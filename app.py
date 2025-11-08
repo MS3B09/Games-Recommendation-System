@@ -818,7 +818,7 @@ elif page == "Recommendation System":
 elif page == "Chatbot":
 
     # 🔐 Configuration des clés API
-    hf_token = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+    #hf_token = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
     groq_key = st.secrets["GROQ_API_KEY"]
 
     # 🔁 Mise en cache
@@ -1155,4 +1155,5 @@ Clear tone and structured answers
 
         # Paste full content from chatbot.py (UI, CSS, LLM init, FAISS load, chat loop, etc.)
         # Keep all original formatting and behavior
+
 
