@@ -824,7 +824,7 @@ elif page == "Chatbot":
     # 🔁 Mise en cache
     @st.cache_resource
     def initialize_llm():
-        return ChatGroq(groq_api_key=groq_key, model_name="llama3-8b-8192")
+        return ChatGroq(groq_api_key=groq_key, model_name="llama-3.1-8b-instant")
 
     @st.cache_resource
     def initialize_embeddings():
@@ -1155,5 +1155,6 @@ Clear tone and structured answers
 
         # Paste full content from chatbot.py (UI, CSS, LLM init, FAISS load, chat loop, etc.)
         # Keep all original formatting and behavior
+
 
 
