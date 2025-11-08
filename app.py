@@ -818,13 +818,13 @@ elif page == "Recommendation System":
 elif page == "Chatbot":
 
     # 🔐 Configuration des clés API
-    os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
-    os.environ["GROQ_API_KEY"] = "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"
+    hf_token = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+    groq_key = st.secrets["GROQ_API_KEY"]
 
     # 🔁 Mise en cache
     @st.cache_resource
     def initialize_llm():
-        return ChatGroq(groq_api_key=os.environ.get('GROQ_API_KEY'), model_name="llama3-8b-8192")
+        return ChatGroq(groq_api_key=groq_key, model_name="llama3-8b-8192")
 
     @st.cache_resource
     def initialize_embeddings():
@@ -1155,3 +1155,4 @@ Clear tone and structured answers
 
         # Paste full content from chatbot.py (UI, CSS, LLM init, FAISS load, chat loop, etc.)
         # Keep all original formatting and behavior
+
