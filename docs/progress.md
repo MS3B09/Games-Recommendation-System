@@ -2,10 +2,12 @@
 
 ## 2026-10-14 — GitHub publication authorized
 
+Publication completed: foundation commit [`7c6767c`](https://github.com/MS3B09/Games-Recommendation-System/commit/7c6767c0487554888b358780f18c22691221e8bf) was pushed to `origin/main` and verified against GitHub's remote commit. [Backend checks](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38497801838) and [Frontend checks](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38497801731) both completed **successfully on GitHub**. The follow-up documentation commit records those results. Personal OpenCode commands/configuration remain local; no local credential values were included in the staged patch.
+
 - Owner explicitly requested publication to `https://github.com/MS3B09/Games-Recommendation-System`, superseding the earlier self-publication preference for this commit/push.
 - Publication scope: verified M0/M1 source, tests, lockfiles/contracts, project requirements/design records, CI/hosting configuration, developer documentation and requested project-local skill text/launchers.
 - Local credentials, personal OpenCode/MCP configuration, generated question state, dependency/model caches, raw data and screenshots are excluded. Existing legacy application/data remain intact.
-- Hosting configuration and live M1 checks remain owner-managed/pending; publication does not authorize M2 or establish hosted availability. Verify remote CI after push and obtain public Netlify/Render URLs for the remaining gate.
+- Hosting configuration and live M1 checks remain owner-managed/pending; publication does not authorize M2 or establish hosted availability. Remote CI is now verified; obtain public Netlify/Render URLs for the remaining gate.
 
 ## 2026-10-13 — M1 local foundation verified; hosted gate pending
 

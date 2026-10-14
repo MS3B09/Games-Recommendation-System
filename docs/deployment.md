@@ -6,7 +6,7 @@ The owner initially chose self-publication, then explicitly requested publicatio
 
 Publish the verified backend/frontend projects, lockfiles, generated API schema/types, workflows, `netlify.toml`, `render.yaml`, product/design and setup/progress documentation. Include `backend/alembic` and `backend/migrations` in the checkout. Keep environment secrets, node_modules, model caches/raw data/job reports and screenshots out of Git; `.gitignore` covers them. Existing personal OpenCode/MCP configuration was not changed for deployment.
 
-CI workflows pin action revisions, uv and Node and use no live service secrets. They have been checked locally but have **not** run remotely before publication. Both backend and frontend checks must pass after push.
+CI workflows pin action revisions, uv and Node and use no live service secrets. Both passed on GitHub for foundation commit `7c6767c`: [Backend checks](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38497801838) and [Frontend checks](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38497801731). The source is published on `main`; configure hosting next.
 
 ## 2. Render API
 
