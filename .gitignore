@@ -11,3 +11,31 @@ __pycache__/
 venv/
 env/
 ENV/
+.venv/
+.env.*
+!.env.example
+.streamlit/secrets.toml
+.pytest_cache/
+.ruff_cache/
+data/raw/
+data/processed/
+data/artifacts/
+data/reports/
+*.egg-info/
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# Reinstallable project-local Impeccable engine (keep skill text/launcher).
+.opencode/skills/impeccable/scripts/bin/
+node_modules/
+frontend/dist/
+frontend/test-results/
+frontend/playwright-report/
+.mypy_cache/
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/questions/
+.impeccable/config.local.json
+# Personal MCP/provider configuration is local; project skills remain versioned.
+.opencode/opencode.json

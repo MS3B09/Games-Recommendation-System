@@ -1,0 +1,37 @@
+name: Backend checks
+
+on:
+  push:
+    paths: ["backend/**", ".github/workflows/backend-checks.yml"]
+  pull_request:
+    paths: ["backend/**", ".github/workflows/backend-checks.yml"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: backend-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  behavior:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7.6.0
+        with:
+          version: "0.11.16"
+          python-version: "3.13"
+          enable-cache: true
+          cache-dependency-glob: "backend/uv.lock"
+      - name: Install locked lightweight check environment
+        run: uv sync --project backend --locked --extra dev --extra benchmark --extra api-spike
+      - name: Lint all backend code
+        run: uv run --project backend --locked --extra dev --extra benchmark --extra api-spike ruff check backend
+      - name: Strictly type-check foundation boundaries
+        run: uv run --project backend --locked --extra dev --extra benchmark --extra api-spike mypy --config-file backend/pyproject.toml backend/src/game_discovery/api backend/src/game_discovery/core backend/src/game_discovery/db
+      - name: Verify generated API contract
+        run: uv run --project backend --locked --extra dev --extra benchmark --extra api-spike python -m game_discovery.api.export_schema --check
+      - name: Check important behavior without live services or model downloads
+        run: uv run --project backend --locked --extra dev --extra benchmark --extra api-spike python -m unittest discover -s backend/tests -v

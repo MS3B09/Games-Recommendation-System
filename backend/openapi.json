@@ -1,0 +1,214 @@
+{
+  "components": {
+    "schemas": {
+      "ApiError": {
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          },
+          "request_id": {
+            "title": "Request Id",
+            "type": "string"
+          },
+          "retryable": {
+            "title": "Retryable",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "request_id",
+          "retryable"
+        ],
+        "title": "ApiError",
+        "type": "object"
+      },
+      "CatalogStatus": {
+        "properties": {
+          "catalog_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Catalog Version"
+          },
+          "currency": {
+            "const": "USD",
+            "default": "USD",
+            "title": "Currency",
+            "type": "string"
+          },
+          "game_count": {
+            "title": "Game Count",
+            "type": "integer"
+          },
+          "llm_enabled": {
+            "default": false,
+            "title": "Llm Enabled",
+            "type": "boolean"
+          },
+          "region": {
+            "const": "US",
+            "default": "US",
+            "title": "Region",
+            "type": "string"
+          },
+          "semantic_query_matching": {
+            "default": false,
+            "title": "Semantic Query Matching",
+            "type": "boolean"
+          },
+          "source_observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Observed At"
+          },
+          "state": {
+            "enum": [
+              "ready",
+              "uninitialized"
+            ],
+            "title": "State",
+            "type": "string"
+          }
+        },
+        "required": [
+          "state",
+          "catalog_version",
+          "game_count"
+        ],
+        "title": "CatalogStatus",
+        "type": "object"
+      },
+      "LiveStatus": {
+        "properties": {
+          "status": {
+            "const": "alive",
+            "default": "alive",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "title": "LiveStatus",
+        "type": "object"
+      },
+      "ReadyStatus": {
+        "properties": {
+          "catalog_version": {
+            "title": "Catalog Version",
+            "type": "string"
+          },
+          "status": {
+            "const": "ready",
+            "default": "ready",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "catalog_version"
+        ],
+        "title": "ReadyStatus",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "title": "Game Discovery API",
+    "version": "0.1.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/v1/catalog/status": {
+      "get": {
+        "operationId": "status_api_v1_catalog_status_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogStatus"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "summary": "Status"
+      }
+    },
+    "/health/live": {
+      "get": {
+        "operationId": "live_health_live_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LiveStatus"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Live"
+      }
+    },
+    "/health/ready": {
+      "get": {
+        "operationId": "ready_health_ready_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadyStatus"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "summary": "Ready"
+      }
+    }
+  }
+}

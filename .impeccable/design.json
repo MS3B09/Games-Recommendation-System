@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-13T18:41:26.5940378Z",
+  "title": "Design System: Game Discovery",
+  "extensions": {
+    "colorMeta": {
+      "ground": { "role": "neutral", "displayName": "Dark blue ground", "tonalRamp": ["oklch(15% 0.02694 249.16)", "oklch(26% 0.02694 249.16)", "oklch(38% 0.02694 249.16)", "oklch(49% 0.02694 249.16)", "oklch(61% 0.02694 249.16)", "oklch(72% 0.02694 249.16)", "oklch(84% 0.02694 249.16)", "oklch(95% 0.02694 249.16)"] },
+      "text": { "role": "neutral", "displayName": "Pale blue-white", "tonalRamp": ["oklch(15% 0.01179 239.91)", "oklch(26% 0.01179 239.91)", "oklch(38% 0.01179 239.91)", "oklch(49% 0.01179 239.91)", "oklch(61% 0.01179 239.91)", "oklch(72% 0.01179 239.91)", "oklch(84% 0.01179 239.91)", "oklch(95% 0.01179 239.91)"] },
+      "muted": { "role": "neutral", "displayName": "Muted blue-gray", "tonalRamp": ["oklch(15% 0.02632 240.75)", "oklch(26% 0.02632 240.75)", "oklch(38% 0.02632 240.75)", "oklch(49% 0.02632 240.75)", "oklch(61% 0.02632 240.75)", "oklch(72% 0.02632 240.75)", "oklch(84% 0.02632 240.75)", "oklch(95% 0.02632 240.75)"] },
+      "line": { "role": "neutral", "displayName": "Blue-gray hairline", "tonalRamp": ["oklch(15% 0.03590 241.23)", "oklch(26% 0.03590 241.23)", "oklch(38% 0.03590 241.23)", "oklch(49% 0.03590 241.23)", "oklch(61% 0.03590 241.23)", "oklch(72% 0.03590 241.23)", "oklch(84% 0.03590 241.23)", "oklch(95% 0.03590 241.23)"] },
+      "action": { "role": "primary", "displayName": "Parchment action", "tonalRamp": ["oklch(15% 0.04804 82.69)", "oklch(26% 0.04804 82.69)", "oklch(38% 0.04804 82.69)", "oklch(49% 0.04804 82.69)", "oklch(61% 0.04804 82.69)", "oklch(72% 0.04804 82.69)", "oklch(84% 0.04804 82.69)", "oklch(95% 0.04804 82.69)"] },
+      "action-hover": { "role": "primary", "displayName": "Light parchment", "tonalRamp": ["oklch(15% 0.03757 83.03)", "oklch(26% 0.03757 83.03)", "oklch(38% 0.03757 83.03)", "oklch(49% 0.03757 83.03)", "oklch(61% 0.03757 83.03)", "oklch(72% 0.03757 83.03)", "oklch(84% 0.03757 83.03)", "oklch(95% 0.03757 83.03)"] },
+      "action-ink": { "role": "neutral", "displayName": "Dark action ink", "tonalRamp": ["oklch(15% 0.02690 246.75)", "oklch(26% 0.02690 246.75)", "oklch(38% 0.02690 246.75)", "oklch(49% 0.02690 246.75)", "oklch(61% 0.02690 246.75)", "oklch(72% 0.02690 246.75)", "oklch(84% 0.02690 246.75)", "oklch(95% 0.02690 246.75)"] },
+      "connected": { "displayName": "Connected mint", "tonalRamp": ["oklch(15% 0.06819 166.73)", "oklch(26% 0.06819 166.73)", "oklch(38% 0.06819 166.73)", "oklch(49% 0.06819 166.73)", "oklch(61% 0.06819 166.73)", "oklch(72% 0.06819 166.73)", "oklch(84% 0.06819 166.73)", "oklch(95% 0.06819 166.73)"] },
+      "failed": { "displayName": "Interrupted peach", "tonalRamp": ["oklch(15% 0.06868 47.39)", "oklch(26% 0.06868 47.39)", "oklch(38% 0.06868 47.39)", "oklch(49% 0.06868 47.39)", "oklch(61% 0.06868 47.39)", "oklch(72% 0.06868 47.39)", "oklch(84% 0.06868 47.39)", "oklch(95% 0.06868 47.39)"] },
+      "disabled-bg": { "role": "neutral", "displayName": "Disabled blue-gray fill", "tonalRamp": ["oklch(15% 0.03374 242.27)", "oklch(26% 0.03374 242.27)", "oklch(38% 0.03374 242.27)", "oklch(49% 0.03374 242.27)", "oklch(61% 0.03374 242.27)", "oklch(72% 0.03374 242.27)", "oklch(84% 0.03374 242.27)", "oklch(95% 0.03374 242.27)"] },
+      "disabled-text": { "role": "neutral", "displayName": "Disabled blue-gray text", "tonalRamp": ["oklch(15% 0.02070 238.72)", "oklch(26% 0.02070 238.72)", "oklch(38% 0.02070 238.72)", "oklch(49% 0.02070 238.72)", "oklch(61% 0.02070 238.72)", "oklch(72% 0.02070 238.72)", "oklch(84% 0.02070 238.72)", "oklch(95% 0.02070 238.72)"] },
+      "disabled-border": { "role": "neutral", "displayName": "Disabled blue-gray border", "tonalRamp": ["oklch(15% 0.03668 240.01)", "oklch(26% 0.03668 240.01)", "oklch(38% 0.03668 240.01)", "oklch(49% 0.03668 240.01)", "oklch(61% 0.03668 240.01)", "oklch(72% 0.03668 240.01)", "oklch(84% 0.03668 240.01)", "oklch(95% 0.03668 240.01)"] },
+      "scrollbar": { "role": "neutral", "displayName": "Scrollbar blue-gray", "tonalRamp": ["oklch(15% 0.04072 242.31)", "oklch(26% 0.04072 242.31)", "oklch(38% 0.04072 242.31)", "oklch(49% 0.04072 242.31)", "oklch(61% 0.04072 242.31)", "oklch(72% 0.04072 242.31)", "oklch(84% 0.04072 242.31)", "oklch(95% 0.04072 242.31)"] }
+    },
+    "typographyMeta": {
+      "headline": { "displayName": "Introductory headline", "purpose": "Left-aligned h1 with balanced wrapping and a desktop-only explicit break." },
+      "title": { "displayName": "Connection title", "purpose": "Live-region h2 for loading, connected and failed states." },
+      "body": { "displayName": "Purpose copy", "purpose": "Muted introductory paragraph, bounded to 54ch." },
+      "body-mobile": { "displayName": "Mobile purpose copy", "purpose": "Introductory copy at maximum width 760px." },
+      "supporting": { "displayName": "Supporting copy", "purpose": "Foundation notice and connection explanation; desktop navigation shares its size." },
+      "status-label": { "displayName": "Status label", "purpose": "Text beside the decorative state dot; fact rows share its size." },
+      "action-label": { "displayName": "Action label", "purpose": "Retry button and unknown-route home action." },
+      "link-label": { "displayName": "Documentation link", "purpose": "Underlined secondary text action." },
+      "caption": { "displayName": "Caption", "purpose": "Footer and request ID; mobile navigation shares its size." },
+      "wordmark": { "displayName": "Temporary title", "purpose": "Game Discovery home link, not a final brand asset." },
+      "wordmark-mobile": { "displayName": "Mobile temporary title", "purpose": "Smaller home link at maximum width 760px." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "enabled-button-press", "value": "transform: scale(.98)", "purpose": "Immediate :active feedback, only when enabled; no authored transition." },
+      { "name": "reduced-motion-press", "value": "@media (prefers-reduced-motion: reduce) { .button:active:not(:disabled) { transform: none; } }", "purpose": "Removes press scaling when reduced motion is requested." },
+      { "name": "skip-link-reveal", "value": "transform: translateY(-160%); on :focus, transform: translateY(0)", "purpose": "Moves the keyboard entry link into view without an authored transition." }
+    ],
+    "breakpoints": [
+      { "name": "mobile-max", "value": "760px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Enabled manual retry; the same visual treatment is used by the unknown-route home link. Static preview, not an API control.",
+      "html": "<div class=\"ds-action-frame\"><button class=\"ds-button\" type=\"button\">Check connection again</button></div>",
+      "css": ".ds-action-frame { background: #101b26; padding: 24px; font-family: 'Manrope Variable', sans-serif; } .ds-button { background: var(--action, #e9d7b6); color: #17232e; border: 1px solid var(--action, #e9d7b6); border-radius: 5px; min-height: 44px; padding: 11px 18px; font: inherit; font-size: 13px; font-weight: 750; cursor: pointer; text-decoration: none; touch-action: manipulation; -webkit-tap-highlight-color: transparent; } .ds-button:focus-visible { outline: 2px solid var(--focus, #e9d7b6); outline-offset: 5px; } .ds-button:active:not(:disabled) { transform: scale(.98); } @media (hover: hover) and (pointer: fine) { .ds-button:hover:not(:disabled) { background: #f4e6cc; } } @media (prefers-reduced-motion: reduce) { .ds-button:active:not(:disabled) { transform: none; } }"
+    },
+    {
+      "name": "Checking action",
+      "kind": "button",
+      "refersTo": "button-primary-disabled",
+      "description": "Native disabled retry during the one in-flight check; uses explicit disabled colors, not faded opacity.",
+      "html": "<div class=\"ds-check-frame\"><button class=\"ds-check-button\" type=\"button\" disabled>Checking…</button></div>",
+      "css": ".ds-check-frame { background: #101b26; padding: 24px; font-family: 'Manrope Variable', sans-serif; } .ds-check-button { background: var(--action, #e9d7b6); color: #17232e; border: 1px solid var(--action, #e9d7b6); border-radius: 5px; min-height: 44px; padding: 11px 18px; font: inherit; font-size: 13px; font-weight: 750; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; } .ds-check-button:disabled { background: #2b3d4b; color: #c0ced8; border-color: #526878; cursor: wait; } .ds-check-button:focus-visible { outline: 2px solid var(--focus, #e9d7b6); outline-offset: 5px; } .ds-check-button:active:not(:disabled) { transform: scale(.98); } @media (hover: hover) and (pointer: fine) { .ds-check-button:hover:not(:disabled) { background: #f4e6cc; } } @media (prefers-reduced-motion: reduce) { .ds-check-button:active:not(:disabled) { transform: none; } }"
+    },
+    {
+      "name": "Documentation link",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "Underlined API documentation action. Preview uses a local fragment instead of inventing a service URL.",
+      "html": "<div class=\"ds-link-frame\"><a class=\"ds-text-link\" href=\"#api-documentation\" target=\"_blank\" rel=\"noreferrer\">API documentation<span class=\"ds-link-sr\"> (opens in a new tab)</span></a></div>",
+      "css": ".ds-link-frame { background: #101b26; color: #e7eff5; padding: 24px; font-family: 'Manrope Variable', sans-serif; } .ds-text-link { color: inherit; text-underline-offset: .3em; font-size: 13px; font-weight: 600; touch-action: manipulation; -webkit-tap-highlight-color: transparent; } .ds-text-link:focus-visible { outline: 2px solid var(--focus, #e9d7b6); outline-offset: 5px; } .ds-link-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; } @media (hover: hover) and (pointer: fine) { .ds-text-link:hover { color: var(--action, #e9d7b6); } }"
+    },
+    {
+      "name": "Foundation navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Temporary title plus one service-status route; mobile keeps the same header. Current-route preview.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-wordmark\" href=\"/\" aria-label=\"Game Discovery home\">Game Discovery<span aria-hidden=\"true\">.</span></a><nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"/system\" aria-current=\"page\">Service status</a></nav></header>",
+      "css": ".ds-header { background: #101b26; color: #e7eff5; font-family: 'Manrope Variable', sans-serif; min-height: 100px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line, #334756); } .ds-wordmark { color: inherit; font-weight: 750; font-size: 20px; text-decoration: none; letter-spacing: -.025em; } .ds-wordmark span { color: var(--action, #e9d7b6); } .ds-nav { font-size: 14px; color: var(--muted, #adbecb); } .ds-nav a { color: inherit; text-decoration: none; padding-block: 12px; text-underline-offset: .3em; } .ds-nav a[aria-current] { color: #e7eff5; text-decoration: underline; } .ds-header a { touch-action: manipulation; -webkit-tap-highlight-color: transparent; } .ds-header a:focus-visible { outline: 2px solid var(--focus, #e9d7b6); outline-offset: 5px; } @media (hover: hover) and (pointer: fine) { .ds-nav a:hover { color: var(--action, #e9d7b6); } } @media (max-width: 760px) { .ds-header { min-height: 84px; } .ds-wordmark { font-size: 17px; } .ds-nav { font-size: 12px; } }"
+    },
+    {
+      "name": "Connection copy",
+      "kind": "custom",
+      "refersTo": "connection",
+      "description": "Static snapshot of the implemented initial loading state; colored states remain paired with written labels. No simulated API result.",
+      "html": "<section class=\"ds-connection\" aria-labelledby=\"ds-connection-title\"><div role=\"status\" aria-live=\"polite\" aria-atomic=\"true\"><h2 id=\"ds-connection-title\">Checking the connection…</h2><p class=\"ds-connection-label\"><span class=\"ds-state-dot\" aria-hidden=\"true\"></span>Connecting to the API</p><p>The free demo may need up to a minute to wake up. This check runs once; it won’t poll in the background.</p></div></section>",
+      "css": ".ds-connection { background: #101b26; color: #e7eff5; font-family: 'Manrope Variable', sans-serif; border-block: 1px solid var(--line, #334756); padding: 36px 0 40px; } .ds-connection h2 { font-size: 25px; line-height: 1.35; font-weight: 650; letter-spacing: -.025em; margin: 0 0 12px; text-wrap: balance; } .ds-connection p { font-size: 14px; color: var(--muted, #adbecb); margin: 0; line-height: 1.8; max-width: 65ch; } .ds-connection .ds-connection-label { display: flex; align-items: center; gap: 9px; font-size: 13px; margin-bottom: 12px; } .ds-state-dot { width: 7px; height: 7px; border: 1px solid var(--muted, #adbecb); border-radius: 50%; flex: 0 0 auto; } .ds-state-dot.ds-connected { background: #93ccb4; border-color: #93ccb4; } .ds-state-dot.ds-failed { background: #e9b69d; border-color: #e9b69d; } @media (max-width: 760px) { .ds-connection { padding-top: 28px; } }"
+    },
+    {
+      "name": "Catalog facts",
+      "kind": "custom",
+      "refersTo": "catalog-facts",
+      "description": "Three-row definition list, using the actual initial unknown state rather than fabricated catalog metrics.",
+      "html": "<dl class=\"ds-facts\"><div><dt>Catalog</dt><dd>Not available yet</dd></div><div><dt>Games available</dt><dd>Unknown</dd></div><div><dt>Source freshness</dt><dd>Unknown</dd></div></dl>",
+      "css": ".ds-facts { background: #101b26; color: #e7eff5; font-family: 'Manrope Variable', sans-serif; margin: 0; padding-top: 4px; font-size: 13px; min-width: 0; } .ds-facts div { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--line, #334756); } .ds-facts div:first-child { padding-top: 0; } .ds-facts dt { color: var(--muted, #adbecb); } .ds-facts dd { margin: 0; text-align: right; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; } @media (max-width: 760px) { .ds-facts { max-width: 480px; } }"
+    },
+    {
+      "name": "Keyboard skip link",
+      "kind": "custom",
+      "refersTo": "skip-link",
+      "description": "Hidden-at-rest link revealed on keyboard focus. The bounded dark preview frame supplies a local main target.",
+      "html": "<div class=\"ds-skip-frame\"><a class=\"ds-skip-link\" href=\"#ds-main\">Skip to content</a><main id=\"ds-main\" class=\"ds-skip-main\" tabindex=\"-1\"></main></div>",
+      "css": ".ds-skip-frame { position: relative; background: #101b26; color: #e7eff5; font-family: 'Manrope Variable', sans-serif; min-height: 100px; overflow: hidden; } .ds-skip-link { position: absolute; left: 24px; top: 16px; background: var(--action, #e9d7b6); color: #101b26; padding: 12px; transform: translateY(-160%); z-index: 1; text-underline-offset: .3em; touch-action: manipulation; -webkit-tap-highlight-color: transparent; } .ds-skip-link:focus { transform: translateY(0); } .ds-skip-link:focus-visible, .ds-skip-main:focus-visible { outline: 2px solid var(--focus, #e9d7b6); outline-offset: 5px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "",
+    "overview": "This is the documented foundation system for the temporary M1 service-status surface, not a final release design. “Game Discovery” is the approved temporary title. No named creative metaphor or final brand identity has been approved. The confirmed direction is restrained, dark and minimal: compact sans typography, pale text, a quiet warm action color and flat sections separated by hairlines.\n\nThe implemented page makes a real connection state readable, distinguishes an unpublished catalog from a service failure, and provides manual retry and API documentation. Its generous spacing supports a small amount of operational information. These patterns describe the current foundation; they do not decide the identity or composition of later game-discovery surfaces.\n\nEvidence: `PRODUCT.md`, `docs/design/foundation.md`, `frontend/src/styles.css` and `frontend/src/App.tsx`. Frontmatter is the normative extracted token layer; the source remains authoritative for application behavior. The schema-v2 sidecar holds component previews, focus, motion and breakpoint details. Its synthesized tonal ramps are panel-only previews, not additional approved application colors.",
+    "keyCharacteristics": [
+      "Restrained dark ground with pale readable text and warm action emphasis.",
+      "Flat sections and hairline separators rather than elevated cards.",
+      "Compact operational typography with a larger left-aligned introduction.",
+      "Explicit connection states, manual retry and accessible focus feedback.",
+      "Temporary M1 foundation, with final branding and discovery surfaces unresolved."
+    ],
+    "rules": [
+      { "name": "The State Is Written Rule", "body": "Keep loading, connected and failed states explicit in text; color alone never communicates the service state.", "section": "colors" },
+      { "name": "The Flat Foundation Rule", "body": "For this M1 surface, separate regions with spacing and hairlines rather than elevated containers.", "section": "elevation" },
+      { "name": "The One Check Rule", "body": "Check on entry, then let the visitor retry manually; do not poll or animate a continuing activity after the request completes.", "section": "components" }
+    ],
+    "dos": [
+      "Do preserve the restrained dark, flat foundation and its hairline separators.",
+      "Do pair each status color with explicit loading, connected or failed text.",
+      "Do keep manual retry, readable disabled controls, visible keyboard focus and reduced-motion press feedback.",
+      "Do stack the status columns at the existing mobile breakpoint and allow long values to wrap.",
+      "Do distinguish unpublished, unknown and unavailable catalog data using real service evidence.",
+      "Do treat this document as the temporary M1 foundation, with later visual decisions requiring their own approved scope."
+    ],
+    "donts": [
+      "Don't present “Game Discovery” or this foundation as a final approved brand identity.",
+      "Don't add game cards, images, synthetic catalog metrics or M2 discovery controls to this M1 surface.",
+      "Don't treat a reachable but unpublished catalog as a failed connection.",
+      "Don't introduce automatic polling or animated loading ceremonies into the manual-check pattern.",
+      "Don't promote the sidecar's synthesized tonal ramps into application tokens or owner-approved palette decisions."
+    ]
+  }
+}

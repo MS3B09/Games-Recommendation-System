@@ -1,0 +1,19 @@
+[build]
+base = "frontend"
+command = "npm run lint && npm run check:api && npm run build"
+publish = "dist"
+
+[build.environment]
+NODE_VERSION = "24.13.0"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+[[headers]]
+for = "/*"
+[headers.values]
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "DENY"
+Referrer-Policy = "strict-origin-when-cross-origin"

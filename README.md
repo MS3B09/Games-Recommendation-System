@@ -1,5 +1,15 @@
 # 🎮 Steam Games Analytics & Recommendation System
 
+> **Full-stack rebuild in progress:** M0 is complete; M1's local foundation is verified, with live-hosting verification pending owner deployment. [Run the new stack](docs/setup.md) · [Deploy M1](docs/deployment.md) · [Progress and checks](docs/progress.md). The Streamlit documentation below describes the preserved legacy application; the new recommendation experience/evaluation is not published yet.
+
+## New application foundation
+
+The React/TypeScript frontend calls a modular FastAPI backend using generated API contracts. PostgreSQL metadata uses a restricted runtime role, bounded SQLAlchemy pooling and explicit Alembic migrations. A responsive status page distinguishes an unpublished catalog from service failure; no sign-in is required.
+
+**Verified locally:** 28 Python tests, backend lint/strict foundation typing, frontend lint/type/build/API drift checks, 7 browser checks and a real browser → API → PostgreSQL smoke test. No catalog/recommendations are activated at M1. CI and free-hosting configuration are included; live deployment remains to verify.
+
+For setup commands, exact hosting settings and milestone boundaries, see [docs/setup.md](docs/setup.md) and [docs/deployment.md](docs/deployment.md).
+
 A comprehensive web application built with Streamlit that provides interactive analytics, AI-powered game recommendations, and an intelligent chatbot for exploring Steam's vast gaming library.
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "M0 development skeleton, not frozen release evaluation",
+  "catalog_version": null,
+  "manual_judgments_status": "not started",
+  "rubric": {"0": "irrelevant or poor fit", "1": "plausible with important tradeoffs", "2": "strong supported fit"},
+  "cases": [
+    {"id": "dev-hades", "favorite_ids": [1145360], "query": "I loved Hades for its combat and sense of progression. I want another satisfying single-player game, but with less repetition, playable on Windows, under $20.", "expected": {"platforms": ["windows"], "required_modes": ["single-player"], "price_operator": "lt", "max_price_cents": 2000, "excluded_ids": [1145360]}, "evidence_note": "Less repetition remains unresolved unless supported; do not invent an attribute."},
+    {"id": "dev-seed-only", "favorite_ids": [620], "query": "", "expected": {"excluded_ids": [620]}, "evidence_note": "Useful results must not require LLM or query encoder."},
+    {"id": "dev-text-only", "favorite_ids": [], "query": "A quiet farming game with crafting and friendships", "expected": {}, "evidence_note": "Judge semantic relevance manually; mood is a qualified inference."},
+    {"id": "dev-free-linux", "favorite_ids": [], "query": "Free multiplayer games on Linux", "expected": {"free_only": true, "platforms": ["linux"], "required_modes": ["multiplayer"]}, "evidence_note": "Explicit free/platform/category evidence; missing price alone is not free."},
+    {"id": "dev-local-coop", "favorite_ids": [620], "query": "Something we can play together on one computer", "expected": {"required_modes": ["local-coop"]}, "evidence_note": "Online co-op or user tag alone must not satisfy local co-op."},
+    {"id": "dev-impossible-budget", "favorite_ids": [], "query": "", "filters": {"max_price_cents": 0, "price_operator": "lt"}, "expected": {"result_count": 0}, "evidence_note": "Never relax constraints to fill results."},
+    {"id": "dev-unknown-facts", "favorite_ids": [], "query": "", "filters": {"platforms": ["macos"], "max_price_cents": 1000}, "expected": {"reject_unknown_price": true, "reject_unknown_platform": true}, "evidence_note": "Exercise incomplete synthetic catalog fixtures alongside real cases."},
+    {"id": "dev-feedback", "favorite_ids": [1145360], "query": "Action combat", "feedback": [{"app_id": 620, "kind": "already_played"}], "expected": {"excluded_ids": [1145360, 620]}, "evidence_note": "Already played is an exact exclusion, not dislike; paired fixture proves interested feedback changes order."},
+    {"id": "dev-conflict", "favorite_ids": [], "query": "Windows only", "filters": {"platforms": ["linux"]}, "expected": {"explicit_controls_preserved": true, "visible_conflict": true}, "evidence_note": "Language interpretation cannot silently override explicit Linux control."},
+    {"id": "dev-refinement", "favorite_ids": [620], "query": "Make it cheaper", "prior_criteria": {"required_modes": ["online-coop"], "platforms": ["windows"]}, "expected": {"retain_prior_modes": true, "retain_prior_platforms": true}, "evidence_note": "Refinement requires a visible resolved budget; no invented numeric cap."}
+  ]
+}
