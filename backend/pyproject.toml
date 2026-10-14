@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Guest game discovery API and reproducible catalog jobs"
 requires-python = ">=3.13,<3.14"
 dependencies = [
-    "fastapi==0.143.0",
+    "fastapi[standard]==0.143.0",
     "pydantic==2.14.1",
     "psycopg[binary]==3.3.6",
     "python-dotenv==1.2.4",
@@ -40,6 +40,9 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.fastapi]
+entrypoint = "game_discovery.api.main:app"
 
 [tool.ruff]
 target-version = "py313"

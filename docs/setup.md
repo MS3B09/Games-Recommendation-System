@@ -112,4 +112,4 @@ Native installation/fresh-database execution has **not** been performed on this 
 
 ## Deployment and next gate
 
-[Deployment guide](deployment.md). Local foundation verification is complete; hosted page/API/CORS/rewrite and actual Free-account allowances remain unverified until the owner publishes/configures the services and supplies public URLs. M1 is not marked fully complete while that gate is open. M2 requires explicit permission **after M1 completion**.
+[Deployment guide](deployment.md). Local foundation verification is complete. Netlify `/` and `/system` are live at https://steam-discovery.netlify.app/; backend hosting has switched to FastAPI Cloud Hobby. Cloud API/CORS and actual Free-account allowances remain to verify after configuration and a Netlify rebuild with `VITE_API_BASE_URL`. M1 is not marked fully complete while that gate is open. M2 requires explicit permission **after M1 completion**.

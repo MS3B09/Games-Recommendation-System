@@ -39,3 +39,4 @@ frontend/playwright-report/
 .impeccable/config.local.json
 # Personal MCP/provider configuration is local; project skills remain versioned.
 .opencode/opencode.json
+.fastapicloud/

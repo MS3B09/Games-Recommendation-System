@@ -1,5 +1,22 @@
 # Implementation progress
 
+## 2026-10-14 — FastAPI Cloud migration publication requested
+
+- Owner explicitly authorized committing/pushing the FastAPI Cloud migration and all latest project changes to the existing repository.
+- Removed `WEB_CONCURRENCY` from the cloud variable table after the owner reported the provider rejecting it as an invalid environment variable name. Only `DATABASE_URL` (secret) and exact `ALLOWED_ORIGINS` are required application variables; max replicas stays 1 via the Scaling UI. Actual managed worker count remains to inspect, rather than inferred from replica count or an unsupported variable.
+- Publication includes the previously installed Impeccable command shortcut, reviewed as a generic non-secret skill dispatcher. Personal MCP/provider configuration and `.env` remain excluded.
+- Dependency-change verification from the preceding step remains valid: 28 tests, Ruff, strict mypy, unchanged OpenAPI and local FastAPI CLI startup passed. This correction changes documentation only. Check remote CI for the published migration; a successful push still does not complete the hosted M1 API/CORS gate or authorize M2.
+
+## 2026-10-14 — Netlify live; owner switches backend to FastAPI Cloud
+
+- Owner supplied https://steam-discovery.netlify.app/ and selected FastAPI Cloud instead of Render. This supersedes earlier hosting instructions; historical measurements remain historical.
+- Real Chromium checks: `/` and direct `/system` both **200**, application renders, no JavaScript page errors; both explicitly report **API address not configured**. This verifies the frontend/SPA route but not end-to-end discovery/API access.
+- Checked official FastAPI Cloud migration, entrypoint, dependency, application-directory, GitHub, environment, ignore, pricing and autoscaling docs. Hobby is currently $0/no card, 512 MB shared, scale-to-zero; beta limits may change. Max replica documentation disagrees (2 vs 3); target min 0/max 1. Actual account/worker/resource settings remain owner verification.
+- Added `[tool.fastapi]` entrypoint, pinned Python file, `fastapi[standard]` with regenerated lockfile and cloud upload exclusions; removed superseded `render.yaml`. Updated active plan/product/setup/hosting instructions. No schema changes, credential edits, provider login, deployment, commit or push performed in this hosting-switch task.
+- Verification after dependency change: locked install succeeded in a fresh C: environment; Ruff passed, strict mypy passed (10 foundation files), **28 tests passed**, generated OpenAPI unchanged, and `git diff --check` passed. FastAPI CLI started from `backend/` using the configured entrypoint with no path argument; `/health/live` returned 200 using empty DB settings, then the owned process tree was stopped. No database/cloud access occurred in that startup check.
+- Runtime credential rotation was requested after a selected environment value appeared in conversation; the value is not repeated or stored in project files/reports. Owner must configure the rotated `DATABASE_URL` as a cloud secret and exact `ALLOWED_ORIGINS=https://steam-discovery.netlify.app`.
+- Next: publish the hosting configuration when requested, deploy the backend on Hobby, supply its public URL, set Netlify `VITE_API_BASE_URL` and rebuild. Verify browser-to-cloud API before completing M1. M2 remains unstarted and requires permission after M1.
+
 ## 2026-10-14 — GitHub publication authorized
 
 Publication completed: foundation commit [`7c6767c`](https://github.com/MS3B09/Games-Recommendation-System/commit/7c6767c0487554888b358780f18c22691221e8bf) was pushed to `origin/main` and verified against GitHub's remote commit. [Backend checks](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38497801838) and [Frontend checks](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38497801731) both completed **successfully on GitHub**. The follow-up documentation commit records those results. Personal OpenCode commands/configuration remain local; no local credential values were included in the staged patch.

@@ -210,7 +210,7 @@ Use a **lean, professional architecture**:
 
 Avoid unnecessary distributed infrastructure. Separate AI services, dedicated worker fleets, elaborate job queues, and infrastructure-heavy orchestration are not part of the agreed baseline.
 
-The technical planning baseline is recorded in [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md): React/TypeScript/Vite frontend on Netlify, a modular FastAPI backend with Render Free proposed, and Supabase PostgreSQL/pgvector without authentication. Exact dependency versions, models, source availability, and hosting feasibility are implementation validation decisions.
+The technical planning baseline is recorded in [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md): React/TypeScript/Vite frontend on Netlify, a modular FastAPI backend on FastAPI Cloud Hobby (owner-selected replacement for Render on 2026-10-14), and Supabase PostgreSQL/pgvector without authentication. Netlify is published at https://steam-discovery.netlify.app/. Exact dependency versions, models, source availability, and hosting feasibility are implementation validation decisions. FastAPI Cloud's public-beta free allowances and actual account settings must be rechecked before deployment; no paid plan is authorized.
 
 ## 8. Budget, Hosting, and Availability
 

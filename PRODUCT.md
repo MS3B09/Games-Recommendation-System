@@ -6,7 +6,7 @@
 web
 
 ## Stack
-Approved: React/TypeScript/Vite, Tailwind CSS, modular Python/FastAPI, one PostgreSQL/pgvector database. Netlify frontend, proposed Render Free backend, Supabase Free database. No accounts.
+Approved: React/TypeScript/Vite, Tailwind CSS, modular Python/FastAPI, one PostgreSQL/pgvector database. Netlify frontend, FastAPI Cloud Hobby backend (owner-selected replacement for Render), Supabase Free database. No accounts.
 
 ## Users
 Gamers looking for their next game; recruiters and clients assessing full-stack and AI/ML engineering.

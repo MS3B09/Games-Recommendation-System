@@ -1,0 +1,12 @@
+# Secrets are dashboard configuration, never deployment payloads.
+.env
+.env.*
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.fastapicloud/
+tests/

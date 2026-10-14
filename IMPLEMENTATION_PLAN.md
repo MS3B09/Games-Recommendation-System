@@ -58,7 +58,7 @@ The initial acceptance scenario is: “I loved Hades for its combat and sense of
 | LLM | Groq Free via a small provider adapter | Exact supported model selected at implementation; optional enhancement with bounded usage |
 | Data jobs | Scrapling, Pandas, Pydantic | Local, resumable, low concurrency |
 | Frontend host | Netlify Free | User-selected; configure SPA rewrites and provider subdomain |
-| API host | Render Free, proposed | Confirm feasibility in M0/M1; separate from Netlify |
+| API host | FastAPI Cloud Hobby | Owner-selected replacement for Render on 2026-10-14; verify actual account/build/runtime limits in M1 |
 | Checks | pytest, Vitest, React Testing Library, Playwright | Meaningful behavior checks and a small end-to-end suite |
 | Tooling | uv for Python; npm for frontend; Ruff, ESLint, TypeScript | Stable pinned dependencies and documented PowerShell-compatible commands |
 | CI | GitHub Actions | Bounded lint/type/test/build checks within free allowances |
@@ -67,7 +67,7 @@ No Redis, worker fleet, queue broker, microservices, paid monitoring, or mandato
 
 ### Free-service gates
 
-Previously consulted documentation reported Render Free with 512 MB RAM, 750 monthly instance hours and idle spin-down after 15 minutes; Supabase Free with 500 MB database storage and pausing after one week of inactivity. These are planning constraints, not permanent promises. Recheck current plans and account-specific allowances before deployment. Verify Netlify's applicable plan, credits, transfer/request/build limits and behavior at exhaustion; do not assume legacy free-plan quotas apply.
+The owner replaced Render with FastAPI Cloud on 2026-10-14. Current public-beta Hobby documentation reports $0, no credit card, 3 apps, 0.1 vCPU/512 MB shared and scale-to-zero. Configure minimum 0 / maximum 1 replica; future usage/build billing is not finalized and must be reviewed without assuming a paid budget. The pricing table and autoscaling guide disagree on the upper replica ceiling (2 versus 3); this app does not rely on that ceiling. Previously consulted Supabase Free documentation reported 500 MB database storage and pausing after one week of inactivity. Recheck actual account allowances before deployment. Verify Netlify's applicable plan, credits, transfer/request/build limits and exhaustion behavior; do not assume legacy quotas apply.
 
 - Target API peak resident memory below 400 MB under representative low concurrency, preserving headroom. Measure startup as well as requests.
 - Target hosted database use below 350 MB initially, including indexes and operational records. Measure a representative import and project catalog growth.
@@ -81,7 +81,7 @@ Previously consulted documentation reported Render Free with 512 MB RAM, 750 mon
 
 ```mermaid
 flowchart TD
-  Browser[React SPA on Netlify] --> API[FastAPI on Render]
+  Browser[React SPA on Netlify] --> API[FastAPI on FastAPI Cloud Hobby]
   Browser <--> Local[Local storage and session storage]
   API --> DB[(Supabase PostgreSQL + pgvector)]
   API --> Encoder[Optional in-process query encoder]
@@ -282,7 +282,7 @@ Document frontend install/dev/build, backend environment setup/dev/test, migrati
 
 Configuration: server-only database URL, Groq key/model, feature flags, allowed origins, limits, artifact version and log level; public frontend API URL only. Track `.env.example` with placeholders. Use least-privilege runtime DB access and separate migration/import credentials. Serving the demo must not expose collection or import endpoints.
 
-Netlify builds `frontend/` using its lockfile and publishes `dist`; SPA fallback must support direct navigation to nested routes. Render runs one bounded API process initially. Build artifacts must include needed encoder files or use a documented reproducible acquisition step; do not download large models on each first request. Run schema migrations explicitly as part of the release workflow, not on every API startup.
+Netlify builds `frontend/` using its lockfile and publishes `dist`; SPA fallback must support direct navigation to nested routes. FastAPI Cloud uses application directory `backend`, the locked Python package and its explicit `[tool.fastapi]` entrypoint. Configure minimum 0 / maximum 1 replica and verify a single serving worker so the pool/request bounds remain meaningful; transient old/new replicas can overlap during rollout. Build artifacts must include needed encoder files or use a documented reproducible acquisition step; do not download large models on each first request. Run schema migrations explicitly as part of the release workflow, not on every API startup.
 
 ## 10. Evaluation and testing
 
@@ -321,7 +321,7 @@ Evidence: [M0 feasibility](docs/reports/feasibility.md), [engineering defaults](
 
 Dependencies: M0 feasibility decisions.
 
-Tasks: create frontend/backend projects, pin dependencies, configure typed API contracts, migrations and environment examples; establish local DB; build health endpoints and minimal page; configure CI, Netlify and proposed Render deployment.
+Tasks: create frontend/backend projects, pin dependencies, configure typed API contracts, migrations and environment examples; establish local DB; build health endpoints and minimal page; configure CI, Netlify and FastAPI Cloud deployment.
 
 Coordination gate: before scaffolding or implementing the frontend, notify the user and wait for their frontend-skill installation confirmation. Request database/hosting configuration when needed, with explicit setup locations and variable names.
 
@@ -446,6 +446,6 @@ Consult current documentation again when implementing; free limits and model ava
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [Supabase pgvector search](https://supabase.com/docs/guides/ai/semantic-search)
 - [Supabase pricing](https://supabase.com/pricing)
-- [Render Free limits](https://render.com/docs/free)
+- [FastAPI Cloud pricing](https://fastapicloud.com/pricing) and [autoscaling](https://fastapicloud.com/docs/advanced-features/autoscaling)
 - [Groq rate limits](https://console.groq.com/docs/rate-limits)
 - [Scrapling](https://github.com/D4Vinci/Scrapling)
