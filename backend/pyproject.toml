@@ -55,4 +55,4 @@ select = ["E4", "E7", "E9", "F"]
 python_version = "3.13"
 strict = true
 follow_imports = "silent"
-files = ["src/game_discovery/api", "src/game_discovery/core", "src/game_discovery/db"]
+files = ["src/game_discovery/api", "src/game_discovery/core", "src/game_discovery/db", "src/game_discovery/catalog/contracts.py", "src/game_discovery/catalog/repository.py", "src/game_discovery/catalog/discovery.py"]

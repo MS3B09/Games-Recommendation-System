@@ -18,13 +18,13 @@ Help players find games through favorite titles, natural-language taste and expl
 Desktop and mobile browsers; free hosting can cold-start or pause. Developer collection/indexing/evaluation jobs run sequentially on an 8 GB CPU-only machine.
 
 ## Capabilities and Constraints
-AGENTS.md governs product scope; IMPLEMENTATION_PLAN.md governs milestones. M1 is a health-connected walking skeleton only. Catalog import, search and recommendations begin in M2; browser persistence/feedback in M3; conversational discovery in M4. US store region/USD, recorded freshness, no promised live prices. Scrapling is the sole scraping framework. No next milestone without explicit owner permission.
+AGENTS.md governs product scope; IMPLEMENTATION_PLAN.md governs milestones. M1 is complete; authorized M2 has real catalog import, search and favorite-based non-LLM discovery working locally. M2 clean-native replay and hosted publication remain open. Browser persistence/feedback is M3; conversational discovery M4. US store region/USD, recorded freshness, no promised live prices. Scrapling is the sole scraping framework. No next milestone without explicit owner permission.
 
 ## Brand Commitments
-User-approved dark, refined presentation with restrained accents. Image-rich game presentation belongs to later discovery surfaces. “Game Discovery” is an approved temporary M1 title, not a final brand decision. User confirmed a minimal foundation page with real connection state, manual retry and API documentation links.
+User-approved dark, refined presentation with restrained accents. “Game Discovery” remains a temporary title, not a final brand decision. User confirmed M2 extends the existing dark Manrope/parchment foundation with favorites/filters beside image-rich results, stacked on mobile, with evidence and price dates visible. Final branding remains M6.
 
 ## Evidence on Hand
-docs/progress.md and docs/reports/feasibility.md record measured resource results. The metadata schema is initialized but no catalog is active. No live recommendation demo or evaluated relevance improvement exists yet.
+docs/progress.md and docs/reports/feasibility.md record measured resource results. docs/reports/m2-implementation.md records an active 40-game source-backed catalog, local real browser/API/database discovery and an independently reviewed M2 interface. Hosted M2 discovery and evaluated relevance improvement are not claimed.
 
 ## Product Principles
 - Ground claims in source evidence.

@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { apiOrigin, getCatalog, ServiceError, type CatalogStatus } from './api/client';
+import Discovery from './Discovery';
+import GameDetail from './GameDetail';
 
 type Connection = { kind: 'loading' } | { kind: 'failed'; message: string; requestId?: string }
   | { kind: 'connected'; catalog: CatalogStatus };
@@ -8,7 +10,9 @@ export default function App() {
   const [connection, setConnection] = useState<Connection>({ kind: 'loading' });
   const [attempt, setAttempt] = useState(0);
   const button = useRef<HTMLButtonElement>(null);
-  const validRoute = ['/', '/system', '/system/'].includes(window.location.pathname);
+  const path = window.location.pathname;
+  const gameMatch = /^\/games\/(\d+)\/?$/.exec(path);
+  const validRoute = ['/', '/system', '/system/'].includes(path) || !!gameMatch;
   let docsUrl: string | undefined;
   try { docsUrl = `${apiOrigin()}/docs`; } catch { /* State region supplies configuration recovery. */ }
 
@@ -38,15 +42,17 @@ export default function App() {
     <a className="skip-link" href="#main">Skip to content</a>
     <header className="site-header">
       <a className="wordmark" href="/" aria-label="Game Discovery home">Game Discovery<span aria-hidden="true">.</span></a>
-      <nav aria-label="Main navigation"><a href="/system" aria-current={window.location.pathname.startsWith('/system') ? 'page' : undefined}>Service status</a></nav>
+      <nav aria-label="Main navigation"><a href="/" aria-current={path === '/' ? 'page' : undefined}>Discover</a><a href="/system" aria-current={path.startsWith('/system') ? 'page' : undefined}>Service status</a></nav>
     </header>
     <main id="main" tabIndex={-1}>
       {!validRoute ? <section className="intro"><h1>This page isn’t here.</h1><p>Return to the foundation page to check the service.</p><a className="button" href="/">Go home</a></section>
+        : gameMatch ? <GameDetail id={Number(gameMatch[1])} />
+        : path === '/' && catalog?.state === 'ready' ? <Discovery catalog={catalog} />
         : <>
           <section className="intro">
             <h1>A better way to find<br className="desktop-break" /> your next game.</h1>
             <p>Built around the games you love, the experience you want, and the constraints that matter to you.</p>
-            <p className="build-note">You’re viewing the application foundation. Game discovery is coming in the next milestone.</p>
+            <p className="build-note">Favorite-based discovery uses recorded catalog facts. Natural-language discovery is planned for a later milestone.</p>
           </section>
           <section className="connection" aria-labelledby="connection-title">
             <div className="connection-copy">
@@ -57,7 +63,7 @@ export default function App() {
                 <p>{connection.kind === 'failed' ? connection.message : connection.kind === 'loading'
                   ? 'The free demo may need up to a minute to wake up. This check runs once; it won’t poll in the background.'
                   : catalog?.state === 'uninitialized' ? 'The API and database are reachable. No catalog has been published yet, so there are no games to browse.'
-                    : 'A catalog is published. Recommendation search will be available in the next milestone.'}</p>
+                    : 'A catalog is published. Open Discover to browse favorite-based recommendations.'}</p>
                 {connection.kind === 'failed' && connection.requestId && <p className="request-id">Request ID: {connection.requestId}</p>}
               </div>
               <div className="actions">

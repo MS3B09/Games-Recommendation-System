@@ -1,5 +1,38 @@
 # Implementation progress
 
+## 2026-10-15 — M2 GitHub publication authorized
+
+- Owner explicitly requested committing and pushing the M2 implementation to the existing GitHub repository.
+- Publication includes the locally verified M2 source, migration, generated contracts, sample ID list, behavior checks, operations/design/evidence documentation, and the previously uncommitted M1 hosted verification script/report referenced by these documents.
+- Raw catalog snapshots, vectors, model/dependency caches, local screenshots and credentials remain excluded. Local acceptance evidence remains 36 Python tests, 11 browser tests and the real local browser/API/database journey; this publication request does not itself verify provider deployment or close clean-native replay.
+- M2 remains in progress until its outstanding acceptance gates pass. M3 is not authorized.
+
+## 2026-10-15 — M2 implemented locally; final acceptance gates open
+
+- Owner explicitly requested M2 implementation and confirmed installed frontend skills plus the task-first extension layout before frontend edits. M3 is not authorized.
+- Implemented source-normalized contracts/evidence, sequential resumable Steam collection, guarded CPU embeddings/checkpoints, immutable staging/import/activation and Alembic `0002`. Real 40-game catalog `m2-649714e8b26775165f105d02` is active in the shared database. [Manifest](reports/m2-artifact-manifest.json).
+- Added bounded search/details/resolve/facets/discovery APIs, exact filtered pgvector ranking and source-backed template explanations. API CORS now permits POST. No Groq dependency, auth or server-side guest profile.
+- Added favorites, budget/free/platform/mode/genre controls, exclusions, real-artwork cards, recorded-price dates, Early Access labels, inline source evidence and direct detail pages. In-memory selections only; persistence is M3. [Design](design/discovery.md).
+- Verified 36 Python and 11 Playwright checks, Ruff, strict 13-module serving typing, frontend types/build/current-source lint, nine real API/database filter cases, idempotent import, 40-vector checkpoint reuse, deliberately interrupted real import rollback and incomplete-artifact rejection. Real browser → local API → restricted Supabase: desktop/mobile axe 0, no overflow, no uncaught errors, direct-detail reload passed. Fresh independent UI reviewer disposition **ship** within M2 scope; detector `[]`.
+- Initial real browser run exposed automatic browse/search admission contention; removed unsolicited browse requests. Old M0 C: environment lost its Python launcher; rebuilt a separate locked M2 environment. C: frontend execution copy remains necessary on the slow E: filesystem. These are documented execution corrections, not deployment-performance results.
+- Source collection happened 2026-10-14 18:52–18:54 UTC; records retain actual collection time. Database measured 12,138,163 bytes after activation. Security advisor: no notices; performance only unused-index INFO.
+- [Full evidence and limitations](reports/m2-implementation.md); [runnable operations](operations-m2.md). The existing M1 verification changes were preserved. No commit/push/provider deployment performed.
+
+**M2 remains in progress:** run complete migrations/catalog replay against a clean native PostgreSQL/pgvector database, then publish/deploy and verify the hosted M2 journey. Existing hosted code is M1, but its database now contains the real catalog. Stop after M2 completion and obtain explicit permission before M3.
+
+## 2026-10-14 — M1 complete; hosted verification passed
+
+- Verified https://steam-discovery.netlify.app/ → https://steam-discovery-api.fastapicloud.dev/ → PostgreSQL using real Chromium and public HTTP checks. [Detailed report](reports/m1-hosted-verification.md).
+- Live health 200/alive; catalog 200/uninitialized/0 games, US/USD with unknown freshness and disabled semantic/LLM flags; readiness expected **503/catalog_not_initialized** with matching request IDs. The database is reachable; no catalog is published.
+- Hosted OpenAPI paths/models match the tracked contract. Swagger UI actually renders. CORS permits the exact Netlify origin on success/errors/preflight and does not grant an unrelated origin.
+- Public `/` and direct `/system`, manual retry, reload, 390px mobile layout, keyboard entry and desktop/mobile axe scans pass. Zero frontend uncaught page errors. Browser-only intercepted network failure reports unavailable/unknown rather than false zero/absence and recovers against the real API. Application JS contains the correct public API origin and no tested credential patterns.
+- Owner explicitly confirmed **FastAPI Cloud Hobby/$0**, min 0/max 1 replica, **one active serving worker**, and applicable **Netlify Free** without paid upgrades/recharge. These private settings are owner-confirmed, not dashboard-inspected by the agent. `WEB_CONCURRENCY` stays omitted.
+- Added bounded manual `frontend/scripts/verify-hosted.mjs` and `npm run verify:hosted`; lint and eight hosted verification groups passed. The script is not added to CI or scheduled polling. Earlier backend migration CI and frontend-code CI are green.
+- Endpoint spot timings ranged 761–2,415 ms across two small rounds; no p95/cold-start/hosted RSS claim. Future discovery latency, resource/load and real-phone checks remain feature/release work.
+- All M1 acceptance gates are now checked. Updated requirements, plan, README, setup/deployment and backend reference. These report/script/status changes are **local**, not committed/pushed; publication requires a new request.
+
+**STOP: M0 and M1 are complete. M2 has not started. Await explicit owner permission before any M2 scaffolding, schema/import/retrieval setup or implementation.**
+
 ## 2026-10-14 — FastAPI Cloud migration publication requested
 
 - Owner explicitly authorized committing/pushing the FastAPI Cloud migration and all latest project changes to the existing repository.

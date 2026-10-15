@@ -24,7 +24,7 @@ p { line-height: 1.8; max-width: 65ch; }
 .site-header { min-height: 100px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line); }
 .wordmark { font-weight: 750; font-size: 20px; text-decoration: none; letter-spacing: -.025em; }
 .wordmark span { color: var(--action); }
-nav { font-size: 14px; color: var(--muted); }
+nav { font-size: 14px; color: var(--muted); display: flex; gap: 24px; }
 nav a { text-decoration: none; padding-block: 12px; }
 nav a[aria-current] { color: #e7eff5; text-decoration: underline; }
 main { flex: 1; }
@@ -63,7 +63,7 @@ footer p { margin: 0; }
   .app-shell { padding-inline: 24px; }
   .site-header { min-height: 84px; }
   .wordmark { font-size: 17px; }
-  nav { font-size: 12px; }
+  nav { font-size: 12px; gap: 14px; }
   .intro { padding: 48px 0 40px; }
   .intro > p { font-size: 16px; }
   .desktop-break { display: none; }

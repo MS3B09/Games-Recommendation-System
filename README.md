@@ -1,12 +1,12 @@
 # 🎮 Steam Games Analytics & Recommendation System
 
-> **Full-stack rebuild in progress:** M0 is complete; M1's local foundation is verified, with live-hosting verification pending owner deployment. [Run the new stack](docs/setup.md) · [Deploy M1](docs/deployment.md) · [Progress and checks](docs/progress.md). The Streamlit documentation below describes the preserved legacy application; the new recommendation experience/evaluation is not published yet.
+> **Full-stack rebuild in progress:** M0/M1 complete; M2 discovery implemented and verified locally against a real 40-game catalog. [M2 evidence](docs/reports/m2-implementation.md) · [Run discovery](docs/operations-m2.md) · [Live M1 foundation](https://steam-discovery.netlify.app/) · [Local setup](docs/setup.md). Hosted M2 publication and clean-native-database replay remain open. The Streamlit documentation below describes the preserved legacy application.
 
 ## New application foundation
 
-The React/TypeScript frontend calls a modular FastAPI backend using generated API contracts. PostgreSQL metadata uses a restricted runtime role, bounded SQLAlchemy pooling and explicit Alembic migrations. A responsive status page distinguishes an unpublished catalog from service failure; no sign-in is required.
+The React/TypeScript frontend calls a modular FastAPI backend using generated API contracts. PostgreSQL/pgvector uses a restricted runtime role, bounded pooling and explicit migrations. M2 adds favorite selection, hard filters, exact seed-vector retrieval, source-backed reasons, artwork, price dates and game details; no sign-in or LLM key is required. Local developer jobs reproduce catalog artifacts from retained source snapshots.
 
-**Verified locally:** 28 Python tests, backend lint/strict foundation typing, frontend lint/type/build/API drift checks, 7 browser checks and a real browser → API → PostgreSQL smoke test. No catalog/recommendations are activated at M1. CI and free-hosting configuration are included; live deployment remains to verify.
+**M2 locally verified:** 36 Python tests, 11 browser checks, backend lint/strict serving typing, frontend lint/type/build, real browser → FastAPI → Supabase discovery, desktop/mobile axe, import idempotence and interrupted-write rollback. [M1 hosted checks](docs/reports/m1-hosted-verification.md) remain historical; M2 has not been committed/pushed/deployed. No relevance improvement or full conversational discovery is claimed.
 
 For setup commands, exact hosting settings and milestone boundaries, see [docs/setup.md](docs/setup.md) and [docs/deployment.md](docs/deployment.md).
 

@@ -21,6 +21,91 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/discover": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Discover */
+        post: operations["discover_api_v1_discover_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/facets": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Facets */
+        get: operations["facets_api_v1_facets_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/games": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Games */
+        get: operations["games_api_v1_games_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/games/resolve": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Resolve */
+        post: operations["resolve_api_v1_games_resolve_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/games/{app_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Detail */
+        get: operations["detail_api_v1_games__app_id__get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/health/live": {
         parameters: {
             query?: never;
@@ -106,6 +191,156 @@ export interface components {
              */
             state: "ready" | "uninitialized";
         };
+        /** DiscoverRequest */
+        DiscoverRequest: {
+            /** Favorite Ids */
+            favorite_ids?: number[];
+            filters?: components["schemas"]["Filters"];
+            /**
+             * Limit
+             * @default 10
+             */
+            limit: number;
+        };
+        /** DiscoverResponse */
+        DiscoverResponse: {
+            /** Catalog Version */
+            catalog_version: string;
+            /** Degraded Reasons */
+            degraded_reasons?: string[];
+            effective_criteria: components["schemas"]["Filters"];
+            /**
+             * Ranking Version
+             * @default seed-v1
+             * @constant
+             */
+            ranking_version: "seed-v1";
+            /** Request Id */
+            request_id: string;
+            /** Results */
+            results: components["schemas"]["Recommendation"][];
+            /** Suggested Refinements */
+            suggested_refinements: string[];
+            /** Timings Ms */
+            timings_ms: {
+                [key: string]: number;
+            };
+        };
+        /** Evidence */
+        Evidence: {
+            /** Field */
+            field: string;
+            /** Id */
+            id: string;
+            source: components["schemas"]["Source"];
+            /** Value */
+            value: string | number | boolean | string[];
+        };
+        /** Facets */
+        Facets: {
+            /** Catalog Version */
+            catalog_version: string;
+            /** Genres */
+            genres: string[];
+            /** Modes */
+            modes: string[];
+            /** Platforms */
+            platforms: string[];
+            /** Tags */
+            tags: string[];
+        };
+        /** Filters */
+        Filters: {
+            /** Excluded Ids */
+            excluded_ids?: number[];
+            /**
+             * Free Only
+             * @default false
+             */
+            free_only: boolean;
+            /** Max Price Cents */
+            max_price_cents?: number | null;
+            /**
+             * Platform Match
+             * @default any
+             * @enum {string}
+             */
+            platform_match: "any" | "all";
+            /** Platforms */
+            platforms?: ("windows" | "mac" | "linux")[];
+            /** Preferred Terms */
+            preferred_terms?: string[];
+            /**
+             * Price Operator
+             * @default lte
+             * @enum {string}
+             */
+            price_operator: "lte" | "lt";
+            /** Required Modes */
+            required_modes?: ("single-player" | "multiplayer" | "online-co-op" | "local-co-op")[];
+            /** Unwanted Terms */
+            unwanted_terms?: string[];
+        };
+        /** Game */
+        Game: {
+            /** App Id */
+            app_id: number;
+            /** Artwork Url */
+            artwork_url?: string | null;
+            /** Description */
+            description: string;
+            /** Early Access */
+            early_access?: boolean | null;
+            /**
+             * Eligibility
+             * @enum {string}
+             */
+            eligibility: "eligible" | "excluded" | "quarantined";
+            /** Eligibility Reason */
+            eligibility_reason: string;
+            /** Evidence */
+            evidence: components["schemas"]["Evidence"][];
+            /** Free To Play */
+            free_to_play?: boolean | null;
+            /** Genres */
+            genres?: string[];
+            /** Modes */
+            modes?: ("single-player" | "multiplayer" | "online-co-op" | "local-co-op")[];
+            /**
+             * Observed At
+             * Format: date-time
+             */
+            observed_at: string;
+            /** Platforms */
+            platforms: {
+                [key: string]: boolean | null;
+            };
+            price?: components["schemas"]["Price"] | null;
+            /** Semantic Hash */
+            semantic_hash: string;
+            /** Store Url */
+            store_url: string;
+            /** Tags */
+            tags?: string[];
+            /** Title */
+            title: string;
+        };
+        /** GamePage */
+        GamePage: {
+            /** Catalog Version */
+            catalog_version: string;
+            /** Items */
+            items: components["schemas"]["Game"][];
+            /** Offset */
+            offset: number;
+            /** Total */
+            total: number;
+        };
+        /** HTTPValidationError */
+        HTTPValidationError: {
+            /** Detail */
+            detail?: components["schemas"]["ValidationError"][];
+        };
         /** LiveStatus */
         LiveStatus: {
             /**
@@ -114,6 +349,30 @@ export interface components {
              * @constant
              */
             status: "alive";
+        };
+        /** Price */
+        Price: {
+            /** Amount Cents */
+            amount_cents: number;
+            /**
+             * Currency
+             * @default USD
+             * @constant
+             */
+            currency: "USD";
+            /** Evidence Id */
+            evidence_id: string;
+            /**
+             * Observed At
+             * Format: date-time
+             */
+            observed_at: string;
+            /**
+             * Region
+             * @default US
+             * @constant
+             */
+            region: "US";
         };
         /** ReadyStatus */
         ReadyStatus: {
@@ -125,6 +384,60 @@ export interface components {
              * @constant
              */
             status: "ready";
+        };
+        /** Reason */
+        Reason: {
+            /** Evidence Ids */
+            evidence_ids: string[];
+            /** Text */
+            text: string;
+        };
+        /** Recommendation */
+        Recommendation: {
+            game: components["schemas"]["Game"];
+            /** Reasons */
+            reasons: components["schemas"]["Reason"][];
+            /** Tradeoffs */
+            tradeoffs: string[];
+        };
+        /** ResolveRequest */
+        ResolveRequest: {
+            /** App Ids */
+            app_ids: number[];
+        };
+        /** ResolvedGames */
+        ResolvedGames: {
+            /** Catalog Version */
+            catalog_version: string;
+            /** Items */
+            items: components["schemas"]["Game"][];
+            /** Unknown Ids */
+            unknown_ids: number[];
+        };
+        /** Source */
+        Source: {
+            /**
+             * Collected At
+             * Format: date-time
+             */
+            collected_at: string;
+            /** Sha256 */
+            sha256: string;
+            /** Url */
+            url: string;
+        };
+        /** ValidationError */
+        ValidationError: {
+            /** Context */
+            ctx?: Record<string, never>;
+            /** Input */
+            input?: unknown;
+            /** Location */
+            loc: (string | number)[];
+            /** Message */
+            msg: string;
+            /** Error Type */
+            type: string;
         };
     };
     responses: never;
@@ -151,6 +464,210 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["CatalogStatus"];
+                };
+            };
+            /** @description Service Unavailable */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    discover_api_v1_discover_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["DiscoverRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DiscoverResponse"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+            /** @description Service Unavailable */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    facets_api_v1_facets_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Facets"];
+                };
+            };
+            /** @description Service Unavailable */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    games_api_v1_games_get: {
+        parameters: {
+            query?: {
+                q?: string;
+                limit?: number;
+                offset?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GamePage"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+            /** @description Service Unavailable */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    resolve_api_v1_games_resolve_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ResolveRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ResolvedGames"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+            /** @description Service Unavailable */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    detail_api_v1_games__app_id__get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                app_id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Game"];
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
                 };
             };
             /** @description Service Unavailable */

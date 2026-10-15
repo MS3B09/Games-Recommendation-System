@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "games": 40,
+  "requested": 40,
+  "quarantine": [],
+  "games_sha256": "4417edbb322e9016bc465d17e36270237d8e044869b74125782adce8250bd244",
+  "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+  "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "dimensions": 384,
+  "semantic_text_version": "title-terms-description-v1",
+  "embeddings_sha256": "69f8bff008f8a766a2806bd9849d4650bcec0eeba31ad5312f813a7e8b3e42a4",
+  "encoder": "float-onnx-cpu-parity-verified",
+  "tokenizer_sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+  "model_sha256": "6fd5d72fe4589f189f8ebc006442dbb529bb7ce38f8082112682524616046452",
+  "version": "m2-649714e8b26775165f105d02"
+}

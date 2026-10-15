@@ -12,6 +12,27 @@ def main() -> int:
     audit = commands.add_parser("audit", help="Stream CSV coverage and identity audit")
     audit.add_argument("--input", type=Path, action="append", required=True)
     audit.add_argument("--output", type=Path, required=True)
+    verification = commands.add_parser("verify-catalog", help="Explicit real API/database M2 smoke; needs local DATABASE_URL")
+    verification.add_argument("--output", type=Path, required=True)
+    import_verification = commands.add_parser("verify-import", help="Opt-in real DB interruption/activation rejection check; writes roll back")
+    import_verification.add_argument("--run-dir", type=Path, required=True)
+    import_verification.add_argument("--env-file", type=Path, required=True)
+    import_verification.add_argument("--output", type=Path, required=True)
+    collect = commands.add_parser("collect", help="Sequential resumable US Steam appdetails collection (max 100 IDs)")
+    identities = collect.add_mutually_exclusive_group(required=True)
+    identities.add_argument("--app-id", type=int, action="append")
+    identities.add_argument("--ids-file", type=Path, help="JSON array of Steam app IDs")
+    collect.add_argument("--run-dir", type=Path, required=True)
+    collect.add_argument("--resume", action="store_true")
+    for name in ("normalize", "embed", "import", "activate"):
+        job = commands.add_parser(name, help=f"M2 catalog {name}")
+        job.add_argument("--run-dir", type=Path, required=True)
+        if name == "embed":
+            job.add_argument("--cache-dir", type=Path, required=True)
+            job.add_argument("--batch-size", type=int, default=8)
+            job.add_argument("--resume", action="store_true")
+        if name in {"import", "activate"}:
+            job.add_argument("--env-file", type=Path, required=True)
     probe = commands.add_parser("probe", help="Small sequential Steam source feasibility probe")
     probe.add_argument("--app-id", type=int, action="append", required=True)
     probe.add_argument("--output-dir", type=Path, required=True)
@@ -40,6 +61,32 @@ def main() -> int:
     api.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     try:
+        if args.command == "verify-import":
+            from game_discovery.jobs.verify_import import verify_import
+            result = verify_import(args.run_dir, args.env_file, args.output)
+            print(json.dumps({"job": args.command, "status": result["status"], "report": str(args.output)}))
+            return 0
+        if args.command == "verify-catalog":
+            from game_discovery.jobs.verify_catalog import verify_catalog
+            result = verify_catalog(args.output)
+            print(json.dumps({"job": args.command, "status": result["status"], "report": str(args.output)}))
+            return 0
+        if args.command in {"collect", "normalize", "embed", "import", "activate"}:
+            from game_discovery.jobs import catalog
+            if args.command == "collect":
+                app_ids = json.loads(args.ids_file.read_text(encoding="utf-8")) if args.ids_file else args.app_id
+                report = catalog.collect(args.run_dir, app_ids, args.resume)
+            elif args.command == "normalize":
+                report = catalog.normalize(args.run_dir)
+            elif args.command == "embed":
+                report = catalog.embed(args.run_dir, args.cache_dir, args.batch_size, args.resume)
+            else:
+                report = catalog.publish(args.run_dir, args.env_file, args.command == "activate")
+            failed = args.command == "collect" and any(item.get("error_type") for item in report["observations"])
+            summary = {"requested": len(report["app_ids"]), "observed": len(report["observations"]),
+                       "failed": sum(bool(item.get("error_type")) for item in report["observations"])} if args.command == "collect" else report
+            print(json.dumps({"job": args.command, "status": "partial" if failed else "ok", "report": summary}))
+            return 1 if failed else 0
         if args.command == "audit":
             report = run_audit(args.input, args.output)
             print(json.dumps({"job": "audit", "status": "ok", "report": str(args.output),
@@ -64,6 +111,10 @@ def main() -> int:
         from game_discovery.jobs.environment_check import run_environment_check
         return run_environment_check(args.env_file, args.project_url, args.connect)
     except (OSError, ValueError) as error:
+        print(json.dumps({"job": args.command, "status": "failed", "error_type": type(error).__name__}), file=sys.stderr)
+        return 1
+    except Exception as error:
+        # Provider/database exceptions can contain secrets. Report only the type.
         print(json.dumps({"job": args.command, "status": "failed", "error_type": type(error).__name__}), file=sys.stderr)
         return 1
 

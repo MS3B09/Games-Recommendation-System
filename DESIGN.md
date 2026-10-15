@@ -259,3 +259,11 @@ The sidecar includes only implemented patterns: primary button, checking button,
 - **Don't** treat a reachable but unpublished catalog as a failed connection.
 - **Don't** introduce automatic polling or animated loading ceremonies into the manual-check pattern.
 - **Don't** promote the sidecar's synthesized tonal ramps into application tokens or owner-approved palette decisions.
+
+## M2 extension
+
+The owner-approved ordinary discovery extension preserves the incumbent dark Manrope/parchment foundation. Its actual layout, components, states, remote artwork provenance and local verification are documented in [M2 discovery extension](docs/design/discovery.md): favorites and filters beside image-rich results on desktop, stacked before results on mobile, with inline source-backed reasons and recorded US/USD price dates.
+
+The M1 service-status descriptions and restrictions above apply to `/system` and the foundation fallback shown at `/` while the catalog is loading, unavailable or unpublished. A ready catalog at `/` renders discovery; `/games/:id` renders recorded game details. The shared header now includes Discover and Service status. M1 statements about absent images/cards and single-link navigation are historical surface descriptions, not prohibitions on this approved extension.
+
+Incumbent token frontmatter and `.impeccable/design.json` are preserved; the latter remains an M1 preview, not a complete M2 component inventory. Pre-existing M1 scope/status drift in `PRODUCT.md` and `docs/design/foundation.md` is reported in the linked document rather than repaired here. This records local implementation evidence, not public deployment or M2 completion. Browser-local persistence, conversation and final branding remain later work.

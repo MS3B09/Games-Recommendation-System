@@ -29,8 +29,8 @@ jobs:
         run: uv sync --project backend --locked --extra dev --extra benchmark --extra api-spike
       - name: Lint all backend code
         run: uv run --project backend --locked --extra dev --extra benchmark --extra api-spike ruff check backend
-      - name: Strictly type-check foundation boundaries
-        run: uv run --project backend --locked --extra dev --extra benchmark --extra api-spike mypy --config-file backend/pyproject.toml backend/src/game_discovery/api backend/src/game_discovery/core backend/src/game_discovery/db
+      - name: Strictly type-check API, database and catalog boundaries
+        run: uv run --project backend --locked --extra dev --extra benchmark --extra api-spike mypy --config-file backend/pyproject.toml backend/src/game_discovery/api backend/src/game_discovery/core backend/src/game_discovery/db backend/src/game_discovery/catalog/contracts.py backend/src/game_discovery/catalog/repository.py backend/src/game_discovery/catalog/discovery.py
       - name: Verify generated API contract
         run: uv run --project backend --locked --extra dev --extra benchmark --extra api-spike python -m game_discovery.api.export_schema --check
       - name: Check important behavior without live services or model downloads

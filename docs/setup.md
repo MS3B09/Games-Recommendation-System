@@ -1,6 +1,6 @@
-# Full-stack foundation setup (M1)
+# Full-stack setup (M1 foundation + M2 discovery)
 
-M1 implements a real service-status page, typed catalog metadata API, bounded PostgreSQL access and explicit migrations. No catalog is published yet. Search, imports, recommendations and game cards belong to M2 and have not started.
+M1 implements the service-status foundation. M2 now has an active 40-game real catalog, search, favorite-based discovery, hard filters and evidence-linked game cards working locally. See [M2 operations](operations-m2.md) for collection, embedding, import, activation and verification commands; [M2 evidence](reports/m2-implementation.md) records remaining clean-native-replay and hosted-publication gates.
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ From repository root:
 
 ```powershell
 # Optional override used on this machine; omit on a normal local working copy.
-$env:UV_PROJECT_ENVIRONMENT = 'C:\Users\User\AppData\Local\Temp\opencode\game-discovery-m0-venv'
+$env:UV_PROJECT_ENVIRONMENT = 'C:\Users\User\AppData\Local\Temp\opencode\game-discovery-m2-venv'
 uv sync --project backend --locked --extra dev --extra benchmark
 uv run --project backend --locked --extra dev --extra benchmark python -m uvicorn game_discovery.api.main:app --host 127.0.0.1 --port 8000 --workers 1
 ```
@@ -34,7 +34,7 @@ npm run dev
 
 Open **http://127.0.0.1:5173/system**. Development defaults to the local API. For another origin, configure `VITE_API_BASE_URL` in ignored `frontend/.env.local` (example provided). Only this public origin belongs in browser configuration.
 
-Both `/` and `/system` render the foundation. Unknown routes provide a home link. The UI requests metadata once, permits manual retry, aborts on unmount, times out at 75 seconds, and never polls to keep free services awake. A reachable unpublished catalog is distinct from an outage; unknown freshness stays unknown.
+`/` renders discovery when a catalog is active, `/system` retains the status page, and `/games/:id` supports details/direct reload. Unknown routes provide a home link. The UI requests metadata once, permits manual retry, aborts stale requests, times out at 75 seconds, and never polls to keep free services awake. A reachable unpublished catalog is distinct from an outage; unknown freshness stays unknown.
 
 ### Verified C: frontend execution copy
 
@@ -51,7 +51,7 @@ uv run --project backend --locked --extra dev --extra benchmark python -m unitte
 uv run --project backend --locked --extra dev --extra benchmark python -m game_discovery.api.export_schema --check
 ```
 
-On the slow E: machine, add `--cache-dir C:/Users/User/AppData/Local/Temp/opencode/game-discovery-mypy` to mypy. Ruff covers all backend code; strict types cover serving/config/migration boundaries (10 files), not the disposable M0 job implementations.
+On the slow E: machine, use a C: mypy cache. Ruff covers all backend code; strict types cover serving/config/migration plus M2 catalog boundaries (13 files), not developer jobs. To include all configured modules, run `uv run --no-sync mypy` from `backend/` after installing the dev environment; CI explicitly includes the catalog modules too.
 
 From `frontend/`:
 
@@ -65,12 +65,12 @@ npx playwright install chromium
 npm test
 ```
 
-This machine sets `PLAYWRIGHT_BROWSERS_PATH=C:\Users\User\AppData\Local\Temp\opencode\game-discovery-browsers`. CI installs Chromium with Linux dependencies. Seven browser checks use mocked provider responses and no database secrets. They cover uninitialized versus unavailable state, malformed/HTML responses, retry, a 75-second timeout, nested navigation, mobile layout, keyboard and axe accessibility checks.
+This machine sets `PLAYWRIGHT_BROWSERS_PATH=C:\Users\User\AppData\Local\Temp\opencode\game-discovery-browsers`. CI installs Chromium with Linux dependencies. Eleven browser checks use mocked responses and no database secrets: seven foundation checks plus four discovery/evidence/constraint/stale-response/detail checks. [Real M2 smoke](operations-m2.md#verification) separately exercises the configured database through an actual browser.
 
 For the **real** browser → API → PostgreSQL check, first stop local servers on ports 8000/4173, ensure backend setup is installed and frontend build targets the local API:
 
 ```powershell
-$env:API_PYTHON = 'C:\Users\User\AppData\Local\Temp\opencode\game-discovery-m0-venv\Scripts\python.exe'
+$env:API_PYTHON = 'C:\Users\User\AppData\Local\Temp\opencode\game-discovery-m2-venv\Scripts\python.exe'
 # Optional capture directory; default is ../.impeccable/review.
 $env:M1_CAPTURE_DIR = 'E:\Games-Recommendation-System\.impeccable\review'
 npm run smoke:stack
@@ -106,10 +106,10 @@ The existing Supabase schema was already applied through MCP; a guarded migratio
 
 ### Native, database-only alternative
 
-Install PostgreSQL 17 and [pgvector](https://github.com/pgvector/pgvector#installation) locally; no full Supabase stack is required. Using a privileged local SQL client, create a dedicated `game_discovery` database. In it, install `create extension vector;` after pgvector is available. Set developer `MIGRATION_DATABASE_URL=postgresql://postgres:REPLACE_LOCALLY@localhost:5432/game_discovery`, then run the explicit `upgrade` command. The initial migration conditionally revokes Supabase browser roles only if those roles exist, so it is portable to native PostgreSQL. Configure the new runtime password in the local SQL client and set `DATABASE_URL=postgresql://game_discovery_runtime:REPLACE_LOCALLY@localhost:5432/game_discovery` (no pooler project suffix locally).
+Install PostgreSQL 17 and [pgvector](https://github.com/pgvector/pgvector#installation) locally; no full Supabase stack is required. Using a privileged local SQL client, create a dedicated `game_discovery` database. Let the catalog migration install `vector` in `extensions`, or preinstall using `create schema if not exists extensions; create extension vector with schema extensions;`. Set developer `MIGRATION_DATABASE_URL=postgresql://postgres:REPLACE_LOCALLY@localhost:5432/game_discovery`, then run the explicit `upgrade` command. The initial migration conditionally revokes Supabase browser roles only if those roles exist, so it is portable to native PostgreSQL. Configure the new runtime password in the local SQL client and set `DATABASE_URL=postgresql://game_discovery_runtime:REPLACE_LOCALLY@localhost:5432/game_discovery` (no pooler project suffix locally).
 
-Native installation/fresh-database execution has **not** been performed on this machine; no psql/Docker was available. The configured Supabase path, real application connection and baseline revision were tested; offline SQL generation was checked, including PostgreSQL format placeholders. Extension setup/indexes for the full catalog are M2 work.
+Native installation/fresh-database execution has **not** been performed on this machine; no psql/Docker was available. The configured Supabase path, explicit M2 migration/import and real application connection were tested. Complete native replay remains an open M2 acceptance gate.
 
 ## Deployment and next gate
 
-[Deployment guide](deployment.md). Local foundation verification is complete. Netlify `/` and `/system` are live at https://steam-discovery.netlify.app/; backend hosting has switched to FastAPI Cloud Hobby. Cloud API/CORS and actual Free-account allowances remain to verify after configuration and a Netlify rebuild with `VITE_API_BASE_URL`. M1 is not marked fully complete while that gate is open. M2 requires explicit permission **after M1 completion**.
+[Deployment guide](deployment.md). **M1 is complete; authorized M2 is in progress.** [M1 hosted evidence](reports/m1-hosted-verification.md) is historical. The shared database now has M2's catalog, but new frontend/backend code has not been published. `npm run verify:hosted` assumes M1's unpublished catalog and is not the M2 verifier; use [M2 operations](operations-m2.md) for local checks. Complete clean-native replay and hosted M2 verification before marking M2 complete. Do not start M3 without explicit approval.

@@ -12,7 +12,9 @@
     "generate:api": "openapi-typescript ../backend/openapi.json -o src/api/schema.d.ts",
     "check:api": "openapi-typescript ../backend/openapi.json -o src/api/schema.d.ts --check",
     "test": "playwright test",
-    "smoke:stack": "node scripts/smoke-stack.mjs"
+    "smoke:stack": "node scripts/smoke-stack.mjs",
+    "smoke:discovery": "node scripts/smoke-discovery.mjs",
+    "verify:hosted": "node scripts/verify-hosted.mjs"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "5.3.0",

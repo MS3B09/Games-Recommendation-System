@@ -1,6 +1,6 @@
 # Technical Implementation Plan
 
-Status: M0 complete; M1 local foundation verified, hosted walking-skeleton gate pending owner publication/configuration. See [docs/progress.md](docs/progress.md) for measured evidence and remaining gates.
+Status: **M0 and M1 complete; M2 in progress**, explicitly authorized on 2026-10-15. Real 40-game catalog and local non-LLM discovery journey verified; clean-native-database replay and hosted M2 publication remain open. See [M2 evidence](docs/reports/m2-implementation.md), [docs/progress.md](docs/progress.md) and [M1 hosted verification](docs/reports/m1-hosted-verification.md). M3 requires approval after M2 completion.
 
 This plan implements [AGENTS.md](AGENTS.md) and records the decisions made during technical planning. The product brief governs scope; this document governs implementation order and proposed technical defaults. Items described as targets, candidates, or gates are not measured results. Keep both documents consistent when an approved requirement changes.
 
@@ -300,7 +300,7 @@ Quality gates: zero known hard-constraint violations and zero known unsupported 
 
 ## 11. Build milestones
 
-M0 is **complete** for implementation feasibility; M1 is **in progress**; M2–M8 are **not started**. Checkboxes are completion gates, not a record of work already performed.
+M0 and M1 are **complete**; M2 is **in progress** with explicit owner authorization; M3–M8 are **not started**. Checkboxes are completion gates. Stop after M2 completion and request explicit permission before M3.
 
 ### M0 — Audit and feasibility decisions
 
@@ -329,11 +329,11 @@ Deliverables: runnable local stack, initial schema, deployment configs, setup gu
 
 - [x] Frontend build, Python checks and initial API tests pass from documented setup.
 - [x] User was notified before frontend implementation, confirmed their desired skills were installed, and applicable skills were consulted.
-- [ ] Frontend can call the hosted API; direct SPA routes work; secrets remain server-side.
+- [x] Frontend can call the hosted API; direct SPA routes work; secrets remain server-side.
 - [x] API/database unavailability is distinguishable from empty results.
 - [x] Deployment access blockers are recorded rather than marked complete.
 
-Local evidence: [setup/checks](docs/setup.md), 28 Python tests, Ruff, strict mypy, generated-contract checks, frontend lint/type/build and 7 browser checks; real browser/CORS/API/PostgreSQL smoke passed. [Deployment guide](docs/deployment.md): owner chose self-publication; no commit/push/live deployment or remote CI result is claimed. Hosted acceptance remains unchecked, so M1 is **not fully complete**. M2 requires explicit permission after full M1 completion.
+Evidence: [setup/checks](docs/setup.md), 28 Python tests, Ruff, strict mypy, generated-contract checks, frontend lint/type/build and 7 browser checks; GitHub CI and real local browser/CORS/API/PostgreSQL smoke passed. [Hosted M1 report](docs/reports/m1-hosted-verification.md): deployed Netlify → FastAPI Cloud → PostgreSQL verified, direct SPA routes, contracts/docs, explicit CORS, manual retry, mobile/keyboard/axe and controlled browser-only outage recovery pass. Owner confirmed both Free plans, min 0/max 1 replica and one worker. **M1 is complete; owner subsequently authorized M2 on 2026-10-15.** Hosted RSS, cold-start/load/relevance evaluation are not claimed.
 
 ### M2 — Reproducible catalog and useful non-LLM discovery
 
@@ -344,10 +344,12 @@ Tasks: implement normalized imports/provenance/eligibility, compact embeddings, 
 Deliverables: a representative real catalog, reproducible artifact manifest, thin public discovery journey.
 
 - [ ] From a clean database, documented jobs reproduce a usable catalog and embeddings.
-- [ ] Favorite selection and recorded US/USD/platform/mode/exclusion filters work end to end.
-- [ ] Missing data fails required constraints; no-match results do not relax filters.
-- [ ] Useful recommendations work with no Groq key configured.
-- [ ] Output cites real catalog fields; freshness and Early Access labels are visible.
+- [x] Favorite selection and recorded US/USD/platform/mode/exclusion filters work end to end (real local browser/API/Supabase).
+- [x] Missing data fails required constraints; no-match results do not relax filters.
+- [x] Useful recommendations work with no Groq key configured.
+- [x] Output cites real catalog fields; freshness and Early Access labels are visible.
+
+Evidence: [M2 implementation report](docs/reports/m2-implementation.md), [operations](docs/operations-m2.md), [artifact manifest](docs/reports/m2-artifact-manifest.json). 40 real games active, repeat import/checkpoint reuse and interrupted transaction checks passed; 36 Python and 11 browser checks. **M2 remains in progress:** complete clean-native-database replay and hosted M2 publication/verification before handoff. M3 is not authorized.
 
 ### M3 — Guest persistence and feedback personalization
 
