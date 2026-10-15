@@ -1,6 +1,8 @@
 # M1 hosted walking-skeleton verification
 
-Date: **2026-10-14**. Result: **PASS for M1; milestone complete**. M2 is not started and requires explicit permission.
+Date: **2026-10-14**. Result: **PASS for M1; milestone complete**. At that time, M2 had not started and required explicit permission.
+
+**Historical verification snapshot. Current status: M0–M2 are complete.** Hosted M2 is owner-confirmed and its [clean-database replay passed](m2-clean-replay.md). The M1 observations and unpublished-catalog verifier below are retained as historical evidence, not current M2 expectations. M3 requires explicit approval.
 
 - Frontend: https://steam-discovery.netlify.app/
 - Backend: https://steam-discovery-api.fastapicloud.dev/

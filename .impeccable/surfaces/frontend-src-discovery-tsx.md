@@ -7,6 +7,8 @@ related_targets: ["frontend/src/discovery.css", "frontend/src/GameCard.tsx"]
 
 # M2 discovery surface
 
+**Status: M2 complete.** The UI review passed, hosted verification is owner-confirmed, and approved Actions run `38680812079` passed the final clean-database gate and cleanup. See `docs/reports/m2-clean-replay.md`. Stop before M3 until explicit owner approval.
+
 Mode: Operate. User confirmed installed frontend skills and the task-first layout in this session. Scope: favorites, explicit filters, real catalog cards, details and evidence; M3 persistence and M4 language discovery remain future milestones.
 
 ## Direction contract

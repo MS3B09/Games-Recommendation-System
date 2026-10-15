@@ -2,15 +2,15 @@
 
 **M2 is complete. Hosted M2 verification is owner-confirmed** after publication of `3453bfb` and successful backend/frontend CI. Frontend: **https://steam-discovery.netlify.app/**. Backend: **https://steam-discovery-api.fastapicloud.dev/**. The final [clean-database replay](reports/m2-clean-replay.md) passed twice in approved Actions run `38680812079` on `3a62d1e`, including integrity/permissions/API/reproducibility checks and cleanup. Production hosting/database settings were not changed by replay verification. [M2 evidence](reports/m2-implementation.md) · [Historical M1 evidence](reports/m1-hosted-verification.md). Stop before M3 until explicit approval.
 
-The foundation and migration are published on GitHub: migration `fe79842` passed [backend CI](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38601010646); unchanged frontend UI code previously passed [frontend CI](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38497801731). Hosted browser verification now confirms the actual deployed artifacts. No provider dashboard credentials are available to the agent; private plan/scaling/worker settings below are owner-confirmed. New verification scripts/reports/status changes remain local until publication is separately requested.
+The M2 application was published in `3453bfb`; its unchanged frontend passed [CI with 11 browser tests](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38673824585). Replay support was published in `3a62d1e`, with passing [backend CI](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38680783914) and [clean replay](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38680812079). Completion evidence and retained reports were published in `6264063`. Hosted M2 acceptance and private plan/scaling/worker settings are owner-confirmed; no provider dashboard changes were made during replay verification.
 
 ## M2 publication checklist — historical procedure; hosted verification now owner-confirmed
 
-1. Publish the intended frontend/backend/contracts to the connected GitHub repository when authorized; allow the existing free hosting integrations to deploy the correct revision. No commit/push was performed during M2 implementation.
+1. Publish the intended frontend/backend/contracts to the connected GitHub repository when authorized; allow the existing free hosting integrations to deploy the correct revision. M2 publication is complete (`3453bfb`); hosted verification is owner-confirmed.
 2. Alembic `0002` and the active catalog are already applied to the configured Supabase project. Do not rerun initial SQL or put `MIGRATION_DATABASE_URL` in serving settings. Existing restricted `DATABASE_URL` and exact `ALLOWED_ORIGINS` remain sufficient; no Groq key is required.
 3. Recheck applicable free-plan settings below, then confirm both providers built the intended revision. Netlify public `VITE_API_BASE_URL` stays the same.
 4. Verify `/api/v1/games?q=Hades`, facets, details, a constrained POST `/api/v1/discover`, current contracts and POST CORS. Verify Netlify favorite selection → recorded-price/platform/mode filters → results → source evidence → direct details/reload on desktop/mobile. Readiness should now be 200 with the active version, not the historical M1 503.
-5. Record hosted evidence and resolve the clean-native-database replay gate before marking M2 complete. M3 still requires explicit approval.
+5. Record hosted evidence and resolve the clean-native-database replay gate before marking M2 complete. Both are now satisfied; [retained completion evidence](reports/m2-clean-replay.md). M3 still requires explicit approval.
 
 `npm run verify:hosted` below is the historical M1 verifier and assumes an unpublished catalog. It is not the M2 acceptance verifier. [M2 local verification commands](operations-m2.md).
 
@@ -61,7 +61,7 @@ uv run --locked fastapi deploy
 
 Complete login in your own browser, select the **Hobby** team, and link the intended app. These commands upload/deploy; they were not executed by the agent. The local `.fastapicloud/` link state is ignored. `.fastapicloudignore` excludes secret files, environments, caches and unrelated frontend/legacy data from uploads. Review the CLI upload list before confirming. For GitHub deployment, keep the application directory `backend`; for a direct backend-folder upload, use the application root corresponding to that upload, rather than nesting `backend` twice.
 
-Run reviewed schema migrations explicitly from the developer environment, never on cloud/API startup. If a health-check path is configurable, use **`/health/live`**. Do not use catalog readiness as platform liveness while the M1 catalog is unpublished.
+Run reviewed schema migrations explicitly from the developer environment, never on cloud/API startup. If a health-check path is configurable, use **`/health/live`** for process liveness; catalog readiness describes database/artifact availability and is a separate check. The active M2 catalog now makes readiness return 200 when its dependencies are available.
 
 ## 2. Connect the Netlify frontend
 
@@ -98,7 +98,7 @@ The owner supplied both public URLs and the following checks passed at M1 handof
 5. The rebuilt Netlify `/` and `/system` page calls the cloud API successfully with CORS, distinguishes empty from failure and permits manual retry.
 6. Free-account/scaling/worker settings are owner-confirmed and CI is checked; memory/cold-start/load limitations are recorded in the report rather than claimed as measured.
 
-Hosted M1 acceptance passed. M2 was subsequently authorized; its real catalog is now active, while its frontend/backend publication remains pending as described above.
+Hosted M1 acceptance passed under the historical conditions above. M2 is now published and complete: its real catalog is active, hosted verification is owner-confirmed, and the final clean replay/cleanup passed. Do not use the historical unpublished-catalog assertions as current M2 expectations.
 
 ## Troubleshooting
 

@@ -1,5 +1,7 @@
 # Run the M0 jobs
 
+**Historical M0 workflow reference. M0–M2 are complete.** The original commands/results below describe feasibility work, not current blockers. Use [M2 operations](operations-m2.md) for the active pipeline and [replay results](reports/m2-clean-replay.md) for the passed clean-database gate. M3 is not authorized.
+
 Run these PowerShell commands from the repository root. The legacy application has its own dependencies; the new job environment does not require them.
 
 ```powershell
@@ -90,4 +92,4 @@ uv sync --project backend --locked --extra benchmark --extra api-spike
 uv run --project backend --locked --extra benchmark --extra api-spike python -m unittest discover -s backend/tests -v
 ```
 
-Final result: **26 tests passed**. Offline installation was tested on the user's Windows CPU machine; Linux offline CPU-wheel/resource verification remains a fresh-machine setup check. Hosted environments must omit `offline`/collection extras; production semantic-runtime packaging is upcoming M2 work.
+Historical M0 result: **26 tests passed**. Offline installation was tested on the user's Windows CPU machine. M2 subsequently passed backend CI with 41 tests and two native Linux PostgreSQL/pgvector builds with real CPU embeddings. Hosted serving still omits `offline`/collection extras: completed M2 uses stored seed vectors and does not load a hosted query encoder. Natural-language/query encoding remains M4 work, not an unfinished M2 gate.

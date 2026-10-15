@@ -1,5 +1,7 @@
 # Implementation progress
 
+**Current status: M0, M1 and M2 are complete. M3 is unstarted and requires explicit owner approval.** Entries below are dated historical snapshots; earlier references to pending gates or approvals describe their state at that time, not current blockers. The latest completion evidence is recorded first.
+
 ## 2026-10-15 — M2 complete; approved clean replay and cleanup passed
 
 - Published replay workflow/supporting files to existing `main` in [`3a62d1e`](https://github.com/MS3B09/Games-Recommendation-System/commit/3a62d1ef2f07eb5d2b7f080ab5edb35f4ea2db70), then manually dispatched [run 38680812079](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38680812079). **Passed on attempt 1 in 43 seconds; no fixes/reruns needed.**

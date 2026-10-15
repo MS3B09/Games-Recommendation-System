@@ -2,9 +2,9 @@
 
 ## Overview
 
-This records the implemented local M2 discovery surface, an ordinary extension of the M1 foundation. The owner approved preserving the dark Manrope/parchment system and the precise composition: favorite selection and filters beside image-rich results, stacked on mobile. Mode: Operate. The direction contract is [the discovery surface brief](../../.impeccable/surfaces/frontend-src-discovery-tsx.md).
+**Status: M2 complete.** This records the implemented M2 discovery surface, an ordinary extension of the M1 foundation. The owner approved preserving the dark Manrope/parchment system and the precise composition: favorite selection and filters beside image-rich results, stacked on mobile. Mode: Operate. The direction contract is [the discovery surface brief](../../.impeccable/surfaces/frontend-src-discovery-tsx.md).
 
-This document describes component and presentation behavior; it does not certify public deployment or completion of M2. Browser-local persistence and feedback belong to M3, conversational discovery to M4, and final branding remains unresolved. Current selections are in component memory and disappear on navigation away or reload.
+This document describes component and presentation behavior. Hosted M2 verification is owner-confirmed; the [passed clean-database replay and retained evidence](../reports/m2-clean-replay.md) close the final M2 gate. Browser-local persistence and feedback belong to M3, conversational discovery to M4, and final branding remains unresolved. Current selections are in component memory and disappear on navigation away or reload. M3 remains unstarted and requires explicit approval.
 
 Implementation evidence: `frontend/src/Discovery.tsx`, `GameCard.tsx`, `GameDetail.tsx`, `discovery.css`, `App.tsx` and `styles.css`. [DESIGN.md](../../DESIGN.md) retains the incumbent token frontmatter; `.impeccable/design.json` remains the M1 preview sidecar.
 
@@ -72,6 +72,6 @@ The existing [local browser report](../../.impeccable/review/m2/report.json) ide
 
 For this documentation pass, the report and both captures were inspected against the component/CSS source and catalog provenance code. The supplied review handoff reports detector `[]`, desktop/mobile axe zero, no overflow, and a ship disposition with no material fixes for this narrow scope. Detector output and numeric overflow measurements are not fields in `report.json`; those claims are attributed to that handoff, not represented as newly executed checks. This docs-only pass did not rerun the application or browser checks. These are local observations, not hosted-release evidence, an exhaustive accessibility certification or an evaluation of relevance.
 
-## Existing drift retained
+## Historical scope and retained preview limitations
 
-The historical M1 foundation document still lists `/` and describes discovery as future work; it now describes `/system` and the fallback at `/`, rather than ready-catalog discovery. `PRODUCT.md` and the sidecar also retain M1-era scope/status language and previews. They are not refreshed by this ordinary extension. Unknown-route recovery still says to return to the foundation page although its home action targets discovery when ready; this minor copy mismatch is reported, not promoted as a rule. The root extension note clarifies route scope without changing incumbent tokens, historical prose, sidecar or implementation. No material mismatch with the approved narrow M2 layout/evidence contract was found.
+The historical M1 direction describes `/system` and the fallback at `/`, rather than ready-catalog discovery; its original contract is retained with an explicit current-scope note. `PRODUCT.md` and the root design extension note now record M2 completion. The unchanged sidecar remains an M1 component preview, not a complete M2 inventory. Unknown-route recovery still says to return to the foundation page although its home action targets discovery when ready; this minor copy mismatch is reported, not promoted as a rule or changed by this status-only update. No material mismatch with the approved narrow M2 layout/evidence contract was found.

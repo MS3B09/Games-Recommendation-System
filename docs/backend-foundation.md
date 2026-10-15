@@ -50,17 +50,17 @@ Errors contain `{code,message,request_id,retryable}`; `X-Request-ID` matches err
 
 The metadata schema uses one active-version unique index and checks US/USD, 384 dimensions and positive game counts before an active row can exist. Publication remains developer-managed and is not exposed by an API endpoint. Schema changes are explicit migrations, never startup side effects.
 
-## Checks and remaining gates
+## Checks and completed M2 gates
 
 ```powershell
 uv run --project backend --locked --extra benchmark --extra api-spike python -m unittest discover -s backend/tests -v
 uv run --project backend --locked python -m game_discovery.jobs environment-check --env-file backend/.env --project-url https://mmdmxjiawlbridvvhtrt.supabase.co --connect
 ```
 
-M1's local behavior suite had 28 tests and 10 typed foundation files; M2 has **36 passing tests and 13 strictly typed serving modules**. Ruff covers all backend code. Historical M1 pooled checks reported uninitialized status; current M2 runtime/browser checks see the active catalog and useful discovery. [Detailed current evidence](reports/m2-implementation.md).
+M1's local behavior suite had 28 tests and 10 typed foundation files; completed M2 has **41 passing tests and 13 strictly typed serving modules**, including the five replay preparation checks. Ruff covers all backend code. Historical M1 pooled checks reported uninitialized status; current M2 runtime/browser checks see the active catalog and useful discovery. [Detailed current evidence](reports/m2-implementation.md).
 
-`.github/workflows/backend-checks.yml` uses pinned action commits and uv, bounded runtime, read-only repository permissions and lightweight extras. It needs no service secrets, browser installs, live scraping or model downloads. Backend and frontend workflows both passed on GitHub after publication of foundation commit `7c6767c`; [results](progress.md).
+`.github/workflows/backend-checks.yml` uses pinned action commits and uv, bounded runtime, read-only repository permissions and lightweight extras. It needs no service secrets, browser installs, live scraping or model downloads. [Backend CI on `3a62d1e`](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38680783914) passed; [unchanged frontend CI on `3453bfb`](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38673824585) passed all 11 browser tests and build checks. The separate manual [clean-database replay](reports/m2-clean-replay.md) passed twice with actual model inference and temporary PostgreSQL/pgvector.
 
 Alembic tracks revision `0002` after the explicitly applied M2 catalog migration; `0001` was the guarded M1 baseline adoption. Full initial migrations were verified twice on native PostgreSQL 17.10/pgvector 0.8.2 in GitHub Actions instead of installing local psql/Docker. M2 expects pgvector in `extensions`; see its operations guide. API startup never runs migrations. Runtime connections use SQLAlchemy's bounded two-connection pool with no overflow; developer migrations use NullPool and only the migration URL.
 
-Hosted M1 verification passed with the then-uninitialized catalog. Owner confirmed Hobby/Free settings and one worker; no `WEB_CONCURRENCY` variable is required. **M1 is complete; M2 was subsequently authorized.** The shared database is now active, but new M2 routes/interface are not claimed hosted until publication and verification.
+Hosted M1 verification passed with the then-uninitialized catalog. The owner confirmed Hobby/Free settings and one worker; no `WEB_CONCURRENCY` variable is required. **M2 is also complete:** its routes/interface are published, hosted verification is owner-confirmed, and the final clean-database replay passed. Stop before M3 until explicit approval.

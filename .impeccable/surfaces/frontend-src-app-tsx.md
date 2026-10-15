@@ -7,6 +7,8 @@ related_targets: ["frontend/src/styles.css"]
 
 # M1 foundation surface
 
+**Historical M1 direction; M0–M2 are complete.** This contract now applies to `/system` and the connection fallback at `/`. Ready-catalog discovery follows `frontend-src-discovery-tsx.md`; `/games/:id` renders recorded details. See `docs/reports/m2-clean-replay.md` for completed M2 verification. M3 is unstarted and unauthorized.
+
 Scope: `/` and `/system`. Mode: Operate. The owner approved this narrow page, temporary title and restrained dark direction. No recommendation controls or game imagery are part of M1.
 
 ## Direction contract
@@ -23,4 +25,4 @@ FORM: User-pinned narrow foundation surface, confirmed through structured questi
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
-No shipping raster assets in this surface. Final branding/image-rich discovery remains open for later approved milestones.
+No shipping raster assets belong to this M1 foundation surface. Image-rich discovery was subsequently completed in M2 with remote source-provided artwork; final branding remains M6 work.

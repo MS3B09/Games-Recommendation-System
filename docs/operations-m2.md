@@ -119,7 +119,7 @@ For a future authorized manual test:
    gh workflow run m2-clean-replay.yml --repo MS3B09/Games-Recommendation-System --ref main
    ```
 
-3. Wait for the entire job, including evidence retention/cleanup, to succeed. Inspect its summary and download the `m2-clean-replay-<run-id>-<attempt>` report within seven days. Preserve the concise result and run URL in the tracked [report](reports/m2-clean-replay.md), then update progress. Any failed/skipped/pending replay leaves the gate open.
+3. Wait for the entire job, including evidence retention/cleanup, to succeed. Inspect its summary and download the `m2-clean-replay-<run-id>-<attempt>` report within seven days. Preserve the concise result and run URL in the tracked [report](reports/m2-clean-replay.md), then update progress. M2's acceptance gate is already closed by run `38680812079`; a future failed/skipped/pending regression run must not be recorded as another pass and must be investigated within its authorized task.
 
 The 40-game frozen source fixture avoids live Steam/network collection dependencies. Public pinned model files are downloaded once inside the disposable runner and used to compute embeddings independently twice. The helper runs the existing migrations, normalizer, embedding/import/activation and verification jobs, comparing manifests, database contents and recommendation results across two empty database builds. No precomputed vectors/database dump are used.
 
