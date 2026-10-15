@@ -2,7 +2,7 @@
 
 Date: 2026-10-15 (source observations are recorded in UTC on 2026-10-14).
 
-**Status: implemented and verified locally against the real Supabase database; M2 remains in progress.** Clean-native-database replay and publication/verification of the hosted M2 frontend/API are outstanding. M3 has not started.
+**Current status: hosted M2 verification is owner-confirmed; M2 remains in progress only for clean-database replay.** The following sections retain original implementation evidence. The owner selected a temporary PostgreSQL 17/pgvector GitHub Actions service for the final gate; its [manual workflow is prepared but awaiting approval](m2-clean-replay.md). M3 has not started.
 
 ## Delivered
 
@@ -53,10 +53,10 @@ Public Steam responses, weights and full vectors stay local/ignored. Rerunning j
 
 ## Remaining gates and limitations
 
-1. **Clean database replay:** commands/schema are present, and the new catalog tables were empty for the real first import. The complete initial migrations → catalog build on a wholly clean native PostgreSQL/pgvector database has **not** been executed; no local psql/Docker tooling was available. This acceptance checkbox remains open.
-2. **Hosted M2 journey:** source is local/uncommitted. The shared database now has the active real catalog, so the old hosted M1 status API can report it; the new search/discovery routes and interface are not claimed deployed. Publish/deploy the intended changes, then verify real Netlify → FastAPI Cloud discovery. No new hosting credentials were requested or used; existing server-side `DATABASE_URL`, exact `ALLOWED_ORIGINS` and public frontend `VITE_API_BASE_URL` remain the required settings.
+1. **Clean database replay — still open:** the complete initial migrations → catalog build on a wholly clean native PostgreSQL/pgvector database has **not** been executed. The owner requested GitHub Actions instead of local psql/Docker installation. A frozen-source, two-pass replay is [prepared locally](m2-clean-replay.md); no commit, push or workflow execution is permitted before approval.
+2. **Hosted M2 journey — resolved by owner confirmation:** M2 was published in commit `3453bfb` and both GitHub CI checks passed; the owner subsequently confirmed successful hosted deployment verification. This replay preparation task makes no production/provider changes and requires no hosting credentials.
 3. Catalog size is deliberately 40 games, not the 6,000-game budget. Tags/reviews are not enriched yet; price/platform/mode facts come only from selected source fields. M5 covers expansion/refresh depth.
 4. M2 has in-memory selection only. Browser persistence/feedback is M3; natural-language/conversation is M4. LLM/query-encoder capability flags remain false. Final brand/premium polish remains M6.
 5. No relevance improvement, human evaluation, hosted latency/RSS, free-host load headroom, fresh-machine setup or physical-phone verification is claimed.
 
-[Runnable operations](../operations-m2.md). Keep M2 in progress until the open acceptance/publication gates are resolved; do not start M3 without explicit milestone approval.
+[Runnable operations](../operations-m2.md). Keep M2 in progress until the approved [clean-database replay](m2-clean-replay.md) passes; hosted verification is now owner-confirmed. Do not start M3 without explicit milestone approval.

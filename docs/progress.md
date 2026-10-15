@@ -1,5 +1,19 @@
 # Implementation progress
 
+## 2026-10-15 — Clean replay execution authorized
+
+- Owner explicitly authorized committing/pushing the prepared replay changes on existing `main`, manually dispatching the workflow, fixing failures/rerunning as needed, and publishing actual results and M2 completion only after all gates pass.
+- Production Supabase/Netlify/FastAPI Cloud must remain untouched by the replay. Hosted M2 acceptance remains owner-confirmed. M3 is not authorized; stop after the M2 handoff.
+
+## 2026-10-15 — Hosted M2 confirmed; clean replay prepared, approval pending
+
+- Owner confirmed that M2 hosted deployment verification succeeded. Recorded as owner-reported acceptance; this preparation task does not reconnect to or change production Supabase, Netlify or FastAPI Cloud.
+- Owner selected **GitHub Actions with temporary PostgreSQL 17 + pgvector** for the remaining clean-database gate instead of installing local database tools. Existing repository and `main` branch are retained. No M3 work is authorized.
+- Prepared manual-only `.github/workflows/m2-clean-replay.yml`: pinned PostgreSQL 17/pgvector 0.8.2 image, locked CPU dependencies, two full empty-database builds, fresh embeddings, migrations/import/activation, real API/database checks, RLS/least-privilege/integrity/rollback checks and cross-build fingerprints. Frozen field projections of all 40 verified source records avoid live Steam traffic; no precomputed vectors or DB dump are used.
+- The workflow uses no production secrets/URLs or deployment steps; only its loopback service is reachable through the helper. Runtime/model/source scratch files and database/service resources are discarded; only a small seven-day JSON report plus job summary is retained. [Design, scope and results record](reports/m2-clean-replay.md).
+- **Preparation checks executed locally:** 41 offline Python tests passed, Ruff passed, actionlint 1.7.12 static workflow validation passed, existing OpenAPI contract check passed. No database replay, GitHub workflow dispatch, commit, push or provider operation was executed.
+- **Approval required before commit, push and execution**, as explicitly requested. Clean pass results/run URL remain pending; do not mark M2 complete until the approved replay succeeds and its results are recorded. M3 remains unstarted.
+
 ## 2026-10-15 — M2 GitHub publication authorized
 
 - Owner explicitly requested committing and pushing the M2 implementation to the existing GitHub repository.

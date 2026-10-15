@@ -1,6 +1,6 @@
 # Full-stack setup (M1 foundation + M2 discovery)
 
-M1 implements the service-status foundation. M2 now has an active 40-game real catalog, search, favorite-based discovery, hard filters and evidence-linked game cards working locally. See [M2 operations](operations-m2.md) for collection, embedding, import, activation and verification commands; [M2 evidence](reports/m2-implementation.md) records remaining clean-native-replay and hosted-publication gates.
+M1 implements the service-status foundation. M2 has an active 40-game real catalog, search, favorite-based discovery, hard filters and evidence-linked game cards; hosted verification is owner-confirmed. See [M2 operations](operations-m2.md) for commands and the [prepared GitHub Actions replay](reports/m2-clean-replay.md) for its final gate. The Actions database removes the need to install PostgreSQL/pgvector locally for this acceptance check; it awaits approval before commit/push/execution.
 
 ## Prerequisites
 
@@ -112,4 +112,4 @@ Native installation/fresh-database execution has **not** been performed on this 
 
 ## Deployment and next gate
 
-[Deployment guide](deployment.md). **M1 is complete; authorized M2 is in progress.** [M1 hosted evidence](reports/m1-hosted-verification.md) is historical. The shared database now has M2's catalog, but new frontend/backend code has not been published. `npm run verify:hosted` assumes M1's unpublished catalog and is not the M2 verifier; use [M2 operations](operations-m2.md) for local checks. Complete clean-native replay and hosted M2 verification before marking M2 complete. Do not start M3 without explicit approval.
+[Deployment guide](deployment.md). **M1 is complete; authorized M2 remains in progress only for clean-database replay.** Hosted M2 verification is owner-confirmed. [M1 hosted evidence](reports/m1-hosted-verification.md) is historical; `npm run verify:hosted` assumes that old unpublished catalog and is not the M2 verifier. Use [M2 operations](operations-m2.md) for checks and its approval-gated temporary Actions database workflow. Do not start M3 without explicit approval after M2 completion.

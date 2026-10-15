@@ -102,4 +102,31 @@ npm run smoke:discovery
 
 The real-stack smoke starts/stops only its own local API/preview processes, checks CORS-backed favorite search/discovery, constraints, evidence, direct-detail reload, desktop/mobile axe and overflow, and saves captures under `.impeccable/review/m2`. Local startup wait is bounded at 75 seconds for this slow filesystem. On this machine the frontend C: execution copy remains in use; set `API_PYTHON` to the new `game-discovery-m2-venv/Scripts/python.exe`. The earlier M0 environment lost its Python launcher and was not reused. Source remains on E:; no secrets/raw catalog are copied to the frontend cache.
 
-M1's `verify:hosted` is historical and assumes an unpublished catalog; it is not the M2 acceptance verifier. Public M2 verification needs the new frontend/backend deployed first. No commit, push or provider deployment was performed in this implementation session.
+M1's `verify:hosted` is historical and assumes an unpublished catalog; it is not the M2 acceptance verifier. M2 was subsequently published as `3453bfb`, passed both CI checks and is now hosted-verification owner-confirmed. The remaining replay preparation below makes no provider/database changes and requires separate approval before publication/execution.
+
+## Clean-database replay in GitHub Actions
+
+The owner has now confirmed M2 hosted verification. A local PostgreSQL installation is **not required** to close the remaining clean-database gate: `.github/workflows/m2-clean-replay.yml` prepares a native PostgreSQL 17/pgvector 0.8.2 service on a standard free GitHub-hosted runner. [Preparation/results record](reports/m2-clean-replay.md).
+
+**Approval boundary:** the workflow and supporting files are currently local only. Do not commit, push or run it until the owner explicitly approves those actions. It is manual-only, so a later approved push does not automatically dispatch this replay. Keep the existing `main` branch; no new branch or production migration is needed.
+
+After approval to publish **and** execute:
+
+1. Commit/push the reviewed replay workflow, helper, source fixture, tests and docs to the existing repository/branch.
+2. In GitHub → Actions → **M2 clean database replay**, choose **Run workflow** on `main`. Equivalent CLI (do not execute before approval):
+
+   ```powershell
+   gh workflow run m2-clean-replay.yml --repo MS3B09/Games-Recommendation-System --ref main
+   ```
+
+3. Wait for the entire job, including evidence retention/cleanup, to succeed. Inspect its summary and download the `m2-clean-replay-<run-id>-<attempt>` report within seven days. Preserve the concise result and run URL in the tracked [report](reports/m2-clean-replay.md), then update progress. Any failed/skipped/pending replay leaves the gate open.
+
+The 40-game frozen source fixture avoids live Steam/network collection dependencies. Public pinned model files are downloaded once inside the disposable runner and used to compute embeddings independently twice. The helper runs the existing migrations, normalizer, embedding/import/activation and verification jobs, comparing manifests, database contents and recommendation results across two empty database builds. No precomputed vectors/database dump are used.
+
+The fixture is a **field projection**, not a full original raw response. `original_source` retains the original HTTP SHA256 and collection time; materialized projection files carry their own SHA256. The replay's distinct provenance/version is expected. To regenerate the fixture deliberately from the retained verified local snapshots (no database access):
+
+```powershell
+uv run --project backend --no-sync python backend/scripts/export_replay_fixture.py --source-run data/raw/m2-catalog --output data/fixtures/m2-replay-sources.json
+```
+
+This exporter was used during preparation. Frozen public metadata fixtures are tracked; full raw HTTP snapshots, models and vectors remain ignored. No new credentials are required. Do not configure Supabase/Groq/Netlify/FastAPI Cloud secrets in this workflow. Its isolated test URLs are not accepted from user inputs or production `.env` files.

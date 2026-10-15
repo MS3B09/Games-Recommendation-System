@@ -1,6 +1,6 @@
 # Technical Implementation Plan
 
-Status: **M0 and M1 complete; M2 in progress**, explicitly authorized on 2026-10-15. Real 40-game catalog and local non-LLM discovery journey verified; clean-native-database replay and hosted M2 publication remain open. See [M2 evidence](docs/reports/m2-implementation.md), [docs/progress.md](docs/progress.md) and [M1 hosted verification](docs/reports/m1-hosted-verification.md). M3 requires approval after M2 completion.
+Status: **M0 and M1 complete; M2 in progress**, explicitly authorized on 2026-10-15. The owner confirmed hosted M2 verification; the only remaining M2 gate is clean PostgreSQL/pgvector replay. The owner selected a temporary GitHub Actions database instead of local installation. Its manual-only workflow is prepared but must not be committed, pushed or executed without approval. See [replay preparation/results](docs/reports/m2-clean-replay.md), [M2 evidence](docs/reports/m2-implementation.md) and [progress](docs/progress.md). M3 requires approval after M2 completion.
 
 This plan implements [AGENTS.md](AGENTS.md) and records the decisions made during technical planning. The product brief governs scope; this document governs implementation order and proposed technical defaults. Items described as targets, candidates, or gates are not measured results. Keep both documents consistent when an approved requirement changes.
 
@@ -349,7 +349,7 @@ Deliverables: a representative real catalog, reproducible artifact manifest, thi
 - [x] Useful recommendations work with no Groq key configured.
 - [x] Output cites real catalog fields; freshness and Early Access labels are visible.
 
-Evidence: [M2 implementation report](docs/reports/m2-implementation.md), [operations](docs/operations-m2.md), [artifact manifest](docs/reports/m2-artifact-manifest.json). 40 real games active, repeat import/checkpoint reuse and interrupted transaction checks passed; 36 Python and 11 browser checks. **M2 remains in progress:** complete clean-native-database replay and hosted M2 publication/verification before handoff. M3 is not authorized.
+Evidence: [M2 implementation report](docs/reports/m2-implementation.md), [operations](docs/operations-m2.md), [artifact manifest](docs/reports/m2-artifact-manifest.json). 40 real games active, repeat import/checkpoint reuse and interrupted transaction checks passed; original implementation had 36 Python and 11 browser checks. The owner subsequently confirmed hosted M2 verification. **M2 remains in progress only for clean-database replay:** the owner selected native PostgreSQL 17/pgvector in temporary GitHub Actions services, avoiding local database installation. The [prepared manual workflow](docs/reports/m2-clean-replay.md) and five additional offline tests are not a replay pass; commit, push and execution require explicit approval. M3 is not authorized.
 
 ### M3 — Guest persistence and feedback personalization
 

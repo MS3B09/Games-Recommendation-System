@@ -1,0 +1,2410 @@
+{
+  "schema_version": 1,
+  "kind": "steam-appdetails-field-projections",
+  "note": "Frozen real-source field projections, not full original HTTP bodies or live prices. original_source.sha256 identifies the original locally retained HTTP response.",
+  "records": [
+    {
+      "app_id": 400,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=400&cc=us&l=english",
+        "collected_at": "2026-10-14T18:52:53.328346Z",
+        "sha256": "6eb79f643ef8fd9ad8abbc858e222282ca212f0a1e7708bac609a9f8ea22fc2f"
+      },
+      "payload": {
+        "400": {
+          "success": true,
+          "data": {
+            "steam_appid": 400,
+            "name": "Portal",
+            "short_description": "Portal™ is a new single player game from Valve. Set in the mysterious Aperture Science Laboratories, Portal has been called one of the most innovative new games on the horizon and will offer gamers hours of unique gameplay.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": true
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 999
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Oct 10, 2007"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/400/header.jpg?t=1745368554"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 440,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=440&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:14.430616Z",
+        "sha256": "3b31c1d47bca35d3548da381528c4f17f5778eaa7165494e8ef6ec0e7997572e"
+      },
+      "payload": {
+        "440": {
+          "success": true,
+          "data": {
+            "steam_appid": 440,
+            "name": "Team Fortress 2",
+            "short_description": "Nine distinct classes provide a broad range of tactical abilities and personalities. Constantly updated with new game modes, maps, equipment and, most importantly, hats!",
+            "type": "game",
+            "is_free": true,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": true
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Oct 10, 2007"
+            },
+            "categories": [
+              {
+                "id": 1,
+                "description": "Multi-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "37",
+                "description": "Free To Play"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/440/header.jpg?t=1757348372"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 570,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=570&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:17.892374Z",
+        "sha256": "d3ef0cb884d9398b59611524d3d8c0b0753a1fce62bfed982faacafdcd3f3375"
+      },
+      "payload": {
+        "570": {
+          "success": true,
+          "data": {
+            "steam_appid": 570,
+            "name": "Dota 2",
+            "short_description": "Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. And no matter if it's their 10th hour of play or 1,000th, there's always something new to discover. With regular updates that ensure a constant evolution of gameplay, features, and heroes, Dota 2 has taken on a life of its own.",
+            "type": "game",
+            "is_free": true,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": true
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Jul 9, 2013"
+            },
+            "categories": [
+              {
+                "id": 1,
+                "description": "Multi-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "2",
+                "description": "Strategy"
+              },
+              {
+                "id": "37",
+                "description": "Free To Play"
+              }
+            ],
+            "content_descriptors": {
+              "ids": [
+                5
+              ]
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/570/header.jpg?t=1791407503"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 620,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=620&cc=us&l=english",
+        "collected_at": "2026-10-14T18:52:50.524240Z",
+        "sha256": "1314f5387abfe3b508ea08bdf32949f67ecf6a676edb0fef719304a0301c36f6"
+      },
+      "payload": {
+        "620": {
+          "success": true,
+          "data": {
+            "steam_appid": 620,
+            "name": "Portal 2",
+            "short_description": "The &quot;Perpetual Testing Initiative&quot; has been expanded to allow you to design co-op puzzles for you and your friends!",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": true
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 999
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Apr 18, 2011"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 38,
+                "description": "Online Co-op"
+              },
+              {
+                "id": 39,
+                "description": "Shared/Split Screen Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/620/faffc0f560786e2f05104a8d2fac837c6969bf13/header.jpg?t=1790187113"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 22380,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=22380&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:41.185142Z",
+        "sha256": "e7804f31e135583560a22dbb5435f178898259de75a8416099a38514eb4612e9"
+      },
+      "payload": {
+        "22380": {
+          "success": true,
+          "data": {
+            "steam_appid": 22380,
+            "name": "Fallout: New Vegas",
+            "short_description": "Welcome to Vegas. New Vegas. Enjoy your stay!",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 249
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Oct 19, 2010"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "3",
+                "description": "RPG"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22380/header.jpg?t=1765992876"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 105600,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=105600&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:10.961365Z",
+        "sha256": "cb771a47fb339aaa2d05336e7d00b98df741f6679c1477a88859655f60c51216"
+      },
+      "payload": {
+        "105600": {
+          "success": true,
+          "data": {
+            "steam_appid": 105600,
+            "name": "Terraria",
+            "short_description": "Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game. Four Pack also available!",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": true
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 499
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "May 16, 2011"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 38,
+                "description": "Online Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              },
+              {
+                "id": "23",
+                "description": "Indie"
+              },
+              {
+                "id": "3",
+                "description": "RPG"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/105600/header.jpg?t=1769844435"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 107100,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=107100&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:58.027170Z",
+        "sha256": "db85e9e53dfafabf9fadadc2396ca686132d3d6e950e37b053e82104d7ce1d28"
+      },
+      "payload": {
+        "107100": {
+          "success": true,
+          "data": {
+            "steam_appid": 107100,
+            "name": "Bastion",
+            "short_description": "Discover the secrets of the Calamity, a surreal catastrophe that shattered the world to pieces.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": true
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 1499
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Aug 16, 2011"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "23",
+                "description": "Indie"
+              },
+              {
+                "id": "3",
+                "description": "RPG"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/107100/header.jpg?t=1729113932"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 108600,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=108600&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:08.226703Z",
+        "sha256": "8bcae7ef1ebadbf2cb59784d66179dea22ad8b7f1d79721c462144d352abc962"
+      },
+      "payload": {
+        "108600": {
+          "success": true,
+          "data": {
+            "steam_appid": 108600,
+            "name": "Project Zomboid",
+            "short_description": "Project Zomboid is the ultimate in zombie survival. Alone or in MP: you loot, build, craft, fight, farm and fish in a struggle to survive. A hardcore RPG skillset, a vast map, massively customisable sandbox and a cute tutorial raccoon await the unwary. So how will you die? All it takes is a bite..",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": true
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 2499
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Nov 8, 2013"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 38,
+                "description": "Online Co-op"
+              },
+              {
+                "id": 39,
+                "description": "Shared/Split Screen Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "23",
+                "description": "Indie"
+              },
+              {
+                "id": "3",
+                "description": "RPG"
+              },
+              {
+                "id": "28",
+                "description": "Simulation"
+              },
+              {
+                "id": "70",
+                "description": "Early Access"
+              }
+            ],
+            "content_descriptors": {
+              "ids": [
+                2,
+                5
+              ]
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/108600/header.jpg?t=1787740093"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 113200,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=113200&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:51.247536Z",
+        "sha256": "7df928fea001d0177765f24ebe7acb1fc4f0179b1eb0acf542734374f16979f7"
+      },
+      "payload": {
+        "113200": {
+          "success": true,
+          "data": {
+            "steam_appid": 113200,
+            "name": "The Binding of Isaac",
+            "short_description": "Now 20% More Evil with the Free Halloween update!",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 499
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Sep 28, 2011"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              },
+              {
+                "id": "23",
+                "description": "Indie"
+              },
+              {
+                "id": "3",
+                "description": "RPG"
+              }
+            ],
+            "content_descriptors": {
+              "ids": [
+                5
+              ]
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/113200/header.jpg?t=1643480517"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 203160,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=203160&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:44.637802Z",
+        "sha256": "dade7620f1362a7de74617be3562c18c4137ef81307c9114f15a89995ab42c95"
+      },
+      "payload": {
+        "203160": {
+          "success": true,
+          "data": {
+            "steam_appid": 203160,
+            "name": "Tomb Raider Game of the Year",
+            "short_description": "Tomb Raider explores the intense origin story of Lara Croft and her ascent from a young woman to a hardened survivor.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 1999
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Mar 4, 2013"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/203160/9e67774e97cdd155f287146e62611eb445514ac6/header.jpg?t=1765220424"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 237930,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=237930&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:54.622926Z",
+        "sha256": "b4314bc899022f10756ba2bbd84aa6e04691637d2186fab3a7488f6f21d26226"
+      },
+      "payload": {
+        "237930": {
+          "success": true,
+          "data": {
+            "steam_appid": 237930,
+            "name": "Transistor",
+            "short_description": "Discover the world of Transistor, a sci-fi-themed action RPG from the creators of Bastion.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": true
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 1999
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "May 20, 2014"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "23",
+                "description": "Indie"
+              },
+              {
+                "id": "3",
+                "description": "RPG"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/237930/header.jpg?t=1729113992"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 239140,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=239140&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:16.944942Z",
+        "sha256": "420b13e407a4d5c7c30d5d1257293e96e95eac5c0f315af7200fa26f7df9714c"
+      },
+      "payload": {
+        "239140": {
+          "success": true,
+          "data": {
+            "steam_appid": 239140,
+            "name": "Dying Light",
+            "short_description": "First-person action survival game set in a post-apocalyptic open world overrun by flesh-hungry zombies. Roam a city devastated by a mysterious virus epidemic. Scavenge for supplies, craft weapons, and face hordes of the infected.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": true
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 2499
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Jan 26, 2015"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 38,
+                "description": "Online Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              },
+              {
+                "id": "3",
+                "description": "RPG"
+              }
+            ],
+            "content_descriptors": {
+              "ids": [
+                2,
+                5
+              ]
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/239140/9d1b810b85ae46a0acbdfddf583ccbb81271183e/header.jpg?t=1782913513"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 250900,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=250900&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:38.876798Z",
+        "sha256": "ca97ffc3215ec69b1f9e975b508f42e89fa81180d2d143f198e8f83240ccb27e"
+      },
+      "payload": {
+        "250900": {
+          "success": true,
+          "data": {
+            "steam_appid": 250900,
+            "name": "The Binding of Isaac: Rebirth",
+            "short_description": "The Binding of Isaac: Rebirth is a randomly generated action RPG shooter with heavy Rogue-like elements. Following Isaac on his journey players will find bizarre treasures that change Isaac’s form giving him super human abilities and enabling him to fight off droves of mysterious creatures, discover secrets and fight his way to safety.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": true
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 1499
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Nov 4, 2014"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              }
+            ],
+            "content_descriptors": {
+              "ids": [
+                5
+              ]
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/250900/header.jpg?t=1731977365"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 261570,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=261570&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:51.502056Z",
+        "sha256": "6792629e2d7417c5292005daa54ed5bfb782e594135a97cbbc89061e87f2d659"
+      },
+      "payload": {
+        "261570": {
+          "success": true,
+          "data": {
+            "steam_appid": 261570,
+            "name": "Ori and the Blind Forest",
+            "short_description": "“Ori and the Blind Forest” tells the tale of a young orphan destined for heroics, through a visually stunning action-platformer crafted by Moon Studios for PC.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": false
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Mar 10, 2015"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/261570/header.jpg?t=1667504148"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 268910,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=268910&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:45.154771Z",
+        "sha256": "ee648382b77faa51ef259ac5502e07bf84e79a94678fee1bfb78c9ca55ea94f7"
+      },
+      "payload": {
+        "268910": {
+          "success": true,
+          "data": {
+            "steam_appid": 268910,
+            "name": "Cuphead",
+            "short_description": "Cuphead is a classic run and gun action game heavily focused on boss battles. Inspired by cartoons of the 1930s, the visuals and audio are painstakingly created with the same techniques of the era, i.e. traditional hand drawn cel animation, watercolor backgrounds, and original jazz recordings.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 1999
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Sep 29, 2017"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 39,
+                "description": "Shared/Split Screen Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "23",
+                "description": "Indie"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/268910/header.jpg?t=1709068852"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 291550,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=291550&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:23.957365Z",
+        "sha256": "863ed09ceb951240f673d3d319f355e9e6591d2bb37dfd18e57c9c14e0df916d"
+      },
+      "payload": {
+        "291550": {
+          "success": true,
+          "data": {
+            "steam_appid": 291550,
+            "name": "Brawlhalla",
+            "short_description": "An epic platform fighter for up to 8 players online or local. Try casual free-for-alls, ranked matches, or invite friends to a private room. And it's free! Play cross-platform with millions of players on PlayStation, Xbox, Nintendo Switch, iOS, Android &amp; Steam! Frequent updates. Over sixty Legends.",
+            "type": "game",
+            "is_free": true,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": false
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Oct 17, 2017"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 38,
+                "description": "Online Co-op"
+              },
+              {
+                "id": 39,
+                "description": "Shared/Split Screen Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "23",
+                "description": "Indie"
+              },
+              {
+                "id": "37",
+                "description": "Free To Play"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/291550/f6dd1b0a6a2b6e161604b36788276b18d36909cf/header.jpg?t=1789564454"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 304430,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=304430&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:48.076863Z",
+        "sha256": "1a4e541d1fa6ae73dc54d457305cce13756f961b3e49be32acb8bc10263aa00f"
+      },
+      "payload": {
+        "304430": {
+          "success": true,
+          "data": {
+            "steam_appid": 304430,
+            "name": "INSIDE",
+            "short_description": "Hunted and alone, a boy finds himself drawn into the center of a dark project. INSIDE is a dark, narrative-driven platformer combining intense action with challenging puzzles. It has been critically acclaimed for its moody art style, ambient soundtrack and unsettling atmosphere.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 2499
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Jul 7, 2016"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              },
+              {
+                "id": "23",
+                "description": "Indie"
+              }
+            ],
+            "content_descriptors": {
+              "ids": [
+                1,
+                2,
+                5
+              ]
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/304430/header.jpg?t=1761819581"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 311690,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=311690&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:47.895891Z",
+        "sha256": "7896ad3ac7774572c8e2817cbc5732dace7336b121f01b1c6d0639d88036814f"
+      },
+      "payload": {
+        "311690": {
+          "success": true,
+          "data": {
+            "steam_appid": 311690,
+            "name": "Enter the Gungeon",
+            "short_description": "Enter the Gungeon is a bullet hell dungeon crawler following a band of misfits seeking to shoot, loot, dodge roll and table-flip their way to personal absolution by reaching the legendary Gungeon’s ultimate treasure: the gun that can kill the past.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": true
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 299
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Apr 5, 2016"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              },
+              {
+                "id": "23",
+                "description": "Indie"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/311690/471d245bd8a37011c16852694342e5ad2d8a4667/header.jpg?t=1779733990"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 367520,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=367520&cc=us&l=english",
+        "collected_at": "2026-10-14T18:52:58.697842Z",
+        "sha256": "d0577b2ab162f0835b3ce8d769743d80c10a1c1d4ab9df711be3606efeadb474"
+      },
+      "payload": {
+        "367520": {
+          "success": true,
+          "data": {
+            "steam_appid": 367520,
+            "name": "Hollow Knight",
+            "short_description": "Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects and heroes. Explore twisting caverns, battle tainted creatures and befriend bizarre bugs, all in a classic, hand-drawn 2D style.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": true
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 1499
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Feb 24, 2017"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              },
+              {
+                "id": "23",
+                "description": "Indie"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/367520/3c3489495136b26b34f8a9543c7f5645b99d388c/header.jpg?t=1776125684"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 387290,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=387290&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:54.937875Z",
+        "sha256": "9eac83b8d4b334932a218374fe7234ea09e5f84c0348c96f531c0a30410d66e0"
+      },
+      "payload": {
+        "387290": {
+          "success": true,
+          "data": {
+            "steam_appid": 387290,
+            "name": "Ori and the Blind Forest: Definitive Edition",
+            "short_description": "“Ori and the Blind Forest” tells the tale of a young orphan destined for heroics, through a visually stunning Action-Platformer crafted by Moon Studios.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 1999
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Apr 27, 2016"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/387290/header.jpg?t=1701967651"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 413150,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=413150&cc=us&l=english",
+        "collected_at": "2026-10-14T18:52:55.946529Z",
+        "sha256": "ca5eec6e14adbef8b4353174b0aec177137cacc4adcafa7ca7fd2c122e316dc8"
+      },
+      "payload": {
+        "413150": {
+          "success": true,
+          "data": {
+            "steam_appid": 413150,
+            "name": "Stardew Valley",
+            "short_description": "You've inherited your grandfather's old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home?",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": true
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 1499
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Feb 26, 2016"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 38,
+                "description": "Online Co-op"
+              },
+              {
+                "id": 39,
+                "description": "Shared/Split Screen Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "23",
+                "description": "Indie"
+              },
+              {
+                "id": "3",
+                "description": "RPG"
+              },
+              {
+                "id": "28",
+                "description": "Simulation"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg?t=1786554168"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 435150,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=435150&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:20.517109Z",
+        "sha256": "ba1448c1a41fc5b5485c9f2dc1f3e5242d5e95a7f886aab39fd2f5e2fc1f60b2"
+      },
+      "payload": {
+        "435150": {
+          "success": true,
+          "data": {
+            "steam_appid": 435150,
+            "name": "Divinity: Original Sin 2 - Definitive Edition",
+            "short_description": "The critically acclaimed RPG that raised the bar, from the creators of Baldur's Gate 3. Gather your party. Master deep, tactical combat. Venture as a party of up to four - but know that only one of you will have the chance to become a God.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 4499
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Sep 14, 2017"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 38,
+                "description": "Online Co-op"
+              },
+              {
+                "id": 39,
+                "description": "Shared/Split Screen Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "25",
+                "description": "Adventure"
+              },
+              {
+                "id": "3",
+                "description": "RPG"
+              },
+              {
+                "id": "2",
+                "description": "Strategy"
+              }
+            ],
+            "content_descriptors": {
+              "ids": [
+                5
+              ]
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/435150/3f6ee788cb01bd65097c52399d536eb424b4876f/header.jpg?t=1765811123"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 504230,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=504230&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:05.632680Z",
+        "sha256": "dddf8f4e6bac1867a325a5881d309b40d4c652675a3d243e2f0c9080b174e763"
+      },
+      "payload": {
+        "504230": {
+          "success": true,
+          "data": {
+            "steam_appid": 504230,
+            "name": "Celeste",
+            "short_description": "Help Madeline survive her inner demons on her journey to the top of Celeste Mountain, in this super-tight platformer from the creators of TowerFall. Brave hundreds of hand-crafted challenges, uncover devious secrets, and piece together the mystery of the mountain.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": true
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 499
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Jan 25, 2018"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              },
+              {
+                "id": "23",
+                "description": "Indie"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/504230/header.jpg?t=1714089525"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 548430,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=548430&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:10.040524Z",
+        "sha256": "317e92bace272b3522027fd92d527dcdd15f6e8d132e0b1a0fd75047ba5c8bc8"
+      },
+      "payload": {
+        "548430": {
+          "success": true,
+          "data": {
+            "steam_appid": 548430,
+            "name": "Deep Rock Galactic",
+            "short_description": "Deep Rock Galactic is a 1-4 player co-op FPS featuring dwarven space miners, procedurally-generated destructible environments, and endless hordes of alien monsters. Explore cave systems, mine for minerals, and work together to survive!",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 2999
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "May 13, 2020"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 38,
+                "description": "Online Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              }
+            ],
+            "content_descriptors": {
+              "ids": [
+                5
+              ]
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/548430/37b58a6c4816ee60b0ca97cb6724d6e904c58c41/header.jpg?t=1791554128"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 582010,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=582010&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:13.476932Z",
+        "sha256": "e95917eb7ba24fa16ff9a93c71b766199a81e98ad4eaf6dd025bc4688b7903ba"
+      },
+      "payload": {
+        "582010": {
+          "success": true,
+          "data": {
+            "steam_appid": 582010,
+            "name": "Monster Hunter: World",
+            "short_description": "Welcome to a new world! In Monster Hunter: World, the latest installment in the series, you can enjoy the ultimate hunting experience, using everything at your disposal to hunt monsters in a new world teeming with surprises and excitement.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 2999
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Aug 8, 2018"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/582010/header.jpg?t=1791439347"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 588650,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=588650&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:02.174651Z",
+        "sha256": "7b2149f04b2f1e420825ea806805fa0509ca777b7545b7fe382220028a0c76ef"
+      },
+      "payload": {
+        "588650": {
+          "success": true,
+          "data": {
+            "steam_appid": 588650,
+            "name": "Dead Cells",
+            "short_description": "Dead Cells is a roguelite, metroidvania inspired, action-platformer. You'll explore a sprawling, ever-changing castle... assuming you’re able to fight your way past its keepers in 2D souls-lite combat. No checkpoints. Kill, die, learn, repeat.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": true
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 2499
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Aug 6, 2018"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              },
+              {
+                "id": "23",
+                "description": "Indie"
+              }
+            ],
+            "content_descriptors": {
+              "ids": [
+                2,
+                5
+              ]
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/588650/header.jpg?t=1779086887"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 632360,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=632360&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:31.967408Z",
+        "sha256": "4b288ece1273fb899bb1981becb01687f38ff865932854006c01d27ae78f4bba"
+      },
+      "payload": {
+        "632360": {
+          "success": true,
+          "data": {
+            "steam_appid": 632360,
+            "name": "Risk of Rain 2",
+            "short_description": "Escape a chaotic alien planet by fighting through hordes of frenzied monsters – with your friends, or on your own. Combine loot in surprising ways and master each character until you become the havoc you feared upon your first crash landing.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 824
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Aug 11, 2020"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 38,
+                "description": "Online Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "23",
+                "description": "Indie"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/632360/77f4cff7fea7de8a4566d1fb76ace16967604da7/header_alt_assets_7.jpg?t=1791475448"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 646570,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=646570&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:35.502899Z",
+        "sha256": "600ea0e250b6c93ddfcb9a8965edb1001a79903c351874bee531277c27b08b0f"
+      },
+      "payload": {
+        "646570": {
+          "success": true,
+          "data": {
+            "steam_appid": 646570,
+            "name": "Slay the Spire",
+            "short_description": "We fused card games and roguelikes together to make the best single player deckbuilder we could. Craft a unique deck, encounter bizarre creatures, discover relics of immense power, and Slay the Spire!",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": true
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 2499
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Jan 23, 2019"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "23",
+                "description": "Indie"
+              },
+              {
+                "id": "2",
+                "description": "Strategy"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/646570/header.jpg?t=1774015376"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 692850,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=692850&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:42.639844Z",
+        "sha256": "6cee44c4449f84fd2d396230f75d95a7ab41a2e5c3ac661db57fb1e4c1ff4ba2"
+      },
+      "payload": {
+        "692850": {
+          "success": true,
+          "data": {
+            "steam_appid": 692850,
+            "name": "Bloodstained: Ritual of the Night",
+            "short_description": "Bloodstained: Ritual of the Night is an exploration-focused, side-scroller action RPG by Koji Igarashi. Play as Miriam, an orphan scarred by an alchemist's curse that slowly crystallizes her body. Battle through a demon-infested castle and defeat its master to save yourself, and all of humanity!",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 3999
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Jun 18, 2019"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 38,
+                "description": "Online Co-op"
+              },
+              {
+                "id": 39,
+                "description": "Shared/Split Screen Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              },
+              {
+                "id": "3",
+                "description": "RPG"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/692850/header.jpg?t=1788970793"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 881100,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=881100&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:34.292722Z",
+        "sha256": "f566f60e7bb41a6fdc3234e63b868ab616fa939da67eb17ce1dd15b9ff2d4947"
+      },
+      "payload": {
+        "881100": {
+          "success": true,
+          "data": {
+            "steam_appid": 881100,
+            "name": "Noita",
+            "short_description": "Noita is a magical action roguelite set in a world where every pixel is physically simulated. Fight, explore, melt, burn, freeze and evaporate your way through the procedurally generated world using spells you've created yourself.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 799
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Oct 15, 2020"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              },
+              {
+                "id": "23",
+                "description": "Indie"
+              },
+              {
+                "id": "3",
+                "description": "RPG"
+              },
+              {
+                "id": "28",
+                "description": "Simulation"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/881100/header.jpg?t=1675987871"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 892970,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=892970&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:07.280428Z",
+        "sha256": "22ec14c5acf359de2753dcd96ebfa99d32d704e21865b74bad1b41b7b0eec8a9"
+      },
+      "payload": {
+        "892970": {
+          "success": true,
+          "data": {
+            "steam_appid": 892970,
+            "name": "Valheim",
+            "short_description": "A collaborative exploration and survival game for 1-10 players, set in a procedurally generated afterlife inspired by Viking culture. Battle, build, and conquer your way to a saga worthy of Odin’s patronage!",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": true
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 2999
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Sep 9, 2026"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 38,
+                "description": "Online Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              },
+              {
+                "id": "23",
+                "description": "Indie"
+              },
+              {
+                "id": "3",
+                "description": "RPG"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/892970/1888731b59362fca6c026cdbafa3dfffd45c3146/header_alt_assets_6.jpg?t=1791544831"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 960090,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=960090&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:37.727278Z",
+        "sha256": "af323126e341c598f5260dc72828e2f1ce6e8285ae95f37a4d00f6afca3a439a"
+      },
+      "payload": {
+        "960090": {
+          "success": true,
+          "data": {
+            "steam_appid": 960090,
+            "name": "Bloons TD 6",
+            "short_description": "The Bloons are back and better than ever! Get ready for a massive 3D tower defense game designed to give you hours and hours of the best strategy gaming available.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 1399
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Dec 17, 2018"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 38,
+                "description": "Online Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "2",
+                "description": "Strategy"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/960090/header.jpg?t=1782123772"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 1086940,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=1086940&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:28.502083Z",
+        "sha256": "8a3953bf61ff0ad6e4fa81277909192fe3639049e82108c7a8a566c2b1ba251d"
+      },
+      "payload": {
+        "1086940": {
+          "success": true,
+          "data": {
+            "steam_appid": 1086940,
+            "name": "Baldur's Gate 3",
+            "short_description": "Baldur’s Gate 3 is a story-rich, party-based RPG set in the universe of Dungeons &amp; Dragons, where your choices shape a tale of fellowship and betrayal, survival and sacrifice, and the lure of absolute power.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 5999
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Aug 3, 2023"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 38,
+                "description": "Online Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "25",
+                "description": "Adventure"
+              },
+              {
+                "id": "3",
+                "description": "RPG"
+              },
+              {
+                "id": "2",
+                "description": "Strategy"
+              }
+            ],
+            "content_descriptors": {
+              "ids": [
+                1,
+                2,
+                5
+              ]
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/48a2fcbda8565bb45025e98fd8ebde8a7203f6a0/header.jpg?t=1777363040"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 1091500,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=1091500&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:24.804177Z",
+        "sha256": "fde789f2f900b91bcbebd3f601e73af3cccf54da547ba02375f7b650e7ad5f1c"
+      },
+      "payload": {
+        "1091500": {
+          "success": true,
+          "data": {
+            "steam_appid": 1091500,
+            "name": "Cyberpunk 2077",
+            "short_description": "Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City — a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 1799
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Dec 9, 2020"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "3",
+                "description": "RPG"
+              }
+            ],
+            "content_descriptors": {
+              "ids": [
+                1,
+                2,
+                5
+              ]
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/e9047d8ec47ae3d94bb8b464fb0fc9e9972b4ac7/header.jpg?t=1784714077"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 1145360,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=1145360&cc=us&l=english",
+        "collected_at": "2026-10-14T18:52:47.736652Z",
+        "sha256": "42e51bcb7ea1dc202d3e53f69995505b289694592520a26e3e569e945609692f"
+      },
+      "payload": {
+        "1145360": {
+          "success": true,
+          "data": {
+            "steam_appid": 1145360,
+            "name": "Hades",
+            "short_description": "Defy the god of the dead as you hack and slash out of the Underworld in this rogue-like dungeon crawler from the creators of Bastion, Transistor, and Pyre.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": true,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 2499
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Sep 17, 2020"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "23",
+                "description": "Indie"
+              },
+              {
+                "id": "3",
+                "description": "RPG"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145360/header.jpg?t=1758127023"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 1151640,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=1151640&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:01.872180Z",
+        "sha256": "cf8fa464be5cd1911c67b80582feecccebf804692f5c1b523b32ff2f341730fa"
+      },
+      "payload": {
+        "1151640": {
+          "success": true,
+          "data": {
+            "steam_appid": 1151640,
+            "name": "Horizon Zero Dawn™ Complete Edition",
+            "short_description": "Experience Aloy’s legendary quest to unravel the mysteries of a future Earth ruled by Machines. Use devastating tactical attacks against your prey and explore a majestic open world in this award-winning action RPG!",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": false
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Aug 7, 2020"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              },
+              {
+                "id": "3",
+                "description": "RPG"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1151640/header.jpg?t=1776465788"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 1174180,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=1174180&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:04.661723Z",
+        "sha256": "5fd976be7ece6ae5a488a459fabb3d6e49228f061033a7793d23ad6f9249bf7d"
+      },
+      "payload": {
+        "1174180": {
+          "success": true,
+          "data": {
+            "steam_appid": 1174180,
+            "name": "Red Dead Redemption 2",
+            "short_description": "Arthur Morgan and the Van der Linde Gang are outlaws on the run. With federal agents and bounty hunters massing on their heels, the gang must rob, steal, and fight their way across the rugged heartland in order to survive.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 1499
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Dec 5, 2019"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 38,
+                "description": "Online Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              }
+            ],
+            "content_descriptors": {
+              "ids": [
+                5
+              ]
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg?t=1759502961"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 1245620,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=1245620&cc=us&l=english",
+        "collected_at": "2026-10-14T18:53:21.342000Z",
+        "sha256": "15fe98f2ca523c78de5b2bf41ff946e0c145848fd30fd21c994b79ae73e61294"
+      },
+      "payload": {
+        "1245620": {
+          "success": true,
+          "data": {
+            "steam_appid": 1245620,
+            "name": "ELDEN RING",
+            "short_description": "THE CRITICALLY ACCLAIMED FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 5999
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Feb 24, 2022"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 38,
+                "description": "Online Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "3",
+                "description": "RPG"
+              }
+            ],
+            "content_descriptors": {
+              "ids": [
+                2,
+                5
+              ]
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg?t=1790290043"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 1817070,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=1817070&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:30.845588Z",
+        "sha256": "8ddd45289b157c296c7a0b39726714a56edabcb242f60be6b6453e3641f50d0f"
+      },
+      "payload": {
+        "1817070": {
+          "success": true,
+          "data": {
+            "steam_appid": 1817070,
+            "name": "Marvel’s Spider-Man Remastered",
+            "short_description": "In Marvel’s Spider-Man Remastered, the worlds of Peter Parker and Spider-Man collide in an original action-packed story. Play as an experienced Peter Parker, fighting big crime and iconic villains in Marvel’s New York. Web-swing through vibrant neighborhoods and defeat villains with epic takedowns.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 5999
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Aug 12, 2022"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              },
+              {
+                "id": "4",
+                "description": "Casual"
+              }
+            ],
+            "content_descriptors": {
+              "ids": []
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1817070/header.jpg?t=1787838689"
+          }
+        }
+      }
+    },
+    {
+      "app_id": 1966720,
+      "original_source": {
+        "url": "https://store.steampowered.com/api/appdetails?appids=1966720&cc=us&l=english",
+        "collected_at": "2026-10-14T18:54:27.419308Z",
+        "sha256": "d0ea4baf38ae67f09cda8a8b22e8c27877fd52a1dca1611b3cd2f34a997d4e3d"
+      },
+      "payload": {
+        "1966720": {
+          "success": true,
+          "data": {
+            "steam_appid": 1966720,
+            "name": "Lethal Company",
+            "short_description": "A co-op horror about scavenging at abandoned moons to sell scrap to the Company.",
+            "type": "game",
+            "is_free": false,
+            "platforms": {
+              "windows": true,
+              "mac": false,
+              "linux": false
+            },
+            "price_overview": {
+              "currency": "USD",
+              "final": 999
+            },
+            "release_date": {
+              "coming_soon": false,
+              "date": "Oct 23, 2023"
+            },
+            "categories": [
+              {
+                "id": 2,
+                "description": "Single-player"
+              },
+              {
+                "id": 1,
+                "description": "Multi-player"
+              },
+              {
+                "id": 38,
+                "description": "Online Co-op"
+              }
+            ],
+            "genres": [
+              {
+                "id": "1",
+                "description": "Action"
+              },
+              {
+                "id": "25",
+                "description": "Adventure"
+              },
+              {
+                "id": "23",
+                "description": "Indie"
+              },
+              {
+                "id": "70",
+                "description": "Early Access"
+              }
+            ],
+            "content_descriptors": {
+              "ids": [
+                2,
+                5
+              ]
+            },
+            "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1966720/header.jpg?t=1775380053"
+          }
+        }
+      }
+    }
+  ]
+}

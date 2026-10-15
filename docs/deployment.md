@@ -1,10 +1,10 @@
 # Deployment — Netlify + FastAPI Cloud Hobby
 
-**M1 is complete**, verified 2026-10-14. Frontend: **https://steam-discovery.netlify.app/**. Backend: **https://steam-discovery-api.fastapicloud.dev/**. The hosted code is still M1. Authorized M2 implementation is verified locally, and the shared database now has an active 40-game catalog. **M2 publication/hosted verification is pending**; no new-code deployment is claimed. [M2 evidence](reports/m2-implementation.md) · [Historical M1 evidence](reports/m1-hosted-verification.md).
+**Hosted M2 verification is owner-confirmed** after publication of `3453bfb` and successful backend/frontend CI. Frontend: **https://steam-discovery.netlify.app/**. Backend: **https://steam-discovery-api.fastapicloud.dev/**. The only remaining M2 gate is [clean-database replay](reports/m2-clean-replay.md), prepared for an isolated GitHub Actions service and awaiting approval to publish/execute. Production hosting/database settings remain unchanged by that verification task. [M2 evidence](reports/m2-implementation.md) · [Historical M1 evidence](reports/m1-hosted-verification.md).
 
 The foundation and migration are published on GitHub: migration `fe79842` passed [backend CI](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38601010646); unchanged frontend UI code previously passed [frontend CI](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38497801731). Hosted browser verification now confirms the actual deployed artifacts. No provider dashboard credentials are available to the agent; private plan/scaling/worker settings below are owner-confirmed. New verification scripts/reports/status changes remain local until publication is separately requested.
 
-## M2 publication checklist — pending owner action/authorization
+## M2 publication checklist — historical procedure; hosted verification now owner-confirmed
 
 1. Publish the intended frontend/backend/contracts to the connected GitHub repository when authorized; allow the existing free hosting integrations to deploy the correct revision. No commit/push was performed during M2 implementation.
 2. Alembic `0002` and the active catalog are already applied to the configured Supabase project. Do not rerun initial SQL or put `MIGRATION_DATABASE_URL` in serving settings. Existing restricted `DATABASE_URL` and exact `ALLOWED_ORIGINS` remain sufficient; no Groq key is required.
