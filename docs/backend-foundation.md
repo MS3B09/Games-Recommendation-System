@@ -1,6 +1,6 @@
 # M1 backend foundation
 
-Status: **M1 complete; authorized M2 in progress.** This document records the M1 foundation; [M2 operations](operations-m2.md) and [evidence](reports/m2-implementation.md) supersede its historical unpublished-catalog results. M2 tables/import/discovery are implemented and verified locally; hosted M2 publication and clean-native replay remain open. [Stack setup](setup.md) · [Deployment](deployment.md).
+Status: **M1 and M2 complete.** This document records the M1 foundation; [M2 operations](operations-m2.md) and [evidence](reports/m2-implementation.md) supersede its historical unpublished-catalog results. M2 hosted verification is owner-confirmed and the [approved clean-native replay](reports/m2-clean-replay.md) passed twice with CI/cleanup evidence. Stop before M3 until explicit approval. [Stack setup](setup.md) · [Deployment](deployment.md).
 
 ## Configure the runtime database role
 
@@ -61,6 +61,6 @@ M1's local behavior suite had 28 tests and 10 typed foundation files; M2 has **3
 
 `.github/workflows/backend-checks.yml` uses pinned action commits and uv, bounded runtime, read-only repository permissions and lightweight extras. It needs no service secrets, browser installs, live scraping or model downloads. Backend and frontend workflows both passed on GitHub after publication of foundation commit `7c6767c`; [results](progress.md).
 
-Alembic tracks revision `0002` after the explicitly applied M2 catalog migration; `0001` was the guarded M1 baseline adoption. Native fresh-database execution remains untested on this machine; no psql/Docker was available. M2 expects pgvector in `extensions`; see its operations guide. API startup never runs migrations. Runtime connections use SQLAlchemy's bounded two-connection pool with no overflow; developer migrations use NullPool and only the migration URL.
+Alembic tracks revision `0002` after the explicitly applied M2 catalog migration; `0001` was the guarded M1 baseline adoption. Full initial migrations were verified twice on native PostgreSQL 17.10/pgvector 0.8.2 in GitHub Actions instead of installing local psql/Docker. M2 expects pgvector in `extensions`; see its operations guide. API startup never runs migrations. Runtime connections use SQLAlchemy's bounded two-connection pool with no overflow; developer migrations use NullPool and only the migration URL.
 
 Hosted M1 verification passed with the then-uninitialized catalog. Owner confirmed Hobby/Free settings and one worker; no `WEB_CONCURRENCY` variable is required. **M1 is complete; M2 was subsequently authorized.** The shared database is now active, but new M2 routes/interface are not claimed hosted until publication and verification.

@@ -1,0 +1,658 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "code_revision": "3a62d1ef2f07eb5d2b7f080ab5edb35f4ea2db70",
+  "run_url": "https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38680812079",
+  "started_at": "2026-10-15T04:19:25.939917+00:00",
+  "python": "3.13.13",
+  "architecture": "x86_64",
+  "uv_lock_sha256": "50caf890f3697629b63a09bd15b7675ba7ebe1dee48810cc02ab5cb3c7dbbdf7",
+  "passes": [
+    {
+      "pass": 1,
+      "source": {
+        "games": 40,
+        "sha256": "9384ecc6199002a5fb0240e76db5270d339dd91ca13e568591bebb7d3f3120f6",
+        "provenance": "Frozen real-source field projections. Artifact source hashes identify the projections; the fixture separately preserves original HTTP hashes and collection times."
+      },
+      "artifact": {
+        "schema_version": 1,
+        "games": 40,
+        "requested": 40,
+        "quarantine": [],
+        "games_sha256": "6257b6498bc1ae6c9431b2aa6cbcd37f2d704113dc1e8e57fe1a3d4aa8da60b9",
+        "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+        "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "dimensions": 384,
+        "semantic_text_version": "title-terms-description-v1",
+        "embeddings_sha256": "549c37b74939e563596deb16d3aa76537b421ddac6c1d220e371156c43f75f47",
+        "encoder": "float-onnx-cpu-parity-verified",
+        "tokenizer_sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+        "model_sha256": "6fd5d72fe4589f189f8ebc006442dbb529bb7ce38f8082112682524616046452",
+        "version": "m2-10190ee67b2b13af7840bb0a"
+      },
+      "embedding_initial": {
+        "version": "m2-10190ee67b2b13af7840bb0a",
+        "embedded": 40,
+        "reused": 0,
+        "elapsed_seconds": 0.981
+      },
+      "embedding_resume": {
+        "version": "m2-10190ee67b2b13af7840bb0a",
+        "embedded": 0,
+        "reused": 40,
+        "elapsed_seconds": 0.091
+      },
+      "fingerprint": {
+        "table_hashes": {
+          "games": "ee956fe620c4b9fc41d5baf3bdb9b06c5b8794972e69818cd628cb74e50014aa",
+          "game_platforms": "f374811f431220cd54fbfa9e900c7d6d043eba5d325002087a4be8e95b2c92d1",
+          "game_terms": "e51872aae82a0085b6375e8b204722f9c636969d3ae4b8ab16c68b5652840913",
+          "game_prices": "20be76b448a4e6aa4ba558927a3974fd6c433083c955b297ff9214e683a5d89b",
+          "game_embeddings": "5190f0c517b52690ca4f7677bf1aeeb40015419b5abaf3698e2d0425d2fce606",
+          "catalog_versions_without_operational_timestamps": "a4ebbbf62243cb37adbf06116468a6f4f1f6b64d420ec88b216889c42a98e0a9"
+        },
+        "row_counts": {
+          "games": 40,
+          "game_platforms": 120,
+          "game_terms": 186,
+          "game_prices": 40,
+          "game_embeddings": 40
+        },
+        "sha256": "78f266b635b7087605e73453e3a2d9c1573c408fc720650114a7e44f0fa16b4c"
+      },
+      "staging_permissions": {
+        "runtime_not_elevated": true,
+        "runtime_has_no_memberships": true,
+        "all_tables_rls": true,
+        "public_schema_usage_denied": true,
+        "staging_hidden": true,
+        "write_ddl_job_log_and_migration_access_denied": true
+      },
+      "active_permissions": {
+        "runtime_not_elevated": true,
+        "runtime_has_no_memberships": true,
+        "all_tables_rls": true,
+        "public_schema_usage_denied": true,
+        "active_rows_readable": true,
+        "write_ddl_job_log_and_migration_access_denied": true
+      },
+      "api_cases": [
+        {
+          "filters": {
+            "max_price_cents": null,
+            "price_operator": "lte",
+            "free_only": false,
+            "platforms": [],
+            "platform_match": "any",
+            "required_modes": [],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "result_ids": [
+            435150,
+            107100,
+            892970,
+            311690,
+            237930,
+            1086940,
+            588650,
+            646570,
+            113200,
+            582010
+          ]
+        },
+        {
+          "filters": {
+            "max_price_cents": 2000,
+            "price_operator": "lt",
+            "free_only": false,
+            "platforms": [
+              "windows"
+            ],
+            "platform_match": "any",
+            "required_modes": [
+              "single-player"
+            ],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "result_ids": [
+            107100,
+            311690,
+            237930,
+            113200,
+            367520,
+            1966720,
+            1091500,
+            105600,
+            632360,
+            620
+          ]
+        },
+        {
+          "filters": {
+            "max_price_cents": null,
+            "price_operator": "lte",
+            "free_only": true,
+            "platforms": [],
+            "platform_match": "any",
+            "required_modes": [],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "result_ids": [
+            440,
+            570,
+            291550
+          ]
+        },
+        {
+          "filters": {
+            "max_price_cents": null,
+            "price_operator": "lte",
+            "free_only": false,
+            "platforms": [
+              "mac",
+              "linux"
+            ],
+            "platform_match": "all",
+            "required_modes": [],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "result_ids": [
+            107100,
+            892970,
+            237930,
+            588650,
+            646570,
+            367520,
+            239140,
+            105600,
+            504230,
+            108600
+          ]
+        },
+        {
+          "filters": {
+            "max_price_cents": null,
+            "price_operator": "lte",
+            "free_only": false,
+            "platforms": [],
+            "platform_match": "any",
+            "required_modes": [
+              "online-co-op"
+            ],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "result_ids": [
+            435150,
+            892970,
+            1086940,
+            1966720,
+            548430,
+            239140,
+            105600,
+            632360,
+            620,
+            1174180
+          ]
+        },
+        {
+          "filters": {
+            "max_price_cents": null,
+            "price_operator": "lte",
+            "free_only": false,
+            "platforms": [],
+            "platform_match": "any",
+            "required_modes": [
+              "local-co-op"
+            ],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "result_ids": [
+            435150,
+            620,
+            108600,
+            692850,
+            413150,
+            268910,
+            291550
+          ]
+        },
+        {
+          "filters": {
+            "max_price_cents": 0,
+            "price_operator": "lt",
+            "free_only": false,
+            "platforms": [],
+            "platform_match": "any",
+            "required_modes": [],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "result_ids": []
+        },
+        {
+          "filters": {
+            "max_price_cents": null,
+            "price_operator": "lte",
+            "free_only": false,
+            "platforms": [],
+            "platform_match": "any",
+            "required_modes": [],
+            "preferred_terms": [],
+            "unwanted_terms": [
+              "action"
+            ],
+            "excluded_ids": []
+          },
+          "result_ids": [
+            435150,
+            1086940,
+            646570,
+            1091500,
+            108600,
+            413150,
+            960090
+          ]
+        },
+        {
+          "filters": {
+            "max_price_cents": null,
+            "price_operator": "lte",
+            "free_only": false,
+            "platforms": [],
+            "platform_match": "any",
+            "required_modes": [],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": [
+              435150,
+              107100,
+              892970,
+              311690,
+              237930,
+              1086940,
+              588650,
+              646570,
+              113200,
+              582010
+            ]
+          },
+          "result_ids": [
+            367520,
+            1966720,
+            548430,
+            239140,
+            1091500,
+            105600,
+            632360,
+            620,
+            304430,
+            1174180
+          ]
+        }
+      ],
+      "request_ms": [
+        6.85,
+        8.72,
+        5.72,
+        7.02,
+        8.48,
+        6.33,
+        5.19,
+        7.44,
+        6.88
+      ],
+      "interruption": {
+        "status": "passed",
+        "interrupted_write_rolled_back": true,
+        "incomplete_activation_rejected": true,
+        "active_version_unchanged": "m2-10190ee67b2b13af7840bb0a"
+      },
+      "migrations_from_empty": true,
+      "migration_rerun": true,
+      "migration_head": "0002",
+      "pgvector_version": "0.8.2",
+      "constraint_rejections": true,
+      "privileged_api_login_rejected": true
+    },
+    {
+      "pass": 2,
+      "source": {
+        "games": 40,
+        "sha256": "9384ecc6199002a5fb0240e76db5270d339dd91ca13e568591bebb7d3f3120f6",
+        "provenance": "Frozen real-source field projections. Artifact source hashes identify the projections; the fixture separately preserves original HTTP hashes and collection times."
+      },
+      "artifact": {
+        "schema_version": 1,
+        "games": 40,
+        "requested": 40,
+        "quarantine": [],
+        "games_sha256": "6257b6498bc1ae6c9431b2aa6cbcd37f2d704113dc1e8e57fe1a3d4aa8da60b9",
+        "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+        "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "dimensions": 384,
+        "semantic_text_version": "title-terms-description-v1",
+        "embeddings_sha256": "549c37b74939e563596deb16d3aa76537b421ddac6c1d220e371156c43f75f47",
+        "encoder": "float-onnx-cpu-parity-verified",
+        "tokenizer_sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+        "model_sha256": "6fd5d72fe4589f189f8ebc006442dbb529bb7ce38f8082112682524616046452",
+        "version": "m2-10190ee67b2b13af7840bb0a"
+      },
+      "embedding_initial": {
+        "version": "m2-10190ee67b2b13af7840bb0a",
+        "embedded": 40,
+        "reused": 0,
+        "elapsed_seconds": 0.966
+      },
+      "embedding_resume": {
+        "version": "m2-10190ee67b2b13af7840bb0a",
+        "embedded": 0,
+        "reused": 40,
+        "elapsed_seconds": 0.09
+      },
+      "fingerprint": {
+        "table_hashes": {
+          "games": "ee956fe620c4b9fc41d5baf3bdb9b06c5b8794972e69818cd628cb74e50014aa",
+          "game_platforms": "f374811f431220cd54fbfa9e900c7d6d043eba5d325002087a4be8e95b2c92d1",
+          "game_terms": "e51872aae82a0085b6375e8b204722f9c636969d3ae4b8ab16c68b5652840913",
+          "game_prices": "20be76b448a4e6aa4ba558927a3974fd6c433083c955b297ff9214e683a5d89b",
+          "game_embeddings": "5190f0c517b52690ca4f7677bf1aeeb40015419b5abaf3698e2d0425d2fce606",
+          "catalog_versions_without_operational_timestamps": "a4ebbbf62243cb37adbf06116468a6f4f1f6b64d420ec88b216889c42a98e0a9"
+        },
+        "row_counts": {
+          "games": 40,
+          "game_platforms": 120,
+          "game_terms": 186,
+          "game_prices": 40,
+          "game_embeddings": 40
+        },
+        "sha256": "78f266b635b7087605e73453e3a2d9c1573c408fc720650114a7e44f0fa16b4c"
+      },
+      "staging_permissions": {
+        "runtime_not_elevated": true,
+        "runtime_has_no_memberships": true,
+        "all_tables_rls": true,
+        "public_schema_usage_denied": true,
+        "staging_hidden": true,
+        "write_ddl_job_log_and_migration_access_denied": true
+      },
+      "active_permissions": {
+        "runtime_not_elevated": true,
+        "runtime_has_no_memberships": true,
+        "all_tables_rls": true,
+        "public_schema_usage_denied": true,
+        "active_rows_readable": true,
+        "write_ddl_job_log_and_migration_access_denied": true
+      },
+      "api_cases": [
+        {
+          "filters": {
+            "max_price_cents": null,
+            "price_operator": "lte",
+            "free_only": false,
+            "platforms": [],
+            "platform_match": "any",
+            "required_modes": [],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "result_ids": [
+            435150,
+            107100,
+            892970,
+            311690,
+            237930,
+            1086940,
+            588650,
+            646570,
+            113200,
+            582010
+          ]
+        },
+        {
+          "filters": {
+            "max_price_cents": 2000,
+            "price_operator": "lt",
+            "free_only": false,
+            "platforms": [
+              "windows"
+            ],
+            "platform_match": "any",
+            "required_modes": [
+              "single-player"
+            ],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "result_ids": [
+            107100,
+            311690,
+            237930,
+            113200,
+            367520,
+            1966720,
+            1091500,
+            105600,
+            632360,
+            620
+          ]
+        },
+        {
+          "filters": {
+            "max_price_cents": null,
+            "price_operator": "lte",
+            "free_only": true,
+            "platforms": [],
+            "platform_match": "any",
+            "required_modes": [],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "result_ids": [
+            440,
+            570,
+            291550
+          ]
+        },
+        {
+          "filters": {
+            "max_price_cents": null,
+            "price_operator": "lte",
+            "free_only": false,
+            "platforms": [
+              "mac",
+              "linux"
+            ],
+            "platform_match": "all",
+            "required_modes": [],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "result_ids": [
+            107100,
+            892970,
+            237930,
+            588650,
+            646570,
+            367520,
+            239140,
+            105600,
+            504230,
+            108600
+          ]
+        },
+        {
+          "filters": {
+            "max_price_cents": null,
+            "price_operator": "lte",
+            "free_only": false,
+            "platforms": [],
+            "platform_match": "any",
+            "required_modes": [
+              "online-co-op"
+            ],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "result_ids": [
+            435150,
+            892970,
+            1086940,
+            1966720,
+            548430,
+            239140,
+            105600,
+            632360,
+            620,
+            1174180
+          ]
+        },
+        {
+          "filters": {
+            "max_price_cents": null,
+            "price_operator": "lte",
+            "free_only": false,
+            "platforms": [],
+            "platform_match": "any",
+            "required_modes": [
+              "local-co-op"
+            ],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "result_ids": [
+            435150,
+            620,
+            108600,
+            692850,
+            413150,
+            268910,
+            291550
+          ]
+        },
+        {
+          "filters": {
+            "max_price_cents": 0,
+            "price_operator": "lt",
+            "free_only": false,
+            "platforms": [],
+            "platform_match": "any",
+            "required_modes": [],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "result_ids": []
+        },
+        {
+          "filters": {
+            "max_price_cents": null,
+            "price_operator": "lte",
+            "free_only": false,
+            "platforms": [],
+            "platform_match": "any",
+            "required_modes": [],
+            "preferred_terms": [],
+            "unwanted_terms": [
+              "action"
+            ],
+            "excluded_ids": []
+          },
+          "result_ids": [
+            435150,
+            1086940,
+            646570,
+            1091500,
+            108600,
+            413150,
+            960090
+          ]
+        },
+        {
+          "filters": {
+            "max_price_cents": null,
+            "price_operator": "lte",
+            "free_only": false,
+            "platforms": [],
+            "platform_match": "any",
+            "required_modes": [],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": [
+              435150,
+              107100,
+              892970,
+              311690,
+              237930,
+              1086940,
+              588650,
+              646570,
+              113200,
+              582010
+            ]
+          },
+          "result_ids": [
+            367520,
+            1966720,
+            548430,
+            239140,
+            1091500,
+            105600,
+            632360,
+            620,
+            304430,
+            1174180
+          ]
+        }
+      ],
+      "request_ms": [
+        7.89,
+        9.4,
+        6.57,
+        7.53,
+        7.93,
+        6.81,
+        5.44,
+        7.93,
+        7.11
+      ],
+      "interruption": {
+        "status": "passed",
+        "interrupted_write_rolled_back": true,
+        "incomplete_activation_rejected": true,
+        "active_version_unchanged": "m2-10190ee67b2b13af7840bb0a"
+      },
+      "migrations_from_empty": true,
+      "migration_rerun": true,
+      "migration_head": "0002",
+      "pgvector_version": "0.8.2",
+      "constraint_rejections": true,
+      "privileged_api_login_rejected": true
+    }
+  ],
+  "postgres_version": "17.10 (Debian 17.10-1.pgdg12+1)",
+  "phase": "compare-independent-replays",
+  "reproducibility": "Two independent clean database and embedding builds match exactly on this runner.",
+  "test_database_and_runtime_role_discarded": true,
+  "finished_at": "2026-10-15T04:19:35.812219+00:00",
+  "scope": "Disposable native PostgreSQL 17/pgvector 0.8.2; frozen real source projections; real CPU embeddings and FastAPI TestClient to restricted SQL login. No production access or relevance-quality claim."
+}

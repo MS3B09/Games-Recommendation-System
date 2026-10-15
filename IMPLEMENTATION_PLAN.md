@@ -1,6 +1,6 @@
 # Technical Implementation Plan
 
-Status: **M0 and M1 complete; M2 in progress**, explicitly authorized on 2026-10-15. The owner confirmed hosted M2 verification; the only remaining M2 gate is clean PostgreSQL/pgvector replay. The owner selected a temporary GitHub Actions database instead of local installation. Its manual-only workflow is prepared but must not be committed, pushed or executed without approval. See [replay preparation/results](docs/reports/m2-clean-replay.md), [M2 evidence](docs/reports/m2-implementation.md) and [progress](docs/progress.md). M3 requires approval after M2 completion.
+Status: **M0, M1 and M2 complete** as of 2026-10-15. Hosted M2 verification is owner-confirmed. The approved [clean PostgreSQL/pgvector Actions replay](docs/reports/m2-clean-replay.md) passed two independent builds, all integrity/permissions/API checks and cleanup. See [M2 evidence](docs/reports/m2-implementation.md) and [progress](docs/progress.md). **Stop; M3 is not authorized and requires explicit approval before implementation or setup.**
 
 This plan implements [AGENTS.md](AGENTS.md) and records the decisions made during technical planning. The product brief governs scope; this document governs implementation order and proposed technical defaults. Items described as targets, candidates, or gates are not measured results. Keep both documents consistent when an approved requirement changes.
 
@@ -300,7 +300,7 @@ Quality gates: zero known hard-constraint violations and zero known unsupported 
 
 ## 11. Build milestones
 
-M0 and M1 are **complete**; M2 is **in progress** with explicit owner authorization; M3–M8 are **not started**. Checkboxes are completion gates. Stop after M2 completion and request explicit permission before M3.
+M0, M1 and M2 are **complete**; M3–M8 are **not started**. Checkboxes are completion gates. Stop and wait for explicit owner permission before any M3 work.
 
 ### M0 — Audit and feasibility decisions
 
@@ -343,13 +343,13 @@ Tasks: implement normalized imports/provenance/eligibility, compact embeddings, 
 
 Deliverables: a representative real catalog, reproducible artifact manifest, thin public discovery journey.
 
-- [ ] From a clean database, documented jobs reproduce a usable catalog and embeddings.
+- [x] From a clean database, documented jobs reproduce a usable catalog and embeddings (two PostgreSQL 17/pgvector Actions builds; retained evidence).
 - [x] Favorite selection and recorded US/USD/platform/mode/exclusion filters work end to end (real local browser/API/Supabase).
 - [x] Missing data fails required constraints; no-match results do not relax filters.
 - [x] Useful recommendations work with no Groq key configured.
 - [x] Output cites real catalog fields; freshness and Early Access labels are visible.
 
-Evidence: [M2 implementation report](docs/reports/m2-implementation.md), [operations](docs/operations-m2.md), [artifact manifest](docs/reports/m2-artifact-manifest.json). 40 real games active, repeat import/checkpoint reuse and interrupted transaction checks passed; original implementation had 36 Python and 11 browser checks. The owner subsequently confirmed hosted M2 verification. **M2 remains in progress only for clean-database replay:** the owner selected native PostgreSQL 17/pgvector in temporary GitHub Actions services, avoiding local database installation. The [prepared manual workflow](docs/reports/m2-clean-replay.md) and five additional offline tests are not a replay pass; commit, push and execution require explicit approval. M3 is not authorized.
+Evidence: [M2 implementation report](docs/reports/m2-implementation.md), [operations](docs/operations-m2.md), [production artifact manifest](docs/reports/m2-artifact-manifest.json), [clean replay report and retained JSON](docs/reports/m2-clean-replay.md). All five gates pass: owner-confirmed hosted journey; 40 real games; two independent clean PostgreSQL 17.10/pgvector 0.8.2 builds in [run 38680812079](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38680812079), identical fresh artifacts/database fingerprints/recommendation results, integrity/permissions/rollback checks and confirmed cleanup. Backend CI passed on replay commit `3a62d1e` with 41 tests; the unchanged frontend has passing lint/contract/type/build and 11 browser tests from `3453bfb`. **M2 is complete. Stop and wait for approval before M3.** This is not a full-product or evaluated-relevance release claim.
 
 ### M3 — Guest persistence and feedback personalization
 

@@ -21,7 +21,7 @@ uv run --project backend --locked --extra benchmark --extra dev --extra api-spik
 
 Alembic head is `0002`: versioned games, explicit platform states, normalized genre/tag/mode terms, US/USD price observations and 384-dimensional embeddings. Provenance/evidence is retained in each validated immutable game document rather than split across extra tables for this bounded M2 sample. Foreign keys, RLS and active-version policies protect serving access. All request transactions are read-only; migrations never run at API startup.
 
-For a **new native database**, install PostgreSQL/pgvector and let the migration create `extensions` and install `vector` there. If installing manually, use `create schema if not exists extensions; create extension vector with schema extensions;`. Do not preinstall pgvector in `public`: this pipeline deliberately qualifies the `extensions` type/operator. Native clean-database replay remains unverified on this machine (no local PostgreSQL/Docker tooling).
+For a **new native database**, install PostgreSQL/pgvector and let the migration create `extensions` and install `vector` there. If installing manually, use `create schema if not exists extensions; create extension vector with schema extensions;`. Do not preinstall pgvector in `public`: this pipeline deliberately qualifies the `extensions` type/operator. No local PostgreSQL/Docker tooling was installed on this machine; the full native replay was instead verified in the approved temporary GitHub Actions service described below.
 
 ## Collect, normalize, embed, stage and activate
 
@@ -102,18 +102,18 @@ npm run smoke:discovery
 
 The real-stack smoke starts/stops only its own local API/preview processes, checks CORS-backed favorite search/discovery, constraints, evidence, direct-detail reload, desktop/mobile axe and overflow, and saves captures under `.impeccable/review/m2`. Local startup wait is bounded at 75 seconds for this slow filesystem. On this machine the frontend C: execution copy remains in use; set `API_PYTHON` to the new `game-discovery-m2-venv/Scripts/python.exe`. The earlier M0 environment lost its Python launcher and was not reused. Source remains on E:; no secrets/raw catalog are copied to the frontend cache.
 
-M1's `verify:hosted` is historical and assumes an unpublished catalog; it is not the M2 acceptance verifier. M2 was subsequently published as `3453bfb`, passed both CI checks and is now hosted-verification owner-confirmed. The remaining replay preparation below makes no provider/database changes and requires separate approval before publication/execution.
+M1's `verify:hosted` is historical and assumes an unpublished catalog; it is not the M2 acceptance verifier. M2 was published as `3453bfb`, passed both CI checks and is hosted-verification owner-confirmed. The final approved replay below passed without production/provider changes. M2 is complete; do not start M3 before explicit approval.
 
 ## Clean-database replay in GitHub Actions
 
-The owner has now confirmed M2 hosted verification. A local PostgreSQL installation is **not required** to close the remaining clean-database gate: `.github/workflows/m2-clean-replay.yml` prepares a native PostgreSQL 17/pgvector 0.8.2 service on a standard free GitHub-hosted runner. [Preparation/results record](reports/m2-clean-replay.md).
+The owner confirmed M2 hosted verification and approved publication/execution of `.github/workflows/m2-clean-replay.yml`. The final gate **passed in [run 38680812079](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38680812079)** on `3a62d1e`, using two fresh native PostgreSQL 17.10/pgvector 0.8.2 builds on a standard free GitHub-hosted runner. A local PostgreSQL installation is **not required**. [Results and retained evidence](reports/m2-clean-replay.md).
 
-**Approval boundary:** the workflow and supporting files are currently local only. Do not commit, push or run it until the owner explicitly approves those actions. It is manual-only, so a later approved push does not automatically dispatch this replay. Keep the existing `main` branch; no new branch or production migration is needed.
+The workflow remains **manual-only** for future regression testing; pushes do not dispatch it. Keep the existing `main` branch. No production migration, cloud database or deployment secret is needed. Only the JSON report is retained (seven-day Actions artifact plus durable results in Git); test DB/role, scratch files, container and network cleanup passed. Standard ephemeral-runner disposal removes the remaining VM resources.
 
-After approval to publish **and** execute:
+For a future authorized manual test:
 
-1. Commit/push the reviewed replay workflow, helper, source fixture, tests and docs to the existing repository/branch.
-2. In GitHub → Actions → **M2 clean database replay**, choose **Run workflow** on `main`. Equivalent CLI (do not execute before approval):
+1. Ensure the reviewed workflow/helper/source fixture are already published on the intended revision. Do not change production configuration.
+2. In GitHub → Actions → **M2 clean database replay**, choose **Run workflow** on `main`. Equivalent CLI:
 
    ```powershell
    gh workflow run m2-clean-replay.yml --repo MS3B09/Games-Recommendation-System --ref main

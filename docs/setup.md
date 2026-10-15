@@ -1,6 +1,6 @@
 # Full-stack setup (M1 foundation + M2 discovery)
 
-M1 implements the service-status foundation. M2 has an active 40-game real catalog, search, favorite-based discovery, hard filters and evidence-linked game cards; hosted verification is owner-confirmed. See [M2 operations](operations-m2.md) for commands and the [prepared GitHub Actions replay](reports/m2-clean-replay.md) for its final gate. The Actions database removes the need to install PostgreSQL/pgvector locally for this acceptance check; it awaits approval before commit/push/execution.
+M1 and M2 are complete. M2 has an active 40-game real catalog, search, favorite-based discovery, hard filters and evidence-linked game cards; hosted verification is owner-confirmed. See [M2 operations](operations-m2.md) for commands and the [passed GitHub Actions replay](reports/m2-clean-replay.md) for clean-database evidence. No local PostgreSQL/pgvector installation was needed for this acceptance check. M3 requires explicit approval.
 
 ## Prerequisites
 
@@ -108,8 +108,8 @@ The existing Supabase schema was already applied through MCP; a guarded migratio
 
 Install PostgreSQL 17 and [pgvector](https://github.com/pgvector/pgvector#installation) locally; no full Supabase stack is required. Using a privileged local SQL client, create a dedicated `game_discovery` database. Let the catalog migration install `vector` in `extensions`, or preinstall using `create schema if not exists extensions; create extension vector with schema extensions;`. Set developer `MIGRATION_DATABASE_URL=postgresql://postgres:REPLACE_LOCALLY@localhost:5432/game_discovery`, then run the explicit `upgrade` command. The initial migration conditionally revokes Supabase browser roles only if those roles exist, so it is portable to native PostgreSQL. Configure the new runtime password in the local SQL client and set `DATABASE_URL=postgresql://game_discovery_runtime:REPLACE_LOCALLY@localhost:5432/game_discovery` (no pooler project suffix locally).
 
-Native installation/fresh-database execution has **not** been performed on this machine; no psql/Docker was available. The configured Supabase path, explicit M2 migration/import and real application connection were tested. Complete native replay remains an open M2 acceptance gate.
+Native installation/fresh-database execution was not performed on this local machine; no psql/Docker was needed. The configured Supabase path, explicit M2 migration/import and real application connection were tested. Complete fresh native replay subsequently passed twice in the approved PostgreSQL 17.10/pgvector 0.8.2 Actions service; [retained results](reports/m2-clean-replay.md).
 
 ## Deployment and next gate
 
-[Deployment guide](deployment.md). **M1 is complete; authorized M2 remains in progress only for clean-database replay.** Hosted M2 verification is owner-confirmed. [M1 hosted evidence](reports/m1-hosted-verification.md) is historical; `npm run verify:hosted` assumes that old unpublished catalog and is not the M2 verifier. Use [M2 operations](operations-m2.md) for checks and its approval-gated temporary Actions database workflow. Do not start M3 without explicit approval after M2 completion.
+[Deployment guide](deployment.md). **M0–M2 are complete.** Hosted M2 verification is owner-confirmed and the clean-database Actions replay/cleanup passed. [M1 hosted evidence](reports/m1-hosted-verification.md) is historical; `npm run verify:hosted` assumes that old unpublished catalog and is not the M2 verifier. Use [M2 operations](operations-m2.md) for checks and the retained manual replay workflow. Stop; do not start M3 without explicit approval.

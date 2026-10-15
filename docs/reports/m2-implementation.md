@@ -2,7 +2,7 @@
 
 Date: 2026-10-15 (source observations are recorded in UTC on 2026-10-14).
 
-**Current status: hosted M2 verification is owner-confirmed; M2 remains in progress only for clean-database replay.** The following sections retain original implementation evidence. The owner selected a temporary PostgreSQL 17/pgvector GitHub Actions service for the final gate; its [manual workflow is prepared but awaiting approval](m2-clean-replay.md). M3 has not started.
+**Current status: M2 complete.** Hosted verification is owner-confirmed; the final [approved clean-database replay](m2-clean-replay.md) passed twice on PostgreSQL 17.10/pgvector 0.8.2 in GitHub Actions, with retained artifacts, CI evidence and cleanup confirmation. The following sections retain original implementation evidence. M3 has not started and requires explicit approval.
 
 ## Delivered
 
@@ -53,10 +53,10 @@ Public Steam responses, weights and full vectors stay local/ignored. Rerunning j
 
 ## Remaining gates and limitations
 
-1. **Clean database replay — still open:** the complete initial migrations → catalog build on a wholly clean native PostgreSQL/pgvector database has **not** been executed. The owner requested GitHub Actions instead of local psql/Docker installation. A frozen-source, two-pass replay is [prepared locally](m2-clean-replay.md); no commit, push or workflow execution is permitted before approval.
+1. **Clean database replay — resolved:** approved [Actions run 38680812079](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38680812079) on `3a62d1e` passed both fresh native builds, real CPU embeddings, migrations/import/activation, integrity/permission/rollback/API and reproducibility checks. Cleanup was confirmed. The exact report and verification metadata are retained in Git; no local PostgreSQL installation was required.
 2. **Hosted M2 journey — resolved by owner confirmation:** M2 was published in commit `3453bfb` and both GitHub CI checks passed; the owner subsequently confirmed successful hosted deployment verification. This replay preparation task makes no production/provider changes and requires no hosting credentials.
 3. Catalog size is deliberately 40 games, not the 6,000-game budget. Tags/reviews are not enriched yet; price/platform/mode facts come only from selected source fields. M5 covers expansion/refresh depth.
 4. M2 has in-memory selection only. Browser persistence/feedback is M3; natural-language/conversation is M4. LLM/query-encoder capability flags remain false. Final brand/premium polish remains M6.
 5. No relevance improvement, human evaluation, hosted latency/RSS, free-host load headroom, fresh-machine setup or physical-phone verification is claimed.
 
-[Runnable operations](../operations-m2.md). Keep M2 in progress until the approved [clean-database replay](m2-clean-replay.md) passes; hosted verification is now owner-confirmed. Do not start M3 without explicit milestone approval.
+[Runnable operations](../operations-m2.md). All M2 gates are satisfied; [replay/CI/cleanup evidence](m2-clean-replay.md) and owner-confirmed hosted verification support completion. Stop and wait for explicit approval before M3.

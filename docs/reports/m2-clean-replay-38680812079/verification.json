@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "verified_on": "2026-10-15",
+  "tested_code_revision": "3a62d1ef2f07eb5d2b7f080ab5edb35f4ea2db70",
+  "replay_run": {
+    "id": 38680812079,
+    "url": "https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38680812079",
+    "attempt": 1,
+    "conclusion": "success",
+    "job_id": 116244706462,
+    "job_started_at": "2026-10-15T04:18:58Z",
+    "job_completed_at": "2026-10-15T04:19:41Z",
+    "job_duration_seconds": 43,
+    "report": "replay.json"
+  },
+  "artifact": {
+    "id": 11946704693,
+    "name": "m2-clean-replay-38680812079-1",
+    "size_in_bytes": 2783,
+    "github_archive_digest": "sha256:86b706521d369d356ad29a27130c36e697775439d9b0dcc712278a1a8b433006",
+    "expires_at": "2026-10-22T04:19:36Z",
+    "report_retained_in_git": true
+  },
+  "cleanup": {
+    "test_database_and_runtime_role_discarded": true,
+    "source": "replay.json and successful replay checks",
+    "scratch_cleanup_step": "success",
+    "scratch_cleanup_command": "rm -rf -- ${RUNNER_TEMP:?}/m2-clean-replay",
+    "stop_containers_step": "success",
+    "container_removal_observed_in_actions_log": true,
+    "container_id": "59c98dcbbb5e008a7c9fe171de23b4eafcac4d11688f7bdbaf494ea89df17564",
+    "container_removed_at": "2026-10-15T04:19:39Z",
+    "network_removal_observed_in_actions_log": true,
+    "network": "github_network_abfb463f09a943779374759834038a56",
+    "network_removed_at": "2026-10-15T04:19:39Z",
+    "runner_disposal": "Standard GitHub-hosted ephemeral VM lifecycle; not separately inspected through a VM control API"
+  },
+  "backend_ci": {
+    "url": "https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38680783914",
+    "commit": "3a62d1ef2f07eb5d2b7f080ab5edb35f4ea2db70",
+    "conclusion": "success",
+    "python_tests": 41,
+    "strictly_typed_modules": 13,
+    "ruff": "passed",
+    "generated_openapi": "passed"
+  },
+  "frontend_ci": {
+    "url": "https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38673824585",
+    "commit": "3453bfb876c4561eecfa6f57b9c9c62b46660939",
+    "conclusion": "success",
+    "browser_tests": 11,
+    "frontend_and_contract_unchanged_since_this_run": true,
+    "comparison": "git diff 3453bfb 3a62d1e -- frontend backend/openapi.json .github/workflows/frontend-checks.yml netlify.toml returned no changes",
+    "new_run_not_triggered": "Existing path filters correctly skip frontend CI for replay-only backend/test/docs changes"
+  },
+  "failures_and_reruns": "None; replay passed on first attempt without code fixes",
+  "nonblocking_annotation": "Pinned upload-artifact v4 targets Node 20; GitHub forced Node 24 and the upload succeeded. No action upgrade was required for this acceptance run.",
+  "hosted_m2_acceptance": "Owner-confirmed before this replay",
+  "production_access": "No Supabase connection or provider deployment/configuration command used by this replay task",
+  "m2_acceptance": "complete",
+  "m3": "not started; explicit owner approval required"
+}

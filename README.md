@@ -1,12 +1,12 @@
 # 🎮 Steam Games Analytics & Recommendation System
 
-> **Full-stack rebuild in progress:** M0/M1 complete; M2 discovery is published and its hosted verification is owner-confirmed. [Live discovery](https://steam-discovery.netlify.app/) · [M2 evidence](docs/reports/m2-implementation.md) · [Run discovery](docs/operations-m2.md) · [Clean replay preparation](docs/reports/m2-clean-replay.md). M2's final clean-database gate remains open; its GitHub Actions workflow awaits approval. The Streamlit documentation below describes the preserved legacy application.
+> **Full-stack rebuild in progress:** M0–M2 complete. [Live discovery](https://steam-discovery.netlify.app/) · [M2 evidence](docs/reports/m2-implementation.md) · [Run discovery](docs/operations-m2.md) · [Passed clean-database replay](docs/reports/m2-clean-replay.md). Hosted M2 is owner-confirmed; two clean PostgreSQL/pgvector builds passed in GitHub Actions. M3 requires explicit approval. The Streamlit documentation below describes the preserved legacy application.
 
 ## New application foundation
 
 The React/TypeScript frontend calls a modular FastAPI backend using generated API contracts. PostgreSQL/pgvector uses a restricted runtime role, bounded pooling and explicit migrations. M2 adds favorite selection, hard filters, exact seed-vector retrieval, source-backed reasons, artwork, price dates and game details; no sign-in or LLM key is required. Local developer jobs reproduce catalog artifacts from retained source snapshots.
 
-**M2 implementation checks:** 36 Python tests, 11 browser checks, backend lint/strict serving typing, frontend lint/type/build, real browser → FastAPI → Supabase discovery, desktop/mobile axe, import idempotence and interrupted-write rollback. Commit `3453bfb` passed GitHub CI; hosted M2 is owner-confirmed. Replay preparation adds five passing offline tests (41 total), but the actual clean-database workflow has not run. No relevance improvement or full conversational discovery is claimed.
+**M2 checks:** 41 Python tests, 11 browser checks, backend lint/strict serving typing, frontend lint/type/build, real browser → FastAPI → Supabase discovery, desktop/mobile axe, import idempotence and interrupted-write rollback. [Approved Actions replay](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38680812079) passed two fresh PostgreSQL 17/pgvector builds with matching artifacts/data/recommendations, least-privilege checks and cleanup. Hosted M2 is owner-confirmed. No evaluated relevance improvement or full conversational discovery is claimed.
 
 For setup commands, exact hosting settings and milestone boundaries, see [docs/setup.md](docs/setup.md) and [docs/deployment.md](docs/deployment.md).
 
