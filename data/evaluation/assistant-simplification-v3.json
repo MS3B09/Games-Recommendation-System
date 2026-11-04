@@ -1,0 +1,29 @@
+{
+  "version": "simplification-five-story-review-v3",
+  "scope": "Fresh ambiguity development check after making named exclusions an explicit native-tool decision, followed by untouched budget/fact stories. V1/V2 attempts and source hashes are preserved, not replayed. Browser memory story is separate.",
+  "development": [
+    {
+      "id": "S2Q",
+      "turns": ["Find two Windows single-player games recorded at no more than $24 USD, excluding Hollow Knight, INSIDE and Ori. I haven't chosen which Ori edition I mean. These exclusions are only for this request."],
+      "checks": ["Ambiguous Ori produces edition clarification", "No recommendation search before ambiguity is resolved", "No guessed or persisted exclusions"]
+    },
+    {
+      "id": "S3",
+      "turns": [
+        "Save Windows, single-player and an inclusive recorded USD maximum of $18.50 as my normal requirements. Recommend two games using them.",
+        "For this search only, recommend two games recorded strictly above $18.50 and no higher than $37 USD, keeping Windows and single-player. Leave my normal requirements unchanged.",
+        "Search again with my saved normal requirements and tell me the normal maximum price."
+      ],
+      "checks": ["Three actual searches: maximum 1850, temporary 1851-3700, restored maximum 1850", "Saved maximum stays 1850", "Canonical cards satisfy each search's predicates"]
+    },
+    {
+      "id": "S4",
+      "turns": [
+        "Look up Portal 2 and Risk of Rain 2. Tell me their catalog-recorded platforms and play modes; don't infer current compatibility.",
+        "A quick non-game detour: give me one simple idea for using leftover cooked rice.",
+        "Back to the two games before the rice question: which has recorded Mac support, and which recorded play modes do they share?"
+      ],
+      "checks": ["Correct canonical facts for 620 and 632360", "Detour does not perform an unsolicited catalog search", "Earlier pair resolved correctly after detour", "Unrecorded support not called proven incompatibility"]
+    }
+  ]
+}

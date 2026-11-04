@@ -1,0 +1,9 @@
+{
+  "version": "native-assistant-discovery-development-v46",
+  "scope": "Fresh exposed development regressions for evidence-value critique and title-resolution-before-discovery. Completed originals and failures remain preserved; held-out fixtures unchanged.",
+  "development": [
+    {"id":"D46F","query":"farming town life","filters":{"platforms":["linux"],"max_price_cents":1800},"turns":["Suggest a Linux farming or town-life game with a recorded price up to 18 USD. Use supplied description words to explain the theme, and distinguish what the catalog does not establish."]},
+    {"id":"D46X","query":"action games","filters":{"excluded_ids":[268910,504230]},"turns":["I have finished Cuphead and Celeste. Recommend other action games from this catalog, leaving both of those titles out of the search."]},
+    {"id":"D46M","query":"survival exploration","filters":{"platforms":["mac"],"max_price_cents":2500},"turns":["Suggest survival or exploration options with recorded macOS support and recorded prices no higher than 25 USD. Explain the fit using only the description evidence supplied by your tools."]}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "version": "simplification-five-story-review-v6",
+  "scope": "Fresh budget story after server-owned canonical card identity provenance replaced the ineffective citation prompt trial. Earlier attempts and hashes remain immutable; no replay. Untouched fact/detour story retained. Browser memory story is separate.",
+  "development": [
+    {
+      "id": "S3R",
+      "turns": [
+        "Save Windows, single-player and a recorded USD maximum of $20.10 inclusive as my normal limits. Find two games using them.",
+        "Only for this search, find two games recorded above $20.10 and no higher than $40.20 USD, still Windows and single-player. Keep my saved normal limits.",
+        "Recommend two games with my normal saved limits again and state my normal maximum price."
+      ],
+      "checks": ["Three delivered searches: maximum 2010, temporary 2011-4020, restored maximum 2010", "Saved maximum unchanged by temporary search", "Canonical card identities have server-owned provenance without rewriting prose"]
+    },
+    {
+      "id": "S4",
+      "turns": [
+        "Look up Portal 2 and Risk of Rain 2. Tell me their catalog-recorded platforms and play modes; don't infer current compatibility.",
+        "A quick non-game detour: give me one simple idea for using leftover cooked rice.",
+        "Back to the two games before the rice question: which has recorded Mac support, and which recorded play modes do they share?"
+      ],
+      "checks": ["Correct canonical facts for 620 and 632360", "Detour does not perform an unsolicited catalog search", "Earlier pair resolved correctly after detour", "Unrecorded support not called proven incompatibility"]
+    }
+  ]
+}

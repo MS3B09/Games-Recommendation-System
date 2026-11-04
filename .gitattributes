@@ -1,1 +1,6 @@
 *.mov filter=lfs diff=lfs merge=lfs -text
+
+# Preserve byte-exact evaluation evidence, fixtures, and pinned upstream files.
+/docs/reports/** -text
+/data/evaluation/** -text
+/.agents/skills/pstack/** -text

@@ -1,0 +1,32 @@
+{
+  "version": "owner-closeout-development-v23",
+  "scope": "Fresh development after v22 exposed oversized four-card evidence and an inferred local-co-op requirement. These are exposed regressions, not held-out data. Original v22 outputs remain immutable; original held-out cases stay in dialogue-v12.json.",
+  "development": [
+    {
+      "id": "D23B",
+      "turns": [
+        "Please save Windows and single-player as my usual requirements, with a recorded USD ceiling of 12 dollars inclusive. Recommend up to four games.",
+        "For this request alone, recommend Windows single-player games with recorded prices strictly above 12 USD and no higher than 24 USD. Keep my usual 12-dollar ceiling saved.",
+        "Return to my usual requirements, search again, and remind me of the normal price limit."
+      ],
+      "checks": ["Complete four-card evidence fits existing provider bounds", "Normal/restored maximum 1200 inclusive; temporary minimum 1201 and maximum 2400 inclusive", "Temporary returned cards include prices above 1200", "Normal Windows/single-player/1200 remains saved", "No false no-match assertion or invented field facts"]
+    },
+    {
+      "id": "D23P",
+      "turns": [
+        "Find Hades in the catalog. Tell me only the operating systems and modes recorded there, and its recorded USD price with the observation date.",
+        "If an operating system has no support recorded there, can you conclude that Hades cannot run on it?"
+      ],
+      "checks": ["Hades ID1145360 independently confirmed present before inference", "All amounts/dates/modes/platforms agree with actual record", "No unsupported real-world incompatibility implication"]
+    },
+    {
+      "id": "D23R",
+      "turns": [
+        "My sibling Casey and I tentatively planned a gaming evening for Monday. We haven't chosen a spending limit.",
+        "Update that gaming evening to Saturday; Casey is still joining.",
+        "Which day came first, which day replaced it, who am I playing with, and what budget have we agreed?"
+      ],
+      "checks": ["Monday then Saturday; sibling Casey; budget unagreed", "No inferred local-co-op/multiplayer/platform/budget requirement is persisted", "Preserve gaming-plan context and uncertainty"]
+    }
+  ]
+}

@@ -1,6 +1,26 @@
 # Technical Implementation Plan
 
-Status: **M0, M1 and M2 complete** as of 2026-10-15. Hosted M2 verification is owner-confirmed. The approved [clean PostgreSQL/pgvector Actions replay](docs/reports/m2-clean-replay.md) passed two independent builds, all integrity/permissions/API checks and cleanup. See [M2 evidence](docs/reports/m2-implementation.md) and [progress](docs/progress.md). **Stop; M3 is not authorized and requires explicit approval before implementation or setup.**
+**Latest R4 — 2026-10-27:** [quota amendment/progress](docs/reports/r4-quota-increase-2026-10-27.md). Approved100/1,500,000temporary daily limits applied preserving usage; defaults50/500,000 retained. Same v6 source/outputs continue via documented operational wrapper.193backend tests and15scratch quota checks pass. Proposed development13/13passes; held-out32attempts/8prose failures,95calls today, paused by conservative provider-token headroom. Human/mandatory/latency gates remain, R4 not accepted. Resume only unattempted held-out work with a fresh receipt; restore runtime after R4, no counter reset or M5/publication authority. Older statuses below are historical.
+
+**Latest R4 authority — 2026-10-26:** [v6 checkpoint](docs/reports/conversational-rag-r4-resume-2026-10-26.md) supersedes October25 status. Additional inference approved, today's50calls/393,494units exhaust daily calls.189backend tests/313integration assertions; explicit played/undo and durable journal fixes verified. Current9/26development attempts, baseline claim failure retained; full held-out live/human/representative latency gates pending. Preserve C: authoritative journal and resume only unattempted v6 work on later UTC days. No new setup or M5/publication authority.
+
+## Current next-work authority — 2026-10-25
+
+**Latest R4 continuation:** owner approved the additional inference needed within free-only limits. [Fixes/checkpoint](docs/reports/conversational-rag-r4-continuation.md): strict max-four generation, unsupported-platform metadata and continuation references verified; live proposed core journey3/3; runtime retrieve p95487ms/90warm samples.180backend tests and313integration assertions pass. Current live paired development13/26turns; today49/50calls/390,773reserved units pauses further two-call turns. Resume with a fresh later-UTC-day receipt under existing approval. Full held-out live/human/serving-total-latency gates remain; R4 is not accepted. No new key/config/model or M5/publication authority. The exhausted-pilot entry below is historical.
+
+**R4 update: in progress, acceptance incomplete.** Owner approved R4 and a development pilot/fix-retest, not full held-out live generation. [R4 report](docs/reports/conversational-rag-evaluation.md) records conditional held-out title Hit@5 9/9 vs8/9 baseline, semantic miss/C06 metadata gap, retrieval p952.574s and live six-ID rejection after multiplayer/Spider-Man success. **Aggregate12calls/92,813reserved tokens used; further inference needs new explicit budget.**168backend tests/static/contracts pass; no frontend changes. [Architecture](docs/architecture-assistant.md) / [walkthrough](docs/walkthrough-assistant.md). Human/full live quality and R4 completion remain pending; M5/publication/commit/push unauthorized. The following R3 entry is historical.
+
+**R0–R3 complete locally; stop before R4.** Owner approved R3/confirmed frontend skills. [RAG plan](docs/conversational-rag-plan.md), [visual guide](docs/design/conversational-rag-plan.html), [R3 evidence](docs/reports/conversational-rag-r3.md) and [frozen contracts](docs/conversational-rag-contracts.md) govern. Full v2 wire/browser memory now integrates the six Core stages; validated legacy migration/quarantine, exact pending reload/retry and protected version-skew recovery retain Current's assistant contracts.151backend/49frontend tests,1actual-network browser test,6clean responsive scans/static/contracts pass. No new configuration needed; restart older API/hard-refresh UI. Next: separately approved R4 evaluation/live budget. Chat remains independent from main inputs; no live-quality/M5/publication claim. Earlier dated entries are historical.
+
+**Owner-approved follow-up (2026-10-22): independent assistant implemented locally.** Main favorites/limits/feedback recommendations are separate from the floating chat; main text/conflict UI removed, exact-row feedback dismissal added, chat cards expand in-panel with Save/Steam only and retain bounded tab-session state. [Follow-up evidence](docs/reports/independent-assistant.md) records 80 backend/29 frontend tests, strict/static checks, mocked-provider real-catalog integration and actual disabled-chat/browser verification. [Current startup and live-AI prerequisites](docs/operations-assistant.md) replace temporary interpreter instructions. Earlier main-text/refinement acceptance descriptions remain historical/backend-compatible. M0–M4 status and hosted M2 unchanged; no M5 or publication authorization.
+
+**Latest milestone status (2026-10-19): M0–M4 complete; M3/M4 complete locally, unpublished.** [M4 acceptance report](docs/reports/m4-implementation.md) records all five gates: constrained Hades discovery, retained refinement/conflict choices, bounded reload-safe session, validated claims/provider failure fallback, and atomic quota persistence verified across a new Python process in an isolated cleaned-up schema. Final checks: 68 backend tests in a fresh locked environment, Ruff/mypy17/contracts, 25 frontend tests, type/build/targeted lint, seven real API cases/twelve clean scans, seven SQL-budget checks. Independent UI review is **SHIP at M4 Current UI surface scope**, not blanket release approval. No live Groq, production quota migration, evaluated relevance improvement, physical-phone or hosted-M4 claim. Earlier unstarted/awaiting-layout notes are historical. **M5/publication remain unauthorized; stop after M4.**
+
+**Active M4 coordination (2026-10-19):** the owner authorized “Start M4 Implementation” and confirmed installed frontend skills. M4 is now **in progress, incomplete**. The first backend slice adds bounded optional query/lexical ranking with explicit-filter preservation and safe encoder fallback; it does not complete interpretation, conversation, provider limits or the acceptance gates. Owner next requested an HTML plan before deciding on the application UI: `docs/design/m4-plan.html`. Await that decision before UI implementation. [Current evidence and remaining work](docs/reports/m4-in-progress.md). Earlier M4-unstarted/unauthorized statements are retained historical coordination, superseded by this authorization. M5/publication are not authorized.
+
+**Current controls follow-up complete locally, main confirmed (2026-10-19):** owner-authorized after completed M3 in Current. Three multi-choice selectors (required modes → platform → catalog genre) and a two-handle min/max USD slider replace advanced/text-term UI; exclusions/undo remain. All modes/genres, any platform. The one material metadata-failure fix is **RESOLVED**; **ship at ONE-SCORED-FIX verdict-pass scope**, not blanket product/publication approval. Reviewer reopened all 18 refreshed captures with no regression attributable to the fix; earlier full review found no material visual/a11y regression. Full 21 frontend tests (15 browser/6 storage), TypeScript/build/lint and live nine-case/18-clean-scan verification passed again; backend 51/Ruff/strict mypy13/OpenAPI/generated drift and detector `[]` remain passed. Unavailable facets preserve stored null maximum/free-only false, with Any price / No maximum price; rendering fallback is never a budget. Main restored final interactive build to :8001 after owned :8002 verification; user must restart older :8001 backend and start/reuse :4173 preview, then refresh both entry routes. [Controls report](docs/reports/discovery-controls.md). M3 stays complete/local/unpublished; M4 stays unstarted/unauthorized. The following 49/17 counts and four-fix verdict describe the historical completed baseline separately.
+
+Status: **M0–M3 complete; M3 complete locally and unpublished** as of 2026-10-18. Main agent confirms all five M3 acceptance gates and final handoff. Independent review: all four material fixes **RESOLVED**, disposition **ship at the four-scored-fixes verdict-pass scope**; all 12 fresh captures inspected with no material regression attributable to the fix batch. This is not blanket whole-product/UI release approval. Hosted M2 remains unchanged; the [clean PostgreSQL/pgvector replay](docs/reports/m2-clean-replay.md) remains historical evidence. Both entry routes load the same authorized Current guest application with real API search/discovery, compact controls, genre-led evidence, persistence, saves/history and feedback. [M3 evidence](docs/reports/m3-implementation.md) · [operations](docs/operations-m3.md) · [progress](docs/progress.md). Checks remain passed: 49 backend tests, 17 frontend tests, one separate live test, 12 clean scans and static/build/contract checks. Fresh frontend installation, remote M3 CI, real-phone and hosted M3 verification are not claimed. **M4 is unstarted and unauthorized. Stop after M3; no commit, push, deployment or redesign authorization.**
 
 This plan implements [AGENTS.md](AGENTS.md) and records the decisions made during technical planning. The product brief governs scope; this document governs implementation order and proposed technical defaults. Items described as targets, candidates, or gates are not measured results. Keep both documents consistent when an approved requirement changes.
 
@@ -22,10 +42,10 @@ This plan implements [AGENTS.md](AGENTS.md) and records the decisions made durin
 | Area | Decision |
 | --- | --- |
 | Goal | Portfolio-quality full-stack product with credible, evaluated AI/ML and genuine gamer usefulness |
-| Main journey | Favorite games + natural-language request + explicit filters -> ranked shortlist -> grounded explanations -> conversational refinement |
+| Main journey | Main favorites + My limits + feedback -> ranked shortlist; independent chat uses only its own conversation and catalog. Planned conversational RAG follows the 2026-10-24 addendum. |
 | Persistence | Guest-only; browser-local preferences, saved games, feedback, limited recent history; active conversation retained for the current session |
 | Accounts | No registration, Google sign-in, authentication flows, account profiles, or guest-to-account migration |
-| Controls | Budget/free-only, Windows/macOS/Linux, preferred and unwanted genres/tags, play modes, explicit game exclusions |
+| Controls | Current UI: multi-choice required modes, Windows/macOS/Linux, required catalog genres, inclusive recorded-USD min/max slider/free-only and exact exclusions. Earlier preferred/unwanted text UI is superseded; API term support remains compatible for future authorized work. |
 | Region | US Steam store region; USD prices, with collection timestamps and recorded-price wording |
 | Eligibility | Released standalone games, including free-to-play and clearly labeled Early Access |
 | Exclusions | DLC, soundtracks, software, demos, unreleased games, adult-only sexual content; ordinary mature-rated games remain eligible |
@@ -63,7 +83,7 @@ The initial acceptance scenario is: “I loved Hades for its combat and sense of
 | Tooling | uv for Python; npm for frontend; Ruff, ESLint, TypeScript | Stable pinned dependencies and documented PowerShell-compatible commands |
 | CI | GitHub Actions | Bounded lint/type/test/build checks within free allowances |
 
-No Redis, worker fleet, queue broker, microservices, paid monitoring, or mandatory local LLM. A plain provider adapter is sufficient; LangChain is not required for this flow.
+No Redis, worker fleet, queue broker, microservices, paid monitoring, or mandatory local LLM. Retain the existing metered provider adapter. For the planned RAG revision, prefer minimal LangChain Core composition if the R0 benefit/resource gate passes; no full agent framework or parallel provider transport.
 
 ### Free-service gates
 
@@ -176,10 +196,10 @@ On the user's hardware: start with one browser session, conservative scraping co
 
 ### Hard-filter semantics
 
-- Budget uses nonnegative integer USD cents. UI “maximum” is inclusive; natural-language “under” can be represented as exclusive. Unknown/non-USD/non-US prices fail a price constraint. Show recorded price and observation date; do not imply a live purchase quote.
+- Price bounds use integer USD cents in 0..1,000,000. Optional `min_price_cents` is inclusive; UI maximum is inclusive (`price_operator: "lte"`), while the API retains exclusive `"lt"` support. A supplied minimum, including zero, requires a known recorded price. Unknown/non-USD/non-US prices fail a price constraint. Validate minimum ≤ maximum both in individual filters and after explicit/saved criteria merge; reject invalid ranges or free-only with a positive minimum as 422. Show recorded price and observation date; do not imply a live purchase quote.
 - Free-only requires explicit supporting evidence of the chosen free eligibility policy.
 - Platform controls expose whether the user means any selected platform or all selected platforms; default to any and document it. Unknown support does not pass a required platform.
-- Required play modes must be explicitly supported. Preferred genres/tags boost rank; unwanted genres/tags are exclusions. Do not treat a genre preference as a mandatory filter unless the UI explicitly offers that meaning.
+- All selected required play modes and catalog genres must be explicitly supported. Current UI uses any-selected-platform matching and states it; API retains any/all support. Preferred terms remain ranking signals and unwanted terms exclusions for compatible API clients; the current UI removes their fields and clears both arrays on submit so old stored terms cannot silently influence discovery.
 - Evidence absence is not evidence of absence: disclose incomplete tag coverage and use only supported fields for strong exclusion claims.
 - Never silently relax filters when results are scarce. Return fewer/zero results and suggested changes that require user action.
 
@@ -224,13 +244,13 @@ Prefix routes with `/api/v1`. Generate frontend types from the OpenAPI schema. U
 | `GET /api/v1/games` | Search/paginated catalog browsing and favorite selection |
 | `GET /api/v1/games/{app_id}` | Detail and evidence-backed metadata |
 | `POST /api/v1/games/resolve` | Resolve a bounded set of saved IDs; report removed/unknown entries |
-| `GET /api/v1/facets` | Supported normalized genres, tags, platforms, modes |
+| `GET /api/v1/facets` | Normalized genres, tags, platforms, modes and optional `max_price_cents` from eligible active US/USD catalog observations (null when unavailable) |
 | `POST /api/v1/discover` | Initial and refined discovery using full current state; no server-side user profile |
 | `GET /api/v1/analytics` | Bounded, cacheable catalog aggregates with missingness and freshness |
 
 Discovery request groups:
 
-- `favorite_ids`, `query`, `filters` (budget operator/cents/free-only, US/USD, platforms/match mode, required play modes, preferred/unwanted terms, excluded IDs).
+- Current M3 request: `favorite_ids`, `filters` (`min_price_cents`, `max_price_cents`, `price_operator`, `free_only`, `platforms`, `platform_match`, `required_modes`, `required_genres`, compatible `preferred_terms`/`unwanted_terms`, `excluded_ids`). Optional minimum defaults to null at the API boundary; explicit null/false/[] overrides saved state. US/USD is the catalog price context. `query` remains a future hybrid-discovery field, not a current M3 capability.
 - `preferences` and bounded `feedback` entries containing app ID, kind and timestamp; client data is untrusted and validated.
 - `conversation`: bounded recent messages and normalized prior criteria; full active state is resubmitted, not fetched by user ID.
 - `limit` (default 10, maximum 20) and an optional client request ID for stale-response handling.
@@ -248,7 +268,7 @@ Return structured errors such as `{code, message, request_id, retryable}`. Disti
 
 Pages: discovery (`/`), saved games (`/saved`), catalog exploration (`/explore`), game details (`/games/:id`), and a concise about/methodology page. Brand name and detailed art direction remain design choices for the first UI review.
 
-Discovery layout: favorite picker, natural-language input, expandable filters, active constraint chips, ranked cards, explanation/tradeoff details, feedback actions and integrated refinement. Mobile layouts must retain clear access to criteria and results. Provide skeletons, empty states, image fallbacks, keyboard navigation and visible focus.
+Current owner-authorized layout: favorite picker, small “My limits” lead, required modes → platform → catalog genre multi-choice selectors → two-handle price slider, ranked genre-led rows, evidence/tradeoffs and feedback. Four desktop fields stay on one row; ≤900px two columns; ≤640px one column in the same order. The former advanced/soft-term text UI is superseded only for the active UI. Native checkbox disclosures support clearing/Escape/outside close; one-cent native range handles cannot cross. Slider cap uses facets' eligible recorded maximum, rounded up to a whole dollar, extended for stored bounds and capped at 1,000,000 cents; absent/error cap disables it, with request-error retry. Stored unbounded `max_price_cents: null` / `free_only: false` is preserved when facets are unavailable, including submission/persistence; disabled labels read Any price / No maximum price. The finite internal rendering fallback never becomes a budget. Bounded $0–$0 submits explicit free-only. Natural-language input, active refinement chips and integrated conversation remain later unauthorized work. Keep loading/empty/error states, image fallbacks, keyboard navigation and visible focus.
 
 Persistence defaults (technical defaults, adjustable with documentation):
 
@@ -256,6 +276,7 @@ Persistence defaults (technical defaults, adjustable with documentation):
 - Start with bounded limits of 50 favorites, 200 saved games and 500 feedback entries. Explain limits rather than silently discarding saves. Coalesce feedback to the latest action per game.
 - Session storage retains at most 20 recent active conversation messages and normalized criteria for the current tab session, including reloads. Persistent history summaries do not contain full conversations.
 - Validate and migrate storage schemas; catch quota and parsing errors. Handle same-browser tab updates without silently replacing an in-progress conversation.
+- The controls follow-up retains storage version 2 and the defined v1 migration: older v2 preferences/history without `min_price_cents` normalize to zero. History summaries display ranges; no format bump or database migration is needed.
 - “Clear my saved data” removes application-owned local and session keys, resets in-memory state and personalized query caches. Ignore outstanding responses that would restore cleared state.
 - Show “Saved on this device,” explain no sync and storage-clearing loss. Keep data forwarding to the API limited to relevant ranking inputs.
 - Saving a game does not implicitly mean “interested” unless clearly communicated; make feedback behavior explicit.
@@ -300,7 +321,7 @@ Quality gates: zero known hard-constraint violations and zero known unsupported 
 
 ## 11. Build milestones
 
-M0, M1 and M2 are **complete**; M3–M8 are **not started**. Checkboxes are completion gates. Stop and wait for explicit owner permission before any M3 work.
+M0–M3 are **complete**; M3 is **complete locally and unpublished**, with all five functional gates and final handoff confirmed by main agent. The independent review's ship verdict covers the four scored fixes, not a blanket release approval. M4–M8 are **not started**; M4 is **unauthorized**. Stop after M3 and wait for explicit owner permission before M4 or publication.
 
 ### M0 — Audit and feasibility decisions
 
@@ -349,9 +370,13 @@ Deliverables: a representative real catalog, reproducible artifact manifest, thi
 - [x] Useful recommendations work with no Groq key configured.
 - [x] Output cites real catalog fields; freshness and Early Access labels are visible.
 
-Evidence: [M2 implementation report](docs/reports/m2-implementation.md), [operations](docs/operations-m2.md), [production artifact manifest](docs/reports/m2-artifact-manifest.json), [clean replay report and retained JSON](docs/reports/m2-clean-replay.md). All five gates pass: owner-confirmed hosted journey; 40 real games; two independent clean PostgreSQL 17.10/pgvector 0.8.2 builds in [run 38680812079](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38680812079), identical fresh artifacts/database fingerprints/recommendation results, integrity/permissions/rollback checks and confirmed cleanup. Backend CI passed on replay commit `3a62d1e` with 41 tests; the unchanged frontend has passing lint/contract/type/build and 11 browser tests from `3453bfb`. **M2 is complete. Stop and wait for approval before M3.** This is not a full-product or evaluated-relevance release claim.
+Evidence: [M2 implementation report](docs/reports/m2-implementation.md), [operations](docs/operations-m2.md), [production artifact manifest](docs/reports/m2-artifact-manifest.json), [clean replay report and retained JSON](docs/reports/m2-clean-replay.md). All five gates pass: owner-confirmed hosted journey; 40 real games; two independent clean PostgreSQL 17.10/pgvector 0.8.2 builds in [run 38680812079](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/38680812079), identical fresh artifacts/database fingerprints/recommendation results, integrity/permissions/rollback checks and confirmed cleanup. Backend CI passed on replay commit `3a62d1e` with 41 tests; the unchanged frontend has passing lint/contract/type/build and 11 browser tests from `3453bfb`. **M2 is complete; these are historical M2 checks. M3 is now complete locally under the latest status above.** This is not a full-product or evaluated-relevance release claim.
 
 ### M3 — Guest persistence and feedback personalization
+
+Owner-authorized post-completion follow-up is **complete locally, main confirmed**: compact multi-choice/range controls, compatible minimum/facets API fields and the resolved unbounded-price metadata-failure fix. [Controls evidence](docs/reports/discovery-controls.md) records final passing checks and **ship at ONE-SCORED-FIX verdict-pass scope**, separate from the historical baseline four-fix verdict below. Completed acceptance gates stay complete; no M4 or publication authority.
+
+Current status (2026-10-18): **M3 COMPLETE LOCALLY.** Main agent confirms all five functional acceptance gates and final handoff. Real search/discovery, versioned guest storage, saved page, bounded history, feedback and required-genre filtering are implemented and verified. [Recorded evidence](docs/reports/m3-implementation.md): 49 backend tests, 17 frontend tests, one separate live test, 12 clean scans and static/build/contract checks remain passed. Independent reviewer: all four material fixes RESOLVED; ship at the four-scored-fixes verdict-pass scope, with no material regression attributable to the fix batch in all 12 inspected fresh captures. This is not blanket whole-product/UI release approval. M3 is unpublished; hosted M2 remains unchanged. M4 is unstarted and unauthorized; no further implementation, commit/push/deploy or next-milestone work is authorized.
 
 Dependencies: M2.
 
@@ -359,13 +384,15 @@ Tasks: implement versioned browser storage, saved page, bounded history, feedbac
 
 Deliverables: persistent guest experience and personalization checks.
 
-- [ ] Reload preserves favorites/preferences/saves/history/feedback in the same browser.
-- [ ] Controlled examples prove feedback changes ranking and exact exclusions hold.
-- [ ] Already played is not treated as negative taste; current request overrides stored preferences.
-- [ ] “Saved on this device” and clear-data behavior are verified, including in-flight requests.
-- [ ] No accounts/authentication have been introduced.
+- [x] Reload preserves favorites/preferences/saves/history/feedback in the same browser.
+- [x] Controlled examples prove feedback changes ranking and exact exclusions hold.
+- [x] Already played is not treated as negative taste; current request overrides stored preferences.
+- [x] “Saved on this device” and clear-data behavior are verified, including in-flight requests.
+- [x] No accounts/authentication have been introduced.
 
 ### M4 — Hybrid text discovery and conversational refinement
+
+**Complete locally (2026-10-19), unpublished.** [Acceptance evidence and limits](docs/reports/m4-implementation.md) · [operations](docs/operations-m4.md). Provider failure-mode coverage uses mocked Groq transport; real atomic quota behavior uses a scratch schema, not an application-schema migration. Live Groq remains optional and unverified.
 
 Dependencies: M2 and M3; query encoder feasibility resolved.
 
@@ -373,11 +400,11 @@ Tasks: integrate query/lexical retrieval, configured hybrid ranker, structured i
 
 Deliverables: complete signature discovery flow, ranking/prompt versions and failure-mode tests.
 
-- [ ] Hades acceptance scenario produces constrained results and honestly handles “less repetition.”
-- [ ] Refinements retain prior criteria unless explicitly changed; contradictions are visible.
-- [ ] Session conversation survives reload without becoming an indefinite persistent chat archive.
-- [ ] Invented IDs/claims, malformed outputs, timeout and quota exhaustion fall back safely.
-- [ ] Global AI budget enforcement survives process restart; core discovery remains usable.
+- [x] Hades acceptance scenario produces constrained results and honestly handles “less repetition.”
+- [x] Refinements retain prior criteria unless explicitly changed; contradictions are visible.
+- [x] Session conversation survives reload without becoming an indefinite persistent chat archive.
+- [x] Invented IDs/claims, malformed outputs, timeout and quota exhaustion fall back safely.
+- [x] Global AI budget enforcement survives process restart; core discovery remains usable.
 
 ### M5 — Catalog expansion and refresh operations
 

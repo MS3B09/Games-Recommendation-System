@@ -1,0 +1,85 @@
+{
+  "status": "ok",
+  "measured_at": "2026-10-25T02:09:04.164Z",
+  "catalog_version": "m2-649714e8b26775165f105d02",
+  "turns": [
+    {
+      "message": "Find multiplayer games",
+      "ids": [
+        105600,
+        548430
+      ],
+      "user_turn": 1,
+      "milliseconds": 1125
+    },
+    {
+      "message": "Does a spiderman game exist?",
+      "ids": [
+        1817070
+      ],
+      "user_turn": 2,
+      "milliseconds": 2300
+    },
+    {
+      "message": "Would it meet those requirements?",
+      "ids": [
+        1817070
+      ],
+      "user_turn": 3,
+      "milliseconds": 911
+    },
+    {
+      "message": "More multiplayer options",
+      "ids": [
+        105600,
+        548430
+      ],
+      "user_turn": 4,
+      "milliseconds": 1490
+    },
+    {
+      "message": "I played Spider-Man",
+      "ids": [
+        105600,
+        548430
+      ],
+      "user_turn": 5,
+      "milliseconds": 2329
+    },
+    {
+      "message": "Include Spider-Man again",
+      "ids": [
+        105600,
+        548430
+      ],
+      "user_turn": 6,
+      "milliseconds": 1960
+    }
+  ],
+  "real_throttle_429": true,
+  "throttle_waited_without_bypass": true,
+  "main_result_ids": [
+    107100,
+    311690,
+    237930,
+    113200,
+    367520,
+    1966720,
+    1091500,
+    105600,
+    632360,
+    620
+  ],
+  "diagnostics": {
+    "mock_http_calls": 12,
+    "bounded_packets": true,
+    "matched_reservations": true,
+    "live_provider_calls": 0,
+    "actual_quota_reservations": 0,
+    "database_writes": 0,
+    "encoder_loaded": true,
+    "semantic_candidate_queries": 4,
+    "mock_reservations": 12
+  },
+  "scope": "Real browser/API/CORS/read-only catalog and pinned encoder; scripted provider HTTP and accounting. Not live interpretation or quality evidence."
+}

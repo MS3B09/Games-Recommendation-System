@@ -1,23 +1,20 @@
 import type { components } from './schema';
 
 export type CatalogStatus = components['schemas']['CatalogStatus'];
-type ApiError = components['schemas']['ApiError'];
-
-export class ServiceError extends Error {
-  constructor(message: string, readonly requestId?: string) { super(message); }
-}
+import { ServiceError, parseServiceError, serviceError } from './errors';
+export { ServiceError } from './errors';
 
 export function apiOrigin(): string {
   const value = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? 'http://127.0.0.1:8000' : '');
-  if (!value) throw new ServiceError('The API address has not been configured for this deployment.');
+  if (!value) throw serviceError('service_configuration');
   let url: URL;
   try { url = new URL(value); }
-  catch { throw new ServiceError('The API address needs attention.'); }
+  catch { throw serviceError('service_configuration'); }
   if (url.username || url.password || url.search || url.hash || url.pathname !== '/') {
-    throw new ServiceError('The API address needs attention.');
+    throw serviceError('service_configuration');
   }
   if (url.protocol !== 'https:' && !(url.protocol === 'http:' && ['localhost', '127.0.0.1'].includes(url.hostname))) {
-    throw new ServiceError('The API address must use HTTPS.');
+    throw serviceError('service_configuration');
   }
   return url.origin;
 }
@@ -37,24 +34,22 @@ function isCatalog(value: unknown): value is CatalogStatus {
 
 export async function getCatalog(signal: AbortSignal): Promise<CatalogStatus> {
   let response: Response;
+  const timeout = AbortSignal.timeout(75_000);
   try {
-    response = await fetch(`${apiOrigin()}/api/v1/catalog/status`, { signal, credentials: 'omit' });
+    response = await fetch(`${apiOrigin()}/api/v1/catalog/status`, { signal: AbortSignal.any([signal, timeout]), credentials: 'omit' });
   } catch (error) {
     if (error instanceof ServiceError || signal.aborted) throw error;
-    throw new ServiceError('We couldn’t reach the service. It may be waking up or temporarily unavailable.');
+    throw serviceError(timeout.aborted ? 'request_timeout' : 'network_error');
   }
   let body: unknown;
   try { body = await response.json(); }
-  catch { throw new ServiceError('The service returned an unexpected response. Please try again shortly.'); }
-  if (!response.ok) {
-    const error = body as Partial<ApiError> | null;
-    const configurationError = error && ['database_unconfigured', 'database_configuration_invalid', 'database_role_misconfigured'].includes(error.code ?? '');
-    throw new ServiceError(
-      configurationError ? 'The service needs configuration. The project owner needs to check the backend settings.'
-        : 'The catalog service is temporarily unavailable. Please try again shortly.',
-      error && typeof error.request_id === 'string' ? error.request_id : undefined,
-    );
+  catch (error) {
+    if (signal.aborted) throw error;
+    throw serviceError(timeout.aborted ? 'request_timeout' : 'invalid_response');
   }
-  if (!isCatalog(body)) throw new ServiceError('The catalog response could not be verified. Please try again shortly.');
+  if (!response.ok) {
+    throw parseServiceError(body);
+  }
+  if (!isCatalog(body)) throw serviceError('invalid_response');
   return body;
 }

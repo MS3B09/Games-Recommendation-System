@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-02T15:26:16.534749+00:00",
+  "source_version": "v40",
+  "budget_gate": "pass",
+  "actual_searches": 3,
+  "native_actions": [
+    "save_normal",
+    "temporary",
+    "use_saved"
+  ],
+  "canonical_card_comparisons": 12,
+  "normal_and_restored_maximum": 2125,
+  "temporary_range": [
+    2126,
+    4250
+  ],
+  "requested_saved_limit_wording": "pass",
+  "archive_statuses": {
+    "D40P": 404,
+    "D40R": 404,
+    "D40B": 404
+  },
+  "human_scores": null,
+  "full_quality_acceptance": false
+}

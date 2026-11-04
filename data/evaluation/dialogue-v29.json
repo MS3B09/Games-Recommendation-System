@@ -1,0 +1,32 @@
+{
+  "version": "owner-closeout-development-v40",
+  "scope": "Fresh exposed development for plain-answer text/card preservation. V39failed/interrupted turns preserved; original held-out fixtures unchanged.",
+  "development": [
+    {
+      "id": "D40P",
+      "turns": [
+        "Find Hades in the catalog. Report its recorded operating systems, play modes, and dated USD price.",
+        "In general, does an operating system absent from a catalog record prove that a game cannot run on that system today?"
+      ],
+      "checks": ["Canonical Hades facts and observation date agree", "Conceptual follow-up retains native wording without stale cards or previous summary", "No unsupported card/citation accepted"]
+    },
+    {
+      "id": "D40R",
+      "turns": [
+        "Ellis might join my gaming evening on Thursday. No spending limit has been agreed.",
+        "Move the evening to Monday. Ellis remains a tentative guest.",
+        "Recall the original day, corrected day, possible guest, and whether a budget was agreed."
+      ],
+      "checks": ["Thursday then Monday; Ellis tentative; budget unagreed", "No unsolicited game search or inferred hard filters"]
+    },
+    {
+      "id": "D40B",
+      "turns": [
+        "Save Windows, single-player and a recorded maximum of 21.25 USD inclusive as my normal requirements, and find up to four games.",
+        "For this request only, find Windows single-player games recorded strictly above 21.25 USD and no higher than 42.50 USD. Keep my normal requirements unchanged.",
+        "Find games under my saved normal requirements again and state my saved maximum price."
+      ],
+      "checks": ["Three actual searches with canonical cards", "Normal/restored2125; temporary2126–4250", "Saved normal maximum stated, not just searched", "Temporary overrides not persisted"]
+    }
+  ]
+}

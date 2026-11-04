@@ -1,0 +1,994 @@
+{
+  "schema_version": 1,
+  "status": "ok",
+  "measured_at": "2026-10-28T17:57:06.846805+00:00",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "python": "3.13.12",
+  "catalog_version": "m2-649714e8b26775165f105d02",
+  "encoder_catalog_version": "m2-649714e8b26775165f105d02",
+  "packages": {
+    "langchain-core": "1.7.0",
+    "langsmith": "0.14.12",
+    "langchain-protocol": "0.0.20",
+    "jsonpatch": "1.37",
+    "jsonpointer": "3.5"
+  },
+  "checks": [
+    "actual_pinned_encoder_loaded",
+    "bounded_interpret_request_0",
+    "reservation_matches_request_0",
+    "transport_bounds_0",
+    "greeting_at_most_two_calls",
+    "greeting_complete_stage_timings",
+    "greeting_no_games_or_retrieval",
+    "bounded_interpret_request_1",
+    "reservation_matches_request_1",
+    "transport_bounds_1",
+    "bounded_generate_request_2",
+    "reservation_matches_request_2",
+    "transport_bounds_2",
+    "multiplayer_at_most_two_calls",
+    "multiplayer_complete_stage_timings",
+    "multiplayer_canonical_card_105600",
+    "multiplayer_canonical_card_548430",
+    "multiplayer_semantic_used",
+    "multiplayer_cards_pass",
+    "bounded_interpret_request_3",
+    "reservation_matches_request_3",
+    "transport_bounds_3",
+    "bounded_generate_request_4",
+    "reservation_matches_request_4",
+    "transport_bounds_4",
+    "spider_variant_0_at_most_two_calls",
+    "spider_variant_0_complete_stage_timings",
+    "spider_variant_0_canonical_card_1817070",
+    "spider_identity_0",
+    "spider_mismatch_0",
+    "spider_memory_0",
+    "bounded_interpret_request_5",
+    "reservation_matches_request_5",
+    "transport_bounds_5",
+    "bounded_generate_request_6",
+    "reservation_matches_request_6",
+    "transport_bounds_6",
+    "spider_variant_1_at_most_two_calls",
+    "spider_variant_1_complete_stage_timings",
+    "spider_variant_1_canonical_card_1817070",
+    "spider_identity_1",
+    "spider_mismatch_1",
+    "spider_memory_1",
+    "bounded_interpret_request_7",
+    "reservation_matches_request_7",
+    "transport_bounds_7",
+    "bounded_generate_request_8",
+    "reservation_matches_request_8",
+    "transport_bounds_8",
+    "spider_variant_2_at_most_two_calls",
+    "spider_variant_2_complete_stage_timings",
+    "spider_variant_2_canonical_card_1817070",
+    "spider_identity_2",
+    "spider_mismatch_2",
+    "spider_memory_2",
+    "bounded_interpret_request_9",
+    "reservation_matches_request_9",
+    "transport_bounds_9",
+    "bounded_generate_request_10",
+    "reservation_matches_request_10",
+    "transport_bounds_10",
+    "spider_variant_3_at_most_two_calls",
+    "spider_variant_3_complete_stage_timings",
+    "spider_variant_3_canonical_card_1817070",
+    "spider_identity_3",
+    "spider_mismatch_3",
+    "spider_memory_3",
+    "bounded_interpret_request_11",
+    "reservation_matches_request_11",
+    "transport_bounds_11",
+    "bounded_generate_request_12",
+    "reservation_matches_request_12",
+    "transport_bounds_12",
+    "explicit_suitability_at_most_two_calls",
+    "explicit_suitability_complete_stage_timings",
+    "explicit_suitability_canonical_card_1817070",
+    "suitability_mismatch",
+    "bounded_interpret_request_13",
+    "reservation_matches_request_13",
+    "transport_bounds_13",
+    "bounded_generate_request_14",
+    "reservation_matches_request_14",
+    "transport_bounds_14",
+    "more_multiplayer_at_most_two_calls",
+    "more_multiplayer_complete_stage_timings",
+    "more_multiplayer_canonical_card_105600",
+    "more_multiplayer_canonical_card_548430",
+    "multiplayer_retained_after_facts",
+    "bounded_interpret_request_15",
+    "reservation_matches_request_15",
+    "transport_bounds_15",
+    "bounded_generate_request_16",
+    "reservation_matches_request_16",
+    "transport_bounds_16",
+    "played_position_at_most_two_calls",
+    "played_position_complete_stage_timings",
+    "played_position_canonical_card_548430",
+    "played_position_canonical_card_203160",
+    "played_exclusion_canonical",
+    "bounded_interpret_request_17",
+    "reservation_matches_request_17",
+    "transport_bounds_17",
+    "bounded_generate_request_18",
+    "reservation_matches_request_18",
+    "transport_bounds_18",
+    "played_still_inspectable_at_most_two_calls",
+    "played_still_inspectable_complete_stage_timings",
+    "played_still_inspectable_canonical_card_105600",
+    "excluded_fact_visible",
+    "bounded_interpret_request_19",
+    "reservation_matches_request_19",
+    "transport_bounds_19",
+    "bounded_generate_request_20",
+    "reservation_matches_request_20",
+    "transport_bounds_20",
+    "undo_exclusion_at_most_two_calls",
+    "undo_exclusion_complete_stage_timings",
+    "undo_exclusion_canonical_card_105600",
+    "undo_exclusion_canonical_card_548430",
+    "undo_only_chat_exclusion",
+    "bounded_interpret_request_21",
+    "reservation_matches_request_21",
+    "transport_bounds_21",
+    "bounded_generate_request_22",
+    "reservation_matches_request_22",
+    "transport_bounds_22",
+    "one_turn_price_platform_at_most_two_calls",
+    "one_turn_price_platform_complete_stage_timings",
+    "one_turn_price_platform_canonical_card_105600",
+    "one_turn_price_platform_canonical_card_203160",
+    "turn_conditions_not_persisted",
+    "turn_conditions_enforced",
+    "bounded_interpret_request_23",
+    "reservation_matches_request_23",
+    "transport_bounds_23",
+    "ori_ambiguity_at_most_two_calls",
+    "ori_ambiguity_complete_stage_timings",
+    "ori_options_and_unchanged_state",
+    "bounded_interpret_request_24",
+    "reservation_matches_request_24",
+    "transport_bounds_24",
+    "absent_title_at_most_two_calls",
+    "absent_title_complete_stage_timings",
+    "absence_is_catalog_only",
+    "bounded_interpret_request_25",
+    "reservation_matches_request_25",
+    "transport_bounds_25",
+    "bounded_generate_request_26",
+    "reservation_matches_request_26",
+    "transport_bounds_26",
+    "comparison_at_most_two_calls",
+    "comparison_complete_stage_timings",
+    "comparison_canonical_card_1817070",
+    "comparison_canonical_card_620",
+    "comparison_targets",
+    "bounded_interpret_request_27",
+    "reservation_matches_request_27",
+    "transport_bounds_27",
+    "bounded_generate_request_28",
+    "reservation_matches_request_28",
+    "transport_bounds_28",
+    "legacy_fact_at_most_two_calls",
+    "legacy_fact_complete_stage_timings",
+    "legacy_fact_canonical_card_1817070",
+    "legacy_conditions_not_active",
+    "bounded_interpret_request_29",
+    "reservation_matches_request_29",
+    "transport_bounds_29",
+    "legacy_recommendation_confirmation_at_most_two_calls",
+    "legacy_recommendation_confirmation_complete_stage_timings",
+    "legacy_confirmation_preserves_state",
+    "bounded_interpret_request_30",
+    "reservation_matches_request_30",
+    "transport_bounds_30",
+    "bounded_generate_request_31",
+    "reservation_matches_request_31",
+    "transport_bounds_31",
+    "unsupported_fit_no_selection_at_most_two_calls",
+    "unsupported_fit_no_selection_complete_stage_timings",
+    "rejection_not_absence",
+    "quota_denied_without_http",
+    "bounded_interpret_request_32",
+    "reservation_matches_request_32",
+    "transport_bounds_32",
+    "bounded_generate_request_33",
+    "reservation_matches_request_33",
+    "transport_bounds_33",
+    "existing_api_uses_new_title_path",
+    "api_preserves_legacy_state_shape",
+    "actual_api_throttle_retained",
+    "bounded_interpret_request_34",
+    "reservation_matches_request_34",
+    "transport_bounds_34",
+    "bounded_generate_request_35",
+    "reservation_matches_request_35",
+    "transport_bounds_35",
+    "warm_0_at_most_two_calls",
+    "warm_0_complete_stage_timings",
+    "warm_0_canonical_card_105600",
+    "warm_0_canonical_card_548430",
+    "main_results_identical_before_after",
+    "all_provider_attempts_are_mocked_and_metered",
+    "representative_probe_peak_below_400_mib"
+  ],
+  "check_count": 203,
+  "turns": [
+    {
+      "name": "greeting",
+      "mock_calls": 1,
+      "duration_ms": 69.815,
+      "stages_ms": {
+        "interpret": 8.675,
+        "remember": 1.085,
+        "retrieve": 2.279,
+        "evidence": 0.278,
+        "generate": 0.233,
+        "validate": 0.23
+      },
+      "selected_ids": [],
+      "outcome": null
+    },
+    {
+      "name": "multiplayer",
+      "mock_calls": 2,
+      "duration_ms": 1073.558,
+      "stages_ms": {
+        "interpret": 1.877,
+        "remember": 0.963,
+        "retrieve": 1043.807,
+        "evidence": 18.7,
+        "generate": 3.501,
+        "validate": 1.964
+      },
+      "selected_ids": [
+        105600,
+        548430
+      ],
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          105600,
+          548430,
+          203160,
+          892970,
+          620,
+          960090,
+          413150,
+          692850
+        ]
+      }
+    },
+    {
+      "name": "spider_variant_0",
+      "mock_calls": 2,
+      "duration_ms": 1004.798,
+      "stages_ms": {
+        "interpret": 380.53,
+        "remember": 0.582,
+        "retrieve": 617.612,
+        "evidence": 1.066,
+        "generate": 1.856,
+        "validate": 1.386
+      },
+      "selected_ids": [
+        1817070
+      ],
+      "outcome": {
+        "kind": "found_but_mismatch",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": [
+          1817070
+        ]
+      }
+    },
+    {
+      "name": "spider_variant_1",
+      "mock_calls": 2,
+      "duration_ms": 1065.043,
+      "stages_ms": {
+        "interpret": 451.827,
+        "remember": 0.713,
+        "retrieve": 607.049,
+        "evidence": 1.122,
+        "generate": 1.865,
+        "validate": 0.573
+      },
+      "selected_ids": [
+        1817070
+      ],
+      "outcome": {
+        "kind": "found_but_mismatch",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": [
+          1817070
+        ]
+      }
+    },
+    {
+      "name": "spider_variant_2",
+      "mock_calls": 2,
+      "duration_ms": 980.322,
+      "stages_ms": {
+        "interpret": 531.316,
+        "remember": 0.627,
+        "retrieve": 437.438,
+        "evidence": 5.762,
+        "generate": 2.436,
+        "validate": 0.612
+      },
+      "selected_ids": [
+        1817070
+      ],
+      "outcome": {
+        "kind": "found_but_mismatch",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": [
+          1817070
+        ]
+      }
+    },
+    {
+      "name": "spider_variant_3",
+      "mock_calls": 2,
+      "duration_ms": 765.034,
+      "stages_ms": {
+        "interpret": 311.679,
+        "remember": 1.154,
+        "retrieve": 445.807,
+        "evidence": 1.189,
+        "generate": 2.506,
+        "validate": 0.783
+      },
+      "selected_ids": [
+        1817070
+      ],
+      "outcome": {
+        "kind": "found_but_mismatch",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": [
+          1817070
+        ]
+      }
+    },
+    {
+      "name": "explicit_suitability",
+      "mock_calls": 2,
+      "duration_ms": 752.988,
+      "stages_ms": {
+        "interpret": 321.537,
+        "remember": 0.589,
+        "retrieve": 417.027,
+        "evidence": 2.188,
+        "generate": 8.941,
+        "validate": 0.736
+      },
+      "selected_ids": [
+        1817070
+      ],
+      "outcome": {
+        "kind": "found_but_mismatch",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": [
+          1817070
+        ]
+      }
+    },
+    {
+      "name": "more_multiplayer",
+      "mock_calls": 2,
+      "duration_ms": 900.009,
+      "stages_ms": {
+        "interpret": 325.661,
+        "remember": 0.99,
+        "retrieve": 540.614,
+        "evidence": 21.111,
+        "generate": 8.675,
+        "validate": 0.788
+      },
+      "selected_ids": [
+        105600,
+        548430
+      ],
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          105600,
+          548430,
+          892970,
+          203160,
+          620,
+          960090,
+          413150,
+          692850
+        ]
+      }
+    },
+    {
+      "name": "played_position",
+      "mock_calls": 2,
+      "duration_ms": 1755.816,
+      "stages_ms": {
+        "interpret": 321.011,
+        "remember": 788.768,
+        "retrieve": 609.813,
+        "evidence": 28.271,
+        "generate": 4.431,
+        "validate": 1.223
+      },
+      "selected_ids": [
+        548430,
+        203160
+      ],
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          548430,
+          203160,
+          892970,
+          620,
+          960090,
+          413150,
+          692850,
+          570
+        ]
+      }
+    },
+    {
+      "name": "played_still_inspectable",
+      "mock_calls": 2,
+      "duration_ms": 1104.452,
+      "stages_ms": {
+        "interpret": 322.714,
+        "remember": 336.726,
+        "retrieve": 439.367,
+        "evidence": 1.025,
+        "generate": 2.05,
+        "validate": 0.679
+      },
+      "selected_ids": [
+        105600
+      ],
+      "outcome": {
+        "kind": "found_but_mismatch",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": [
+          105600
+        ]
+      }
+    },
+    {
+      "name": "undo_exclusion",
+      "mock_calls": 2,
+      "duration_ms": 1415.07,
+      "stages_ms": {
+        "interpret": 324.04,
+        "remember": 395.376,
+        "retrieve": 670.111,
+        "evidence": 11.359,
+        "generate": 6.582,
+        "validate": 3.545
+      },
+      "selected_ids": [
+        105600,
+        548430
+      ],
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          105600,
+          548430,
+          203160,
+          892970,
+          620,
+          960090,
+          413150,
+          692850
+        ]
+      }
+    },
+    {
+      "name": "one_turn_price_platform",
+      "mock_calls": 2,
+      "duration_ms": 973.521,
+      "stages_ms": {
+        "interpret": 340.445,
+        "remember": 0.848,
+        "retrieve": 612.922,
+        "evidence": 12.6,
+        "generate": 2.866,
+        "validate": 0.673
+      },
+      "selected_ids": [
+        105600,
+        203160
+      ],
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          105600,
+          203160,
+          620,
+          960090,
+          413150,
+          570,
+          440,
+          632360
+        ]
+      }
+    },
+    {
+      "name": "ori_ambiguity",
+      "mock_calls": 1,
+      "duration_ms": 822.499,
+      "stages_ms": {
+        "interpret": 350.832,
+        "remember": 0.628,
+        "retrieve": 467.733,
+        "evidence": 0.537,
+        "generate": 0.531,
+        "validate": 0.48
+      },
+      "selected_ids": [],
+      "outcome": {
+        "kind": "ambiguous",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": [
+          261570,
+          387290
+        ]
+      }
+    },
+    {
+      "name": "absent_title",
+      "mock_calls": 1,
+      "duration_ms": 353.004,
+      "stages_ms": {
+        "interpret": 3.65,
+        "remember": 1.377,
+        "retrieve": 343.133,
+        "evidence": 0.848,
+        "generate": 0.345,
+        "validate": 0.49
+      },
+      "selected_ids": [],
+      "outcome": {
+        "kind": "not_in_catalog",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": []
+      }
+    },
+    {
+      "name": "comparison",
+      "mock_calls": 2,
+      "duration_ms": 1138.274,
+      "stages_ms": {
+        "interpret": 328.863,
+        "remember": 1.479,
+        "retrieve": 782.763,
+        "evidence": 3.532,
+        "generate": 8.707,
+        "validate": 7.566
+      },
+      "selected_ids": [
+        1817070,
+        620
+      ],
+      "outcome": {
+        "kind": "found_but_mismatch",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": [
+          1817070,
+          620
+        ]
+      }
+    },
+    {
+      "name": "legacy_fact",
+      "mock_calls": 2,
+      "duration_ms": 768.473,
+      "stages_ms": {
+        "interpret": 340.54,
+        "remember": 0.751,
+        "retrieve": 417.412,
+        "evidence": 1.445,
+        "generate": 4.067,
+        "validate": 2.04
+      },
+      "selected_ids": [
+        1817070
+      ],
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": [
+          1817070
+        ]
+      }
+    },
+    {
+      "name": "legacy_recommendation_confirmation",
+      "mock_calls": 1,
+      "duration_ms": 324.637,
+      "stages_ms": {
+        "interpret": 321.87,
+        "remember": 0.363,
+        "retrieve": 0.243,
+        "evidence": 0.251,
+        "generate": 0.244,
+        "validate": 0.274
+      },
+      "selected_ids": [],
+      "outcome": null
+    },
+    {
+      "name": "unsupported_fit_no_selection",
+      "mock_calls": 2,
+      "duration_ms": 856.134,
+      "stages_ms": {
+        "interpret": 2.037,
+        "remember": 0.668,
+        "retrieve": 826.05,
+        "evidence": 20.327,
+        "generate": 2.892,
+        "validate": 1.253
+      },
+      "selected_ids": [],
+      "outcome": {
+        "kind": "no_recommendation_match",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          1151640,
+          304430,
+          582010,
+          108600,
+          1091500,
+          1086940,
+          620,
+          387290
+        ]
+      }
+    },
+    {
+      "name": "warm_0",
+      "mock_calls": 2,
+      "duration_ms": 1032.245,
+      "stages_ms": {
+        "interpret": 318.817,
+        "remember": 1.259,
+        "retrieve": 676.56,
+        "evidence": 27.457,
+        "generate": 3.272,
+        "validate": 0.877
+      },
+      "selected_ids": [
+        105600,
+        548430
+      ],
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          105600,
+          548430,
+          203160,
+          892970,
+          620,
+          960090,
+          413150,
+          692850
+        ]
+      }
+    }
+  ],
+  "mock_http_requests": [
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5593,
+      "mock_reserved_tokens": 6873
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5596,
+      "mock_reserved_tokens": 6876
+    },
+    {
+      "stage": "generate",
+      "input_json_bytes": 11591,
+      "mock_reserved_tokens": 12871
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5818,
+      "mock_reserved_tokens": 7098
+    },
+    {
+      "stage": "generate",
+      "input_json_bytes": 5541,
+      "mock_reserved_tokens": 6821
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5821,
+      "mock_reserved_tokens": 7101
+    },
+    {
+      "stage": "generate",
+      "input_json_bytes": 5541,
+      "mock_reserved_tokens": 6821
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5821,
+      "mock_reserved_tokens": 7101
+    },
+    {
+      "stage": "generate",
+      "input_json_bytes": 5541,
+      "mock_reserved_tokens": 6821
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5821,
+      "mock_reserved_tokens": 7101
+    },
+    {
+      "stage": "generate",
+      "input_json_bytes": 5541,
+      "mock_reserved_tokens": 6821
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5825,
+      "mock_reserved_tokens": 7105
+    },
+    {
+      "stage": "generate",
+      "input_json_bytes": 5543,
+      "mock_reserved_tokens": 6823
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5821,
+      "mock_reserved_tokens": 7101
+    },
+    {
+      "stage": "generate",
+      "input_json_bytes": 11601,
+      "mock_reserved_tokens": 12881
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5822,
+      "mock_reserved_tokens": 7102
+    },
+    {
+      "stage": "generate",
+      "input_json_bytes": 11653,
+      "mock_reserved_tokens": 12933
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5846,
+      "mock_reserved_tokens": 7126
+    },
+    {
+      "stage": "generate",
+      "input_json_bytes": 5396,
+      "mock_reserved_tokens": 6676
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5771,
+      "mock_reserved_tokens": 7051
+    },
+    {
+      "stage": "generate",
+      "input_json_bytes": 11594,
+      "mock_reserved_tokens": 12874
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5825,
+      "mock_reserved_tokens": 7105
+    },
+    {
+      "stage": "generate",
+      "input_json_bytes": 11524,
+      "mock_reserved_tokens": 12804
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5815,
+      "mock_reserved_tokens": 7095
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5597,
+      "mock_reserved_tokens": 6877
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5812,
+      "mock_reserved_tokens": 7092
+    },
+    {
+      "stage": "generate",
+      "input_json_bytes": 6872,
+      "mock_reserved_tokens": 8152
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5707,
+      "mock_reserved_tokens": 6987
+    },
+    {
+      "stage": "generate",
+      "input_json_bytes": 5335,
+      "mock_reserved_tokens": 6615
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5730,
+      "mock_reserved_tokens": 7010
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5613,
+      "mock_reserved_tokens": 6893
+    },
+    {
+      "stage": "generate",
+      "input_json_bytes": 11233,
+      "mock_reserved_tokens": 12513
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5606,
+      "mock_reserved_tokens": 6886
+    },
+    {
+      "stage": "generate",
+      "input_json_bytes": 5347,
+      "mock_reserved_tokens": 6627
+    },
+    {
+      "stage": "interpret",
+      "input_json_bytes": 5808,
+      "mock_reserved_tokens": 7088
+    },
+    {
+      "stage": "generate",
+      "input_json_bytes": 11586,
+      "mock_reserved_tokens": 12866
+    }
+  ],
+  "mock_reservation_attempts": 37,
+  "mock_denied_reservations": 1,
+  "maximum_mock_reserved_tokens": 12933,
+  "main_result_ids": [
+    107100,
+    311690,
+    237930,
+    113200
+  ],
+  "timing": {
+    "fresh_process_core_domain_import_ms": 3613.3355998899788,
+    "encoder_load_ms": 1615.6497998163104,
+    "graph_build_ms": 0.23639993742108345,
+    "warm_samples": 1,
+    "mocked_total_median_ms": 1032.245,
+    "mocked_total_p95_ms": 1032.245,
+    "outside_stage_p95_ms": 4.002999999999929,
+    "probe_peak_rss_mib": 252.42578125
+  },
+  "scope": "Actual restricted catalog/encoder and existing API; scripted provider JSON, HTTP and budget. No throttle bypass. Not answer quality or held-out evaluation.",
+  "live_provider_calls": 0,
+  "actual_quota_reservations": 0,
+  "database_writes": 0,
+  "browser_checks": false,
+  "public_v2_integration": "Historical R2 scope; see separate R3 browser/API evidence"
+}

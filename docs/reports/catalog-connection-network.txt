@@ -1,0 +1,10 @@
+6. [POST] http://127.0.0.1:8001/api/v1/games/resolve => [FAILED] net::ERR_CONNECTION_REFUSED
+7. [GET] http://127.0.0.1:8001/api/v1/facets => [FAILED] net::ERR_CONNECTION_REFUSED
+8. [POST] http://127.0.0.1:8001/api/v1/games/resolve => [200] OK
+9. [GET] http://127.0.0.1:8001/api/v1/facets => [200] OK
+15. [POST] http://127.0.0.1:8001/api/v1/games/resolve => [200] OK
+16. [GET] http://127.0.0.1:8001/api/v1/facets => [200] OK
+17. [GET] http://127.0.0.1:8001/api/v1/games?q=Portal&limit=12 => [200] OK
+20. [POST] http://127.0.0.1:8001/api/v1/discover => [200] OK
+
+Note: 17 static requests not shown, run with "static" option to see them.

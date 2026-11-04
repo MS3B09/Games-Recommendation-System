@@ -1,0 +1,519 @@
+{
+  "at": "2026-11-03T08:10:34.808198+00:00",
+  "owner_baseline_receipt": "groq-owner-allowance-2026-11-03.json",
+  "attempts": 13,
+  "http200_deliveries": 9,
+  "not_quality_passes": true,
+  "provider_reservations": 34,
+  "provider_statuses": {
+    "400": 9,
+    "200": 24,
+    "429": 1
+  },
+  "usage_bound": 169836,
+  "combined_next": 209676,
+  "receipt": {
+    "at": "2026-11-03T08:10:33.765943+00:00",
+    "day": "2026-11-03",
+    "effective_calls": 34,
+    "effective_units": 375679,
+    "remaining_calls": 66,
+    "remaining_units": 1124321
+  },
+  "archives": [
+    {
+      "journal": "assistant-closeout-discovery-development-v45.json",
+      "case": "D04",
+      "status": 404
+    },
+    {
+      "journal": "assistant-closeout-discovery-development-v45.json",
+      "case": "D05",
+      "status": 404
+    },
+    {
+      "journal": "assistant-closeout-discovery-development-v45.json",
+      "case": "D06",
+      "status": 404
+    },
+    {
+      "journal": "assistant-closeout-discovery-development-v45.json",
+      "case": "D07",
+      "status": 404
+    },
+    {
+      "journal": "assistant-closeout-discovery-development-v45.json",
+      "case": "D08",
+      "status": 404
+    },
+    {
+      "journal": "assistant-closeout-discovery-development-v45.json",
+      "case": "D09",
+      "status": 404
+    },
+    {
+      "journal": "assistant-closeout-discovery-development-v45.json",
+      "case": "D10",
+      "status": 404
+    },
+    {
+      "journal": "assistant-closeout-discovery-development-v46.json",
+      "case": "D46F",
+      "status": 404
+    },
+    {
+      "journal": "assistant-closeout-discovery-development-v46.json",
+      "case": "D46X",
+      "status": 404
+    },
+    {
+      "journal": "assistant-closeout-discovery-development-v46.json",
+      "case": "D46M",
+      "status": 404
+    },
+    {
+      "journal": "assistant-closeout-discovery-development-v47.json",
+      "case": "D47F",
+      "status": 404
+    },
+    {
+      "journal": "assistant-closeout-discovery-development-v47.json",
+      "case": "D47X",
+      "status": 404
+    },
+    {
+      "journal": "assistant-closeout-discovery-development-v47.json",
+      "case": "D47M",
+      "status": 404
+    }
+  ],
+  "v47_canonical_card_comparisons": 1,
+  "card_mismatches": 0,
+  "current_source_matches": true,
+  "v47_findings": {
+    "D47F": "Meaningful recommend_games query, mac/1700 filters and canonical Stardew card correct. Removed mac:true display; private unsupported_claims empty. Farming-simulation/work-the-land paraphrases not wholly established by supplied 100-character excerpt; no full-grounding pass.",
+    "D47X": "FAIL: sequential title resolution, then malformed lookup_titles scope argument; no final recommendation, no persistent preference commit.",
+    "D47M": "Provider429 on third-call review after actual filtered exploration search and an undelivered draft with unsupported mechanics/quotes. No final reply or preference commit; never replay."
+  },
+  "v46_findings": {
+    "D46F": "FAIL: two literal keyword searches instead of semantic discovery, rejected final numeric claim.",
+    "D46X": "FAIL: only Cuphead resolved; no recommendation; false alternatives-absence statement delivered.",
+    "D46M": "FAIL: literal keyword lookup then malformed game_details game_id argument; no final reply."
+  },
+  "provider_headers": [
+    {
+      "at": "2026-11-03T07:45:06.618219+00:00",
+      "status": 400,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "999",
+        "x-ratelimit-reset-requests": "1m26.4s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "5643",
+        "x-ratelimit-reset-tokens": "17.677s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:45:09.247599+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "998",
+        "x-ratelimit-reset-requests": "2m52.8s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "3039",
+        "x-ratelimit-reset-tokens": "37.207s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:45:11.138212+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "997",
+        "x-ratelimit-reset-requests": "4m19.2s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "727",
+        "x-ratelimit-reset-tokens": "54.547s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:46:10.106915+00:00",
+      "status": 400,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "996",
+        "x-ratelimit-reset-requests": "5m45.6s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "5726",
+        "x-ratelimit-reset-tokens": "17.055s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:46:11.957152+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "995",
+        "x-ratelimit-reset-requests": "7m12s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "3524",
+        "x-ratelimit-reset-tokens": "33.57s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:46:13.758877+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "994",
+        "x-ratelimit-reset-requests": "8m38.4s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "2009",
+        "x-ratelimit-reset-tokens": "44.932s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:47:14.057303+00:00",
+      "status": 400,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "993",
+        "x-ratelimit-reset-requests": "10m4.8s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "5616",
+        "x-ratelimit-reset-tokens": "17.88s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:47:17.269172+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "992",
+        "x-ratelimit-reset-requests": "11m31.2s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "3330",
+        "x-ratelimit-reset-tokens": "35.025s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:47:18.667004+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "991",
+        "x-ratelimit-reset-requests": "12m57.599s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "1213",
+        "x-ratelimit-reset-tokens": "50.902s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:48:18.446978+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "990",
+        "x-ratelimit-reset-requests": "14m24s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "5788",
+        "x-ratelimit-reset-tokens": "16.59s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:48:20.736666+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "989",
+        "x-ratelimit-reset-requests": "15m50.4s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "3492",
+        "x-ratelimit-reset-tokens": "33.81s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:48:22.566126+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "988",
+        "x-ratelimit-reset-requests": "17m16.8s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "873",
+        "x-ratelimit-reset-tokens": "53.452s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:49:22.839856+00:00",
+      "status": 400,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "987",
+        "x-ratelimit-reset-requests": "18m43.2s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "5510",
+        "x-ratelimit-reset-tokens": "18.675s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:49:25.757918+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "986",
+        "x-ratelimit-reset-requests": "20m9.6s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "2670",
+        "x-ratelimit-reset-tokens": "39.975s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:49:28.058285+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "985",
+        "x-ratelimit-reset-requests": "21m36s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "127",
+        "x-ratelimit-reset-tokens": "59.047s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:50:28.071510+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "984",
+        "x-ratelimit-reset-requests": "23m2.4s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "5731",
+        "x-ratelimit-reset-tokens": "17.017s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:50:29.786732+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "983",
+        "x-ratelimit-reset-requests": "24m28.8s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "4256",
+        "x-ratelimit-reset-tokens": "28.08s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:51:32.594938+00:00",
+      "status": 400,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "982",
+        "x-ratelimit-reset-requests": "25m55.199s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "5520",
+        "x-ratelimit-reset-tokens": "18.6s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:51:34.344382+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "981",
+        "x-ratelimit-reset-requests": "27m21.6s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "2987",
+        "x-ratelimit-reset-tokens": "37.597s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:57:48.231619+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "984",
+        "x-ratelimit-reset-requests": "23m2.4s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "5481",
+        "x-ratelimit-reset-tokens": "18.892s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:57:49.851435+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "983",
+        "x-ratelimit-reset-requests": "24m28.8s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "3341",
+        "x-ratelimit-reset-tokens": "34.942s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:57:51.901735+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "982",
+        "x-ratelimit-reset-requests": "25m55.199s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "1591",
+        "x-ratelimit-reset-tokens": "48.067s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:58:52.941160+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "981",
+        "x-ratelimit-reset-requests": "27m21.6s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "5827",
+        "x-ratelimit-reset-tokens": "16.297s"
+      }
+    },
+    {
+      "at": "2026-11-03T07:58:54.841269+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "980",
+        "x-ratelimit-reset-requests": "28m48s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "3542",
+        "x-ratelimit-reset-tokens": "33.435s"
+      }
+    },
+    {
+      "at": "2026-11-03T08:00:16.290232+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "979",
+        "x-ratelimit-reset-requests": "30m14.4s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "5458",
+        "x-ratelimit-reset-tokens": "19.064s"
+      }
+    },
+    {
+      "at": "2026-11-03T08:00:18.052392+00:00",
+      "status": 400,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "978",
+        "x-ratelimit-reset-requests": "31m40.8s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "3362",
+        "x-ratelimit-reset-tokens": "34.785s"
+      }
+    },
+    {
+      "at": "2026-11-03T08:05:07.108844+00:00",
+      "status": 400,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "980",
+        "x-ratelimit-reset-requests": "28m48s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "5614",
+        "x-ratelimit-reset-tokens": "17.895s"
+      }
+    },
+    {
+      "at": "2026-11-03T08:05:09.437620+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "979",
+        "x-ratelimit-reset-requests": "30m14.4s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "2788",
+        "x-ratelimit-reset-tokens": "39.09s"
+      }
+    },
+    {
+      "at": "2026-11-03T08:05:10.817407+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "978",
+        "x-ratelimit-reset-requests": "31m40.8s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "349",
+        "x-ratelimit-reset-tokens": "57.382s"
+      }
+    },
+    {
+      "at": "2026-11-03T08:06:09.949665+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "977",
+        "x-ratelimit-reset-requests": "33m7.2s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "5709",
+        "x-ratelimit-reset-tokens": "17.182s"
+      }
+    },
+    {
+      "at": "2026-11-03T08:06:11.719278+00:00",
+      "status": 400,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "976",
+        "x-ratelimit-reset-requests": "34m33.6s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "3514",
+        "x-ratelimit-reset-tokens": "33.644s"
+      }
+    },
+    {
+      "at": "2026-11-03T08:07:14.826948+00:00",
+      "status": 400,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "975",
+        "x-ratelimit-reset-requests": "36m0s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "5652",
+        "x-ratelimit-reset-tokens": "17.61s"
+      }
+    },
+    {
+      "at": "2026-11-03T08:07:17.527835+00:00",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "974",
+        "x-ratelimit-reset-requests": "37m26.4s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "2857",
+        "x-ratelimit-reset-tokens": "38.572s"
+      }
+    },
+    {
+      "at": "2026-11-03T08:07:18.311118+00:00",
+      "status": 429,
+      "headers": {
+        "retry-after": "2",
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-remaining-requests": "974",
+        "x-ratelimit-reset-requests": "37m26.4s",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-tokens": "2936",
+        "x-ratelimit-reset-tokens": "37.98s"
+      }
+    }
+  ],
+  "human_scores": null,
+  "inference_calls_during_audit": 0,
+  "source_changes_after_last_live_turn": false,
+  "remaining_heldout_turns": 62,
+  "further_development_required_before_heldout": true
+}

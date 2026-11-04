@@ -1,8 +1,10 @@
 # M2 discovery extension
 
+> **Historical M2 engineering/presentation record — superseded visual guidance (2026-10-18).** The exact existing Current page is now the sole official design: [DESIGN.md](../../DESIGN.md), [selected source](../../frontend/CURRENT_ORIGINAL.md). The integrated UI files and old frontend smoke scripts described below have been removed locally; this document preserves dated M2 behavior, provenance and verification evidence, not an active alternative or current command guide. Hosted M2 remains owner-confirmed and unchanged. The official local frontend is frozen/no-API/no-persistence; live reconnection and M3 guest UI are pending. M3 was subsequently authorized and is incomplete; earlier authorization/status statements below are historical.
+
 ## Overview
 
-**Status: M2 complete.** This records the implemented M2 discovery surface, an ordinary extension of the M1 foundation. The owner approved preserving the dark Manrope/parchment system and the precise composition: favorite selection and filters beside image-rich results, stacked on mobile. Mode: Operate. The direction contract is [the discovery surface brief](../../.impeccable/surfaces/frontend-src-discovery-tsx.md).
+**Historical status: M2 complete.** This records the then-implemented M2 discovery surface, an ordinary extension of the M1 foundation. The owner approved preserving the dark Manrope/parchment system and the precise composition: favorite selection and filters beside image-rich results, stacked on mobile. Mode: Operate. The superseded discovery surface brief has been removed; the [official Current surface brief](../../.impeccable/surfaces/frontend-src-current-original-tsx.md) governs the selected page.
 
 This document describes component and presentation behavior. Hosted M2 verification is owner-confirmed; the [passed clean-database replay and retained evidence](../reports/m2-clean-replay.md) close the final M2 gate. Browser-local persistence and feedback belong to M3, conversational discovery to M4, and final branding remains unresolved. Current selections are in component memory and disappear on navigation away or reload. M3 remains unstarted and requires explicit approval.
 

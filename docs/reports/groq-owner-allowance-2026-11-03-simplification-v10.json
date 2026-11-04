@@ -1,0 +1,23 @@
+{
+  "basis": "Owner supplied fresh November3 Activity screenshots with Resume:67requests;157.6K total tokens;5.1K cached input;138.1K uncached input;14.4K output",
+  "receipt_kind": "Fresh owner dashboard evidence, not independent dashboard authentication or a provider reset timestamp",
+  "scope_assumption": "Same configured organization/model and all-projects UTC scope as prior receipts; screenshot selectors not independently verified",
+  "reconciliation": "67 successful responses/157601 known reported tokens match rounded dashboard counts. Fresh SQL remains84calls/894986units; no intervening owned inference observed. Two earlier provider400 missing usages/reservations remain preserved, not estimated as zero.",
+  "sql_at": "2026-11-03T18:15:57.331314+00:00",
+  "effective_calls": 84,
+  "effective_reserved_units": 894986,
+  "remaining_calls": 16,
+  "remaining_reserved_units": 605014,
+  "provider_usage_baseline_upper_bound": 158000,
+  "baseline_policy": "Fresh owner snapshot supersedes the earlier planning bound only, using the existing receipt policy. Historical usage and original missing-usage reservations stay immutable; do not double count old calls or claim missing usages are zero. Cached tokens included conservatively.",
+  "subsequent_usage_rule": "Add each later reported total or original reservation if missing, plus unchanged39840 next-turn reserve. Require fresh SQL and source/configuration reconciliation before every turn; stop on unexplained activity or provider limit.",
+  "next_turn_reserve": 39840,
+  "initial_planning_total": 197840,
+  "planning_ceiling": 200000,
+  "pre_resume_journal_sha256": "19ed7f8ec9d1f1adfc955b1becf15dddfc2e3fb8f5da214d311e6125cc0154e3",
+  "source_configuration_matches": true,
+  "next_only": "Fresh v10 S3V turn1, then inspect actual result/usage before any further turn",
+  "reset_inferred": false,
+  "external_organization_activity_after_receipt_not_observable": true,
+  "paid_upgrade": false
+}

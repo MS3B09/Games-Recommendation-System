@@ -1,0 +1,32 @@
+{
+  "version": "owner-closeout-development-v25",
+  "scope": "Fresh exposed development regressions for model-selected tool-batch readiness. Earlier v22-v24 failures and skips are retained. Original held-out capability cases remain in dialogue-v12.json, unchanged and unattempted.",
+  "development": [
+    {
+      "id": "D25B",
+      "turns": [
+        "Please keep Windows, single-player, and a normal recorded price limit of 13 USD inclusive. Could you recommend up to four choices?",
+        "Only for the next search, show Windows single-player options with recorded prices above 13 USD and at most 26 USD. Do not save this exception over my normal limit.",
+        "Now return to my normal conditions, search again, and remind me of the usual price limit."
+      ],
+      "checks": ["Initial/restored inclusive maximum1300; temporary minimum1301 and maximum2600", "Normal Windows/single-player/1300 saved; temporary search does not overwrite it", "Temporary cards include a previously ineligible recorded price", "All selected cards and every factual claim match delivered evidence", "Capture actual call counts and provider headers; finish remains model-selected, not forced by fixture"]
+    },
+    {
+      "id": "D25P",
+      "turns": [
+        "Please bring up Bloons TD 6 and give its recorded operating systems, play modes and dated USD price.",
+        "Does that establish that the game is incompatible with an operating system your record does not list?"
+      ],
+      "checks": ["Actual ID960090 record independently verified before inference", "Exact recorded modes/platforms/price/date", "Natural catalog-only uncertainty without internal protocol flags"]
+    },
+    {
+      "id": "D25R",
+      "turns": [
+        "My cousin Jordan might join my gaming evening on Saturday. We have not agreed a budget.",
+        "Change the gaming evening to Tuesday. Jordan is still a possible participant.",
+        "What were the original and replacement days, who might be joining, and did we agree a spending limit?"
+      ],
+      "checks": ["Saturday then Tuesday, cousin Jordan tentative, no agreed budget", "No inferred hard filters or unrequested catalog access", "Short recall only; not long-memory acceptance"]
+    }
+  ]
+}

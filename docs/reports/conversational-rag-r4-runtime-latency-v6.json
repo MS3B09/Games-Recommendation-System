@@ -1,0 +1,4974 @@
+{
+  "schema_version": 1,
+  "mode": "runtime_latency_only",
+  "status": "completed",
+  "started_at": "2026-10-26T17:39:32.558012+00:00",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "python": "3.13.12",
+  "dataset_sha256": "7a37df211eb815b70162828cae73a8112a29d2b179de59270dd14e89e7405fda",
+  "manifest_sha256": "1ca0d71decd7314401a18f31121406cb14ab10b725ee63f23381b3bfa97affc2",
+  "policy_sha256": "240ec16a7d7ec3c8e223af58df356c80d1ecc445938e33c2566fb08286c66b0e",
+  "evaluator_sha256": "c3d760470c0ee3f6c02473f80f333f4a204f56986fe8d3681bde3e45165da337",
+  "adapter_sha256": "45dfbd782f5b032de50c54b3b987bbb8e0c1329dc46467a27a79aef7227df92b",
+  "serving_source_sha256": {
+    "backend\\src\\game_discovery\\ai\\__init__.py": "139967ec6d9917e9b36bdebb0623d329ec0fc27b7f091332105bcc8ba7c95fb6",
+    "backend\\src\\game_discovery\\ai\\chat.py": "32bc1ccc5b811ec71431bd1ac78ad04994623e2dba2332ac49b342aed23fd1d0",
+    "backend\\src\\game_discovery\\ai\\chat_contracts.py": "2114c3df59384e207cac937528ef943c473bd359a242a9009a7d566b99481ae2",
+    "backend\\src\\game_discovery\\ai\\chat_evidence.py": "ab1620af49cf5bb1943fb1508d56352abab024c8e9a43be66c57970442a066a5",
+    "backend\\src\\game_discovery\\ai\\chat_explicit.py": "3373615883149ae91753b3ea75f9d46dd8952de6d2bc3d508684f5a09c13e722",
+    "backend\\src\\game_discovery\\ai\\chat_memory.py": "108e7b3bf9f7a8a4526e744babd8339927495b760784a1c7d21a211e4ea320ce",
+    "backend\\src\\game_discovery\\ai\\interpretation.py": "433b059c5a2c21d4eafb5a7849fc1819ff3b8303c105c3248a41a966a0605eb3",
+    "backend\\src\\game_discovery\\ai\\provider.py": "f950e921c83f22ac57d47a745775c84a21d447ee52183683992e89c2e992b464",
+    "backend\\src\\game_discovery\\ai\\rag.py": "eceaa1ca0e21f71d785aff27b9ff2b6265cfaed9ce4dcf82e120d9235321e8b7",
+    "backend\\src\\game_discovery\\retrieval\\__init__.py": "b18830a0dca2a2b4cfe1e86337f60b67fcd8cdd702ae5cd8e5f3e6789fc816b8",
+    "backend\\src\\game_discovery\\retrieval\\chat.py": "cd2153bb791e809733e0b969ac8bb205ef9496074fd66f87b431c432328328c7",
+    "backend\\src\\game_discovery\\retrieval\\contracts.py": "ff78d4a38548d5bb7acf31ce9757b9dd56b7b121909a6d2f08b8f40863d8378f",
+    "backend\\src\\game_discovery\\retrieval\\encoder.py": "c087dd7bd6ae1c35ba7bf48c86cb5b68f2715c6f2ab62329ed91bfe4b638a8fb",
+    "backend\\src\\game_discovery\\retrieval\\query.py": "54f2efd1508e498a8d1a958b22b2f9f3864a151ebf6678a08e869d73f79551f8",
+    "backend\\src\\game_discovery\\retrieval\\titles.py": "a64ecf1760a472242149bafd200900d06a9b15db85c4d899211581676a40fe96",
+    "backend\\src\\game_discovery\\catalog\\__init__.py": "ebc3cce73d17f8f1581a6a8492d3cb796836b937ce0486dc61f8b38b732d5ffc",
+    "backend\\src\\game_discovery\\catalog\\contracts.py": "4aede57fca358d3dd2f4c1e053a315bd2a2977c9cb9ea30b5896406a11d494d9",
+    "backend\\src\\game_discovery\\catalog\\discovery.py": "6f11e2f7e838a2559e0f3fda4dc7b7ba8f288b4d9a94d77db9023e280a8b0f78",
+    "backend\\src\\game_discovery\\catalog\\eligibility.py": "b13ebacd8354f0961f6d86e03c158c9847cddfed242e4a9fc44e154da978b4ac",
+    "backend\\src\\game_discovery\\catalog\\repository.py": "5ee23ed09ee983ce1cf9f6d3980b1a54acea76f48115b130d788456a8c5a465d",
+    "backend\\src\\game_discovery\\db\\__init__.py": "736556f80caf3fa5d37d52384665404fd0a1b637d18e7facf0661830f6e5eb2a",
+    "backend\\src\\game_discovery\\db\\engine.py": "276d962a295c910ed44467608c339ca3a46a1ce591beabf21adad9a0269753f7",
+    "backend\\src\\game_discovery\\db\\migrate.py": "fd386a58a10749f6291da865df720927e647bb8d5e6c9151fb7e5164cadfc996",
+    "backend\\src\\game_discovery\\db\\readiness.py": "0e5a661dc7bf8c14302cbe286968f981e5abf802e1ab13c0e5fe95b9c730b82c"
+  },
+  "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+  "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "methods": [
+    "proposed",
+    "semantic_top5"
+  ],
+  "records": [
+    {
+      "pass": 1,
+      "case_id": "T02",
+      "turn": 1,
+      "method": "proposed",
+      "warm": false,
+      "status": "ok",
+      "ranked_ids": [
+        1817070
+      ],
+      "total_ms": 881.6981001291424,
+      "stage_ms": {
+        "interpret": 1.694,
+        "remember": 1.657,
+        "retrieve": 340.249,
+        "evidence": 2.005,
+        "generate": 0.73,
+        "validate": 20.406
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 1,
+      "case_id": "T02",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": false,
+      "status": "ok",
+      "ranked_ids": [
+        1817070,
+        1091500,
+        582010,
+        435150,
+        203160
+      ],
+      "total_ms": 510.81210002303123,
+      "stage_ms": {
+        "interpret": 1.266,
+        "remember": 1.347,
+        "retrieve": 493.045,
+        "evidence": 8.761,
+        "generate": 0.364,
+        "validate": 0.806
+      },
+      "encoding_ms": [
+        90.43620014563203
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "T03",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1817070,
+        1091500,
+        582010,
+        435150,
+        203160
+      ],
+      "total_ms": 361.6852001287043,
+      "stage_ms": {
+        "interpret": 0.936,
+        "remember": 1.169,
+        "retrieve": 350.237,
+        "evidence": 4.661,
+        "generate": 0.641,
+        "validate": 1.502
+      },
+      "encoding_ms": [
+        24.714000057429075
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "T03",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1817070
+      ],
+      "total_ms": 374.0175999701023,
+      "stage_ms": {
+        "interpret": 1.057,
+        "remember": 1.656,
+        "retrieve": 365.829,
+        "evidence": 2.131,
+        "generate": 0.318,
+        "validate": 0.544
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 1,
+      "case_id": "T05",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1086940
+      ],
+      "total_ms": 351.5385000500828,
+      "stage_ms": {
+        "interpret": 1.159,
+        "remember": 0.806,
+        "retrieve": 345.13,
+        "evidence": 1.382,
+        "generate": 0.345,
+        "validate": 0.611
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 1,
+      "case_id": "T05",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1086940,
+        435150,
+        387290,
+        1151640,
+        261570
+      ],
+      "total_ms": 387.62310007587075,
+      "stage_ms": {
+        "interpret": 0.475,
+        "remember": 1.282,
+        "retrieve": 379.625,
+        "evidence": 2.685,
+        "generate": 0.649,
+        "validate": 1.063
+      },
+      "encoding_ms": [
+        16.513200011104345
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "T06",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        632360,
+        113200,
+        1091500,
+        413150,
+        387290
+      ],
+      "total_ms": 356.055699987337,
+      "stage_ms": {
+        "interpret": 0.634,
+        "remember": 1.038,
+        "retrieve": 349.522,
+        "evidence": 2.126,
+        "generate": 0.281,
+        "validate": 0.715
+      },
+      "encoding_ms": [
+        13.482199981808662
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "T06",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        632360
+      ],
+      "total_ms": 381.2275000382215,
+      "stage_ms": {
+        "interpret": 0.852,
+        "remember": 0.742,
+        "retrieve": 376.1,
+        "evidence": 1.059,
+        "generate": 0.312,
+        "validate": 0.515
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 1,
+      "case_id": "T07",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620
+      ],
+      "total_ms": 361.1292000859976,
+      "stage_ms": {
+        "interpret": 4.497,
+        "remember": 4.84,
+        "retrieve": 343.006,
+        "evidence": 2.152,
+        "generate": 1.422,
+        "validate": 1.289
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 1,
+      "case_id": "T07",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        400,
+        570,
+        1966720,
+        435150
+      ],
+      "total_ms": 408.33000000566244,
+      "stage_ms": {
+        "interpret": 1.169,
+        "remember": 2.487,
+        "retrieve": 396.138,
+        "evidence": 2.158,
+        "generate": 0.336,
+        "validate": 1.201
+      },
+      "encoding_ms": [
+        13.923499966040254
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "T08",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        387290,
+        261570,
+        113200,
+        105600,
+        1151640
+      ],
+      "total_ms": 374.09369996748865,
+      "stage_ms": {
+        "interpret": 0.503,
+        "remember": 0.94,
+        "retrieve": 362.041,
+        "evidence": 5.276,
+        "generate": 0.904,
+        "validate": 1.981
+      },
+      "encoding_ms": [
+        29.207699932157993
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "T08",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        387290
+      ],
+      "total_ms": 347.5892001297325,
+      "stage_ms": {
+        "interpret": 0.486,
+        "remember": 0.553,
+        "retrieve": 343.148,
+        "evidence": 1.147,
+        "generate": 0.307,
+        "validate": 0.51
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 1,
+      "case_id": "S02",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        291550,
+        108600,
+        105600,
+        1174180,
+        250900,
+        632360,
+        960090
+      ],
+      "total_ms": 493.26150002889335,
+      "stage_ms": {
+        "interpret": 0.572,
+        "remember": 0.613,
+        "retrieve": 462.972,
+        "evidence": 24.342,
+        "generate": 0.715,
+        "validate": 1.962
+      },
+      "encoding_ms": [
+        12.321699876338243
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "S02",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        291550,
+        960090,
+        108600,
+        570
+      ],
+      "total_ms": 415.09440005756915,
+      "stage_ms": {
+        "interpret": 2.476,
+        "remember": 1.673,
+        "retrieve": 402.031,
+        "evidence": 3.884,
+        "generate": 0.565,
+        "validate": 1.188
+      },
+      "encoding_ms": [
+        52.84819984808564
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "S03",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        413150,
+        108600,
+        548430,
+        367520
+      ],
+      "total_ms": 397.47329987585545,
+      "stage_ms": {
+        "interpret": 0.809,
+        "remember": 1.061,
+        "retrieve": 386.826,
+        "evidence": 4.487,
+        "generate": 0.668,
+        "validate": 1.355
+      },
+      "encoding_ms": [
+        25.007300078868866
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "S03",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        548430,
+        367520,
+        1091500,
+        440,
+        570,
+        413150,
+        108600
+      ],
+      "total_ms": 543.15169993788,
+      "stage_ms": {
+        "interpret": 0.949,
+        "remember": 1.23,
+        "retrieve": 501.732,
+        "evidence": 33.952,
+        "generate": 0.653,
+        "validate": 1.347
+      },
+      "encoding_ms": [
+        39.86410005018115
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "S05",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        582010,
+        400,
+        1151640,
+        105600,
+        413150,
+        250900,
+        237930,
+        620
+      ],
+      "total_ms": 490.33430009149015,
+      "stage_ms": {
+        "interpret": 0.843,
+        "remember": 11.034,
+        "retrieve": 448.047,
+        "evidence": 25.659,
+        "generate": 0.793,
+        "validate": 1.136
+      },
+      "encoding_ms": [
+        24.99230019748211
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "S05",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        582010,
+        413150,
+        400,
+        1086940
+      ],
+      "total_ms": 366.01080000400543,
+      "stage_ms": {
+        "interpret": 6.655,
+        "remember": 1.745,
+        "retrieve": 342.843,
+        "evidence": 5.547,
+        "generate": 0.699,
+        "validate": 3.126
+      },
+      "encoding_ms": [
+        14.742200030013919
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "S06",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        892970,
+        203160,
+        105600,
+        413150,
+        108600
+      ],
+      "total_ms": 381.23880000784993,
+      "stage_ms": {
+        "interpret": 0.91,
+        "remember": 1.191,
+        "retrieve": 365.919,
+        "evidence": 5.508,
+        "generate": 0.724,
+        "validate": 3.892
+      },
+      "encoding_ms": [
+        17.127000028267503
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "S06",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        892970,
+        108600,
+        105600,
+        239140,
+        203160,
+        504230,
+        387290,
+        960090
+      ],
+      "total_ms": 420.25130009278655,
+      "stage_ms": {
+        "interpret": 0.542,
+        "remember": 1.552,
+        "retrieve": 403.427,
+        "evidence": 11.913,
+        "generate": 0.335,
+        "validate": 0.671
+      },
+      "encoding_ms": [
+        14.975299825891852
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "S07",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        400,
+        291550,
+        250900,
+        113200,
+        620,
+        105600,
+        387290,
+        268910
+      ],
+      "total_ms": 435.56739995256066,
+      "stage_ms": {
+        "interpret": 4.671,
+        "remember": 1.212,
+        "retrieve": 397.68,
+        "evidence": 25.375,
+        "generate": 0.644,
+        "validate": 1.113
+      },
+      "encoding_ms": [
+        19.13889986462891
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "S07",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        113200,
+        620,
+        105600,
+        387290,
+        400
+      ],
+      "total_ms": 395.7632998935878,
+      "stage_ms": {
+        "interpret": 1.915,
+        "remember": 6.069,
+        "retrieve": 381.517,
+        "evidence": 2.175,
+        "generate": 0.309,
+        "validate": 0.698
+      },
+      "encoding_ms": [
+        27.575100073590875
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "S08",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        304430,
+        387290,
+        113200,
+        1086940,
+        261570
+      ],
+      "total_ms": 363.81809995509684,
+      "stage_ms": {
+        "interpret": 0.496,
+        "remember": 0.55,
+        "retrieve": 354.071,
+        "evidence": 4.983,
+        "generate": 0.633,
+        "validate": 1.265
+      },
+      "encoding_ms": [
+        25.03919997252524
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "S08",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        387290,
+        261570,
+        1086940,
+        203160,
+        570,
+        304430,
+        113200,
+        620
+      ],
+      "total_ms": 441.30760012194514,
+      "stage_ms": {
+        "interpret": 0.961,
+        "remember": 1.145,
+        "retrieve": 418.109,
+        "evidence": 15.999,
+        "generate": 0.403,
+        "validate": 0.864
+      },
+      "encoding_ms": [
+        24.06229986809194
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M02",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        620,
+        960090,
+        632360,
+        440,
+        1966720,
+        105600,
+        570
+      ],
+      "total_ms": 432.84990009851754,
+      "stage_ms": {
+        "interpret": 1.14,
+        "remember": 0.853,
+        "retrieve": 392.516,
+        "evidence": 33.792,
+        "generate": 0.566,
+        "validate": 0.821
+      },
+      "encoding_ms": [
+        23.747799918055534
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M02",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1817070
+      ],
+      "total_ms": 416.80720006115735,
+      "stage_ms": {
+        "interpret": 3.542,
+        "remember": 3.0,
+        "retrieve": 404.652,
+        "evidence": 1.057,
+        "generate": 0.314,
+        "validate": 1.203
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 1,
+      "case_id": "M02",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        620,
+        960090,
+        632360,
+        440
+      ],
+      "total_ms": 360.0200000219047,
+      "stage_ms": {
+        "interpret": 1.007,
+        "remember": 0.612,
+        "retrieve": 344.618,
+        "evidence": 9.898,
+        "generate": 0.718,
+        "validate": 0.899
+      },
+      "encoding_ms": [
+        9.195199934765697
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M02",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1817070,
+        1091500,
+        582010,
+        367520,
+        400
+      ],
+      "total_ms": 357.988900039345,
+      "stage_ms": {
+        "interpret": 0.944,
+        "remember": 2.168,
+        "retrieve": 348.213,
+        "evidence": 2.327,
+        "generate": 0.319,
+        "validate": 0.862
+      },
+      "encoding_ms": [
+        16.682100016623735
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M03",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        440,
+        620,
+        105600,
+        570,
+        413150
+      ],
+      "total_ms": 1174.9615999870002,
+      "stage_ms": {
+        "interpret": 0.602,
+        "remember": 0.644,
+        "retrieve": 1158.934,
+        "evidence": 8.41,
+        "generate": 1.187,
+        "validate": 1.584
+      },
+      "encoding_ms": [
+        14.247700106352568
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M03",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        108600,
+        440,
+        620,
+        105600,
+        413150
+      ],
+      "total_ms": 1018.0729997809976,
+      "stage_ms": {
+        "interpret": 1.755,
+        "remember": 1.607,
+        "retrieve": 1007.422,
+        "evidence": 3.373,
+        "generate": 0.386,
+        "validate": 0.842
+      },
+      "encoding_ms": [
+        14.11659992299974
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M03",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        440,
+        105600,
+        620,
+        570,
+        413150,
+        311690,
+        250900
+      ],
+      "total_ms": 513.4563001338392,
+      "stage_ms": {
+        "interpret": 0.595,
+        "remember": 1.027,
+        "retrieve": 493.044,
+        "evidence": 14.759,
+        "generate": 0.633,
+        "validate": 1.394
+      },
+      "encoding_ms": [
+        9.622100042179227
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M03",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        108600,
+        440,
+        620,
+        105600,
+        413150,
+        239140,
+        311690,
+        570
+      ],
+      "total_ms": 603.341800160706,
+      "stage_ms": {
+        "interpret": 0.646,
+        "remember": 0.951,
+        "retrieve": 573.463,
+        "evidence": 24.259,
+        "generate": 0.441,
+        "validate": 1.021
+      },
+      "encoding_ms": [
+        11.109499959275126
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M04",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        892970,
+        400,
+        105600,
+        646570,
+        239140,
+        250900,
+        108600,
+        620
+      ],
+      "total_ms": 614.4940000958741,
+      "stage_ms": {
+        "interpret": 1.546,
+        "remember": 1.163,
+        "retrieve": 589.228,
+        "evidence": 18.105,
+        "generate": 0.39,
+        "validate": 1.717
+      },
+      "encoding_ms": [
+        20.338600035756826
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M04",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        570,
+        440,
+        960090,
+        105600,
+        892970,
+        413150,
+        435150,
+        203160
+      ],
+      "total_ms": 482.80519992113113,
+      "stage_ms": {
+        "interpret": 1.551,
+        "remember": 3.77,
+        "retrieve": 441.35,
+        "evidence": 29.845,
+        "generate": 0.701,
+        "validate": 1.334
+      },
+      "encoding_ms": [
+        15.535299899056554
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M04",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        892970,
+        105600,
+        108600,
+        620,
+        400
+      ],
+      "total_ms": 434.8440000321716,
+      "stage_ms": {
+        "interpret": 1.191,
+        "remember": 17.032,
+        "retrieve": 397.831,
+        "evidence": 11.667,
+        "generate": 0.778,
+        "validate": 1.238
+      },
+      "encoding_ms": [
+        22.131399950012565
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M04",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        570,
+        291550,
+        440,
+        632360
+      ],
+      "total_ms": 400.9885999839753,
+      "stage_ms": {
+        "interpret": 1.901,
+        "remember": 2.413,
+        "retrieve": 387.236,
+        "evidence": 4.223,
+        "generate": 0.646,
+        "validate": 1.242
+      },
+      "encoding_ms": [
+        25.451800087466836
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M06",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        570,
+        440,
+        960090,
+        620
+      ],
+      "total_ms": 343.4737001080066,
+      "stage_ms": {
+        "interpret": 0.77,
+        "remember": 0.643,
+        "retrieve": 332.979,
+        "evidence": 4.614,
+        "generate": 0.633,
+        "validate": 1.329
+      },
+      "encoding_ms": [
+        10.622999863699079
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M06",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        960090,
+        570,
+        440,
+        108600
+      ],
+      "total_ms": 428.53800021111965,
+      "stage_ms": {
+        "interpret": 6.344,
+        "remember": 2.542,
+        "retrieve": 407.353,
+        "evidence": 4.503,
+        "generate": 0.672,
+        "validate": 1.413
+      },
+      "encoding_ms": [
+        39.627799997106194
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M06",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        960090,
+        440,
+        203160,
+        268910,
+        435150,
+        105600,
+        892970,
+        239140
+      ],
+      "total_ms": 484.186900081113,
+      "stage_ms": {
+        "interpret": 4.232,
+        "remember": 1.596,
+        "retrieve": 446.437,
+        "evidence": 25.82,
+        "generate": 0.731,
+        "validate": 1.552
+      },
+      "encoding_ms": [
+        16.721699852496386
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M06",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        582010,
+        291550,
+        250900,
+        960090,
+        570,
+        440,
+        108600
+      ],
+      "total_ms": 485.8657999429852,
+      "stage_ms": {
+        "interpret": 1.132,
+        "remember": 1.793,
+        "retrieve": 439.025,
+        "evidence": 35.635,
+        "generate": 0.719,
+        "validate": 1.888
+      },
+      "encoding_ms": [
+        25.198200019076467
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M07",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1145360
+      ],
+      "total_ms": 395.43320005759597,
+      "stage_ms": {
+        "interpret": 1.616,
+        "remember": 0.962,
+        "retrieve": 387.707,
+        "evidence": 1.435,
+        "generate": 0.466,
+        "validate": 1.117
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 1,
+      "case_id": "M07",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1145360
+      ],
+      "total_ms": 375.01679989509284,
+      "stage_ms": {
+        "interpret": 0.822,
+        "remember": 0.963,
+        "retrieve": 364.202,
+        "evidence": 4.78,
+        "generate": 0.615,
+        "validate": 1.115
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 1,
+      "case_id": "M07",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1145360,
+        435150,
+        892970,
+        1086940,
+        107100
+      ],
+      "total_ms": 472.3550998605788,
+      "stage_ms": {
+        "interpret": 1.449,
+        "remember": 54.832,
+        "retrieve": 387.612,
+        "evidence": 4.909,
+        "generate": 0.625,
+        "validate": 2.472
+      },
+      "encoding_ms": [
+        16.929500037804246
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M07",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        387290,
+        892970,
+        1086940,
+        261570
+      ],
+      "total_ms": 395.02279995940626,
+      "stage_ms": {
+        "interpret": 1.379,
+        "remember": 2.13,
+        "retrieve": 380.333,
+        "evidence": 6.016,
+        "generate": 0.723,
+        "validate": 1.478
+      },
+      "encoding_ms": [
+        14.350300189107656
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M08",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        440,
+        570
+      ],
+      "total_ms": 475.41129984892905,
+      "stage_ms": {
+        "interpret": 0.944,
+        "remember": 1.172,
+        "retrieve": 466.801,
+        "evidence": 2.459,
+        "generate": 0.567,
+        "validate": 1.107
+      },
+      "encoding_ms": [
+        15.767899807542562
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M08",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        413150,
+        620,
+        646570,
+        1151640
+      ],
+      "total_ms": 560.7957001775503,
+      "stage_ms": {
+        "interpret": 1.032,
+        "remember": 1.683,
+        "retrieve": 546.105,
+        "evidence": 6.534,
+        "generate": 0.634,
+        "validate": 2.126
+      },
+      "encoding_ms": [
+        143.0748999118805
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M08",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        440,
+        570
+      ],
+      "total_ms": 428.5617999266833,
+      "stage_ms": {
+        "interpret": 1.23,
+        "remember": 1.349,
+        "retrieve": 415.368,
+        "evidence": 4.316,
+        "generate": 0.771,
+        "validate": 1.626
+      },
+      "encoding_ms": [
+        10.785400168970227
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "M08",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        646570,
+        400,
+        892970,
+        1151640,
+        548430,
+        203160,
+        291550
+      ],
+      "total_ms": 702.2434999234974,
+      "stage_ms": {
+        "interpret": 1.932,
+        "remember": 1.365,
+        "retrieve": 663.302,
+        "evidence": 30.234,
+        "generate": 0.828,
+        "validate": 1.318
+      },
+      "encoding_ms": [
+        21.520900074392557
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "C02",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        400,
+        960090,
+        203160,
+        105600,
+        268910,
+        250900,
+        113200
+      ],
+      "total_ms": 487.08439990878105,
+      "stage_ms": {
+        "interpret": 1.703,
+        "remember": 1.549,
+        "retrieve": 459.123,
+        "evidence": 19.595,
+        "generate": 0.506,
+        "validate": 1.234
+      },
+      "encoding_ms": [
+        44.766100123524666
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "C02",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        113200,
+        400,
+        1091500,
+        620
+      ],
+      "total_ms": 383.4717001300305,
+      "stage_ms": {
+        "interpret": 0.605,
+        "remember": 0.616,
+        "retrieve": 376.24,
+        "evidence": 3.274,
+        "generate": 0.318,
+        "validate": 0.773
+      },
+      "encoding_ms": [
+        11.940500000491738
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "C03",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        113200,
+        400,
+        1091500,
+        620
+      ],
+      "total_ms": 465.6722000800073,
+      "stage_ms": {
+        "interpret": 2.132,
+        "remember": 2.06,
+        "retrieve": 454.146,
+        "evidence": 2.278,
+        "generate": 0.388,
+        "validate": 1.235
+      },
+      "encoding_ms": [
+        15.181299997493625
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "C03",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        400,
+        960090,
+        105600,
+        250900,
+        113200,
+        1091500,
+        620
+      ],
+      "total_ms": 426.47750000469387,
+      "stage_ms": {
+        "interpret": 0.916,
+        "remember": 1.513,
+        "retrieve": 407.664,
+        "evidence": 13.177,
+        "generate": 0.391,
+        "validate": 0.809
+      },
+      "encoding_ms": [
+        26.99779998511076
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "C04",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        960090,
+        203160,
+        400,
+        268910,
+        367520,
+        881100,
+        620
+      ],
+      "total_ms": 448.4850000590086,
+      "stage_ms": {
+        "interpret": 4.205,
+        "remember": 2.39,
+        "retrieve": 418.897,
+        "evidence": 16.806,
+        "generate": 0.481,
+        "validate": 0.968
+      },
+      "encoding_ms": [
+        15.738700050860643
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "C04",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        620,
+        960090,
+        113200,
+        413150
+      ],
+      "total_ms": 390.1504999957979,
+      "stage_ms": {
+        "interpret": 0.739,
+        "remember": 1.87,
+        "retrieve": 382.776,
+        "evidence": 2.136,
+        "generate": 0.379,
+        "validate": 0.642
+      },
+      "encoding_ms": [
+        21.254800027236342
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "C05",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        413150,
+        108600
+      ],
+      "total_ms": 382.70149985328317,
+      "stage_ms": {
+        "interpret": 0.52,
+        "remember": 0.572,
+        "retrieve": 369.812,
+        "evidence": 7.945,
+        "generate": 0.651,
+        "validate": 1.279
+      },
+      "encoding_ms": [
+        36.207100143656135
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "C05",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        413150,
+        108600
+      ],
+      "total_ms": 385.78400015830994,
+      "stage_ms": {
+        "interpret": 0.592,
+        "remember": 0.628,
+        "retrieve": 378.413,
+        "evidence": 2.524,
+        "generate": 0.407,
+        "validate": 1.344
+      },
+      "encoding_ms": [
+        24.323000106960535
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "C06",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [],
+      "total_ms": 4.389300011098385,
+      "stage_ms": {
+        "interpret": 0.493,
+        "remember": 0.729,
+        "retrieve": 0.409,
+        "evidence": 0.313,
+        "generate": 0.477,
+        "validate": 0.312
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 1,
+      "case_id": "C06",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [],
+      "total_ms": 4.048599861562252,
+      "stage_ms": {
+        "interpret": 0.659,
+        "remember": 0.536,
+        "retrieve": 0.32,
+        "evidence": 0.305,
+        "generate": 0.305,
+        "validate": 0.301
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 1,
+      "case_id": "A02",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        113200,
+        250900,
+        291550,
+        435150,
+        413150
+      ],
+      "total_ms": 375.28489995747805,
+      "stage_ms": {
+        "interpret": 3.256,
+        "remember": 5.302,
+        "retrieve": 356.806,
+        "evidence": 4.595,
+        "generate": 0.763,
+        "validate": 1.648
+      },
+      "encoding_ms": [
+        9.756900137290359
+      ]
+    },
+    {
+      "pass": 1,
+      "case_id": "A02",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        113200,
+        250900
+      ],
+      "total_ms": 358.63450006581843,
+      "stage_ms": {
+        "interpret": 1.167,
+        "remember": 1.887,
+        "retrieve": 352.324,
+        "evidence": 0.334,
+        "generate": 0.333,
+        "validate": 0.338
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 1,
+      "case_id": "A03",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [],
+      "total_ms": 295.84140004590154,
+      "stage_ms": {
+        "interpret": 0.908,
+        "remember": 1.053,
+        "retrieve": 289.886,
+        "evidence": 0.587,
+        "generate": 0.54,
+        "validate": 0.531
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 1,
+      "case_id": "A03",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        881100,
+        413150,
+        1091500,
+        1151640
+      ],
+      "total_ms": 506.88500003889203,
+      "stage_ms": {
+        "interpret": 0.869,
+        "remember": 0.931,
+        "retrieve": 494.036,
+        "evidence": 4.997,
+        "generate": 0.863,
+        "validate": 2.026
+      },
+      "encoding_ms": [
+        54.09629992209375
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "T02",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": false,
+      "status": "ok",
+      "ranked_ids": [
+        1817070,
+        1091500,
+        582010,
+        435150,
+        203160
+      ],
+      "total_ms": 423.6753999721259,
+      "stage_ms": {
+        "interpret": 2.365,
+        "remember": 0.68,
+        "retrieve": 411.593,
+        "evidence": 5.493,
+        "generate": 0.581,
+        "validate": 1.031
+      },
+      "encoding_ms": [
+        24.410499958321452
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "T02",
+      "turn": 1,
+      "method": "proposed",
+      "warm": false,
+      "status": "ok",
+      "ranked_ids": [
+        1817070
+      ],
+      "total_ms": 358.78840018995106,
+      "stage_ms": {
+        "interpret": 1.064,
+        "remember": 1.368,
+        "retrieve": 329.063,
+        "evidence": 2.926,
+        "generate": 0.614,
+        "validate": 1.509
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 2,
+      "case_id": "T03",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1817070
+      ],
+      "total_ms": 370.06779992952943,
+      "stage_ms": {
+        "interpret": 0.956,
+        "remember": 1.085,
+        "retrieve": 359.163,
+        "evidence": 1.852,
+        "generate": 0.779,
+        "validate": 3.049
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 2,
+      "case_id": "T03",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1817070,
+        1091500,
+        582010,
+        435150,
+        203160
+      ],
+      "total_ms": 413.21070003323257,
+      "stage_ms": {
+        "interpret": 3.274,
+        "remember": 1.063,
+        "retrieve": 360.351,
+        "evidence": 9.757,
+        "generate": 0.853,
+        "validate": 1.448
+      },
+      "encoding_ms": [
+        12.522600125521421
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "T05",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1086940,
+        435150,
+        387290,
+        1151640,
+        261570
+      ],
+      "total_ms": 362.15930012986064,
+      "stage_ms": {
+        "interpret": 1.076,
+        "remember": 1.159,
+        "retrieve": 346.643,
+        "evidence": 7.082,
+        "generate": 0.679,
+        "validate": 0.901
+      },
+      "encoding_ms": [
+        14.277100097388029
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "T05",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1086940
+      ],
+      "total_ms": 445.54330012761056,
+      "stage_ms": {
+        "interpret": 1.073,
+        "remember": 1.346,
+        "retrieve": 435.315,
+        "evidence": 2.197,
+        "generate": 0.731,
+        "validate": 1.336
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 2,
+      "case_id": "T06",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        632360
+      ],
+      "total_ms": 388.78409983590245,
+      "stage_ms": {
+        "interpret": 0.857,
+        "remember": 1.255,
+        "retrieve": 380.731,
+        "evidence": 1.813,
+        "generate": 0.588,
+        "validate": 1.078
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 2,
+      "case_id": "T06",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        632360,
+        113200,
+        1091500,
+        413150,
+        387290
+      ],
+      "total_ms": 395.14999999664724,
+      "stage_ms": {
+        "interpret": 0.827,
+        "remember": 1.02,
+        "retrieve": 384.324,
+        "evidence": 4.312,
+        "generate": 0.709,
+        "validate": 1.633
+      },
+      "encoding_ms": [
+        41.37189988978207
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "T07",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        400,
+        570,
+        1966720,
+        435150
+      ],
+      "total_ms": 381.98950001969934,
+      "stage_ms": {
+        "interpret": 1.126,
+        "remember": 1.193,
+        "retrieve": 369.691,
+        "evidence": 5.088,
+        "generate": 0.403,
+        "validate": 0.968
+      },
+      "encoding_ms": [
+        14.42650007084012
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "T07",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620
+      ],
+      "total_ms": 369.9693998787552,
+      "stage_ms": {
+        "interpret": 0.553,
+        "remember": 0.576,
+        "retrieve": 364.662,
+        "evidence": 1.425,
+        "generate": 0.337,
+        "validate": 0.741
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 2,
+      "case_id": "T08",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        387290
+      ],
+      "total_ms": 483.55529992841184,
+      "stage_ms": {
+        "interpret": 51.328,
+        "remember": 1.69,
+        "retrieve": 413.984,
+        "evidence": 1.665,
+        "generate": 0.589,
+        "validate": 2.858
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 2,
+      "case_id": "T08",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        387290,
+        261570,
+        113200,
+        105600,
+        1151640
+      ],
+      "total_ms": 496.76760006695986,
+      "stage_ms": {
+        "interpret": 8.475,
+        "remember": 3.651,
+        "retrieve": 461.955,
+        "evidence": 6.084,
+        "generate": 0.662,
+        "validate": 1.664
+      },
+      "encoding_ms": [
+        41.270599933341146
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "S02",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        291550,
+        960090,
+        108600,
+        570
+      ],
+      "total_ms": 461.72260004095733,
+      "stage_ms": {
+        "interpret": 0.983,
+        "remember": 1.364,
+        "retrieve": 446.702,
+        "evidence": 5.338,
+        "generate": 0.747,
+        "validate": 1.563
+      },
+      "encoding_ms": [
+        40.44750006869435
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "S02",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        291550,
+        108600,
+        105600,
+        1174180,
+        250900,
+        632360,
+        960090
+      ],
+      "total_ms": 887.7505999989808,
+      "stage_ms": {
+        "interpret": 2.364,
+        "remember": 2.268,
+        "retrieve": 847.34,
+        "evidence": 27.105,
+        "generate": 0.72,
+        "validate": 1.297
+      },
+      "encoding_ms": [
+        91.53930004686117
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "S03",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        548430,
+        367520,
+        1091500,
+        440,
+        570,
+        413150,
+        108600
+      ],
+      "total_ms": 657.5386999174953,
+      "stage_ms": {
+        "interpret": 0.939,
+        "remember": 1.415,
+        "retrieve": 604.943,
+        "evidence": 33.611,
+        "generate": 3.744,
+        "validate": 8.23
+      },
+      "encoding_ms": [
+        84.7080999519676
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "S03",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        413150,
+        108600,
+        548430,
+        367520
+      ],
+      "total_ms": 446.7691001482308,
+      "stage_ms": {
+        "interpret": 0.958,
+        "remember": 0.945,
+        "retrieve": 434.813,
+        "evidence": 5.393,
+        "generate": 0.622,
+        "validate": 1.329
+      },
+      "encoding_ms": [
+        24.96299985796213
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "S05",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        582010,
+        413150,
+        400,
+        1086940
+      ],
+      "total_ms": 754.9924000632018,
+      "stage_ms": {
+        "interpret": 1.181,
+        "remember": 3.302,
+        "retrieve": 739.236,
+        "evidence": 4.641,
+        "generate": 0.725,
+        "validate": 2.377
+      },
+      "encoding_ms": [
+        34.068399807438254
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "S05",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        582010,
+        400,
+        1151640,
+        105600,
+        413150,
+        250900,
+        237930,
+        620
+      ],
+      "total_ms": 663.1965001579374,
+      "stage_ms": {
+        "interpret": 0.768,
+        "remember": 1.0,
+        "retrieve": 615.462,
+        "evidence": 41.188,
+        "generate": 0.598,
+        "validate": 1.586
+      },
+      "encoding_ms": [
+        60.16670004464686
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "S06",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        892970,
+        108600,
+        105600,
+        239140,
+        203160,
+        504230,
+        387290,
+        960090
+      ],
+      "total_ms": 630.0848999526352,
+      "stage_ms": {
+        "interpret": 1.244,
+        "remember": 4.7,
+        "retrieve": 582.124,
+        "evidence": 35.753,
+        "generate": 0.675,
+        "validate": 1.352
+      },
+      "encoding_ms": [
+        73.45210015773773
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "S06",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        892970,
+        203160,
+        105600,
+        413150,
+        108600
+      ],
+      "total_ms": 582.0138999260962,
+      "stage_ms": {
+        "interpret": 1.148,
+        "remember": 2.031,
+        "retrieve": 567.402,
+        "evidence": 5.778,
+        "generate": 0.756,
+        "validate": 1.721
+      },
+      "encoding_ms": [
+        27.84199989400804
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "S07",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        113200,
+        620,
+        105600,
+        387290,
+        400
+      ],
+      "total_ms": 716.1463999655098,
+      "stage_ms": {
+        "interpret": 1.471,
+        "remember": 3.481,
+        "retrieve": 698.775,
+        "evidence": 5.303,
+        "generate": 0.586,
+        "validate": 1.891
+      },
+      "encoding_ms": [
+        112.39139991812408
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "S07",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        400,
+        291550,
+        250900,
+        113200,
+        620,
+        105600,
+        387290,
+        268910
+      ],
+      "total_ms": 571.6891998890787,
+      "stage_ms": {
+        "interpret": 3.326,
+        "remember": 2.93,
+        "retrieve": 530.578,
+        "evidence": 29.027,
+        "generate": 0.826,
+        "validate": 1.37
+      },
+      "encoding_ms": [
+        32.31979999691248
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "S08",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        387290,
+        261570,
+        1086940,
+        203160,
+        570,
+        304430,
+        113200,
+        620
+      ],
+      "total_ms": 763.931900030002,
+      "stage_ms": {
+        "interpret": 1.133,
+        "remember": 1.888,
+        "retrieve": 717.448,
+        "evidence": 36.068,
+        "generate": 0.717,
+        "validate": 2.315
+      },
+      "encoding_ms": [
+        33.85060001164675
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "S08",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        304430,
+        387290,
+        113200,
+        1086940,
+        261570
+      ],
+      "total_ms": 431.68959999457,
+      "stage_ms": {
+        "interpret": 1.652,
+        "remember": 7.686,
+        "retrieve": 406.994,
+        "evidence": 6.893,
+        "generate": 2.864,
+        "validate": 1.461
+      },
+      "encoding_ms": [
+        45.066700084134936
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M02",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        620,
+        960090,
+        632360,
+        440
+      ],
+      "total_ms": 403.6417999304831,
+      "stage_ms": {
+        "interpret": 1.473,
+        "remember": 1.236,
+        "retrieve": 385.751,
+        "evidence": 10.322,
+        "generate": 0.715,
+        "validate": 1.5
+      },
+      "encoding_ms": [
+        12.617200147360563
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M02",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1817070,
+        1091500,
+        582010,
+        367520,
+        400
+      ],
+      "total_ms": 400.4832999780774,
+      "stage_ms": {
+        "interpret": 0.946,
+        "remember": 1.291,
+        "retrieve": 389.032,
+        "evidence": 4.585,
+        "generate": 0.662,
+        "validate": 1.541
+      },
+      "encoding_ms": [
+        17.006699927151203
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M02",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        620,
+        960090,
+        632360,
+        440,
+        1966720,
+        105600,
+        570
+      ],
+      "total_ms": 448.88780009932816,
+      "stage_ms": {
+        "interpret": 0.988,
+        "remember": 1.292,
+        "retrieve": 412.724,
+        "evidence": 29.656,
+        "generate": 0.582,
+        "validate": 1.272
+      },
+      "encoding_ms": [
+        19.168300088495016
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M02",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1817070
+      ],
+      "total_ms": 385.26979996822774,
+      "stage_ms": {
+        "interpret": 1.256,
+        "remember": 1.392,
+        "retrieve": 372.115,
+        "evidence": 2.408,
+        "generate": 1.057,
+        "validate": 2.209
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 2,
+      "case_id": "M03",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        440,
+        105600,
+        620,
+        570,
+        413150,
+        311690,
+        250900
+      ],
+      "total_ms": 448.5866001341492,
+      "stage_ms": {
+        "interpret": 1.153,
+        "remember": 1.29,
+        "retrieve": 414.088,
+        "evidence": 24.491,
+        "generate": 0.717,
+        "validate": 1.659
+      },
+      "encoding_ms": [
+        18.11569998972118
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M03",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        108600,
+        440,
+        620,
+        105600,
+        413150,
+        239140,
+        311690,
+        570
+      ],
+      "total_ms": 447.7503001689911,
+      "stage_ms": {
+        "interpret": 1.321,
+        "remember": 1.573,
+        "retrieve": 408.116,
+        "evidence": 31.565,
+        "generate": 0.611,
+        "validate": 1.737
+      },
+      "encoding_ms": [
+        26.754199992865324
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M03",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        440,
+        620,
+        105600,
+        570,
+        413150
+      ],
+      "total_ms": 516.8550000526011,
+      "stage_ms": {
+        "interpret": 1.075,
+        "remember": 1.228,
+        "retrieve": 503.929,
+        "evidence": 5.777,
+        "generate": 0.761,
+        "validate": 1.502
+      },
+      "encoding_ms": [
+        19.760899944230914
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M03",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        108600,
+        440,
+        620,
+        105600,
+        413150
+      ],
+      "total_ms": 402.1936000790447,
+      "stage_ms": {
+        "interpret": 1.414,
+        "remember": 3.354,
+        "retrieve": 385.245,
+        "evidence": 5.084,
+        "generate": 0.862,
+        "validate": 1.628
+      },
+      "encoding_ms": [
+        15.699199866503477
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M04",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        892970,
+        105600,
+        108600,
+        620,
+        400
+      ],
+      "total_ms": 410.74820002540946,
+      "stage_ms": {
+        "interpret": 1.199,
+        "remember": 1.498,
+        "retrieve": 393.421,
+        "evidence": 5.05,
+        "generate": 2.226,
+        "validate": 1.923
+      },
+      "encoding_ms": [
+        31.057899817824364
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M04",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        570,
+        291550,
+        440,
+        632360
+      ],
+      "total_ms": 447.3852999508381,
+      "stage_ms": {
+        "interpret": 6.262,
+        "remember": 1.522,
+        "retrieve": 423.312,
+        "evidence": 6.66,
+        "generate": 1.055,
+        "validate": 3.027
+      },
+      "encoding_ms": [
+        37.541599944233894
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M04",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        892970,
+        400,
+        105600,
+        646570,
+        239140,
+        250900,
+        108600,
+        620
+      ],
+      "total_ms": 460.44609998352826,
+      "stage_ms": {
+        "interpret": 1.159,
+        "remember": 2.425,
+        "retrieve": 412.886,
+        "evidence": 38.655,
+        "generate": 0.83,
+        "validate": 1.421
+      },
+      "encoding_ms": [
+        18.898600013926625
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M04",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        570,
+        440,
+        960090,
+        105600,
+        892970,
+        413150,
+        435150,
+        203160
+      ],
+      "total_ms": 585.7710998971015,
+      "stage_ms": {
+        "interpret": 1.33,
+        "remember": 1.347,
+        "retrieve": 538.016,
+        "evidence": 36.293,
+        "generate": 0.648,
+        "validate": 1.645
+      },
+      "encoding_ms": [
+        40.281400084495544
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M06",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        960090,
+        440,
+        203160,
+        268910,
+        435150,
+        105600,
+        892970,
+        239140
+      ],
+      "total_ms": 475.2225000411272,
+      "stage_ms": {
+        "interpret": 0.994,
+        "remember": 1.73,
+        "retrieve": 433.915,
+        "evidence": 33.115,
+        "generate": 0.671,
+        "validate": 1.534
+      },
+      "encoding_ms": [
+        12.496799929067492
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M06",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        582010,
+        291550,
+        250900,
+        960090,
+        570,
+        440,
+        108600
+      ],
+      "total_ms": 537.3579999431968,
+      "stage_ms": {
+        "interpret": 0.839,
+        "remember": 1.198,
+        "retrieve": 497.483,
+        "evidence": 33.295,
+        "generate": 0.662,
+        "validate": 1.286
+      },
+      "encoding_ms": [
+        24.185100104659796
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M06",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        570,
+        440,
+        960090,
+        620
+      ],
+      "total_ms": 539.2972000408918,
+      "stage_ms": {
+        "interpret": 1.393,
+        "remember": 1.513,
+        "retrieve": 520.072,
+        "evidence": 4.3,
+        "generate": 1.11,
+        "validate": 5.387
+      },
+      "encoding_ms": [
+        20.639399997889996
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M06",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        960090,
+        570,
+        440,
+        108600
+      ],
+      "total_ms": 390.513600083068,
+      "stage_ms": {
+        "interpret": 1.032,
+        "remember": 1.533,
+        "retrieve": 376.422,
+        "evidence": 5.32,
+        "generate": 0.663,
+        "validate": 1.392
+      },
+      "encoding_ms": [
+        24.812400108203292
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M07",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1145360,
+        435150,
+        892970,
+        1086940,
+        107100
+      ],
+      "total_ms": 362.5694999936968,
+      "stage_ms": {
+        "interpret": 1.108,
+        "remember": 1.24,
+        "retrieve": 348.914,
+        "evidence": 5.047,
+        "generate": 0.786,
+        "validate": 2.202
+      },
+      "encoding_ms": [
+        19.550299970433116
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M07",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        387290,
+        892970,
+        1086940,
+        261570
+      ],
+      "total_ms": 382.40749994292855,
+      "stage_ms": {
+        "interpret": 0.928,
+        "remember": 1.24,
+        "retrieve": 368.999,
+        "evidence": 4.845,
+        "generate": 1.277,
+        "validate": 1.77
+      },
+      "encoding_ms": [
+        14.890799997374415
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M07",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1145360
+      ],
+      "total_ms": 368.55749995447695,
+      "stage_ms": {
+        "interpret": 0.943,
+        "remember": 1.141,
+        "retrieve": 352.342,
+        "evidence": 3.028,
+        "generate": 1.775,
+        "validate": 3.249
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 2,
+      "case_id": "M07",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1145360
+      ],
+      "total_ms": 519.5466999430209,
+      "stage_ms": {
+        "interpret": 1.011,
+        "remember": 1.443,
+        "retrieve": 510.65,
+        "evidence": 1.921,
+        "generate": 0.67,
+        "validate": 1.091
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 2,
+      "case_id": "M08",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        440,
+        570
+      ],
+      "total_ms": 422.2646001726389,
+      "stage_ms": {
+        "interpret": 1.843,
+        "remember": 1.442,
+        "retrieve": 410.356,
+        "evidence": 2.443,
+        "generate": 0.633,
+        "validate": 1.583
+      },
+      "encoding_ms": [
+        42.99960006028414
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M08",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        646570,
+        400,
+        892970,
+        1151640,
+        548430,
+        203160,
+        291550
+      ],
+      "total_ms": 550.0940999481827,
+      "stage_ms": {
+        "interpret": 1.35,
+        "remember": 1.343,
+        "retrieve": 505.249,
+        "evidence": 36.608,
+        "generate": 0.729,
+        "validate": 1.333
+      },
+      "encoding_ms": [
+        24.70869990065694
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M08",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        440,
+        570
+      ],
+      "total_ms": 420.0430999044329,
+      "stage_ms": {
+        "interpret": 0.997,
+        "remember": 1.341,
+        "retrieve": 410.304,
+        "evidence": 2.534,
+        "generate": 0.717,
+        "validate": 1.477
+      },
+      "encoding_ms": [
+        14.255499932914972
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "M08",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        413150,
+        620,
+        646570,
+        1151640
+      ],
+      "total_ms": 556.6740999929607,
+      "stage_ms": {
+        "interpret": 1.534,
+        "remember": 1.111,
+        "retrieve": 535.091,
+        "evidence": 8.628,
+        "generate": 2.552,
+        "validate": 2.023
+      },
+      "encoding_ms": [
+        28.1549000646919
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "C02",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        113200,
+        400,
+        1091500,
+        620
+      ],
+      "total_ms": 423.8795000128448,
+      "stage_ms": {
+        "interpret": 1.49,
+        "remember": 1.69,
+        "retrieve": 408.59,
+        "evidence": 5.485,
+        "generate": 0.827,
+        "validate": 1.678
+      },
+      "encoding_ms": [
+        19.817999796941876
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "C02",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        400,
+        960090,
+        203160,
+        105600,
+        268910,
+        250900,
+        113200
+      ],
+      "total_ms": 705.0749999471009,
+      "stage_ms": {
+        "interpret": 0.888,
+        "remember": 7.619,
+        "retrieve": 655.569,
+        "evidence": 34.16,
+        "generate": 0.534,
+        "validate": 2.504
+      },
+      "encoding_ms": [
+        29.0117000695318
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "C03",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        400,
+        960090,
+        105600,
+        250900,
+        113200,
+        1091500,
+        620
+      ],
+      "total_ms": 489.22360013239086,
+      "stage_ms": {
+        "interpret": 1.177,
+        "remember": 1.349,
+        "retrieve": 450.561,
+        "evidence": 27.64,
+        "generate": 3.111,
+        "validate": 1.524
+      },
+      "encoding_ms": [
+        18.470800016075373
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "C03",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        113200,
+        400,
+        1091500,
+        620
+      ],
+      "total_ms": 429.9238999374211,
+      "stage_ms": {
+        "interpret": 1.125,
+        "remember": 1.896,
+        "retrieve": 411.733,
+        "evidence": 8.839,
+        "generate": 1.089,
+        "validate": 1.829
+      },
+      "encoding_ms": [
+        19.557900028303266
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "C04",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        620,
+        960090,
+        113200,
+        413150
+      ],
+      "total_ms": 471.74290008842945,
+      "stage_ms": {
+        "interpret": 1.425,
+        "remember": 2.163,
+        "retrieve": 455.913,
+        "evidence": 6.235,
+        "generate": 0.872,
+        "validate": 1.662
+      },
+      "encoding_ms": [
+        50.860000075772405
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "C04",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        960090,
+        203160,
+        400,
+        268910,
+        367520,
+        881100,
+        620
+      ],
+      "total_ms": 586.5008998662233,
+      "stage_ms": {
+        "interpret": 3.791,
+        "remember": 4.27,
+        "retrieve": 525.797,
+        "evidence": 37.073,
+        "generate": 0.591,
+        "validate": 1.188
+      },
+      "encoding_ms": [
+        27.599700028076768
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "C05",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        413150,
+        108600
+      ],
+      "total_ms": 415.06700008176267,
+      "stage_ms": {
+        "interpret": 1.027,
+        "remember": 1.348,
+        "retrieve": 389.559,
+        "evidence": 8.721,
+        "generate": 0.672,
+        "validate": 4.095
+      },
+      "encoding_ms": [
+        31.8807999137789
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "C05",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        413150,
+        108600
+      ],
+      "total_ms": 689.4036999437958,
+      "stage_ms": {
+        "interpret": 1.55,
+        "remember": 1.341,
+        "retrieve": 669.008,
+        "evidence": 6.705,
+        "generate": 0.857,
+        "validate": 3.749
+      },
+      "encoding_ms": [
+        27.01140008866787
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "C06",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [],
+      "total_ms": 7.2147001046687365,
+      "stage_ms": {
+        "interpret": 0.948,
+        "remember": 0.962,
+        "retrieve": 0.602,
+        "evidence": 0.582,
+        "generate": 0.623,
+        "validate": 0.74
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 2,
+      "case_id": "C06",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [],
+      "total_ms": 16.606099903583527,
+      "stage_ms": {
+        "interpret": 1.28,
+        "remember": 1.241,
+        "retrieve": 0.626,
+        "evidence": 0.781,
+        "generate": 1.545,
+        "validate": 5.95
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 2,
+      "case_id": "A02",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        113200,
+        250900
+      ],
+      "total_ms": 1242.2062000259757,
+      "stage_ms": {
+        "interpret": 0.942,
+        "remember": 3.333,
+        "retrieve": 1227.558,
+        "evidence": 1.179,
+        "generate": 0.644,
+        "validate": 0.625
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 2,
+      "case_id": "A02",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        113200,
+        250900,
+        291550,
+        435150,
+        413150
+      ],
+      "total_ms": 591.6484999470413,
+      "stage_ms": {
+        "interpret": 1.167,
+        "remember": 1.491,
+        "retrieve": 577.287,
+        "evidence": 6.218,
+        "generate": 0.755,
+        "validate": 1.748
+      },
+      "encoding_ms": [
+        24.515900062397122
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "A03",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        881100,
+        413150,
+        1091500,
+        1151640
+      ],
+      "total_ms": 572.7586001157761,
+      "stage_ms": {
+        "interpret": 0.958,
+        "remember": 1.106,
+        "retrieve": 560.659,
+        "evidence": 4.868,
+        "generate": 0.674,
+        "validate": 1.927
+      },
+      "encoding_ms": [
+        147.92130002751946
+      ]
+    },
+    {
+      "pass": 2,
+      "case_id": "A03",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [],
+      "total_ms": 298.02930005826056,
+      "stage_ms": {
+        "interpret": 0.92,
+        "remember": 1.856,
+        "retrieve": 286.66,
+        "evidence": 1.529,
+        "generate": 1.24,
+        "validate": 0.972
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 3,
+      "case_id": "T02",
+      "turn": 1,
+      "method": "proposed",
+      "warm": false,
+      "status": "ok",
+      "ranked_ids": [
+        1817070
+      ],
+      "total_ms": 437.48620012775064,
+      "stage_ms": {
+        "interpret": 2.191,
+        "remember": 1.452,
+        "retrieve": 426.335,
+        "evidence": 2.131,
+        "generate": 0.862,
+        "validate": 1.405
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 3,
+      "case_id": "T02",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": false,
+      "status": "ok",
+      "ranked_ids": [
+        1817070,
+        1091500,
+        582010,
+        435150,
+        203160
+      ],
+      "total_ms": 522.0243998337537,
+      "stage_ms": {
+        "interpret": 9.07,
+        "remember": 1.391,
+        "retrieve": 496.704,
+        "evidence": 4.865,
+        "generate": 0.67,
+        "validate": 2.243
+      },
+      "encoding_ms": [
+        46.53020016849041
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "T03",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1817070,
+        1091500,
+        582010,
+        435150,
+        203160
+      ],
+      "total_ms": 468.4395999647677,
+      "stage_ms": {
+        "interpret": 0.857,
+        "remember": 1.062,
+        "retrieve": 448.644,
+        "evidence": 7.45,
+        "generate": 0.758,
+        "validate": 6.433
+      },
+      "encoding_ms": [
+        13.67110013961792
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "T03",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1817070
+      ],
+      "total_ms": 524.6605998836458,
+      "stage_ms": {
+        "interpret": 0.911,
+        "remember": 1.11,
+        "retrieve": 515.221,
+        "evidence": 2.562,
+        "generate": 0.668,
+        "validate": 1.33
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 3,
+      "case_id": "T05",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1086940
+      ],
+      "total_ms": 605.3682998754084,
+      "stage_ms": {
+        "interpret": 0.839,
+        "remember": 1.049,
+        "retrieve": 591.427,
+        "evidence": 4.674,
+        "generate": 1.44,
+        "validate": 1.248
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 3,
+      "case_id": "T05",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1086940,
+        435150,
+        387290,
+        1151640,
+        261570
+      ],
+      "total_ms": 516.0282000433654,
+      "stage_ms": {
+        "interpret": 0.894,
+        "remember": 1.148,
+        "retrieve": 499.586,
+        "evidence": 7.067,
+        "generate": 1.799,
+        "validate": 2.037
+      },
+      "encoding_ms": [
+        39.34480017051101
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "T06",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        632360,
+        113200,
+        1091500,
+        413150,
+        387290
+      ],
+      "total_ms": 467.45139989070594,
+      "stage_ms": {
+        "interpret": 1.055,
+        "remember": 1.42,
+        "retrieve": 450.617,
+        "evidence": 8.013,
+        "generate": 0.957,
+        "validate": 1.936
+      },
+      "encoding_ms": [
+        23.228300036862493
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "T06",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        632360
+      ],
+      "total_ms": 401.9076998811215,
+      "stage_ms": {
+        "interpret": 0.936,
+        "remember": 1.209,
+        "retrieve": 385.655,
+        "evidence": 3.982,
+        "generate": 1.277,
+        "validate": 4.585
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 3,
+      "case_id": "T07",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620
+      ],
+      "total_ms": 356.1557999346405,
+      "stage_ms": {
+        "interpret": 1.246,
+        "remember": 1.498,
+        "retrieve": 343.233,
+        "evidence": 3.849,
+        "generate": 1.06,
+        "validate": 1.324
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 3,
+      "case_id": "T07",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        400,
+        570,
+        1966720,
+        435150
+      ],
+      "total_ms": 453.00150010734797,
+      "stage_ms": {
+        "interpret": 1.001,
+        "remember": 1.355,
+        "retrieve": 438.329,
+        "evidence": 5.787,
+        "generate": 0.744,
+        "validate": 1.748
+      },
+      "encoding_ms": [
+        34.17319990694523
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "T08",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        387290,
+        261570,
+        113200,
+        105600,
+        1151640
+      ],
+      "total_ms": 364.44479995407164,
+      "stage_ms": {
+        "interpret": 1.239,
+        "remember": 1.315,
+        "retrieve": 351.944,
+        "evidence": 4.782,
+        "generate": 0.685,
+        "validate": 1.625
+      },
+      "encoding_ms": [
+        25.48799989745021
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "T08",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        387290
+      ],
+      "total_ms": 422.06650017760694,
+      "stage_ms": {
+        "interpret": 1.008,
+        "remember": 1.279,
+        "retrieve": 413.359,
+        "evidence": 1.836,
+        "generate": 0.619,
+        "validate": 1.177
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 3,
+      "case_id": "S02",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        291550,
+        108600,
+        105600,
+        1174180,
+        250900,
+        632360,
+        960090
+      ],
+      "total_ms": 616.2174001801759,
+      "stage_ms": {
+        "interpret": 0.916,
+        "remember": 1.313,
+        "retrieve": 561.73,
+        "evidence": 47.202,
+        "generate": 0.828,
+        "validate": 1.337
+      },
+      "encoding_ms": [
+        76.73439988866448
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "S02",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        291550,
+        960090,
+        108600,
+        570
+      ],
+      "total_ms": 370.95850007608533,
+      "stage_ms": {
+        "interpret": 0.975,
+        "remember": 1.258,
+        "retrieve": 353.641,
+        "evidence": 7.481,
+        "generate": 2.335,
+        "validate": 2.119
+      },
+      "encoding_ms": [
+        24.728800170123577
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "S03",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        413150,
+        108600,
+        548430,
+        367520
+      ],
+      "total_ms": 409.48010003194213,
+      "stage_ms": {
+        "interpret": 1.676,
+        "remember": 3.818,
+        "retrieve": 386.805,
+        "evidence": 9.068,
+        "generate": 0.699,
+        "validate": 3.086
+      },
+      "encoding_ms": [
+        36.17990016937256
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "S03",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        548430,
+        367520,
+        1091500,
+        440,
+        570,
+        413150,
+        108600
+      ],
+      "total_ms": 897.9901999700814,
+      "stage_ms": {
+        "interpret": 0.913,
+        "remember": 3.59,
+        "retrieve": 841.42,
+        "evidence": 46.867,
+        "generate": 0.783,
+        "validate": 1.573
+      },
+      "encoding_ms": [
+        17.966900020837784
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "S05",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        582010,
+        400,
+        1151640,
+        105600,
+        413150,
+        250900,
+        237930,
+        620
+      ],
+      "total_ms": 518.7821998260915,
+      "stage_ms": {
+        "interpret": 1.194,
+        "remember": 1.41,
+        "retrieve": 472.502,
+        "evidence": 35.765,
+        "generate": 1.068,
+        "validate": 2.553
+      },
+      "encoding_ms": [
+        23.956000106409192
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "S05",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        582010,
+        413150,
+        400,
+        1086940
+      ],
+      "total_ms": 390.2728999964893,
+      "stage_ms": {
+        "interpret": 0.853,
+        "remember": 2.702,
+        "retrieve": 372.088,
+        "evidence": 6.24,
+        "generate": 0.821,
+        "validate": 3.792
+      },
+      "encoding_ms": [
+        21.747100166976452
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "S06",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        892970,
+        203160,
+        105600,
+        413150,
+        108600
+      ],
+      "total_ms": 379.3641999363899,
+      "stage_ms": {
+        "interpret": 1.087,
+        "remember": 1.297,
+        "retrieve": 365.032,
+        "evidence": 5.102,
+        "generate": 2.14,
+        "validate": 1.655
+      },
+      "encoding_ms": [
+        46.95249977521598
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "S06",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        892970,
+        108600,
+        105600,
+        239140,
+        203160,
+        504230,
+        387290,
+        960090
+      ],
+      "total_ms": 620.3610000666231,
+      "stage_ms": {
+        "interpret": 2.205,
+        "remember": 11.194,
+        "retrieve": 560.582,
+        "evidence": 34.023,
+        "generate": 1.393,
+        "validate": 5.783
+      },
+      "encoding_ms": [
+        48.29399986192584
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "S07",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        400,
+        291550,
+        250900,
+        113200,
+        620,
+        105600,
+        387290,
+        268910
+      ],
+      "total_ms": 500.43359980918467,
+      "stage_ms": {
+        "interpret": 2.024,
+        "remember": 1.29,
+        "retrieve": 461.0,
+        "evidence": 30.677,
+        "generate": 0.808,
+        "validate": 1.447
+      },
+      "encoding_ms": [
+        44.379900209605694
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "S07",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        113200,
+        620,
+        105600,
+        387290,
+        400
+      ],
+      "total_ms": 418.6530001461506,
+      "stage_ms": {
+        "interpret": 1.402,
+        "remember": 1.877,
+        "retrieve": 399.166,
+        "evidence": 7.458,
+        "generate": 0.936,
+        "validate": 2.327
+      },
+      "encoding_ms": [
+        52.37579997628927
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "S08",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        304430,
+        387290,
+        113200,
+        1086940,
+        261570
+      ],
+      "total_ms": 394.4943998940289,
+      "stage_ms": {
+        "interpret": 0.835,
+        "remember": 1.121,
+        "retrieve": 381.766,
+        "evidence": 4.773,
+        "generate": 1.237,
+        "validate": 1.9
+      },
+      "encoding_ms": [
+        59.83479996211827
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "S08",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        387290,
+        261570,
+        1086940,
+        203160,
+        570,
+        304430,
+        113200,
+        620
+      ],
+      "total_ms": 502.8450000099838,
+      "stage_ms": {
+        "interpret": 1.017,
+        "remember": 1.465,
+        "retrieve": 455.452,
+        "evidence": 32.7,
+        "generate": 7.437,
+        "validate": 1.487
+      },
+      "encoding_ms": [
+        31.11970005556941
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M02",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        620,
+        960090,
+        632360,
+        440,
+        1966720,
+        105600,
+        570
+      ],
+      "total_ms": 414.9225000292063,
+      "stage_ms": {
+        "interpret": 0.911,
+        "remember": 2.324,
+        "retrieve": 375.563,
+        "evidence": 31.047,
+        "generate": 0.726,
+        "validate": 1.651
+      },
+      "encoding_ms": [
+        15.838599996641278
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M02",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1817070
+      ],
+      "total_ms": 430.9104001149535,
+      "stage_ms": {
+        "interpret": 1.241,
+        "remember": 1.42,
+        "retrieve": 420.524,
+        "evidence": 2.104,
+        "generate": 0.684,
+        "validate": 2.197
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 3,
+      "case_id": "M02",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        620,
+        960090,
+        632360,
+        440
+      ],
+      "total_ms": 424.238899955526,
+      "stage_ms": {
+        "interpret": 1.441,
+        "remember": 1.367,
+        "retrieve": 411.209,
+        "evidence": 4.964,
+        "generate": 0.771,
+        "validate": 1.493
+      },
+      "encoding_ms": [
+        13.645400060340762
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M02",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1817070,
+        1091500,
+        582010,
+        367520,
+        400
+      ],
+      "total_ms": 535.4931999463588,
+      "stage_ms": {
+        "interpret": 1.433,
+        "remember": 2.674,
+        "retrieve": 514.262,
+        "evidence": 10.806,
+        "generate": 0.831,
+        "validate": 1.83
+      },
+      "encoding_ms": [
+        31.957600032910705
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M03",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        440,
+        620,
+        105600,
+        570,
+        413150
+      ],
+      "total_ms": 520.4730001278222,
+      "stage_ms": {
+        "interpret": 1.341,
+        "remember": 1.664,
+        "retrieve": 502.777,
+        "evidence": 9.675,
+        "generate": 0.682,
+        "validate": 1.505
+      },
+      "encoding_ms": [
+        23.280099965631962
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M03",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        108600,
+        440,
+        620,
+        105600,
+        413150
+      ],
+      "total_ms": 364.6188999991864,
+      "stage_ms": {
+        "interpret": 1.539,
+        "remember": 1.767,
+        "retrieve": 348.112,
+        "evidence": 5.456,
+        "generate": 0.648,
+        "validate": 3.115
+      },
+      "encoding_ms": [
+        17.786500044167042
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M03",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        440,
+        105600,
+        620,
+        570,
+        413150,
+        311690,
+        250900
+      ],
+      "total_ms": 426.07009992934763,
+      "stage_ms": {
+        "interpret": 4.525,
+        "remember": 1.349,
+        "retrieve": 388.189,
+        "evidence": 24.438,
+        "generate": 0.689,
+        "validate": 1.641
+      },
+      "encoding_ms": [
+        23.631100077182055
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M03",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        108600,
+        440,
+        620,
+        105600,
+        413150,
+        239140,
+        311690,
+        570
+      ],
+      "total_ms": 583.4500999189913,
+      "stage_ms": {
+        "interpret": 1.432,
+        "remember": 2.255,
+        "retrieve": 539.532,
+        "evidence": 34.202,
+        "generate": 0.868,
+        "validate": 1.389
+      },
+      "encoding_ms": [
+        15.69940010085702
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M04",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        892970,
+        400,
+        105600,
+        646570,
+        239140,
+        250900,
+        108600,
+        620
+      ],
+      "total_ms": 598.8955998327583,
+      "stage_ms": {
+        "interpret": 1.264,
+        "remember": 1.544,
+        "retrieve": 535.67,
+        "evidence": 29.447,
+        "generate": 1.146,
+        "validate": 1.99
+      },
+      "encoding_ms": [
+        54.336699889972806
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M04",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        570,
+        440,
+        960090,
+        105600,
+        892970,
+        413150,
+        435150,
+        203160
+      ],
+      "total_ms": 502.61259987019,
+      "stage_ms": {
+        "interpret": 2.734,
+        "remember": 1.33,
+        "retrieve": 448.739,
+        "evidence": 36.082,
+        "generate": 1.819,
+        "validate": 2.526
+      },
+      "encoding_ms": [
+        41.23070021159947
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M04",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        892970,
+        105600,
+        108600,
+        620,
+        400
+      ],
+      "total_ms": 423.06670011021197,
+      "stage_ms": {
+        "interpret": 1.327,
+        "remember": 4.858,
+        "retrieve": 395.663,
+        "evidence": 9.033,
+        "generate": 2.928,
+        "validate": 2.717
+      },
+      "encoding_ms": [
+        42.25479997694492
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M04",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        570,
+        291550,
+        440,
+        632360
+      ],
+      "total_ms": 378.0219000764191,
+      "stage_ms": {
+        "interpret": 1.932,
+        "remember": 1.329,
+        "retrieve": 364.888,
+        "evidence": 5.002,
+        "generate": 0.675,
+        "validate": 1.47
+      },
+      "encoding_ms": [
+        25.75009991414845
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M06",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        570,
+        440,
+        960090,
+        620
+      ],
+      "total_ms": 400.70919995196164,
+      "stage_ms": {
+        "interpret": 0.958,
+        "remember": 1.29,
+        "retrieve": 385.474,
+        "evidence": 4.66,
+        "generate": 0.807,
+        "validate": 3.962
+      },
+      "encoding_ms": [
+        28.11930002644658
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M06",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        960090,
+        570,
+        440,
+        108600
+      ],
+      "total_ms": 421.2721998337656,
+      "stage_ms": {
+        "interpret": 1.16,
+        "remember": 10.474,
+        "retrieve": 400.019,
+        "evidence": 4.317,
+        "generate": 0.676,
+        "validate": 1.747
+      },
+      "encoding_ms": [
+        35.728400107473135
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M06",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        960090,
+        440,
+        203160,
+        268910,
+        435150,
+        105600,
+        892970,
+        239140
+      ],
+      "total_ms": 479.0380001068115,
+      "stage_ms": {
+        "interpret": 1.449,
+        "remember": 1.365,
+        "retrieve": 438.989,
+        "evidence": 32.066,
+        "generate": 0.711,
+        "validate": 1.404
+      },
+      "encoding_ms": [
+        20.732299890369177
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M06",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        582010,
+        291550,
+        250900,
+        960090,
+        570,
+        440,
+        108600
+      ],
+      "total_ms": 467.94150001369417,
+      "stage_ms": {
+        "interpret": 1.057,
+        "remember": 1.357,
+        "retrieve": 419.383,
+        "evidence": 39.561,
+        "generate": 0.966,
+        "validate": 2.002
+      },
+      "encoding_ms": [
+        25.678700068965554
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M07",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1145360
+      ],
+      "total_ms": 383.01019999198616,
+      "stage_ms": {
+        "interpret": 1.337,
+        "remember": 1.543,
+        "retrieve": 371.389,
+        "evidence": 3.18,
+        "generate": 0.801,
+        "validate": 1.519
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 3,
+      "case_id": "M07",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1145360
+      ],
+      "total_ms": 426.2079999316484,
+      "stage_ms": {
+        "interpret": 1.065,
+        "remember": 1.277,
+        "retrieve": 416.904,
+        "evidence": 2.315,
+        "generate": 0.568,
+        "validate": 0.867
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 3,
+      "case_id": "M07",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        1145360,
+        435150,
+        892970,
+        1086940,
+        107100
+      ],
+      "total_ms": 450.3340001683682,
+      "stage_ms": {
+        "interpret": 1.596,
+        "remember": 1.308,
+        "retrieve": 429.604,
+        "evidence": 6.721,
+        "generate": 0.912,
+        "validate": 5.514
+      },
+      "encoding_ms": [
+        65.06810011342168
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M07",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        387290,
+        892970,
+        1086940,
+        261570
+      ],
+      "total_ms": 399.18239996768534,
+      "stage_ms": {
+        "interpret": 1.015,
+        "remember": 1.095,
+        "retrieve": 385.629,
+        "evidence": 6.172,
+        "generate": 0.708,
+        "validate": 1.579
+      },
+      "encoding_ms": [
+        21.4049001224339
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M08",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        440,
+        570
+      ],
+      "total_ms": 472.63940004631877,
+      "stage_ms": {
+        "interpret": 1.016,
+        "remember": 1.66,
+        "retrieve": 458.946,
+        "evidence": 4.097,
+        "generate": 0.612,
+        "validate": 1.316
+      },
+      "encoding_ms": [
+        15.071199974045157
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M08",
+      "turn": 2,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        413150,
+        620,
+        646570,
+        1151640
+      ],
+      "total_ms": 419.47870003059506,
+      "stage_ms": {
+        "interpret": 1.347,
+        "remember": 1.615,
+        "retrieve": 399.229,
+        "evidence": 9.123,
+        "generate": 0.826,
+        "validate": 1.68
+      },
+      "encoding_ms": [
+        18.665800103917718
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M08",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        440,
+        570
+      ],
+      "total_ms": 372.3607000429183,
+      "stage_ms": {
+        "interpret": 2.201,
+        "remember": 5.332,
+        "retrieve": 354.519,
+        "evidence": 2.522,
+        "generate": 0.897,
+        "validate": 1.309
+      },
+      "encoding_ms": [
+        16.594299813732505
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "M08",
+      "turn": 2,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        646570,
+        400,
+        892970,
+        1151640,
+        548430,
+        203160,
+        291550
+      ],
+      "total_ms": 1056.5739998128265,
+      "stage_ms": {
+        "interpret": 1.206,
+        "remember": 1.151,
+        "retrieve": 1010.968,
+        "evidence": 37.799,
+        "generate": 0.737,
+        "validate": 1.824
+      },
+      "encoding_ms": [
+        19.471899839118123
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "C02",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        400,
+        960090,
+        203160,
+        105600,
+        268910,
+        250900,
+        113200
+      ],
+      "total_ms": 494.951399974525,
+      "stage_ms": {
+        "interpret": 1.449,
+        "remember": 3.696,
+        "retrieve": 446.075,
+        "evidence": 39.347,
+        "generate": 0.416,
+        "validate": 0.859
+      },
+      "encoding_ms": [
+        29.12140008993447
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "C02",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        113200,
+        400,
+        1091500,
+        620
+      ],
+      "total_ms": 379.4072000309825,
+      "stage_ms": {
+        "interpret": 1.294,
+        "remember": 2.226,
+        "retrieve": 366.662,
+        "evidence": 4.397,
+        "generate": 0.619,
+        "validate": 1.337
+      },
+      "encoding_ms": [
+        27.078800136223435
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "C03",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        113200,
+        400,
+        1091500,
+        620
+      ],
+      "total_ms": 405.40120005607605,
+      "stage_ms": {
+        "interpret": 1.22,
+        "remember": 1.599,
+        "retrieve": 391.631,
+        "evidence": 5.42,
+        "generate": 0.699,
+        "validate": 1.327
+      },
+      "encoding_ms": [
+        33.43479987233877
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "C03",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        291550,
+        400,
+        960090,
+        105600,
+        250900,
+        113200,
+        1091500,
+        620
+      ],
+      "total_ms": 476.6470999456942,
+      "stage_ms": {
+        "interpret": 1.979,
+        "remember": 2.555,
+        "retrieve": 430.827,
+        "evidence": 34.795,
+        "generate": 0.65,
+        "validate": 1.809
+      },
+      "encoding_ms": [
+        27.393999975174665
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "C04",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        960090,
+        203160,
+        400,
+        268910,
+        367520,
+        881100,
+        620
+      ],
+      "total_ms": 488.50369988940656,
+      "stage_ms": {
+        "interpret": 4.872,
+        "remember": 4.413,
+        "retrieve": 435.891,
+        "evidence": 37.807,
+        "generate": 0.712,
+        "validate": 1.605
+      },
+      "encoding_ms": [
+        22.200100123882294
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "C04",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        620,
+        960090,
+        113200,
+        413150
+      ],
+      "total_ms": 399.2775999940932,
+      "stage_ms": {
+        "interpret": 1.235,
+        "remember": 1.687,
+        "retrieve": 383.702,
+        "evidence": 5.094,
+        "generate": 0.645,
+        "validate": 2.678
+      },
+      "encoding_ms": [
+        32.498199958354235
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "C05",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        413150,
+        108600
+      ],
+      "total_ms": 376.5692999586463,
+      "stage_ms": {
+        "interpret": 0.913,
+        "remember": 1.012,
+        "retrieve": 365.103,
+        "evidence": 3.728,
+        "generate": 0.7,
+        "validate": 1.941
+      },
+      "encoding_ms": [
+        21.5850998647511
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "C05",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        620,
+        413150,
+        108600
+      ],
+      "total_ms": 431.1639000661671,
+      "stage_ms": {
+        "interpret": 1.298,
+        "remember": 1.627,
+        "retrieve": 420.748,
+        "evidence": 3.087,
+        "generate": 0.635,
+        "validate": 1.253
+      },
+      "encoding_ms": [
+        61.59099983051419
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "C06",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [],
+      "total_ms": 15.501900110393763,
+      "stage_ms": {
+        "interpret": 3.842,
+        "remember": 3.741,
+        "retrieve": 2.515,
+        "evidence": 0.704,
+        "generate": 0.779,
+        "validate": 0.691
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 3,
+      "case_id": "C06",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [],
+      "total_ms": 11.74579979851842,
+      "stage_ms": {
+        "interpret": 0.867,
+        "remember": 0.845,
+        "retrieve": 2.134,
+        "evidence": 2.97,
+        "generate": 0.702,
+        "validate": 0.489
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 3,
+      "case_id": "A02",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        113200,
+        250900,
+        291550,
+        435150,
+        413150
+      ],
+      "total_ms": 363.6769000440836,
+      "stage_ms": {
+        "interpret": 0.926,
+        "remember": 1.257,
+        "retrieve": 349.96,
+        "evidence": 6.433,
+        "generate": 0.803,
+        "validate": 1.639
+      },
+      "encoding_ms": [
+        14.169600093737245
+      ]
+    },
+    {
+      "pass": 3,
+      "case_id": "A02",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        113200,
+        250900
+      ],
+      "total_ms": 396.81240008212626,
+      "stage_ms": {
+        "interpret": 1.485,
+        "remember": 1.172,
+        "retrieve": 386.554,
+        "evidence": 1.875,
+        "generate": 0.569,
+        "validate": 0.677
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 3,
+      "case_id": "A03",
+      "turn": 1,
+      "method": "proposed",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [],
+      "total_ms": 296.686900081113,
+      "stage_ms": {
+        "interpret": 0.93,
+        "remember": 1.161,
+        "retrieve": 290.474,
+        "evidence": 0.651,
+        "generate": 0.538,
+        "validate": 0.571
+      },
+      "encoding_ms": []
+    },
+    {
+      "pass": 3,
+      "case_id": "A03",
+      "turn": 1,
+      "method": "semantic_top5",
+      "warm": true,
+      "status": "ok",
+      "ranked_ids": [
+        105600,
+        881100,
+        413150,
+        1091500,
+        1151640
+      ],
+      "total_ms": 393.65610014647245,
+      "stage_ms": {
+        "interpret": 0.555,
+        "remember": 1.349,
+        "retrieve": 379.406,
+        "evidence": 5.664,
+        "generate": 0.722,
+        "validate": 2.472
+      },
+      "encoding_ms": [
+        20.07979992777109
+      ]
+    }
+  ],
+  "provider_attempts": [],
+  "live_provider_calls": 0,
+  "actual_quota_reservations": 0,
+  "synthetic_cases": "Not scored here; covered by separately recorded synthetic/backend/browser regressions.",
+  "quality_gate": "incomplete: full held-out live comparison and human judgments not authorized/executed",
+  "scope": "Live M01 development pilot only",
+  "continuation_policy_sha256": "2ab2f8028b2dd064bc95ea7f648700387501c8f5d7a8bb7660b6ad180be1f1d0",
+  "runner_sha256": "40961d419ab6bf4481ff21be4d38b639f9530acbb066fb13b47af63430596306",
+  "repetitions": 3,
+  "protocol": "Three fixed full passes; alternate method order per case/pass; no per-turn disk writes; no inference; no retries; include slow/error observations.",
+  "peak_sampled_rss_mib": 220.109375,
+  "summary": {
+    "proposed": {
+      "warm_samples": 90,
+      "failed_samples": 0,
+      "retrieve_p95_ms": 717.448,
+      "per_pass_retrieve_p95_ms": [
+        589.228,
+        847.34,
+        841.42
+      ]
+    },
+    "semantic_top5": {
+      "warm_samples": 90,
+      "failed_samples": 0,
+      "retrieve_p95_ms": 669.008,
+      "per_pass_retrieve_p95_ms": [
+        1007.422,
+        698.775,
+        502.777
+      ]
+    }
+  },
+  "finished_at": "2026-10-26T17:41:38.410830+00:00"
+}

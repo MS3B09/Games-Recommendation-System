@@ -1,0 +1,12 @@
+{
+  "status": "AIFailure",
+  "synthetic_prompt": "Hi! I had a long day. Could we chat for a moment before choosing anything?",
+  "provider_status": 400,
+  "protocol_error": {
+    "message": "Tool call validation failed: tool call validation failed: attempted to call tool 'json' which was not in request.tools",
+    "type": "invalid_request_error",
+    "code": "tool_use_failed",
+    "failed_generation": "{\"name\": \"json\", \"arguments\": {\n  \"parts\": [\n    {\n      \"text\": \"Hey there! I'm sorry your day was long\u2014happy to chat and unwind a bit. How's everything going? Anything on your mind you'd like to talk about before we dive into games?\",\n      \"evidence\": []\n    }\n  ],\n  \"game_ids\": [],\n  \"memory\": []\n}}"
+  },
+  "code": "ai_provider_configuration"
+}

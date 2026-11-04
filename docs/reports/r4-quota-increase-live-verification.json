@@ -1,0 +1,33 @@
+{
+  "observed_at": "2026-10-27T00:04:36.464568+00:00",
+  "runtime_limits": [
+    100,
+    1500000
+  ],
+  "normal_defaults": [
+    50,
+    500000
+  ],
+  "provider_calls": 0,
+  "committed_application_reservations": 0,
+  "status": "passed",
+  "alembic_version": "0005",
+  "usage_before": {
+    "id": true,
+    "day": "2026-10-26",
+    "calls": 50,
+    "reserved_tokens": 393494,
+    "minute": "2026-10-26T17:33:00+00:00",
+    "minute_calls": 2
+  },
+  "usage_after": {
+    "id": true,
+    "day": "2026-10-26",
+    "calls": 50,
+    "reserved_tokens": 393494,
+    "minute": "2026-10-26T17:33:00+00:00",
+    "minute_calls": 2
+  },
+  "reservation_granted_then_rolled_back": true,
+  "consumed_usage_unchanged": true
+}

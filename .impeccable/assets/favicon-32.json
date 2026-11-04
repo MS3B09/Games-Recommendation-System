@@ -1,0 +1,10 @@
+{
+  "source_kind": "user-provided PNG",
+  "source_path": "frontend/public/favicon.png",
+  "source_sha256": "bb11c494d3ba5f9fcd56156cc93c53c635f91f9fe6f776090f413ed7d338e133",
+  "output_path": "frontend/public/favicon-32.png",
+  "output_sha256": "4981ffc98d6ab16bdb9b5efbb1efa7182a1e237ef3522c22b799bbb2082a5145",
+  "dimensions": [32, 32],
+  "transformation": "Downsampled with browser canvas high-quality smoothing; original PNG unchanged",
+  "ai_generated": false
+}

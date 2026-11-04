@@ -1,0 +1,21 @@
+{
+  "status": "AIFailure",
+  "synthetic_prompt": "Hi! I had a long day. Could we chat for a moment before choosing anything?",
+  "provider_status": 400,
+  "protocol_error": {
+    "message": "invalid JSON schema for response_format: 'conversation_reply': /$defs/FilterSetting/properties/value/anyOf: anyOf branches must be disambiguated via a required discriminator (const/enum) or by key-set exclusion with additionalProperties:false",
+    "type": "invalid_request_error",
+    "param": "response_format",
+    "schema_path": "/$defs/FilterSetting/properties/value/anyOf",
+    "schema_path_segments": [
+      "$",
+      "$defs",
+      "FilterSetting",
+      "properties",
+      "value",
+      "anyOf"
+    ],
+    "schema_kind": "anyOf"
+  },
+  "code": "ai_provider_configuration"
+}

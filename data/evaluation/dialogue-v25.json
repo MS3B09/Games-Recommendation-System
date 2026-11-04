@@ -1,0 +1,32 @@
+{
+  "version": "owner-closeout-development-v36",
+  "scope": "Fresh exposed development after preserving v35's incorrect native requirements action. No held-out changes or failed-turn replay.",
+  "development": [
+    {
+      "id": "D36B",
+      "turns": [
+        "Set Windows, single-player and a recorded maximum of 20.50 USD inclusive as my saved normal requirements. Find up to four games using them.",
+        "Just for this request, find Windows single-player games with recorded prices strictly above 20.50 USD and at most 41 USD. Leave my saved normal requirements alone.",
+        "Return to my saved normal requirements and search for games again. What is my normal maximum price?"
+      ],
+      "checks": ["save_normal commits2050 after valid final reply", "Temporary strict minimum2051 and inclusive maximum4100", "use_saved restores2050 with real cards", "No state loss, scope reinterpretation or false empty search"]
+    },
+    {
+      "id": "D36P",
+      "turns": [
+        "Look up Dead Cells and report its recorded operating systems, play modes and dated USD price.",
+        "Does a platform absent from such a record establish current incompatibility?"
+      ],
+      "checks": ["Exact ID588650 record agrees", "Follow-up answers current question; no incompatibility claim"]
+    },
+    {
+      "id": "D36R",
+      "turns": [
+        "Quinn might join my gaming evening on Monday. We have not agreed a budget.",
+        "Move the evening to Thursday. Quinn remains tentative.",
+        "Recall the original day, corrected day, possible participant and whether we set a spending limit."
+      ],
+      "checks": ["Monday then Thursday; Quinn tentative; budget unagreed", "No invented persistent limits or catalog reads"]
+    }
+  ]
+}

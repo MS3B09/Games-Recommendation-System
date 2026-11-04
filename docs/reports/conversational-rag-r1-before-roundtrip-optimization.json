@@ -1,0 +1,1819 @@
+{
+  "schema_version": 1,
+  "measured_at": "2026-10-25T00:11:01.122583+00:00",
+  "status": "ok",
+  "phase": "complete",
+  "checks": [
+    "all_actual_query_settings_present",
+    "actual_encoder_loaded_with_hash_manifest_checks",
+    "retained_cpu_reference_hash_matches_r0",
+    "reference_model_and_revision_match",
+    "sixteen_fixed_reference_vectors",
+    "fresh_float_onnx_cpu_parity",
+    "runtime_database_configured",
+    "complete_bounded_catalog_inventory",
+    "active_version_matches_configured_encoder",
+    "title_variant_spiderman",
+    "title_lookup_records_single_player_spiderman",
+    "title_variant_Spider-Man",
+    "title_lookup_records_single_player_Spider-Man",
+    "title_variant_spider man remastered",
+    "title_lookup_records_single_player_spider man remastered",
+    "title_variant_Marvel's Spider-Man Remastered",
+    "title_lookup_records_single_player_Marvel's Spider-Man Remastered",
+    "title_variant_Marvel\u2019s Spider-Man Remastered",
+    "title_lookup_records_single_player_Marvel\u2019s Spider-Man Remastered",
+    "real_catalog_franchise_ambiguity",
+    "catalog_absence_requires_completed_title_search",
+    "vector_inventory_matches_active_version",
+    "semantic_filtered_top20_neutral",
+    "semantic_capability_neutral",
+    "every_lexical_id_obeys_hard_conditions_neutral",
+    "pool_and_evidence_bounds_neutral",
+    "semantic_filtered_top20_inclusive_price",
+    "semantic_capability_inclusive_price",
+    "every_lexical_id_obeys_hard_conditions_inclusive_price",
+    "pool_and_evidence_bounds_inclusive_price",
+    "semantic_filtered_top20_strict_price",
+    "semantic_capability_strict_price",
+    "every_lexical_id_obeys_hard_conditions_strict_price",
+    "pool_and_evidence_bounds_strict_price",
+    "semantic_filtered_top20_minimum_and_maximum",
+    "semantic_capability_minimum_and_maximum",
+    "every_lexical_id_obeys_hard_conditions_minimum_and_maximum",
+    "pool_and_evidence_bounds_minimum_and_maximum",
+    "semantic_filtered_top20_free_only",
+    "semantic_capability_free_only",
+    "every_lexical_id_obeys_hard_conditions_free_only",
+    "pool_and_evidence_bounds_free_only",
+    "semantic_filtered_top20_platform_any",
+    "semantic_capability_platform_any",
+    "every_lexical_id_obeys_hard_conditions_platform_any",
+    "pool_and_evidence_bounds_platform_any",
+    "semantic_filtered_top20_platform_all",
+    "semantic_capability_platform_all",
+    "every_lexical_id_obeys_hard_conditions_platform_all",
+    "pool_and_evidence_bounds_platform_all",
+    "semantic_filtered_top20_all_modes",
+    "semantic_capability_all_modes",
+    "every_lexical_id_obeys_hard_conditions_all_modes",
+    "pool_and_evidence_bounds_all_modes",
+    "semantic_filtered_top20_all_genres",
+    "semantic_capability_all_genres",
+    "every_lexical_id_obeys_hard_conditions_all_genres",
+    "pool_and_evidence_bounds_all_genres",
+    "semantic_filtered_top20_unwanted",
+    "semantic_capability_unwanted",
+    "every_lexical_id_obeys_hard_conditions_unwanted",
+    "pool_and_evidence_bounds_unwanted",
+    "semantic_filtered_top20_excluded",
+    "semantic_capability_excluded",
+    "every_lexical_id_obeys_hard_conditions_excluded",
+    "pool_and_evidence_bounds_excluded",
+    "semantic_filtered_top20_impossible",
+    "semantic_capability_impossible",
+    "every_lexical_id_obeys_hard_conditions_impossible",
+    "pool_and_evidence_bounds_impossible",
+    "impossible_filters_are_not_catalog_absence",
+    "real_lexical_no_match_has_no_zero_score_fillers",
+    "missing_encoder_is_not_semantic_success",
+    "active_version_mismatch_is_truthful_lexical_fallback",
+    "development_farm_anchor_in_evidence",
+    "main_discover_results_unchanged_by_chat_reads"
+  ],
+  "live_provider_calls": 0,
+  "database_writes": 0,
+  "ranking_version": "chat-rrf-v1",
+  "configuration": {
+    "query_paths_configured": {
+      "query_tokenizer_path": true,
+      "query_model_path": true,
+      "query_artifact_path": true
+    },
+    "database_configured": true
+  },
+  "encoder_load_ms": 1701.2241000775248,
+  "parity": {
+    "texts": 16,
+    "texts_sha256": "9cfcba1c7906a254666efd0c9363a12b41c88c76f153cbf57fbf4dddbae54b74",
+    "reference_sha256": "238406a24e756aa17578f3584e0cd4b20f2839447a1d6071e2e0dbd432a29530",
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "minimum_cosine": 0.9999999403953552,
+    "max_absolute_component_error": 1.862645149230957e-07,
+    "reference_regenerated": false,
+    "model_downloads": 0
+  },
+  "catalog": {
+    "version": "m2-649714e8b26775165f105d02",
+    "eligible_games": 40
+  },
+  "titles": [
+    {
+      "query": "spiderman",
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": [
+          1817070
+        ]
+      }
+    },
+    {
+      "query": "Spider-Man",
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": [
+          1817070
+        ]
+      }
+    },
+    {
+      "query": "spider man remastered",
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": [
+          1817070
+        ]
+      }
+    },
+    {
+      "query": "Marvel's Spider-Man Remastered",
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": [
+          1817070
+        ]
+      }
+    },
+    {
+      "query": "Marvel\u2019s Spider-Man Remastered",
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": [
+          1817070
+        ]
+      }
+    },
+    {
+      "query": "ori",
+      "outcome": {
+        "kind": "ambiguous",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": [
+          261570,
+          387290
+        ]
+      }
+    },
+    {
+      "query": "R1 nonexistent zephyr clockwork title 987654",
+      "outcome": {
+        "kind": "not_in_catalog",
+        "channels": [
+          "title"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": true,
+        "evidence_ids": []
+      }
+    }
+  ],
+  "filter_cases": [
+    {
+      "name": "neutral",
+      "filters": {
+        "min_price_cents": null,
+        "max_price_cents": null,
+        "price_operator": "lte",
+        "free_only": false,
+        "platforms": [],
+        "platform_match": "any",
+        "required_modes": [],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          105600,
+          367520,
+          203160,
+          1151640,
+          548430,
+          892970,
+          588650,
+          960090
+        ]
+      },
+      "lexical_ids": [
+        588650,
+        105600,
+        203160,
+        367520,
+        435150,
+        548430,
+        692850,
+        881100,
+        892970,
+        1151640
+      ],
+      "semantic_ids": [
+        960090,
+        1151640,
+        413150,
+        105600,
+        367520,
+        440,
+        203160,
+        570,
+        620,
+        646570,
+        892970,
+        1091500,
+        548430,
+        108600,
+        291550,
+        304430,
+        582010,
+        268910,
+        1174180,
+        311690
+      ],
+      "fused_ranks": [
+        [
+          105600,
+          0.031754032258064516
+        ],
+        [
+          367520,
+          0.031009615384615385
+        ],
+        [
+          203160,
+          0.030798389007344232
+        ],
+        [
+          1151640,
+          0.0304147465437788
+        ],
+        [
+          548430,
+          0.028850145288501453
+        ],
+        [
+          892970,
+          0.028577260665441927
+        ],
+        [
+          588650,
+          0.01639344262295082
+        ],
+        [
+          960090,
+          0.01639344262295082
+        ],
+        [
+          413150,
+          0.015873015873015872
+        ],
+        [
+          435150,
+          0.015384615384615385
+        ],
+        [
+          440,
+          0.015151515151515152
+        ],
+        [
+          692850,
+          0.014925373134328358
+        ],
+        [
+          570,
+          0.014705882352941176
+        ],
+        [
+          881100,
+          0.014705882352941176
+        ],
+        [
+          620,
+          0.014492753623188406
+        ],
+        [
+          646570,
+          0.014285714285714285
+        ],
+        [
+          1091500,
+          0.013888888888888888
+        ],
+        [
+          108600,
+          0.013513513513513514
+        ],
+        [
+          291550,
+          0.013333333333333334
+        ],
+        [
+          304430,
+          0.013157894736842105
+        ],
+        [
+          582010,
+          0.012987012987012988
+        ],
+        [
+          268910,
+          0.01282051282051282
+        ],
+        [
+          1174180,
+          0.012658227848101266
+        ],
+        [
+          311690,
+          0.0125
+        ]
+      ]
+    },
+    {
+      "name": "inclusive_price",
+      "filters": {
+        "min_price_cents": null,
+        "max_price_cents": 1999,
+        "price_operator": "lte",
+        "free_only": false,
+        "platforms": [],
+        "platform_match": "any",
+        "required_modes": [],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          105600,
+          367520,
+          203160,
+          960090,
+          413150,
+          881100,
+          440,
+          570
+        ]
+      },
+      "lexical_ids": [
+        105600,
+        203160,
+        367520,
+        881100
+      ],
+      "semantic_ids": [
+        960090,
+        413150,
+        105600,
+        367520,
+        440,
+        203160,
+        570,
+        620,
+        1091500,
+        291550,
+        268910,
+        1174180,
+        311690,
+        22380,
+        237930,
+        504230,
+        387290,
+        632360,
+        1966720,
+        250900
+      ],
+      "fused_ranks": [
+        [
+          105600,
+          0.032266458495966696
+        ],
+        [
+          367520,
+          0.03149801587301587
+        ],
+        [
+          203160,
+          0.03128054740957967
+        ],
+        [
+          960090,
+          0.01639344262295082
+        ],
+        [
+          413150,
+          0.016129032258064516
+        ],
+        [
+          881100,
+          0.015625
+        ],
+        [
+          440,
+          0.015384615384615385
+        ],
+        [
+          570,
+          0.014925373134328358
+        ],
+        [
+          620,
+          0.014705882352941176
+        ],
+        [
+          1091500,
+          0.014492753623188406
+        ],
+        [
+          291550,
+          0.014285714285714285
+        ],
+        [
+          268910,
+          0.014084507042253521
+        ],
+        [
+          1174180,
+          0.013888888888888888
+        ],
+        [
+          311690,
+          0.0136986301369863
+        ],
+        [
+          22380,
+          0.013513513513513514
+        ],
+        [
+          237930,
+          0.013333333333333334
+        ],
+        [
+          504230,
+          0.013157894736842105
+        ],
+        [
+          387290,
+          0.012987012987012988
+        ],
+        [
+          632360,
+          0.01282051282051282
+        ],
+        [
+          1966720,
+          0.012658227848101266
+        ],
+        [
+          250900,
+          0.0125
+        ]
+      ]
+    },
+    {
+      "name": "strict_price",
+      "filters": {
+        "min_price_cents": null,
+        "max_price_cents": 1999,
+        "price_operator": "lt",
+        "free_only": false,
+        "platforms": [],
+        "platform_match": "any",
+        "required_modes": [],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          105600,
+          367520,
+          881100,
+          960090,
+          413150,
+          440,
+          570,
+          620
+        ]
+      },
+      "lexical_ids": [
+        105600,
+        367520,
+        881100
+      ],
+      "semantic_ids": [
+        960090,
+        413150,
+        105600,
+        367520,
+        440,
+        570,
+        620,
+        1091500,
+        291550,
+        1174180,
+        311690,
+        22380,
+        504230,
+        632360,
+        1966720,
+        250900,
+        113200,
+        881100,
+        107100,
+        400
+      ],
+      "fused_ranks": [
+        [
+          105600,
+          0.032266458495966696
+        ],
+        [
+          367520,
+          0.031754032258064516
+        ],
+        [
+          881100,
+          0.028693528693528692
+        ],
+        [
+          960090,
+          0.01639344262295082
+        ],
+        [
+          413150,
+          0.016129032258064516
+        ],
+        [
+          440,
+          0.015384615384615385
+        ],
+        [
+          570,
+          0.015151515151515152
+        ],
+        [
+          620,
+          0.014925373134328358
+        ],
+        [
+          1091500,
+          0.014705882352941176
+        ],
+        [
+          291550,
+          0.014492753623188406
+        ],
+        [
+          1174180,
+          0.014285714285714285
+        ],
+        [
+          311690,
+          0.014084507042253521
+        ],
+        [
+          22380,
+          0.013888888888888888
+        ],
+        [
+          504230,
+          0.0136986301369863
+        ],
+        [
+          632360,
+          0.013513513513513514
+        ],
+        [
+          1966720,
+          0.013333333333333334
+        ],
+        [
+          250900,
+          0.013157894736842105
+        ],
+        [
+          113200,
+          0.012987012987012988
+        ],
+        [
+          107100,
+          0.012658227848101266
+        ],
+        [
+          400,
+          0.0125
+        ]
+      ]
+    },
+    {
+      "name": "minimum_and_maximum",
+      "filters": {
+        "min_price_cents": 1000,
+        "max_price_cents": 2000,
+        "price_operator": "lte",
+        "free_only": false,
+        "platforms": [],
+        "platform_match": "any",
+        "required_modes": [],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          203160,
+          367520,
+          960090,
+          413150,
+          1091500,
+          268910,
+          1174180,
+          237930
+        ]
+      },
+      "lexical_ids": [
+        203160,
+        367520
+      ],
+      "semantic_ids": [
+        960090,
+        413150,
+        367520,
+        203160,
+        1091500,
+        268910,
+        1174180,
+        237930,
+        387290,
+        250900,
+        107100
+      ],
+      "fused_ranks": [
+        [
+          203160,
+          0.032018442622950824
+        ],
+        [
+          367520,
+          0.03200204813108039
+        ],
+        [
+          960090,
+          0.01639344262295082
+        ],
+        [
+          413150,
+          0.016129032258064516
+        ],
+        [
+          1091500,
+          0.015384615384615385
+        ],
+        [
+          268910,
+          0.015151515151515152
+        ],
+        [
+          1174180,
+          0.014925373134328358
+        ],
+        [
+          237930,
+          0.014705882352941176
+        ],
+        [
+          387290,
+          0.014492753623188406
+        ],
+        [
+          250900,
+          0.014285714285714285
+        ],
+        [
+          107100,
+          0.014084507042253521
+        ]
+      ]
+    },
+    {
+      "name": "free_only",
+      "filters": {
+        "min_price_cents": 0,
+        "max_price_cents": 0,
+        "price_operator": "lte",
+        "free_only": true,
+        "platforms": [],
+        "platform_match": "any",
+        "required_modes": [],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          440,
+          570,
+          291550
+        ]
+      },
+      "lexical_ids": [],
+      "semantic_ids": [
+        440,
+        570,
+        291550
+      ],
+      "fused_ranks": [
+        [
+          440,
+          0.01639344262295082
+        ],
+        [
+          570,
+          0.016129032258064516
+        ],
+        [
+          291550,
+          0.015873015873015872
+        ]
+      ]
+    },
+    {
+      "name": "platform_any",
+      "filters": {
+        "min_price_cents": null,
+        "max_price_cents": null,
+        "price_operator": "lte",
+        "free_only": false,
+        "platforms": [
+          "windows",
+          "linux"
+        ],
+        "platform_match": "any",
+        "required_modes": [],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          105600,
+          367520,
+          203160,
+          1151640,
+          548430,
+          892970,
+          588650,
+          960090
+        ]
+      },
+      "lexical_ids": [
+        588650,
+        105600,
+        203160,
+        367520,
+        435150,
+        548430,
+        692850,
+        881100,
+        892970,
+        1151640
+      ],
+      "semantic_ids": [
+        960090,
+        1151640,
+        413150,
+        105600,
+        367520,
+        440,
+        203160,
+        570,
+        620,
+        646570,
+        892970,
+        1091500,
+        548430,
+        108600,
+        291550,
+        304430,
+        582010,
+        268910,
+        1174180,
+        311690
+      ],
+      "fused_ranks": [
+        [
+          105600,
+          0.031754032258064516
+        ],
+        [
+          367520,
+          0.031009615384615385
+        ],
+        [
+          203160,
+          0.030798389007344232
+        ],
+        [
+          1151640,
+          0.0304147465437788
+        ],
+        [
+          548430,
+          0.028850145288501453
+        ],
+        [
+          892970,
+          0.028577260665441927
+        ],
+        [
+          588650,
+          0.01639344262295082
+        ],
+        [
+          960090,
+          0.01639344262295082
+        ],
+        [
+          413150,
+          0.015873015873015872
+        ],
+        [
+          435150,
+          0.015384615384615385
+        ],
+        [
+          440,
+          0.015151515151515152
+        ],
+        [
+          692850,
+          0.014925373134328358
+        ],
+        [
+          570,
+          0.014705882352941176
+        ],
+        [
+          881100,
+          0.014705882352941176
+        ],
+        [
+          620,
+          0.014492753623188406
+        ],
+        [
+          646570,
+          0.014285714285714285
+        ],
+        [
+          1091500,
+          0.013888888888888888
+        ],
+        [
+          108600,
+          0.013513513513513514
+        ],
+        [
+          291550,
+          0.013333333333333334
+        ],
+        [
+          304430,
+          0.013157894736842105
+        ],
+        [
+          582010,
+          0.012987012987012988
+        ],
+        [
+          268910,
+          0.01282051282051282
+        ],
+        [
+          1174180,
+          0.012658227848101266
+        ],
+        [
+          311690,
+          0.0125
+        ]
+      ]
+    },
+    {
+      "name": "platform_all",
+      "filters": {
+        "min_price_cents": null,
+        "max_price_cents": null,
+        "price_operator": "lte",
+        "free_only": false,
+        "platforms": [
+          "windows",
+          "linux"
+        ],
+        "platform_match": "all",
+        "required_modes": [],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          105600,
+          367520,
+          588650,
+          892970,
+          413150,
+          440,
+          570,
+          620
+        ]
+      },
+      "lexical_ids": [
+        588650,
+        105600,
+        367520,
+        892970
+      ],
+      "semantic_ids": [
+        413150,
+        105600,
+        367520,
+        440,
+        570,
+        620,
+        646570,
+        892970,
+        108600,
+        311690,
+        588650,
+        239140,
+        237930,
+        504230,
+        250900,
+        107100,
+        400
+      ],
+      "fused_ranks": [
+        [
+          105600,
+          0.03225806451612903
+        ],
+        [
+          367520,
+          0.031746031746031744
+        ],
+        [
+          588650,
+          0.03047794966520434
+        ],
+        [
+          892970,
+          0.030330882352941176
+        ],
+        [
+          413150,
+          0.01639344262295082
+        ],
+        [
+          440,
+          0.015625
+        ],
+        [
+          570,
+          0.015384615384615385
+        ],
+        [
+          620,
+          0.015151515151515152
+        ],
+        [
+          646570,
+          0.014925373134328358
+        ],
+        [
+          108600,
+          0.014492753623188406
+        ],
+        [
+          311690,
+          0.014285714285714285
+        ],
+        [
+          239140,
+          0.013888888888888888
+        ],
+        [
+          237930,
+          0.0136986301369863
+        ],
+        [
+          504230,
+          0.013513513513513514
+        ],
+        [
+          250900,
+          0.013333333333333334
+        ],
+        [
+          107100,
+          0.013157894736842105
+        ],
+        [
+          400,
+          0.012987012987012988
+        ]
+      ]
+    },
+    {
+      "name": "all_modes",
+      "filters": {
+        "min_price_cents": null,
+        "max_price_cents": null,
+        "price_operator": "lte",
+        "free_only": false,
+        "platforms": [],
+        "platform_match": "any",
+        "required_modes": [
+          "single-player",
+          "online-co-op"
+        ],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          105600,
+          548430,
+          892970,
+          435150,
+          692850,
+          960090,
+          413150,
+          620
+        ]
+      },
+      "lexical_ids": [
+        105600,
+        435150,
+        548430,
+        692850,
+        892970
+      ],
+      "semantic_ids": [
+        960090,
+        413150,
+        105600,
+        620,
+        892970,
+        548430,
+        108600,
+        291550,
+        1174180,
+        1086940,
+        435150,
+        239140,
+        632360,
+        1966720,
+        1245620,
+        692850
+      ],
+      "fused_ranks": [
+        [
+          105600,
+          0.032266458495966696
+        ],
+        [
+          548430,
+          0.031024531024531024
+        ],
+        [
+          892970,
+          0.03076923076923077
+        ],
+        [
+          435150,
+          0.03021353930031804
+        ],
+        [
+          692850,
+          0.028782894736842105
+        ],
+        [
+          960090,
+          0.01639344262295082
+        ],
+        [
+          413150,
+          0.016129032258064516
+        ],
+        [
+          620,
+          0.015625
+        ],
+        [
+          108600,
+          0.014925373134328358
+        ],
+        [
+          291550,
+          0.014705882352941176
+        ],
+        [
+          1174180,
+          0.014492753623188406
+        ],
+        [
+          1086940,
+          0.014285714285714285
+        ],
+        [
+          239140,
+          0.013888888888888888
+        ],
+        [
+          632360,
+          0.0136986301369863
+        ],
+        [
+          1966720,
+          0.013513513513513514
+        ],
+        [
+          1245620,
+          0.013333333333333334
+        ]
+      ]
+    },
+    {
+      "name": "all_genres",
+      "filters": {
+        "min_price_cents": null,
+        "max_price_cents": null,
+        "price_operator": "lte",
+        "free_only": false,
+        "platforms": [],
+        "platform_match": "any",
+        "required_modes": [],
+        "required_genres": [
+          "action",
+          "adventure"
+        ],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          105600,
+          203160,
+          367520,
+          1151640,
+          588650,
+          892970,
+          692850,
+          881100
+        ]
+      },
+      "lexical_ids": [
+        588650,
+        105600,
+        203160,
+        367520,
+        692850,
+        881100,
+        892970,
+        1151640
+      ],
+      "semantic_ids": [
+        1151640,
+        105600,
+        367520,
+        203160,
+        620,
+        892970,
+        304430,
+        1174180,
+        311690,
+        588650,
+        239140,
+        504230,
+        1817070,
+        1966720,
+        113200,
+        881100,
+        692850
+      ],
+      "fused_ranks": [
+        [
+          105600,
+          0.03225806451612903
+        ],
+        [
+          203160,
+          0.03149801587301587
+        ],
+        [
+          367520,
+          0.03149801587301587
+        ],
+        [
+          1151640,
+          0.031099324975891997
+        ],
+        [
+          588650,
+          0.030679156908665108
+        ],
+        [
+          892970,
+          0.03007688828584351
+        ],
+        [
+          692850,
+          0.028371628371628373
+        ],
+        [
+          881100,
+          0.028309409888357256
+        ],
+        [
+          620,
+          0.015384615384615385
+        ],
+        [
+          304430,
+          0.014925373134328358
+        ],
+        [
+          1174180,
+          0.014705882352941176
+        ],
+        [
+          311690,
+          0.014492753623188406
+        ],
+        [
+          239140,
+          0.014084507042253521
+        ],
+        [
+          504230,
+          0.013888888888888888
+        ],
+        [
+          1817070,
+          0.0136986301369863
+        ],
+        [
+          1966720,
+          0.013513513513513514
+        ],
+        [
+          113200,
+          0.013333333333333334
+        ]
+      ]
+    },
+    {
+      "name": "unwanted",
+      "filters": {
+        "min_price_cents": null,
+        "max_price_cents": null,
+        "price_operator": "lte",
+        "free_only": false,
+        "platforms": [],
+        "platform_match": "any",
+        "required_modes": [],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [
+          "action"
+        ],
+        "excluded_ids": []
+      },
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          435150,
+          960090,
+          413150,
+          646570,
+          1091500,
+          108600,
+          1086940
+        ]
+      },
+      "lexical_ids": [
+        435150
+      ],
+      "semantic_ids": [
+        960090,
+        413150,
+        646570,
+        1091500,
+        108600,
+        1086940,
+        435150
+      ],
+      "fused_ranks": [
+        [
+          435150,
+          0.03131881575727918
+        ],
+        [
+          960090,
+          0.01639344262295082
+        ],
+        [
+          413150,
+          0.016129032258064516
+        ],
+        [
+          646570,
+          0.015873015873015872
+        ],
+        [
+          1091500,
+          0.015625
+        ],
+        [
+          108600,
+          0.015384615384615385
+        ],
+        [
+          1086940,
+          0.015151515151515152
+        ]
+      ]
+    },
+    {
+      "name": "excluded",
+      "filters": {
+        "min_price_cents": null,
+        "max_price_cents": null,
+        "price_operator": "lte",
+        "free_only": false,
+        "platforms": [],
+        "platform_match": "any",
+        "required_modes": [],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": [
+          1086940,
+          107100,
+          692850,
+          960090,
+          291550,
+          504230,
+          268910,
+          1091500,
+          588650,
+          548430
+        ]
+      },
+      "outcome": {
+        "kind": "found",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": [
+          105600,
+          367520,
+          1151640,
+          203160,
+          892970,
+          435150,
+          413150,
+          440
+        ]
+      },
+      "lexical_ids": [
+        105600,
+        203160,
+        367520,
+        435150,
+        881100,
+        892970,
+        1151640
+      ],
+      "semantic_ids": [
+        1151640,
+        413150,
+        105600,
+        367520,
+        440,
+        203160,
+        570,
+        620,
+        646570,
+        892970,
+        108600,
+        304430,
+        582010,
+        1174180,
+        311690,
+        435150,
+        22380,
+        239140,
+        261570,
+        237930
+      ],
+      "fused_ranks": [
+        [
+          105600,
+          0.032266458495966696
+        ],
+        [
+          367520,
+          0.03149801587301587
+        ],
+        [
+          1151640,
+          0.03131881575727918
+        ],
+        [
+          203160,
+          0.03128054740957967
+        ],
+        [
+          892970,
+          0.029437229437229435
+        ],
+        [
+          435150,
+          0.028782894736842105
+        ],
+        [
+          413150,
+          0.016129032258064516
+        ],
+        [
+          440,
+          0.015384615384615385
+        ],
+        [
+          881100,
+          0.015384615384615385
+        ],
+        [
+          570,
+          0.014925373134328358
+        ],
+        [
+          620,
+          0.014705882352941176
+        ],
+        [
+          646570,
+          0.014492753623188406
+        ],
+        [
+          108600,
+          0.014084507042253521
+        ],
+        [
+          304430,
+          0.013888888888888888
+        ],
+        [
+          582010,
+          0.0136986301369863
+        ],
+        [
+          1174180,
+          0.013513513513513514
+        ],
+        [
+          311690,
+          0.013333333333333334
+        ],
+        [
+          22380,
+          0.012987012987012988
+        ],
+        [
+          239140,
+          0.01282051282051282
+        ],
+        [
+          261570,
+          0.012658227848101266
+        ],
+        [
+          237930,
+          0.0125
+        ]
+      ]
+    },
+    {
+      "name": "impossible",
+      "filters": {
+        "min_price_cents": 999999,
+        "max_price_cents": 1000000,
+        "price_operator": "lte",
+        "free_only": false,
+        "platforms": [],
+        "platform_match": "any",
+        "required_modes": [],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "outcome": {
+        "kind": "no_recommendation_match",
+        "channels": [
+          "lexical",
+          "semantic"
+        ],
+        "semantic_available": true,
+        "degraded_reason": null,
+        "title_search_complete": false,
+        "evidence_ids": []
+      },
+      "lexical_ids": [],
+      "semantic_ids": [],
+      "fused_ranks": []
+    }
+  ],
+  "fallbacks": {
+    "missing": {
+      "kind": "no_recommendation_match",
+      "channels": [
+        "lexical"
+      ],
+      "semantic_available": false,
+      "degraded_reason": "encoder_missing",
+      "title_search_complete": false,
+      "evidence_ids": []
+    },
+    "mismatch": {
+      "kind": "found",
+      "channels": [
+        "lexical"
+      ],
+      "semantic_available": false,
+      "degraded_reason": "artifact_mismatch",
+      "title_search_complete": false,
+      "evidence_ids": [
+        588650,
+        105600,
+        203160,
+        367520,
+        435150,
+        548430,
+        692850,
+        881100
+      ]
+    }
+  },
+  "development_example": {
+    "query": "tending a farm and getting to know a small town",
+    "evidence_ids": [
+      413150,
+      108600,
+      435150,
+      239140,
+      387290,
+      960090,
+      1174180,
+      1151640
+    ],
+    "ranks": [
+      {
+        "game": {
+          "app_id": 413150,
+          "title": "Stardew Valley"
+        },
+        "rrf_score": 0.03252247488101534,
+        "lexical_rank": 2,
+        "semantic_rank": 1,
+        "cosine_similarity": 0.325146704180244
+      },
+      {
+        "game": {
+          "app_id": 108600,
+          "title": "Project Zomboid"
+        },
+        "rrf_score": 0.032266458495966696,
+        "lexical_rank": 1,
+        "semantic_rank": 3,
+        "cosine_similarity": 0.13473829912499
+      },
+      {
+        "game": {
+          "app_id": 435150,
+          "title": "Divinity: Original Sin 2 - Definitive Edition"
+        },
+        "rrf_score": 0.028531243721117136,
+        "lexical_rank": 3,
+        "semantic_rank": 19,
+        "cosine_similarity": 0.0481115565266743
+      },
+      {
+        "game": {
+          "app_id": 239140,
+          "title": "Dying Light"
+        },
+        "rrf_score": 0.016129032258064516,
+        "lexical_rank": null,
+        "semantic_rank": 2,
+        "cosine_similarity": 0.141490493461206
+      },
+      {
+        "game": {
+          "app_id": 387290,
+          "title": "Ori and the Blind Forest: Definitive Edition"
+        },
+        "rrf_score": 0.015625,
+        "lexical_rank": null,
+        "semantic_rank": 4,
+        "cosine_similarity": 0.123196285164246
+      },
+      {
+        "game": {
+          "app_id": 960090,
+          "title": "Bloons TD 6"
+        },
+        "rrf_score": 0.015625,
+        "lexical_rank": 4,
+        "semantic_rank": null,
+        "cosine_similarity": null
+      },
+      {
+        "game": {
+          "app_id": 1174180,
+          "title": "Red Dead Redemption 2"
+        },
+        "rrf_score": 0.015384615384615385,
+        "lexical_rank": null,
+        "semantic_rank": 5,
+        "cosine_similarity": 0.122392870330386
+      },
+      {
+        "game": {
+          "app_id": 1151640,
+          "title": "Horizon Zero Dawn\u2122 Complete Edition"
+        },
+        "rrf_score": 0.015151515151515152,
+        "lexical_rank": null,
+        "semantic_rank": 6,
+        "cosine_similarity": 0.105516399607551
+      }
+    ]
+  },
+  "timings": {
+    "warm_samples": 12,
+    "encoding_only_median_ms": 8.661550004035234,
+    "encoding_only_p95_ms": 11.723039881326256,
+    "encoding_plus_remote_retrieval_median_ms": 748.841349966824,
+    "encoding_plus_remote_retrieval_p95_ms": 1015.8634049585087,
+    "local_warm_target_ms": 1000
+  },
+  "main_discovery_ids_before_and_after": [
+    107100,
+    311690,
+    237930,
+    113200
+  ],
+  "peak_interpreter_rss_mib": 220.5703125
+}

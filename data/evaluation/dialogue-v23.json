@@ -1,0 +1,15 @@
+{
+  "version": "owner-closeout-development-v34",
+  "scope": "Fresh exposed budget regression for active saved-state placement. Earlier failures remain preserved; no held-out changes or replay.",
+  "development": [
+    {
+      "id": "D34B",
+      "turns": [
+        "Save Windows, single-player and a recorded maximum of 23 USD inclusive as my usual requirements, and find up to four games.",
+        "For this search only, find Windows single-player games recorded strictly above 23 USD and no higher than 46 USD. Do not change my usual requirements.",
+        "Now find games under my usual requirements again, and tell me my saved maximum price."
+      ],
+      "checks": ["Three actual searches with cards", "Normal/restored maximum2300; temporary minimum2301 maximum4600", "Normal requirements remain saved", "No false-empty result or internal-state dump"]
+    }
+  ]
+}

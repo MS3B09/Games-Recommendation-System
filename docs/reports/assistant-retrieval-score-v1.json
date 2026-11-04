@@ -1,0 +1,298 @@
+{
+  "status": "owner_judgments_incomplete",
+  "splits": {
+    "development": {
+      "cases": 10,
+      "missing_judgments": 43,
+      "aggregate": null
+    },
+    "held_out": {
+      "cases": 30,
+      "missing_judgments": 151,
+      "aggregate": null
+    }
+  },
+  "cases": [
+    {
+      "id": "D01",
+      "split": "development",
+      "missing_judgments": 4,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "D02",
+      "split": "development",
+      "missing_judgments": 7,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "D03",
+      "split": "development",
+      "missing_judgments": 5,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "D04",
+      "split": "development",
+      "missing_judgments": 4,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "D05",
+      "split": "development",
+      "missing_judgments": 4,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "D06",
+      "split": "development",
+      "missing_judgments": 3,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "D07",
+      "split": "development",
+      "missing_judgments": 5,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "D08",
+      "split": "development",
+      "missing_judgments": 5,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "D09",
+      "split": "development",
+      "missing_judgments": 5,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "D10",
+      "split": "development",
+      "missing_judgments": 1,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H01",
+      "split": "held_out",
+      "missing_judgments": 6,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H02",
+      "split": "held_out",
+      "missing_judgments": 5,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H03",
+      "split": "held_out",
+      "missing_judgments": 6,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H04",
+      "split": "held_out",
+      "missing_judgments": 5,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H05",
+      "split": "held_out",
+      "missing_judgments": 4,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H06",
+      "split": "held_out",
+      "missing_judgments": 5,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H07",
+      "split": "held_out",
+      "missing_judgments": 4,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H08",
+      "split": "held_out",
+      "missing_judgments": 6,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H09",
+      "split": "held_out",
+      "missing_judgments": 8,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H10",
+      "split": "held_out",
+      "missing_judgments": 4,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H11",
+      "split": "held_out",
+      "missing_judgments": 4,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H12",
+      "split": "held_out",
+      "missing_judgments": 6,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H13",
+      "split": "held_out",
+      "missing_judgments": 5,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H14",
+      "split": "held_out",
+      "missing_judgments": 4,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H15",
+      "split": "held_out",
+      "missing_judgments": 4,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H16",
+      "split": "held_out",
+      "missing_judgments": 5,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H17",
+      "split": "held_out",
+      "missing_judgments": 6,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H18",
+      "split": "held_out",
+      "missing_judgments": 6,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H19",
+      "split": "held_out",
+      "missing_judgments": 5,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H20",
+      "split": "held_out",
+      "missing_judgments": 4,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H21",
+      "split": "held_out",
+      "missing_judgments": 5,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H22",
+      "split": "held_out",
+      "missing_judgments": 7,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H23",
+      "split": "held_out",
+      "missing_judgments": 4,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H24",
+      "split": "held_out",
+      "missing_judgments": 7,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H25",
+      "split": "held_out",
+      "missing_judgments": 2,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H26",
+      "split": "held_out",
+      "missing_judgments": 6,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H27",
+      "split": "held_out",
+      "missing_judgments": 2,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H28",
+      "split": "held_out",
+      "missing_judgments": 5,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H29",
+      "split": "held_out",
+      "missing_judgments": 5,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    },
+    {
+      "id": "H30",
+      "split": "held_out",
+      "missing_judgments": 6,
+      "metrics": null,
+      "empty_ranking_adequacy": {}
+    }
+  ],
+  "scope": "Retrieval-only owner judgments. No whole-catalog recall, generated-answer quality, or final acceptance claim."
+}

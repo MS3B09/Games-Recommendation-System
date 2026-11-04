@@ -1,0 +1,13 @@
+{
+  "version": "llm-first-v16",
+  "development": [
+    {"id":"D16L","checks":["durable_conditions","temporary_override","normal_budget_restored","dated_price_language"],"turns":["Remember my normal requirements: Windows, multiplayer, and a recorded price no higher than 22 USD. Please recommend one game.","For just this search, change the recorded budget to 32 USD. My other requirements stay the same.","What normal budget, operating system and play mode are you retaining for me now?"]},
+    {"id":"D16F","checks":["named_catalog_games","no_embellished_description","topic_detour","reference_repair"],"turns":["Bring up Hades and Slay the Spire from your database.","Brief detour: say something kind to a beginner learning to draw.","Back to the pair from before: compare the operating systems and play modes actually recorded for them."]}
+  ],
+  "held_out": [
+    {"id":"H16M","seed_turns":80,"seed_context":{"initial":"I play on Windows. My friend is Reese. Our plan is Wednesday. Please remember this.","correction":"Change our plan to Friday. My friend is still Reese. We have not agreed on a price limit.","initial_memory":{"platform":"Windows","friend":"Reese","plan_day":"Wednesday"},"corrected_memory":{"plan_day":"Friday","budget":"Not agreed; do not assume"},"game_ids":[413150,105600]},"checks":["original_and_corrected_day","friend_and_unknown_budget","old_pair_recorded_modes"],"turns":["Tell me the original day I proposed and the day I switched it to.","Who did I plan to play with, and what price limit had we agreed on?","What were the two games from early in our chat? Compare their recorded play modes."]},
+    {"id":"H16L","checks":["durable_filters","temporary_override","retained_budget_and_platform","recorded_price_not_current_quote"],"turns":["Please retain Windows, single-player and a recorded price ceiling of 15 USD as my normal conditions, and suggest one game.","Only for this search, raise the ceiling to 20 USD. Leave the other conditions alone.","What are my normal conditions after that temporary exception?"]},
+    {"id":"H16F","checks":["canonical_named_games","catalog_only_facts","natural_detour","earlier_pair_without_id_leak"],"turns":["Can you show Hollow Knight and Dead Cells from the catalog?","Before we continue, give me one friendly sentence of encouragement for learning a difficult skill.","Returning to those two games, how do their recorded platforms and play modes compare?"]}
+  ],
+  "judging": "Frozen before v16 inference. These held-out cases remain unattempted from v14/v15. New development conversations are not failed-turn retries. Preserve all earlier source hashes, attempts and provider limits. The 80-turn prefix is synthetic stored history; only follow-ups are live. Human scores remain null."
+}

@@ -1,0 +1,11 @@
+{
+  "M01:1:A": "semantic_top5",
+  "M01:1:B": "proposed",
+  "M01:2:A": "semantic_top5",
+  "M01:3:A": "semantic_top5",
+  "M05:1:A": "proposed",
+  "M05:1:B": "semantic_top5",
+  "M05:2:A": "proposed",
+  "M05:2:B": "semantic_top5",
+  "M05:3:A": "proposed"
+}

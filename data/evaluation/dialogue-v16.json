@@ -1,0 +1,32 @@
+{
+  "version": "owner-closeout-development-v26",
+  "scope": "Fresh exposed regressions after v25 omitted optional readiness, used turn scope for normal conditions, and embellished descriptions. Native readiness is now required; all earlier attempts/failures remain preserved. Original held-out fixtures remain unchanged and unattempted.",
+  "development": [
+    {
+      "id": "D26B",
+      "turns": [
+        "Retain Windows and single-player as my usual requirements, with an inclusive recorded price ceiling of 14 USD. Please suggest up to four games.",
+        "For this search alone, look for Windows single-player games priced above 14 USD and at most 28 USD in the catalog. Leave my usual 14-dollar limit unchanged.",
+        "Use my usual requirements for a new search and tell me the normal budget after that exception."
+      ],
+      "checks": ["Initial/restored maximum1400 inclusive, temporary minimum1401 and maximum2800 inclusive", "Normal Windows/single-player/1400 committed; exception never overwrites", "At least one temporary returned price newly eligible", "Description assertions are quoted from actual supplied excerpts or omitted", "Actual explicit native finish choice and final model-call count are recorded"]
+    },
+    {
+      "id": "D26P",
+      "turns": [
+        "Look up the Hades catalog record and report its recorded operating systems, modes and dated USD price.",
+        "Can you infer real-world incompatibility today from a platform that is not recorded there?"
+      ],
+      "checks": ["Actual Hades ID1145360 values; no extra qualities", "Natural catalog-only uncertainty without internal flags"]
+    },
+    {
+      "id": "D26R",
+      "turns": [
+        "My uncle Riley might join a gaming evening on Monday. We have not agreed a budget.",
+        "Move that gaming evening to Friday. Riley remains a possible participant.",
+        "Recall the first and replacement days, the possible participant and whether a budget was agreed."
+      ],
+      "checks": ["Monday then Friday; uncle Riley tentative; budget unagreed", "No invented hard filters or catalog reads"]
+    }
+  ]
+}

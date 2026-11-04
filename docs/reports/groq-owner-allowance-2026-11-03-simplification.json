@@ -1,0 +1,21 @@
+{
+  "basis": "Owner-supplied November 3 Activity tooltip screenshots: 24 requests; 256 cached input, 54.2K uncached input, 5K output, 59.4K total tokens",
+  "provider_day": "2026-11-03",
+  "receipt_kind": "Owner dashboard evidence, not an independently authenticated dashboard read or a provider reset timestamp",
+  "scope_assumption": "Same configured organization/model, all-projects UTC scope as preceding owner receipts; screenshots do not themselves display those selectors",
+  "reconciled_sql_at": "2026-11-03T10:00:31.880931+00:00",
+  "effective_calls": 34,
+  "effective_reserved_units": 375679,
+  "remaining_application_calls": 66,
+  "remaining_application_reserved_units": 1124321,
+  "reconciliation": "34 prior reservations = 24 HTTP200 + 9 HTTP400 + 1 HTTP429. The 24 dashboard requests and rounded 59.4K tokens agree with 59434 known reported tokens. Last owned provider attempt was 08:07:18 UTC, over 110 minutes before reconciliation, beyond the previously documented dashboard lag.",
+  "historical_missing_usage_reservation_bound": 110402,
+  "provider_usage_baseline_upper_bound": 60000,
+  "baseline_policy": "Fresh organization dashboard usage after lag is the new planning basis; do not add old calls again. The historical missing usages are not edited or asserted to be zero. Include cached tokens in the rounded baseline conservatively.",
+  "subsequent_usage_rule": "Add every later full reported total, or its original reservation if usage is missing; retain 39840 next-turn reserve and fresh SQL receipt. Stop on provider limits, unknown execution, unexplained accounting or insufficient headroom.",
+  "next_worst_case_turn": 39840,
+  "planning_ceiling": 200000,
+  "reset_inferred": false,
+  "external_organization_activity_after_receipt_not_observable": true,
+  "paid_upgrade": false
+}

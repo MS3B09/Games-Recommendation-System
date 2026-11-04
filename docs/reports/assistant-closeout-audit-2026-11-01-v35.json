@@ -1,0 +1,78 @@
+{
+  "at": "2026-11-01T15:12:02.820278+00:00",
+  "human_scores": null,
+  "journals": [
+    {
+      "source": "C:\\Users\\User\\AppData\\Local\\Temp\\opencode\\assistant-closeout-capability-development-v35.json",
+      "snapshot": "assistant-closeout-capability-development-v35-snapshot-4ca561056dfb.json",
+      "sha256": "4ca561056dfb1621956a7ae22ff39a7dfc07b9a1c75a5b5ae6b80286d0eba9f5",
+      "current_source_matches": true,
+      "attempted": 1,
+      "http_200_deliveries": 0,
+      "http_p95_ms": null,
+      "paused": null,
+      "cases": [
+        {
+          "id": "D35B",
+          "seed_turns": 0,
+          "dependent_turns_skipped": 2,
+          "finished": true,
+          "cleanup_status": 200
+        },
+        {
+          "id": "D35P",
+          "seed_turns": 0
+        }
+      ],
+      "turns": [
+        {
+          "case": "D35B",
+          "turn": 1,
+          "status": 502,
+          "message": "We couldn't give you a reliable answer to that question. Try asking it another way.",
+          "elapsed_ms": 8294.508,
+          "games": [],
+          "model_calls": 3,
+          "applied_filters": null,
+          "preference_changes": null,
+          "tool_deliveries": [
+            {
+              "tool": "recommend_games",
+              "result_bytes": 139,
+              "error": "saved_requirements_conflict",
+              "returned": null
+            },
+            {
+              "tool": "recommend_games",
+              "result_bytes": 3831,
+              "error": null,
+              "returned": 4
+            }
+          ],
+          "code": "chat_invalid_answer",
+          "retry_at": null
+        }
+      ]
+    }
+  ],
+  "receipt": {
+    "at": "2026-11-01T15:12:07.536645+00:00",
+    "day": "2026-11-01",
+    "effective_calls": 55,
+    "effective_units": 610687,
+    "remaining_calls": 45,
+    "remaining_units": 889313
+  },
+  "accounting": {
+    "observed_reserved_calls": 3,
+    "reserved_units": 32750,
+    "known_reported_tokens": 7285,
+    "traces_without_usage": 0,
+    "unreported_reserved_units": 0,
+    "owned_reported_plus_missing_bound": 7285,
+    "turn_start_days": [
+      "2026-11-01"
+    ],
+    "note": "Aggregate owned usage/bound, not provider remaining balance. Cached tokens may reduce actual debit. Check applicable windows separately."
+  }
+}

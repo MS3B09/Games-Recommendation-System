@@ -1,0 +1,8 @@
+{
+  "version":"llm-first-contract-regression-v11",
+  "development":[
+    {"id":"R_MEMORY","seed_turns":80,"seed_context":{"initial":"My friend is Remy and we plan to play on Tuesday. I use Windows.","correction":"The plan has changed to Thursday. My friend is still Remy. We have no budget requirement.","initial_memory":{"platform":"Windows","friend":"Remy","plan_day":"Tuesday"},"corrected_memory":{"plan_day":"Thursday","budget":"Unspecified"},"game_ids":[367520,881100]},"turns":["What was our original planned day, and what did we later change it to?"]},
+    {"id":"R_FILTER","turns":["Please find one game with online co-op for Windows and a recorded price no higher than 30 USD."]}
+  ],
+  "scope":"Development contract regressions after preserved v1/v2 failures. Not held-out acceptance, and not an 80-turn live model conversation."
+}

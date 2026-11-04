@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-10-26T23:56:54.097236+00:00",
+  "status": "passed",
+  "schema": "m4_budget_verify_9f10df5ade994de5",
+  "application_schema_changed": false,
+  "cleanup": true,
+  "checks": [
+    "new migration preserves usage and grants reservations above the old daily ceilings",
+    "concurrent reservations stop at exactly 50 calls and 500000 reserved tokens",
+    "oversized daily ceilings and per-call reservations remain denied",
+    "initial reservation cannot exceed configured token limit",
+    "four concurrent runtime calls grant exactly two reservations",
+    "new Python process cannot reset or exceed the consumed budget",
+    "token exhaustion denies subsequent reservations",
+    "global four-calls-per-minute ceiling is enforced",
+    "runtime cannot read or reset private counters directly",
+    "database UTC window rollover reuses the single bounded row",
+    "R4 migration preserves all consumed counters; call 51 adds usage rather than resetting it",
+    "R4 concurrent reservations stop at exactly 100 calls and 1500000 reserved units",
+    "R4 invalid ceilings/per-call bounds denied; restoring lower runtime limits retains counters",
+    "expanded daily limits do not bypass the four-per-minute guard",
+    "R4 next-UTC-day rollover still uses the same single row"
+  ],
+  "stage": "r4_utc_rollover"
+}

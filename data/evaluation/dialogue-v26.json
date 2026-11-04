@@ -1,0 +1,32 @@
+{
+  "version": "owner-closeout-development-v37",
+  "scope": "Fresh exposed development for optional native tools and explicit retrieval filters. V36 failures/skips remain recorded; no failed-turn replay or held-out changes.",
+  "development": [
+    {
+      "id": "D37R",
+      "turns": [
+        "Robin may join my gaming evening on Friday. We have not agreed any spending limit.",
+        "Change the evening to Sunday. Robin is still only a possibility.",
+        "What was the original day, the corrected day, the possible guest, and did we agree a budget?"
+      ],
+      "checks": ["Friday then Sunday; Robin tentative; no agreed budget", "No unsolicited game searches or inferred platform/mode/budget filters", "Original transcript remains available without hard-preference edits"]
+    },
+    {
+      "id": "D37B",
+      "turns": [
+        "Save Windows, single-player and a recorded maximum of 18.75 USD inclusive as my normal requirements, and find up to four games.",
+        "For this search only, show Windows single-player games recorded strictly above 18.75 USD and no higher than 37.50 USD. Leave my normal requirements unchanged.",
+        "Search using my saved normal requirements again and tell me the saved maximum price."
+      ],
+      "checks": ["Three actual searches; save_normal, temporary, use_saved", "Normal/restored1875; temporary1876–3750", "Canonical cards satisfy actual filters; no temporary persistence"]
+    },
+    {
+      "id": "D37P",
+      "turns": [
+        "Look up Portal 2 and give its recorded operating systems, play modes, and dated USD price.",
+        "In general, if an operating system is not recorded for a game, is that proof the game cannot run on it today?"
+      ],
+      "checks": ["Canonical record and dated prices agree", "Follow-up answers the current question without asserting present incompatibility", "No provider failure from requiring an unnecessary tool call"]
+    }
+  ]
+}

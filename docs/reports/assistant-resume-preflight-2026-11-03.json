@@ -1,0 +1,360 @@
+{
+  "at": "2026-11-03T07:41:05.145948+00:00",
+  "kind": "read_only_resume_preflight_no_inference",
+  "checkpoint": "assistant-closeout-discovery-development-v45.json",
+  "checkpoint_sha256_unchanged": "98fc64acc8a6462dd08c9ec2ee8da246ed0344873fd9a8c5d03dba54383d0d57",
+  "source_and_configuration_match": true,
+  "current_v45_live_turns": 0,
+  "receipt": {
+    "at": "2026-11-03T07:41:14.960678+00:00",
+    "day": "2026-11-03",
+    "effective_calls": 0,
+    "effective_units": 0,
+    "remaining_calls": 100,
+    "remaining_units": 1500000
+  },
+  "previous_owner_receipt_bound_plus_later_calls": 166000,
+  "previous_receipt_combined_next": 205840,
+  "owned24h_calls": 70,
+  "owned24h_bound": 222000,
+  "next_worst_case": 39840,
+  "owned24h_combined_next": 261840,
+  "planning_ceiling": 200000,
+  "provider_reset_inferred": false,
+  "provider_exhaustion_confirmed": false,
+  "earliest_conservative_owned_window_recheck": "2026-11-03T13:24:47.120171+00:00",
+  "recommended_recheck_utc": "2026-11-03T13:26:00+00:00",
+  "earlier_resume_condition": "Fresh reconciled organization free usage or applicable reset receipt demonstrating worst-case headroom",
+  "archives": [
+    {
+      "version": 40,
+      "case": "D01",
+      "status": 404
+    },
+    {
+      "version": 40,
+      "case": "D02",
+      "status": 404
+    },
+    {
+      "version": 41,
+      "case": "D41Q",
+      "status": 404
+    },
+    {
+      "version": 43,
+      "case": "D42Q",
+      "status": 404
+    },
+    {
+      "version": 44,
+      "case": "D44Q",
+      "status": 404
+    },
+    {
+      "version": 44,
+      "case": "D03",
+      "status": 404
+    }
+  ],
+  "catalog": {
+    "state": "ready",
+    "catalog_version": "m2-649714e8b26775165f105d02",
+    "game_count": 40,
+    "region": "US",
+    "currency": "USD",
+    "source_observed_at": "2026-10-14T18:52:47.736652Z",
+    "semantic_query_matching": true,
+    "llm_enabled": true
+  },
+  "preview_http": 200,
+  "observer_sidecar": "groq-rate-headers-v45-20261103T073937Z.jsonl",
+  "observer_provider_calls": 0,
+  "inference_calls": 0,
+  "committed_reservations": 0,
+  "untouched_development_cases": [
+    "D04",
+    "D05",
+    "D06",
+    "D07",
+    "D08",
+    "D09",
+    "D10"
+  ],
+  "remaining_live_turns": 69,
+  "turns": [
+    {
+      "case": "D36P",
+      "at": "2026-11-02T13:01:06.382452+00:00",
+      "conservative_end": "2026-11-02T13:01:08.955814+00:00",
+      "calls": 1,
+      "bound": 12978,
+      "journal": "assistant-closeout-capability-development-v36.json"
+    },
+    {
+      "case": "D36R",
+      "at": "2026-11-02T13:02:21.340224+00:00",
+      "conservative_end": "2026-11-02T13:02:26.617182+00:00",
+      "calls": 2,
+      "bound": 5064,
+      "journal": "assistant-closeout-capability-development-v36.json"
+    },
+    {
+      "case": "D37R",
+      "at": "2026-11-02T13:07:35.363730+00:00",
+      "conservative_end": "2026-11-02T13:07:38.036200+00:00",
+      "calls": 1,
+      "bound": 2149,
+      "journal": "assistant-closeout-capability-development-v37.json"
+    },
+    {
+      "case": "D37R",
+      "at": "2026-11-02T13:08:40.630348+00:00",
+      "conservative_end": "2026-11-02T13:08:44.213451+00:00",
+      "calls": 2,
+      "bound": 3760,
+      "journal": "assistant-closeout-capability-development-v37.json"
+    },
+    {
+      "case": "D37R",
+      "at": "2026-11-02T13:09:44.300794+00:00",
+      "conservative_end": "2026-11-02T13:09:47.817103+00:00",
+      "calls": 2,
+      "bound": 4096,
+      "journal": "assistant-closeout-capability-development-v37.json"
+    },
+    {
+      "case": "D37B",
+      "at": "2026-11-02T13:10:48.952388+00:00",
+      "conservative_end": "2026-11-02T13:10:54.854372+00:00",
+      "calls": 2,
+      "bound": 5130,
+      "journal": "assistant-closeout-capability-development-v37.json"
+    },
+    {
+      "case": "D37B",
+      "at": "2026-11-02T13:11:53.050833+00:00",
+      "conservative_end": "2026-11-02T13:11:58.450581+00:00",
+      "calls": 2,
+      "bound": 6050,
+      "journal": "assistant-closeout-capability-development-v37.json"
+    },
+    {
+      "case": "D37B",
+      "at": "2026-11-02T13:12:57.722308+00:00",
+      "conservative_end": "2026-11-02T13:13:00.522591+00:00",
+      "calls": 1,
+      "bound": 2690,
+      "journal": "assistant-closeout-capability-development-v37.json"
+    },
+    {
+      "case": "D37P",
+      "at": "2026-11-02T13:15:19.991334+00:00",
+      "conservative_end": "2026-11-02T13:15:25.831891+00:00",
+      "calls": 2,
+      "bound": 3952,
+      "journal": "assistant-closeout-capability-development-v37.json"
+    },
+    {
+      "case": "D37P",
+      "at": "2026-11-02T13:16:24.010265+00:00",
+      "conservative_end": "2026-11-02T13:16:31.135260+00:00",
+      "calls": 3,
+      "bound": 7133,
+      "journal": "assistant-closeout-capability-development-v37.json"
+    },
+    {
+      "case": "D38B",
+      "at": "2026-11-02T13:22:37.503897+00:00",
+      "conservative_end": "2026-11-02T13:22:43.491509+00:00",
+      "calls": 2,
+      "bound": 5027,
+      "journal": "assistant-closeout-capability-development-v38.json"
+    },
+    {
+      "case": "D38B",
+      "at": "2026-11-02T13:23:41.436039+00:00",
+      "conservative_end": "2026-11-02T13:23:47.120171+00:00",
+      "calls": 2,
+      "bound": 5858,
+      "journal": "assistant-closeout-capability-development-v38.json"
+    },
+    {
+      "case": "D38B",
+      "at": "2026-11-02T13:24:45.255849+00:00",
+      "conservative_end": "2026-11-02T13:24:51.208273+00:00",
+      "calls": 2,
+      "bound": 6170,
+      "journal": "assistant-closeout-capability-development-v38.json"
+    },
+    {
+      "case": "D38P",
+      "at": "2026-11-02T13:25:59.922605+00:00",
+      "conservative_end": "2026-11-02T13:26:04.005001+00:00",
+      "calls": 2,
+      "bound": 3878,
+      "journal": "assistant-closeout-capability-development-v38.json"
+    },
+    {
+      "case": "D38P",
+      "at": "2026-11-02T13:27:04.703615+00:00",
+      "conservative_end": "2026-11-02T13:27:08.105701+00:00",
+      "calls": 2,
+      "bound": 4658,
+      "journal": "assistant-closeout-capability-development-v38.json"
+    },
+    {
+      "case": "D39B",
+      "at": "2026-11-02T13:58:06.143351+00:00",
+      "conservative_end": "2026-11-02T13:58:11.336051+00:00",
+      "calls": 2,
+      "bound": 4965,
+      "journal": "assistant-closeout-capability-development-v39.json"
+    },
+    {
+      "case": "D39B",
+      "at": "2026-11-02T13:59:10.411453+00:00",
+      "conservative_end": "2026-11-02T13:59:15.329565+00:00",
+      "calls": 2,
+      "bound": 5995,
+      "journal": "assistant-closeout-capability-development-v39.json"
+    },
+    {
+      "case": "D39B",
+      "at": "2026-11-02T14:00:14.756850+00:00",
+      "conservative_end": "2026-11-02T14:00:21.465791+00:00",
+      "calls": 3,
+      "bound": 28297,
+      "journal": "assistant-closeout-capability-development-v39.json"
+    },
+    {
+      "case": "D39P",
+      "at": "2026-11-02T14:07:14.609203+00:00",
+      "conservative_end": "2026-11-02T14:07:20.217182+00:00",
+      "calls": 2,
+      "bound": 3990,
+      "journal": "assistant-closeout-capability-development-v39.json"
+    },
+    {
+      "case": "D39P",
+      "at": "2026-11-02T14:08:18.680831+00:00",
+      "conservative_end": "2026-11-02T14:08:24.528513+00:00",
+      "calls": 3,
+      "bound": 7186,
+      "journal": "assistant-closeout-capability-development-v39.json"
+    },
+    {
+      "case": "D40P",
+      "at": "2026-11-02T14:12:03.267839+00:00",
+      "conservative_end": "2026-11-02T14:12:07.487830+00:00",
+      "calls": 2,
+      "bound": 3884,
+      "journal": "assistant-closeout-capability-development-v40.json"
+    },
+    {
+      "case": "D40P",
+      "at": "2026-11-02T14:13:07.272079+00:00",
+      "conservative_end": "2026-11-02T14:13:11.867442+00:00",
+      "calls": 2,
+      "bound": 4798,
+      "journal": "assistant-closeout-capability-development-v40.json"
+    },
+    {
+      "case": "D40R",
+      "at": "2026-11-02T15:20:12.276741+00:00",
+      "conservative_end": "2026-11-02T15:20:14.871271+00:00",
+      "calls": 1,
+      "bound": 2078,
+      "journal": "assistant-closeout-capability-development-v40.json"
+    },
+    {
+      "case": "D40R",
+      "at": "2026-11-02T15:21:16.047985+00:00",
+      "conservative_end": "2026-11-02T15:21:18.161166+00:00",
+      "calls": 1,
+      "bound": 2170,
+      "journal": "assistant-closeout-capability-development-v40.json"
+    },
+    {
+      "case": "D40R",
+      "at": "2026-11-02T15:22:19.926472+00:00",
+      "conservative_end": "2026-11-02T15:22:23.736918+00:00",
+      "calls": 1,
+      "bound": 2326,
+      "journal": "assistant-closeout-capability-development-v40.json"
+    },
+    {
+      "case": "D40B",
+      "at": "2026-11-02T15:23:24.477541+00:00",
+      "conservative_end": "2026-11-02T15:23:29.652985+00:00",
+      "calls": 2,
+      "bound": 5130,
+      "journal": "assistant-closeout-capability-development-v40.json"
+    },
+    {
+      "case": "D40B",
+      "at": "2026-11-02T15:24:29.026601+00:00",
+      "conservative_end": "2026-11-02T15:24:34.557905+00:00",
+      "calls": 2,
+      "bound": 5921,
+      "journal": "assistant-closeout-capability-development-v40.json"
+    },
+    {
+      "case": "D40B",
+      "at": "2026-11-02T15:25:34.253942+00:00",
+      "conservative_end": "2026-11-02T15:25:39.049955+00:00",
+      "calls": 2,
+      "bound": 5837,
+      "journal": "assistant-closeout-capability-development-v40.json"
+    },
+    {
+      "case": "D01",
+      "at": "2026-11-02T16:00:42.622188+00:00",
+      "conservative_end": "2026-11-02T16:00:48.241529+00:00",
+      "calls": 2,
+      "bound": 4990,
+      "journal": "assistant-closeout-discovery-development-v40.json"
+    },
+    {
+      "case": "D02",
+      "at": "2026-11-02T16:01:47.464317+00:00",
+      "conservative_end": "2026-11-02T16:01:52.610433+00:00",
+      "calls": 3,
+      "bound": 14985,
+      "journal": "assistant-closeout-discovery-development-v40.json"
+    },
+    {
+      "case": "D41Q",
+      "at": "2026-11-02T16:08:32.705199+00:00",
+      "conservative_end": "2026-11-02T16:08:40.654849+00:00",
+      "calls": 3,
+      "bound": 7855,
+      "journal": "assistant-closeout-discovery-development-v41.json"
+    },
+    {
+      "case": "D42Q",
+      "at": "2026-11-02T18:16:52.257795+00:00",
+      "conservative_end": "2026-11-02T18:16:59.255687+00:00",
+      "calls": 3,
+      "bound": 16924,
+      "journal": "assistant-closeout-discovery-development-v43.json"
+    },
+    {
+      "case": "D44Q",
+      "at": "2026-11-02T18:25:45.491441+00:00",
+      "conservative_end": "2026-11-02T18:25:53.934752+00:00",
+      "calls": 3,
+      "bound": 8395,
+      "journal": "assistant-closeout-discovery-development-v44.json"
+    },
+    {
+      "case": "D03",
+      "at": "2026-11-02T18:28:43.663446+00:00",
+      "conservative_end": "2026-11-02T18:28:52.563576+00:00",
+      "calls": 3,
+      "bound": 7681,
+      "journal": "assistant-closeout-discovery-development-v44.json"
+    }
+  ],
+  "human_scores": null
+}

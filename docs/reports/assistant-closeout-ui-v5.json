@@ -1,0 +1,70 @@
+{
+  "status": "passed",
+  "measured_at": "2026-10-30T17:57:55.938Z",
+  "checks": [
+    "40-turn actual archive paged beyond browser cache (synthetic, not live LLM)",
+    "Canonical real catalog card, expanded details, Save and Steam",
+    "Reload restores archive/card/draft without generation",
+    "Oversized actual tool page rejected and uncertainty delivered, not false completeness",
+    "New Chat actually erased old archive; new context/memory independent",
+    "Simulated quota wait/pending identity survives reload without automatic retry",
+    "Manual exact retry recovered after deadline, no duplicate user turn",
+    "Mobile modal close restores launcher focus",
+    "Clear device data actually erases current server archive/capability and saves",
+    "Main discovery recommendations unchanged by chat"
+  ],
+  "scans": [
+    {
+      "state": "archive-card",
+      "width": 1440,
+      "axe_violations": 0,
+      "overflow": false,
+      "capture": "C:\\Users\\User\\AppData\\Local\\Temp\\opencode\\game-discovery-m1\\frontend\\test-results-assistant-closeout-v5\\archive-card-1440.png"
+    },
+    {
+      "state": "archive-card",
+      "width": 390,
+      "axe_violations": 0,
+      "overflow": false,
+      "capture": "C:\\Users\\User\\AppData\\Local\\Temp\\opencode\\game-discovery-m1\\frontend\\test-results-assistant-closeout-v5\\archive-card-390.png"
+    },
+    {
+      "state": "archive-card",
+      "width": 320,
+      "axe_violations": 0,
+      "overflow": false,
+      "capture": "C:\\Users\\User\\AppData\\Local\\Temp\\opencode\\game-discovery-m1\\frontend\\test-results-assistant-closeout-v5\\archive-card-320.png"
+    },
+    {
+      "state": "quota",
+      "width": 1440,
+      "axe_violations": 0,
+      "overflow": false,
+      "capture": "C:\\Users\\User\\AppData\\Local\\Temp\\opencode\\game-discovery-m1\\frontend\\test-results-assistant-closeout-v5\\quota-1440.png"
+    },
+    {
+      "state": "quota",
+      "width": 390,
+      "axe_violations": 0,
+      "overflow": false,
+      "capture": "C:\\Users\\User\\AppData\\Local\\Temp\\opencode\\game-discovery-m1\\frontend\\test-results-assistant-closeout-v5\\quota-390.png"
+    },
+    {
+      "state": "quota",
+      "width": 320,
+      "axe_violations": 0,
+      "overflow": false,
+      "capture": "C:\\Users\\User\\AppData\\Local\\Temp\\opencode\\game-discovery-m1\\frontend\\test-results-assistant-closeout-v5\\quota-320.png"
+    }
+  ],
+  "stats": {
+    "scripted_model_exchanges": 8,
+    "simulated_quota_failures": 1,
+    "fresh_context_checked": true,
+    "live_provider_calls": 0,
+    "actual_reservations": 0
+  },
+  "ui_turn_requests": 5,
+  "page_errors": [],
+  "scope": "Actual current browser/API/restricted PostgreSQL catalog/archive. Scripted model, simulated quota denial. No live LLM quality proof; no physical phone."
+}

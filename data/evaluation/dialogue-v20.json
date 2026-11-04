@@ -1,0 +1,32 @@
+{
+  "version": "owner-closeout-development-v31",
+  "scope": "Fresh exposed development after preserved v29/v30 failures; unchanged original held-out fixtures.",
+  "development": [
+    {
+      "id": "D31B",
+      "turns": [
+        "Save Windows, single-player and an inclusive recorded maximum of 19 USD as my normal requirements, and find up to four games.",
+        "For this search only, find Windows single-player games with recorded prices strictly above 19 USD and at most 38 USD. Leave my normal requirements alone.",
+        "Find options under my normal requirements again and state my saved maximum price."
+      ],
+      "checks": ["Three actual searches; normal/restored maximum1900; temporary minimum1901 maximum3800", "Saved normal filters survive exception", "Natural concise facts, no unsolicited descriptions"]
+    },
+    {
+      "id": "D31P",
+      "turns": [
+        "Look up Portal 2 and report its recorded operating systems, modes and dated USD price.",
+        "Does an unrecorded operating system prove that it is incompatible today?"
+      ],
+      "checks": ["Exact Portal2 ID620 fields", "No false incompatibility or raw internal flags", "Follow-up answers latest question"]
+    },
+    {
+      "id": "D31R",
+      "turns": [
+        "Devon may join my gaming evening on Saturday. We have not agreed a budget.",
+        "Make that Wednesday instead. Devon is still only a possible participant.",
+        "Recall the original day, revised day, possible participant and whether we agreed a budget."
+      ],
+      "checks": ["Saturday then Wednesday; Devon tentative; no agreed budget", "No invented persistent filters or catalog calls"]
+    }
+  ]
+}

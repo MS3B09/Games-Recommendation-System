@@ -1,0 +1,28 @@
+{
+  "checks": [
+    "runtime can create only through execute-only capability function",
+    "wrong capability cannot read a conversation",
+    "new conversation is independent and empty",
+    "user input is durable before provider work",
+    "committed lease prevents concurrent model work without holding a connection",
+    "failure preserves original input and attempt without advancing accepted revision",
+    "explicit retry appends attempt history; sourced working memory is durable",
+    "completed turn re-delivery is idempotent and requires no inference",
+    "turn reuse and stale revision cannot overwrite accepted conversation",
+    "second chat shares neither preferences nor messages",
+    "runtime cannot directly select private conversation tables",
+    "explicit erasure requires the matching capability and removes history",
+    "expired lease preserves interrupted input; old completion cannot overwrite the new turn",
+    "erasing an in-flight chat prevents a late response from resurrecting it",
+    "larger canonical-card imports remain complete rather than failing the old 256KiB limit",
+    "oversized or overlong bootstrap arrays fail explicitly without partial imports",
+    "per-chat capacity rejects a new turn without evicting original history",
+    "shared archive capacity is explicit and never silently deletes another chat",
+    "application accounting is untouched"
+  ],
+  "inference_calls": 0,
+  "production_archive_writes": 0,
+  "cleanup": true,
+  "status": "passed",
+  "at": "2026-10-29T15:54:47.520988+00:00"
+}

@@ -1,0 +1,9 @@
+{
+  "version":"llm-first-unseen-v3",
+  "held_out":[
+    {"id":"U01","checks":["named_games","topic_change","earlier_pair_facts"],"turns":["Show me Bastion and Transistor from your database.","Quick break: give me a short encouraging thought for someone learning programming.","Back to the two games you showed: compare their recorded platforms and play modes, without guessing about anything missing."]},
+    {"id":"U02","checks":["retained_hard_filters","temporary_override","restored_conditions"],"turns":["Keep Windows, online co-op and a recorded maximum of 20 USD as my conditions. Suggest one game.","For this search only, allow up to 30 USD. Keep everything else.","What is my normal budget now, and which conditions are still retained?"]},
+    {"id":"U03","seed_turns":80,"seed_context":{"initial":"I use Linux. My friend is Morgan. Our plan is Monday. Please remember this.","correction":"Change our plan to Sunday. My friend remains Morgan. No price limit has been decided.","initial_memory":{"platform":"Linux","friend":"Morgan","plan_day":"Monday"},"corrected_memory":{"plan_day":"Sunday","budget":"Unspecified; do not assume"},"game_ids":[268910,304430]},"checks":["long_history","correction","older_card_identity"],"turns":["Which day did I originally propose, and what did I change it to?","Who was I planning to play with, and did I specify a price limit?","Name the two games we looked at early in this chat and compare their recorded play modes."]}
+  ],
+  "judging":"Fresh cases frozen before use on the v11 contract fix. Retain every attempt. The long prefix is synthetic persisted history, with live follow-ups assessed separately. No invented human scores or portfolio acceptance claim."
+}

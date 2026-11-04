@@ -1,0 +1,32 @@
+{
+  "version": "owner-closeout-development-v32",
+  "scope": "Fresh exposed cases after v31 false-empty/compatibility failures; prior failures and held-out fixtures preserved.",
+  "development": [
+    {
+      "id": "D32B",
+      "turns": [
+        "Keep Windows, single-player and recorded prices no higher than 21 USD as my normal requirements. Find up to four options.",
+        "For this request only, find Windows single-player options whose recorded prices are strictly above 21 USD and at most 42 USD. Do not change my normal limit.",
+        "Now search again with my normal requirements, and remind me of my saved maximum price."
+      ],
+      "checks": ["Three searches deliver cards; normal/restored maximum2100; temporary minimum2101 maximum4200", "Saved2100 survives exception", "No false-empty claim, unsolicited quote or scope-label dump"]
+    },
+    {
+      "id": "D32P",
+      "turns": [
+        "Look up Bloons TD 6. Tell me its recorded operating systems, play modes and dated USD price.",
+        "Does a missing operating system in that record establish incompatibility today?"
+      ],
+      "checks": ["Exact ID960090 values", "Only recorded support, no incompatibility claim", "Latest-question answer, not prior-summary repetition"]
+    },
+    {
+      "id": "D32R",
+      "turns": [
+        "Casey might join my gaming evening on Tuesday. We have not agreed any budget.",
+        "Move the evening to Friday. Casey remains a possible participant.",
+        "Remind me of the original day, replacement day, possible participant and whether a spending limit was agreed."
+      ],
+      "checks": ["Tuesday then Friday; Casey tentative; budget unagreed", "No inferred hard filters or catalog reads"]
+    }
+  ]
+}

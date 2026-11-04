@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "authorization_date": "2026-10-25",
+  "revision_date": "2026-10-26",
+  "authorization": "Existing owner approval: additional inference as needed within free-only limits to fix, verify and complete remaining R4 issues. Resume R4 on 2026-10-26.",
+  "revision_reason": "V3 development completed with two transport failures and a spurious hard Puzzle genre patch. Preserve all V3 records, including skips. V4 clarifies soft experience vs hard genre interpretation, records safe transport exception categories, and measures exact journal write time without global profiling. No timeout/quota/validator/model/ranking changes or retries.",
+  "retained_parent": {"path": "docs/reports/conversational-rag-r4-development-v3.json", "sha256": "e07ebd1d77a342c46f2e90eab88fe870b17289a45f0c732fefe5a03ca6d0e715"},
+  "reuse": "No provider outputs reused across prompt revisions. V4 starts a fresh full paired development run; first M05, then M01, C01, A01, then the other frozen development cases. Unchanged original dataset/splits/expectations. V3 failures remain in historical reliability/accounting, not reclassified as passing V4 evidence.",
+  "limits": "50 calls/day, 500000 reserved tokens/day, four/minute, 30-second peer throttle, two calls/turn, 3-second existing socket timeout; no hidden retries/resets or paid resources.",
+  "development": {"case_ids": ["M05", "M01", "C01", "A01", "T01", "T04", "S01", "S04"], "max_calls": 52, "max_reserved_tokens": 690560},
+  "held_out": {"source": "All 25 real_catalog held_out cases /31 turns, BOTH methods", "max_calls": 124, "max_reserved_tokens": 1646720},
+  "comparison": "Retain original RRF60/20+20/eight evidence and cosine-only top-five. Same interpretation/generation schema/byte budget/model/settings for both methods. No held-out ranking tuning.",
+  "resume": "Source-frozen checkpoints, fresh effective UTC-day read-only quota receipt, worst-case two-call turn preflight including after throttle wait; preserve failed/started/dependent skips, no replay or automatic retry.",
+  "human_review": "Only owner judgments count as human ratings; preserve null until supplied."
+}

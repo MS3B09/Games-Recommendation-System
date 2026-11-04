@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-01T15:25:44.182865+00:00",
+  "source_version": "v36",
+  "record": 588650,
+  "canonical_card": "pass",
+  "platforms": {
+    "mac": true,
+    "linux": true,
+    "windows": true
+  },
+  "modes": [
+    "single-player"
+  ],
+  "recorded_price_cents": 2499,
+  "observation_date": "2026-10-14",
+  "requested_fields_and_date_match": true,
+  "followup_not_yet_attempted": true,
+  "human_scores": null
+}

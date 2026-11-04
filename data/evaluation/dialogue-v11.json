@@ -1,0 +1,32 @@
+{
+  "version": "v21-follow-up-on-unchanged-v20-engine",
+  "held_out": [
+    {
+      "id": "H21M",
+      "seed_turns": 80,
+      "seed_context": {
+        "initial": "My computer uses Linux. My gaming partner is Avery. The first day I suggested was Saturday. Please remember that.",
+        "correction": "Move our plan to Tuesday instead. My partner remains Avery. We still have not settled a spending limit.",
+        "initial_memory": {"platform":"Linux","friend":"Avery","plan_day":"Saturday"},
+        "corrected_memory": {"plan_day":"Tuesday","budget":"Not settled; do not assume"},
+        "game_ids": [311690,250900]
+      },
+      "checks": ["original_and_corrected_day","partner_and_unknown_budget","early_displayed_pair","recorded_modes_only"],
+      "turns": [
+        "Remind me of the first day I suggested and the replacement day we chose.",
+        "Who is my gaming partner, and had we settled a spending limit?",
+        "Which two games did we look at near the beginning? Tell me the play modes actually recorded for each."
+      ]
+    },
+    {
+      "id": "H21F",
+      "checks": ["two_canonical_games","grounded_description","friendly_topic_detour","earlier_pair_platforms_and_modes"],
+      "turns": [
+        "Could you bring up Risk of Rain 2 and Valheim? Tell me what your catalog actually records about them.",
+        "Pause the game discussion for a moment: give me a short, friendly thought about learning to cook.",
+        "Now compare the recorded operating systems and play modes of that earlier pair."
+      ]
+    }
+  ],
+  "judging": "Fresh cases frozen before any v21 inference, using the unchanged v20 engine. Never replay failed H20M, H20F or D20L. Original 80-turn prefixes are synthetic archived history; only follow-ups use inference. Keep all attempts and null owner ratings. The H20L three-turn preference result is separate evidence, not a reason to label this suite passed."
+}

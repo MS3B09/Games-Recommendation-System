@@ -1,0 +1,20 @@
+{
+  "version": "simplification-focused-completion-v7",
+  "scope": "Fresh development budget story after native reply preference operations were distinguished from save-and-recommend and explicit null edits became a local no-op. All v1-v6 failures remain immutable; this is not their replay or quality acceptance.",
+  "development": [
+    {
+      "id": "S3S",
+      "turns": [
+        "Make Windows, single-player and an inclusive recorded USD ceiling of $21.15 my normal requirements. Please find two games with those requirements now.",
+        "For this search alone, find two Windows single-player games with recorded prices strictly above $21.15 and at most $42.30 USD. Do not change my normal requirements.",
+        "Find two games with my saved normal requirements again, and tell me my normal maximum price."
+      ],
+      "checks": [
+        "First turn actually searches with save_normal and maximum 2115; acknowledging saved requirements alone fails",
+        "Temporary search uses inclusive 2116-4230 without replacing saved maximum 2115",
+        "Restored search actually uses saved maximum 2115 and states the normal ceiling",
+        "Canonical cards independently satisfy each requested filter; no owner ratings inferred"
+      ]
+    }
+  ]
+}

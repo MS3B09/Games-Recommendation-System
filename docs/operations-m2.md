@@ -1,5 +1,7 @@
 # M2 catalog and discovery operations
 
+> **Historical frontend-command notice (2026-10-18):** backend/catalog workflows and retained M2 evidence remain; hosted M2 is owner-confirmed and unchanged. The exact approved local Current frontend is now frozen/no-API/no-persistence at `/` and `/current-original.html`. Old `smoke:stack`, `smoke:discovery` and `verify:hosted` scripts were removed; frontend smoke commands below are historical. Use [the official frontend guide](../frontend/CURRENT_ORIGINAL.md) for current checks, whose final results remain pending. Live reconnection and M3 guest UI are pending follow-up; no deployment is authorized.
+
 Run Python commands from the repository root. Keep the original legacy application/data intact. This pipeline never loads pickle files and never constructs an N-by-N matrix.
 
 ## Configuration

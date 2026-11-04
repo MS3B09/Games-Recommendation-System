@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "frozen_at_phase": "R0",
+  "catalog_version": "m2-649714e8b26775165f105d02",
+  "dataset_sha256": "7a37df211eb815b70162828cae73a8112a29d2b179de59270dd14e89e7405fda",
+  "contract_schemas_sha256": "2ae8ea1a65a4868c2070d2e65ef7e48fc1cec96c7fa460f95d6f0223cd89104a",
+  "contract_prototype_sha256": "3bcaffb3eebdb3b59be4aafdb51543ea5dba5234acb257e26e197823c0935935",
+  "case_count": 40,
+  "turn_count": 53,
+  "category_counts": {
+    "title_alias": 8,
+    "semantic": 8,
+    "scope_reference": 8,
+    "constraint": 6,
+    "ambiguity_absence": 4,
+    "independence_session": 3,
+    "failure_grounding": 3
+  },
+  "split_counts": {
+    "development": 10,
+    "held_out": 30
+  },
+  "development_ids": [
+    "T01",
+    "T04",
+    "S01",
+    "S04",
+    "M01",
+    "M05",
+    "C01",
+    "A01",
+    "I01",
+    "F01"
+  ],
+  "source_counts": {
+    "real_catalog": 33,
+    "synthetic": 7
+  },
+  "judgment_status": "Not executed or judged; semantic anchor IDs are curation seeds, not exhaustive relevance labels.",
+  "baseline": "semantic-only cosine top-five, same catalog/encoder/generator/evidence budget/model settings",
+  "rubric": {
+    "0": "irrelevant or incorrect",
+    "1": "partially useful with material missing fit or scope",
+    "2": "useful, relevant and correctly scoped"
+  },
+  "manual_review": [
+    "all factual prose",
+    "unsupported and false-absence claims",
+    "subjective-fit qualifications",
+    "expected scope",
+    "per-candidate relevance labels for Recall@8"
+  ],
+  "execution_rules": [
+    "Synthetic injection/browser cases are mandatory regressions, not real-catalog generation scores.",
+    "Freeze any development-tuned cutoff/ranking policy before running held-out cases.",
+    "No actual quality result or Recall@8 exists until complete judgments and per-method outputs are recorded.",
+    "Live runs need separate approval, actual-turn/call/token budget, throttled sequential checkpoints.",
+    "Input fixtures/contract changes require a new recorded manifest revision; never silently tune held-out expectations."
+  ]
+}

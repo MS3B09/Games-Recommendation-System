@@ -21,6 +21,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/chat": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Chat */
+        post: operations["chat_api_v1_chat_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/discover": {
         parameters: {
             query?: never;
@@ -106,6 +123,74 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v2/assistant": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Converse */
+        post: operations["converse_api_v2_assistant_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/assistant/conversations": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Create */
+        post: operations["create_api_v2_assistant_conversations_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/assistant/forget": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Forget */
+        post: operations["forget_api_v2_assistant_forget_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/assistant/history": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** History */
+        post: operations["history_api_v2_assistant_history_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/health/live": {
         parameters: {
             query?: never;
@@ -148,10 +233,20 @@ export interface components {
         ApiError: {
             /** Code */
             code: string;
+            /** Field */
+            field?: ("message" | "price" | "request") | null;
             /** Message */
             message: string;
+            /**
+             * Recovery
+             * @default retry
+             * @enum {string}
+             */
+            recovery: "retry" | "edit" | "new_chat" | "refresh" | "discover" | "remove_favorite" | "back" | "none";
             /** Request Id */
             request_id: string;
+            /** Retry At */
+            retry_at?: string | null;
             /** Retryable */
             retryable: boolean;
         };
@@ -191,30 +286,283 @@ export interface components {
              */
             state: "ready" | "uninitialized";
         };
+        /** ChatCriteria */
+        ChatCriteria: {
+            /** Excluded Ids */
+            excluded_ids?: number[];
+            /**
+             * Free Only
+             * @default false
+             */
+            free_only: boolean;
+            /** Max Price Cents */
+            max_price_cents?: number | null;
+            /** Min Price Cents */
+            min_price_cents?: number | null;
+            /**
+             * Platform Match
+             * @default any
+             * @enum {string}
+             */
+            platform_match: "any" | "all";
+            /** Platforms */
+            platforms?: ("windows" | "mac" | "linux")[];
+            /** Preferred Terms */
+            preferred_terms?: string[];
+            /**
+             * Price Operator
+             * @default lte
+             * @enum {string}
+             */
+            price_operator: "lte" | "lt";
+            /** Required Genres */
+            required_genres?: string[];
+            /** Required Modes */
+            required_modes?: ("single-player" | "multiplayer" | "online-co-op" | "local-co-op")[];
+            /** Unwanted Terms */
+            unwanted_terms?: string[];
+        };
+        /** ChatRequest */
+        ChatRequest: {
+            /** Message */
+            message: string;
+            /** Messages */
+            messages?: components["schemas"]["ConversationMessage"][];
+            /** State */
+            state?: components["schemas"]["ChatState"] | components["schemas"]["ChatStateV2Wire"];
+        };
+        /** ChatResponse */
+        ChatResponse: {
+            /** Catalog Version */
+            catalog_version?: string | null;
+            /** Games */
+            games?: components["schemas"]["Recommendation"][];
+            /** Message */
+            message: string;
+            /** Notices */
+            notices?: string[];
+            /** Request Id */
+            request_id: string;
+            /** State */
+            state: components["schemas"]["ChatState"] | components["schemas"]["ChatStateV2Wire"];
+        };
+        /** ChatState */
+        ChatState: {
+            criteria?: components["schemas"]["Filters"];
+            /** Excluded Ids */
+            excluded_ids?: number[];
+            /**
+             * Query
+             * @default
+             */
+            query: string;
+            /** Shown Ids */
+            shown_ids?: number[];
+        };
+        /** ChatStateV2Wire */
+        ChatStateV2Wire: {
+            criteria?: components["schemas"]["ChatCriteria"];
+            /** Exclusions */
+            exclusions?: components["schemas"]["RememberedExclusion"][];
+            legacy_criteria?: components["schemas"]["ChatCriteria"] | null;
+            /** Legacy Excluded Ids */
+            legacy_excluded_ids?: number[];
+            /**
+             * Legacy Query
+             * @default
+             */
+            legacy_query: string;
+            /** Provenance */
+            provenance?: {
+                [key: string]: components["schemas"]["Origin"];
+            };
+            /**
+             * Query
+             * @default
+             */
+            query: string;
+            query_origin?: components["schemas"]["Origin"] | null;
+            /** Referenced Ids */
+            referenced_ids?: number[];
+            /** Shown Ids */
+            shown_ids?: number[];
+            /**
+             * User Turn
+             * @default 0
+             */
+            user_turn: number;
+            /**
+             * Version
+             * @constant
+             */
+            version: 2;
+        };
+        /** Conversation */
+        Conversation: {
+            criteria?: components["schemas"]["Filters"];
+            /** Messages */
+            messages?: components["schemas"]["ConversationMessage"][];
+        };
+        /** ConversationCreate */
+        ConversationCreate: {
+            key?: components["schemas"]["ConversationKey"] | null;
+            /** Messages */
+            messages?: components["schemas"]["ImportMessage"][];
+        };
+        /** ConversationCreated */
+        ConversationCreated: {
+            /**
+             * Conversation Id
+             * Format: uuid
+             */
+            conversation_id: string;
+            /**
+             * Imported Messages
+             * @default 0
+             */
+            imported_messages: number;
+            /** Revision */
+            revision: number;
+            /** Token */
+            token: string;
+        };
+        /** ConversationKey */
+        ConversationKey: {
+            /**
+             * Conversation Id
+             * Format: uuid
+             */
+            conversation_id: string;
+            /** Token */
+            token: string;
+        };
+        /** ConversationMessage */
+        ConversationMessage: {
+            /** Content */
+            content: string;
+            /**
+             * Role
+             * @enum {string}
+             */
+            role: "user" | "assistant";
+        };
+        /** ConversationTurn */
+        ConversationTurn: {
+            /**
+             * Conversation Id
+             * Format: uuid
+             */
+            conversation_id: string;
+            /** Message */
+            message: string;
+            /** Revision */
+            revision: number;
+            /** Token */
+            token: string;
+            /**
+             * Turn Id
+             * Format: uuid
+             */
+            turn_id: string;
+        };
+        /** CriteriaConflict */
+        CriteriaConflict: {
+            /** Current */
+            current: string;
+            /** Field */
+            field: string;
+            /** Proposed */
+            proposed: string;
+        };
+        /** DialogueResponse */
+        DialogueResponse: {
+            applied_filters?: components["schemas"]["Filters"] | null;
+            /** Entities */
+            entities?: {
+                [key: string]: unknown;
+            }[];
+            /** Evidence */
+            evidence?: {
+                [key: string]: unknown;
+            }[];
+            /** Games */
+            games?: components["schemas"]["Recommendation"][];
+            /** Memory Changes */
+            memory_changes?: {
+                [key: string]: unknown;
+            }[];
+            /** Message */
+            message: string;
+            /** Notices */
+            notices?: string[];
+            /** Preference Changes */
+            preference_changes?: {
+                [key: string]: unknown;
+            } | null;
+            /** Request Id */
+            request_id: string;
+            /** Revision */
+            revision: number;
+            /**
+             * Total Turns
+             * @default 0
+             */
+            total_turns: number;
+        };
         /** DiscoverRequest */
         DiscoverRequest: {
+            conversation?: components["schemas"]["Conversation"];
             /** Favorite Ids */
             favorite_ids?: number[];
+            /** Feedback */
+            feedback?: components["schemas"]["Feedback"][];
             filters?: components["schemas"]["Filters"];
             /**
              * Limit
              * @default 10
              */
             limit: number;
+            preferences?: components["schemas"]["Filters"];
+            /**
+             * Query
+             * @default
+             */
+            query: string;
+            /** Resolution */
+            resolution?: ("controls" | "text") | null;
         };
         /** DiscoverResponse */
         DiscoverResponse: {
+            /**
+             * Assistant Message
+             * @default
+             */
+            assistant_message: string;
+            capabilities?: components["schemas"]["DiscoveryCapabilities"];
             /** Catalog Version */
             catalog_version: string;
+            /** Conflicts */
+            conflicts?: components["schemas"]["CriteriaConflict"][];
             /** Degraded Reasons */
             degraded_reasons?: string[];
             effective_criteria: components["schemas"]["Filters"];
             /**
-             * Ranking Version
-             * @default seed-v1
-             * @constant
+             * Effective Query
+             * @default
              */
-            ranking_version: "seed-v1";
+            effective_query: string;
+            /**
+             * Prompt Version
+             * @default interpret-claims-v1
+             */
+            prompt_version: string;
+            proposed_criteria?: components["schemas"]["Filters"] | null;
+            /**
+             * Ranking Version
+             * @default seed-feedback-v1
+             * @enum {string}
+             */
+            ranking_version: "seed-feedback-v1" | "hybrid-text-v1";
             /** Request Id */
             request_id: string;
             /** Results */
@@ -225,6 +573,26 @@ export interface components {
             timings_ms: {
                 [key: string]: number;
             };
+            /** Unresolved Preferences */
+            unresolved_preferences?: string[];
+        };
+        /** DiscoveryCapabilities */
+        DiscoveryCapabilities: {
+            /**
+             * Ai Explanations
+             * @default false
+             */
+            ai_explanations: boolean;
+            /**
+             * Ai Interpretation
+             * @default false
+             */
+            ai_interpretation: boolean;
+            /**
+             * Semantic Query Matching
+             * @default false
+             */
+            semantic_query_matching: boolean;
         };
         /** Evidence */
         Evidence: {
@@ -242,12 +610,29 @@ export interface components {
             catalog_version: string;
             /** Genres */
             genres: string[];
+            /** Max Price Cents */
+            max_price_cents?: number | null;
             /** Modes */
             modes: string[];
             /** Platforms */
             platforms: string[];
             /** Tags */
             tags: string[];
+        };
+        /** Feedback */
+        Feedback: {
+            /** App Id */
+            app_id: number;
+            /**
+             * Kind
+             * @enum {string}
+             */
+            kind: "interested" | "not-for-me" | "already-played";
+            /**
+             * Timestamp
+             * Format: date-time
+             */
+            timestamp: string;
         };
         /** Filters */
         Filters: {
@@ -260,6 +645,8 @@ export interface components {
             free_only: boolean;
             /** Max Price Cents */
             max_price_cents?: number | null;
+            /** Min Price Cents */
+            min_price_cents?: number | null;
             /**
              * Platform Match
              * @default any
@@ -276,6 +663,8 @@ export interface components {
              * @enum {string}
              */
             price_operator: "lte" | "lt";
+            /** Required Genres */
+            required_genres?: string[];
             /** Required Modes */
             required_modes?: ("single-player" | "multiplayer" | "online-co-op" | "local-co-op")[];
             /** Unwanted Terms */
@@ -336,10 +725,54 @@ export interface components {
             /** Total */
             total: number;
         };
-        /** HTTPValidationError */
-        HTTPValidationError: {
-            /** Detail */
-            detail?: components["schemas"]["ValidationError"][];
+        /** HistoryRequest */
+        HistoryRequest: {
+            /** Before */
+            before?: number | null;
+            /**
+             * Conversation Id
+             * Format: uuid
+             */
+            conversation_id: string;
+            /**
+             * Limit
+             * @default 20
+             */
+            limit: number;
+            /**
+             * Offset
+             * @default 0
+             */
+            offset: number;
+            /** Token */
+            token: string;
+        };
+        /** HistoryResponse */
+        HistoryResponse: {
+            /** Events */
+            events: {
+                [key: string]: unknown;
+            }[];
+            /** Next Offset */
+            next_offset: number | null;
+            /** Offset */
+            offset: number;
+            /** Revision */
+            revision: number;
+            /** Total */
+            total: number;
+        };
+        /** ImportMessage */
+        ImportMessage: {
+            /** Content */
+            content: string;
+            /** Game Ids */
+            game_ids?: number[];
+            /**
+             * Role
+             * @enum {string}
+             */
+            role: "user" | "assistant";
         };
         /** LiveStatus */
         LiveStatus: {
@@ -349,6 +782,17 @@ export interface components {
              * @constant
              */
             status: "alive";
+        };
+        /** Origin */
+        Origin: {
+            /**
+             * Scope
+             * @default conversation
+             * @constant
+             */
+            scope: "conversation";
+            /** User Turn */
+            user_turn: number;
         };
         /** Price */
         Price: {
@@ -400,6 +844,12 @@ export interface components {
             /** Tradeoffs */
             tradeoffs: string[];
         };
+        /** RememberedExclusion */
+        RememberedExclusion: {
+            /** App Id */
+            app_id: number;
+            origin: components["schemas"]["Origin"];
+        };
         /** ResolveRequest */
         ResolveRequest: {
             /** App Ids */
@@ -425,19 +875,6 @@ export interface components {
             sha256: string;
             /** Url */
             url: string;
-        };
-        /** ValidationError */
-        ValidationError: {
-            /** Context */
-            ctx?: Record<string, never>;
-            /** Input */
-            input?: unknown;
-            /** Location */
-            loc: (string | number)[];
-            /** Message */
-            msg: string;
-            /** Error Type */
-            type: string;
         };
     };
     responses: never;
@@ -466,8 +903,113 @@ export interface operations {
                     "application/json": components["schemas"]["CatalogStatus"];
                 };
             };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
             /** @description Service Unavailable */
             503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    chat_api_v1_chat_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ChatRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ChatResponse"];
+                };
+            };
+            /** @description Conflict */
+            409: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Too Many Requests */
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Bad Gateway */
+            502: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Service Unavailable */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Gateway Timeout */
+            504: {
                 headers: {
                     [name: string]: unknown;
                 };
@@ -499,13 +1041,22 @@ export interface operations {
                     "application/json": components["schemas"]["DiscoverResponse"];
                 };
             };
-            /** @description Validation Error */
+            /** @description Unprocessable Content */
             422: {
                 headers: {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
                 };
             };
             /** @description Service Unavailable */
@@ -535,6 +1086,24 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["Facets"];
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
                 };
             };
             /** @description Service Unavailable */
@@ -570,13 +1139,22 @@ export interface operations {
                     "application/json": components["schemas"]["GamePage"];
                 };
             };
-            /** @description Validation Error */
+            /** @description Unprocessable Content */
             422: {
                 headers: {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
                 };
             };
             /** @description Service Unavailable */
@@ -612,13 +1190,22 @@ export interface operations {
                     "application/json": components["schemas"]["ResolvedGames"];
                 };
             };
-            /** @description Validation Error */
+            /** @description Unprocessable Content */
             422: {
                 headers: {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
                 };
             };
             /** @description Service Unavailable */
@@ -661,17 +1248,257 @@ export interface operations {
                     "application/json": components["schemas"]["ApiError"];
                 };
             };
-            /** @description Validation Error */
+            /** @description Unprocessable Content */
             422: {
                 headers: {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
                 };
             };
             /** @description Service Unavailable */
             503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    converse_api_v2_assistant_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ConversationTurn"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DialogueResponse"];
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Conflict */
+            409: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Too Many Requests */
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Bad Gateway */
+            502: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Service Unavailable */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Gateway Timeout */
+            504: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    create_api_v2_assistant_conversations_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ConversationCreate"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ConversationCreated"];
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Service Unavailable */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    forget_api_v2_assistant_forget_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ConversationKey"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": boolean;
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    history_api_v2_assistant_history_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["HistoryRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HistoryResponse"];
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
                 headers: {
                     [name: string]: unknown;
                 };
@@ -699,6 +1526,24 @@ export interface operations {
                     "application/json": components["schemas"]["LiveStatus"];
                 };
             };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
         };
     };
     ready_health_ready_get: {
@@ -717,6 +1562,24 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["ReadyStatus"];
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
                 };
             };
             /** @description Service Unavailable */

@@ -1,0 +1,57 @@
+{
+  "version": "simplification-five-story-review-v2",
+  "scope": "Fresh descriptive-quote development check plus the three untouched stories from v1. Original S1 failure and source hashes remain immutable; no replay.",
+  "development": [
+    {
+      "id": "S1Q",
+      "turns": [
+        "Recommend two Windows single-player games recorded at no more than $19 USD. I want a world to explore. These are temporary limits, not my normal requirements."
+      ],
+      "checks": [
+        "Actual recommend_games search",
+        "Windows, single-player, inclusive 1800-cent maximum",
+        "Canonical cards and supplied-evidence-only factual prose",
+        "No saved requirements"
+      ]
+    },
+    {
+      "id": "S2",
+      "turns": [
+        "Suggest two Windows single-player games at no more than $26 recorded USD, excluding Hades and Dead Cells. Do not save these limits or exclusions.",
+        "For another search, also exclude Ori. I mean the title, but I haven't specified which edition. Keep the previous exclusions for this request only."
+      ],
+      "checks": [
+        "Actual search excludes 1145360 and 588650",
+        "Ambiguous Ori exclusion asks which edition, without guessing a search",
+        "No temporary exclusions persisted"
+      ]
+    },
+    {
+      "id": "S3",
+      "turns": [
+        "Save Windows, single-player and an inclusive recorded USD maximum of $18.50 as my normal requirements. Recommend two games using them.",
+        "For this search only, recommend two games recorded strictly above $18.50 and no higher than $37 USD, keeping Windows and single-player. Leave my normal requirements unchanged.",
+        "Search again with my saved normal requirements and tell me the normal maximum price."
+      ],
+      "checks": [
+        "Three actual searches: maximum 1850, temporary 1851-3700, restored maximum 1850",
+        "Saved maximum stays 1850",
+        "Canonical cards satisfy each search's predicates"
+      ]
+    },
+    {
+      "id": "S4",
+      "turns": [
+        "Look up Portal 2 and Risk of Rain 2. Tell me their catalog-recorded platforms and play modes; don't infer current compatibility.",
+        "A quick non-game detour: give me one simple idea for using leftover cooked rice.",
+        "Back to the two games before the rice question: which has recorded Mac support, and which recorded play modes do they share?"
+      ],
+      "checks": [
+        "Correct canonical facts for 620 and 632360",
+        "Detour does not perform an unsolicited catalog search",
+        "Earlier pair resolved correctly after detour",
+        "Unrecorded support not called proven incompatibility"
+      ]
+    }
+  ]
+}

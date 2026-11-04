@@ -1,0 +1,10 @@
+{
+  "version": "simplification-browser-memory-v1",
+  "scope": "Actual browser conversation, not a seeded archive. Reload before recall; confirm New chat erases the first archive and the second conversation is independent. Owner ratings remain blank.",
+  "turns": [
+    "Our gaming evening is Friday. Morgan may join, but we haven't agreed a spending limit. Please remember the plan.",
+    "Correction: move the evening to Sunday instead of Friday. Morgan is still only a possible guest, and there is still no agreed budget.",
+    "What day did I first mention, what is the corrected day, who might join, and did we agree a budget?",
+    "What gaming plans or spending limits have I told you in this new chat?"
+  ]
+}

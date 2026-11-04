@@ -1,0 +1,7 @@
+{
+  "version": "simplification-fresh-context-v8",
+  "scope": "One fresh browser conversation after removal of native json reply tool; no seeded/copied history, no replay of failed browser turn. Earlier correction/reload/New chat erasure evidence remains separate and unchanged.",
+  "turns": [
+    "Have I shared a gaming date, a guest or a budget in this conversation?"
+  ]
+}

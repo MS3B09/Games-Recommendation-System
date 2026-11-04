@@ -1,0 +1,69 @@
+{
+  "status": "ValidationError",
+  "at": "2026-10-28T17:47:05.304173+00:00",
+  "packet": {
+    "message": "And the other one—can we play it together online?",
+    "active_criteria": {},
+    "query": "zombie games",
+    "exclusion_count": 0,
+    "has_legacy_context": false,
+    "references": {
+      "shown_positions": [
+        1
+      ],
+      "recent_target_count": 2,
+      "shown_games": [
+        {
+          "position": 1,
+          "title": "Project Zomboid"
+        }
+      ],
+      "recent_targets": [
+        "Dying Light",
+        "Project Zomboid"
+      ]
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "Recommend two zombie games."
+      },
+      {
+        "role": "assistant",
+        "content": "Here are two solid zombie titles you might enjoy: Dying Light and Project Zomboid."
+      },
+      {
+        "role": "user",
+        "content": "Which one support Local Co Op play style ?"
+      },
+      {
+        "role": "assistant",
+        "content": "Project Zomboid supports Local Co‑Op."
+      }
+    ],
+    "context_truncated": false
+  },
+  "output": {
+    "kind": "game_facts",
+    "reference": "last_shown",
+    "requested_facts": [
+      "modes"
+    ],
+    "shown_positions": [
+      2
+    ]
+  },
+  "validation": [
+    {
+      "type": "value_error",
+      "loc": [],
+      "msg": "Value error, Use explicit titles, displayed positions or a reference, not a mixture",
+      "url": "https://errors.pydantic.dev/2.14/v/value_error"
+    }
+  ],
+  "reported_usage": {
+    "prompt_tokens": 1217,
+    "completion_tokens": 181,
+    "total_tokens": 1398
+  }
+}

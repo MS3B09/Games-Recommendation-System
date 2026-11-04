@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-03T16:19:08.964670+00:00",
+  "human_scores": null,
+  "journals": [
+    {
+      "source": "C:\\Users\\User\\AppData\\Local\\Temp\\opencode\\assistant-closeout-simplification-v10.json",
+      "snapshot": "assistant-closeout-simplification-v10-snapshot-19ed7f8ec9d1.json",
+      "sha256": "19ed7f8ec9d1f1adfc955b1becf15dddfc2e3fb8f5da214d311e6125cc0154e3",
+      "current_source_matches": true,
+      "attempted": 0,
+      "http_200_deliveries": 0,
+      "http_p95_ms": null,
+      "paused": {
+        "at": "2026-11-03T16:18:55.308547+00:00",
+        "reason": "insufficient_provider_worst_case_headroom",
+        "dashboard_baseline": 158000,
+        "subsequent_missing_usage_original_reservations": [
+          12157,
+          13238
+        ],
+        "next_turn_reserve": 39840,
+        "total": 223235,
+        "ceiling": 200000,
+        "receipt": {
+          "at": "2026-11-03T16:18:56.134762+00:00",
+          "day": "2026-11-03",
+          "effective_calls": 84,
+          "effective_units": 894986,
+          "remaining_calls": 16,
+          "remaining_units": 605014
+        },
+        "next_only": "Fresh v10 S3V turn1 after applicable headroom; no v9 replay",
+        "reset_inferred": false
+      },
+      "cases": [],
+      "turns": []
+    }
+  ],
+  "receipt": {
+    "at": "2026-11-03T16:19:12.075070+00:00",
+    "day": "2026-11-03",
+    "effective_calls": 84,
+    "effective_units": 894986,
+    "remaining_calls": 16,
+    "remaining_units": 605014
+  },
+  "accounting": {
+    "observed_reserved_calls": 0,
+    "reserved_units": 0,
+    "known_reported_tokens": 0,
+    "traces_without_usage": 0,
+    "unreported_reserved_units": 0,
+    "owned_reported_plus_missing_bound": 0,
+    "turn_start_days": [],
+    "note": "Aggregate owned usage/bound, not provider remaining balance. Cached tokens may reduce actual debit. Check applicable windows separately."
+  }
+}

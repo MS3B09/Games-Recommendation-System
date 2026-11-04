@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "authorization_date": "2026-10-25",
+  "revision_date": "2026-10-26",
+  "authorization": "Existing owner approval to fix, verify and complete remaining R4 issues using additional inference as needed within free-only limits; Resume R4 on 2026-10-26.",
+  "revision_reason": "V4 preserved a missing played exclusion, misrouted include-again, unsupported whole-catalog genre refusal and a pre-reservation checkpoint-write interruption. V5 deterministically normalizes anchored explicit played/undo operations shared by both methods, keeps generic experience words soft, rejects model whole-catalog absence claims and guides description-based soft matching. Before-reservation durability moves to approved local C: storage with per-turn E: exports. No provider retries, output reuse, timeout/validator weakening, model/ranking/catalog/public-schema changes.",
+  "retained_parent": {"path": "docs/reports/conversational-rag-r4-development-v3.json", "sha256": "e07ebd1d77a342c46f2e90eab88fe870b17289a45f0c732fefe5a03ca6d0e715"},
+  "retained_interrupted_parent": {"path": "docs/reports/conversational-rag-r4-development-v4.json", "sha256": "44f1a9e4dab5016a9cd29d3a872c3b4873cf4d99397924a41ad033b168408c47", "temporary_path": "docs/reports/conversational-rag-r4-development-v4.json.tmp", "lock_path": "docs/reports/conversational-rag-r4-development-v4.json.lock", "disposition": "Never resume or replay. Eight granted calls; ninth attempt started before reservation. Original and temporary snapshots retained; confirmed process terminated and SQL delta eight calls."},
+  "reuse": "Fresh full paired development under V5, with no provider outputs reused from earlier revisions. Case order declared here before first V5 observation; original dataset/split/expectations unchanged.",
+  "limits": "50 calls/day, 500000 reserved tokens/day, four/minute, 30-second throttle, two calls/turn, existing 3-second socket timeout; no hidden retries/resets or paid services.",
+  "development": {"case_ids": ["M05", "M01", "C01", "A01", "T01", "T04", "S01", "S04"], "max_calls": 52, "max_reserved_tokens": 690560},
+  "held_out": {"source": "All 25 real_catalog held_out cases /31 turns, BOTH methods", "max_calls": 124, "max_reserved_tokens": 1646720},
+  "comparison": "Original RRF60/20+20/eight evidence versus exact cosine-only top-five. Shared explicit-operation normalization, interpretation, generation schema, byte budget, model/settings and validators. No held-out ranking tuning.",
+  "journal": "Authoritative before-call journal C:/Users/User/AppData/Local/Temp/opencode/r4-evaluation-v5; E: exports after each whole turn and on pause/completion. Exact synchronous journal write intervals measured inside domain invocation; real accounting SQL remains in serving-equivalent domain latency. Not browser/HTTP latency.",
+  "resume": "Fresh effective UTC-day read-only receipt; source-frozen identities; preserve every started/failed/dependent skipped turn; never replay or silently change hashes.",
+  "human_review": "Owner ratings only, agent notes are not human judgments. Keep scores null until supplied."
+}

@@ -1,0 +1,20 @@
+{
+  "version": "simplification-recommendation-ready-default-v10",
+  "scope": "Fresh affected budget development after recommendations default to the structured writer and expose finish=false only for explicit further retrieval. Earlier failed v9 final delivery is immutable and not replayed. No new story or evaluation framework.",
+  "development": [
+    {
+      "id": "S3V",
+      "turns": [
+        "Save Windows, single-player and an inclusive recorded USD ceiling of $24.65 as my usual requirements. Find two games with those requirements now.",
+        "For this search only, recommend two Windows single-player games with recorded USD prices strictly above $24.65 and no higher than $49.30. Leave my usual saved requirements unchanged.",
+        "Recommend two games using my usual saved requirements again, and state my usual maximum price."
+      ],
+      "checks": [
+        "Three actual delivered searches: saved max2465, temporary inclusive2466-4930, restored max2465",
+        "Omitted recommendation finish enters the structured writer; explicit false still permits another information round",
+        "Temporary search never persists its interval; canonical cards match independently specified hard predicates",
+        "No invented owner scores, hidden retries, undeclared json recovery or replay of v9"
+      ]
+    }
+  ]
+}

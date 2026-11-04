@@ -1,0 +1,32 @@
+{
+  "version": "owner-closeout-development-v35",
+  "scope": "Fresh exposed checks for a single native requirements action retained through final validation. Older failures and original held-out fixtures remain unchanged.",
+  "development": [
+    {
+      "id": "D35B",
+      "turns": [
+        "Please save Windows, single-player and a recorded maximum of 24 USD inclusive as my usual requirements. Find up to four games.",
+        "For this request only, find Windows single-player games recorded strictly above 24 USD and at most 48 USD. Keep my usual requirements unchanged.",
+        "Search again using my usual requirements, and remind me of the maximum price you saved."
+      ],
+      "checks": ["Initial save_normal action commits2400 only after valid answer", "Temporary minimum2401 maximum4800 changes only this retrieval", "Restored use_saved action has no overrides and retrieves cards under2400", "Normal filters retain Windows/single-player throughout", "Natural fact-grounded replies"]
+    },
+    {
+      "id": "D35P",
+      "turns": [
+        "Find Celeste in the catalog. Give its recorded operating systems, play modes and USD price with the observation date.",
+        "If another operating system is not listed in a catalog entry, does that establish incompatibility today?"
+      ],
+      "checks": ["Actual canonical Celeste record agrees", "Follow-up answers current question without false incompatibility or previous-summary repetition"]
+    },
+    {
+      "id": "D35R",
+      "turns": [
+        "Jamie might join my gaming evening on Sunday. We have not agreed any spending limit.",
+        "Move the evening to Tuesday. Jamie remains tentative.",
+        "Recall the first day, replacement day, possible participant and whether a budget was agreed."
+      ],
+      "checks": ["Sunday then Tuesday; Jamie tentative; no agreed budget", "No invented persistent constraints or catalog calls", "Short recall only, not long-session acceptance"]
+    }
+  ]
+}

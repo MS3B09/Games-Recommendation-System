@@ -1,0 +1,148 @@
+{
+  "at": "2026-11-01T14:06:43.241671+00:00",
+  "human_scores": null,
+  "journals": [
+    {
+      "source": "C:\\Users\\User\\AppData\\Local\\Temp\\opencode\\assistant-closeout-capability-development-v34.json",
+      "snapshot": "assistant-closeout-capability-development-v34-snapshot-d70240d631d2.json",
+      "sha256": "d70240d631d2762bff3e4ed93ce23094cfe85eded9c096d829f70cbec04a9a73",
+      "current_source_matches": true,
+      "attempted": 1,
+      "http_200_deliveries": 1,
+      "http_p95_ms": 6438.143,
+      "paused": null,
+      "cases": [
+        {
+          "id": "D34B",
+          "seed_turns": 0
+        }
+      ],
+      "turns": [
+        {
+          "case": "D34B",
+          "turn": 1,
+          "status": 200,
+          "message": "Here are four games that match your Windows, single-player, and up to $23 USD requirements.",
+          "elapsed_ms": 6438.143,
+          "games": [
+            {
+              "id": 400,
+              "title": "Portal",
+              "price": {
+                "amount_cents": 999,
+                "currency": "USD",
+                "region": "US",
+                "observed_at": "2026-10-14T18:52:53.328346Z",
+                "evidence_id": "400:price_cents"
+              }
+            },
+            {
+              "id": 105600,
+              "title": "Terraria",
+              "price": {
+                "amount_cents": 499,
+                "currency": "USD",
+                "region": "US",
+                "observed_at": "2026-10-14T18:53:10.961365Z",
+                "evidence_id": "105600:price_cents"
+              }
+            },
+            {
+              "id": 203160,
+              "title": "Tomb Raider Game of the Year",
+              "price": {
+                "amount_cents": 1999,
+                "currency": "USD",
+                "region": "US",
+                "observed_at": "2026-10-14T18:54:44.637802Z",
+                "evidence_id": "203160:price_cents"
+              }
+            },
+            {
+              "id": 960090,
+              "title": "Bloons TD 6",
+              "price": {
+                "amount_cents": 1399,
+                "currency": "USD",
+                "region": "US",
+                "observed_at": "2026-10-14T18:54:37.727278Z",
+                "evidence_id": "960090:price_cents"
+              }
+            }
+          ],
+          "model_calls": 2,
+          "applied_filters": {
+            "min_price_cents": null,
+            "max_price_cents": 2300,
+            "price_operator": "lte",
+            "free_only": false,
+            "platforms": [
+              "windows"
+            ],
+            "platform_match": "any",
+            "required_modes": [
+              "single-player"
+            ],
+            "required_genres": [],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "preference_changes": {
+            "set": [
+              {
+                "field": "platforms",
+                "value": [
+                  "windows"
+                ]
+              },
+              {
+                "field": "required_modes",
+                "value": [
+                  "single-player"
+                ]
+              },
+              {
+                "field": "max_price_cents",
+                "value": 2300
+              }
+            ],
+            "clear": [],
+            "scope": "turn",
+            "source_turn": "4a5e2da8-f6c3-4ce5-b4d2-29ca292af861"
+          },
+          "tool_deliveries": [
+            {
+              "tool": "recommend_games",
+              "result_bytes": 3925,
+              "error": null,
+              "returned": 4
+            }
+          ],
+          "code": null,
+          "retry_at": null
+        }
+      ]
+    }
+  ],
+  "receipt": {
+    "at": "2026-11-01T14:06:47.146161+00:00",
+    "day": "2026-11-01",
+    "effective_calls": 52,
+    "effective_units": 577937,
+    "remaining_calls": 48,
+    "remaining_units": 922063
+  },
+  "accounting": {
+    "observed_reserved_calls": 2,
+    "reserved_units": 22282,
+    "known_reported_tokens": 5190,
+    "traces_without_usage": 0,
+    "unreported_reserved_units": 0,
+    "owned_reported_plus_missing_bound": 5190,
+    "turn_start_days": [
+      "2026-11-01"
+    ],
+    "note": "Aggregate owned usage/bound, not provider remaining balance. Cached tokens may reduce actual debit. Check applicable windows separately."
+  }
+}

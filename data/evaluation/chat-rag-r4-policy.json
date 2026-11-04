@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "frozen_before_first_r4_execution": true,
+  "policy_version": "r4-comparison-v1",
+  "ranking": "Existing chat-rrf-v1: equal-weight RRF60, 20+20 pools, eight evidence candidates. No tuning or cosine cutoff.",
+  "baseline": "Cosine-only top-five, same pinned encoder/catalog and hard recommendation prefilters. No title routing, lexical query or fusion; shared interpretation/memory/evidence/generator/validation. Fact queries use the current message and neutral lookup filters; recommendation queries use interpreted relevant intent. Exclusion identity resolution remains shared memory infrastructure.",
+  "offline": "Oracle TurnPlans annotated from frozen expected intent/criteria and extracted title strings; scripted first-four selection. Measures retrieval/state integration conditional on correct interpretation, not natural-language interpretation or generation quality. Expected/anchor IDs never enter semantic queries. Canonical titles for already annotated named references/exclusions are explicit oracle information.",
+  "quality": "Only real-catalog cases can contribute real-generation scores. Anchors are nonexhaustive curation seeds, not Recall@8 labels. Human relevance/unsupported-prose quality gates remain pending until human judgments and full held-out output exist.",
+  "live_pilot": {"case_ids": ["M01"], "split": "development", "method_order": ["proposed", "semantic_top5"], "max_calls": 12, "max_reserved_tokens": 159360, "approval": "Owner selected Development pilot in the R4 live-call budget question on 2026-10-25. No full comparison approval.", "resume": "Never replay started/failed turns or provider attempts. Checkpoint before reservations; interrupted work is indeterminate, not free to retry. Honor at least 30.1 seconds between turns, including across restarts."},
+  "title_queries": {
+    "T01:1": "spiderman",
+    "T02:1": "Marvel's Spider-Man Remastered",
+    "T03:1": "Marvel’s Spider-Man Remastered",
+    "T04:1": "spider man remastered",
+    "T05:1": "baldurs gate 3",
+    "T06:1": "Risk-of-Rain 2",
+    "T07:1": "PORTAL 2",
+    "T08:1": "Ori and the Blind Forest Definitive Edition",
+    "M01:2": "spiderman",
+    "M02:2": "Marvel's Spider-Man Remastered",
+    "A01:1": "Ori and the Blind Forest",
+    "A01:2": "Ori",
+    "A02:1": "Isaac",
+    "A03:1": "Nebula Teapot 987654"
+  }
+}

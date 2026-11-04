@@ -7,13 +7,56 @@
             "title": "Code",
             "type": "string"
           },
+          "field": {
+            "anyOf": [
+              {
+                "enum": [
+                  "message",
+                  "price",
+                  "request"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Field"
+          },
           "message": {
             "title": "Message",
+            "type": "string"
+          },
+          "recovery": {
+            "default": "retry",
+            "enum": [
+              "retry",
+              "edit",
+              "new_chat",
+              "refresh",
+              "discover",
+              "remove_favorite",
+              "back",
+              "none"
+            ],
+            "title": "Recovery",
             "type": "string"
           },
           "request_id": {
             "title": "Request Id",
             "type": "string"
+          },
+          "retry_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Retry At"
           },
           "retryable": {
             "title": "Retryable",
@@ -97,9 +140,664 @@
         "title": "CatalogStatus",
         "type": "object"
       },
+      "ChatCriteria": {
+        "additionalProperties": false,
+        "properties": {
+          "excluded_ids": {
+            "items": {
+              "exclusiveMinimum": 0.0,
+              "maximum": 2147483647.0,
+              "type": "integer"
+            },
+            "maxItems": 200,
+            "title": "Excluded Ids",
+            "type": "array"
+          },
+          "free_only": {
+            "default": false,
+            "title": "Free Only",
+            "type": "boolean"
+          },
+          "max_price_cents": {
+            "anyOf": [
+              {
+                "maximum": 1000000.0,
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Price Cents"
+          },
+          "min_price_cents": {
+            "anyOf": [
+              {
+                "maximum": 1000000.0,
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Min Price Cents"
+          },
+          "platform_match": {
+            "default": "any",
+            "enum": [
+              "any",
+              "all"
+            ],
+            "title": "Platform Match",
+            "type": "string"
+          },
+          "platforms": {
+            "items": {
+              "enum": [
+                "windows",
+                "mac",
+                "linux"
+              ],
+              "type": "string"
+            },
+            "maxItems": 3,
+            "title": "Platforms",
+            "type": "array"
+          },
+          "preferred_terms": {
+            "items": {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 30,
+            "title": "Preferred Terms",
+            "type": "array"
+          },
+          "price_operator": {
+            "default": "lte",
+            "enum": [
+              "lte",
+              "lt"
+            ],
+            "title": "Price Operator",
+            "type": "string"
+          },
+          "required_genres": {
+            "items": {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 30,
+            "title": "Required Genres",
+            "type": "array"
+          },
+          "required_modes": {
+            "items": {
+              "enum": [
+                "single-player",
+                "multiplayer",
+                "online-co-op",
+                "local-co-op"
+              ],
+              "type": "string"
+            },
+            "maxItems": 4,
+            "title": "Required Modes",
+            "type": "array"
+          },
+          "unwanted_terms": {
+            "items": {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 30,
+            "title": "Unwanted Terms",
+            "type": "array"
+          }
+        },
+        "title": "ChatCriteria",
+        "type": "object"
+      },
+      "ChatRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "message": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Message",
+            "type": "string"
+          },
+          "messages": {
+            "items": {
+              "$ref": "#/components/schemas/ConversationMessage"
+            },
+            "maxItems": 20,
+            "title": "Messages",
+            "type": "array"
+          },
+          "state": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ChatState"
+              },
+              {
+                "$ref": "#/components/schemas/ChatStateV2Wire"
+              }
+            ],
+            "title": "State"
+          }
+        },
+        "required": [
+          "message"
+        ],
+        "title": "ChatRequest",
+        "type": "object"
+      },
+      "ChatResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "catalog_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Catalog Version"
+          },
+          "games": {
+            "items": {
+              "$ref": "#/components/schemas/Recommendation"
+            },
+            "maxItems": 4,
+            "title": "Games",
+            "type": "array"
+          },
+          "message": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Message",
+            "type": "string"
+          },
+          "notices": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Notices",
+            "type": "array"
+          },
+          "request_id": {
+            "title": "Request Id",
+            "type": "string"
+          },
+          "state": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ChatState"
+              },
+              {
+                "$ref": "#/components/schemas/ChatStateV2Wire"
+              }
+            ],
+            "title": "State"
+          }
+        },
+        "required": [
+          "request_id",
+          "message",
+          "state"
+        ],
+        "title": "ChatResponse",
+        "type": "object"
+      },
+      "ChatState": {
+        "additionalProperties": false,
+        "properties": {
+          "criteria": {
+            "$ref": "#/components/schemas/Filters"
+          },
+          "excluded_ids": {
+            "items": {
+              "exclusiveMinimum": 0.0,
+              "maximum": 2147483647.0,
+              "type": "integer"
+            },
+            "maxItems": 100,
+            "title": "Excluded Ids",
+            "type": "array"
+          },
+          "query": {
+            "default": "",
+            "maxLength": 1000,
+            "title": "Query",
+            "type": "string"
+          },
+          "shown_ids": {
+            "items": {
+              "exclusiveMinimum": 0.0,
+              "maximum": 2147483647.0,
+              "type": "integer"
+            },
+            "maxItems": 4,
+            "title": "Shown Ids",
+            "type": "array"
+          }
+        },
+        "title": "ChatState",
+        "type": "object"
+      },
+      "ChatStateV2Wire": {
+        "additionalProperties": false,
+        "properties": {
+          "criteria": {
+            "$ref": "#/components/schemas/ChatCriteria"
+          },
+          "exclusions": {
+            "items": {
+              "$ref": "#/components/schemas/RememberedExclusion"
+            },
+            "maxItems": 100,
+            "title": "Exclusions",
+            "type": "array"
+          },
+          "legacy_criteria": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ChatCriteria"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "legacy_excluded_ids": {
+            "items": {
+              "exclusiveMinimum": 0.0,
+              "maximum": 2147483647.0,
+              "type": "integer"
+            },
+            "maxItems": 100,
+            "title": "Legacy Excluded Ids",
+            "type": "array"
+          },
+          "legacy_query": {
+            "default": "",
+            "maxLength": 1000,
+            "title": "Legacy Query",
+            "type": "string"
+          },
+          "provenance": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Origin"
+            },
+            "maxProperties": 10,
+            "propertyNames": {
+              "enum": [
+                "min_price_cents",
+                "max_price_cents",
+                "price_operator",
+                "free_only",
+                "platforms",
+                "platform_match",
+                "required_modes",
+                "required_genres",
+                "preferred_terms",
+                "unwanted_terms"
+              ]
+            },
+            "title": "Provenance",
+            "type": "object"
+          },
+          "query": {
+            "default": "",
+            "maxLength": 1000,
+            "title": "Query",
+            "type": "string"
+          },
+          "query_origin": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Origin"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "referenced_ids": {
+            "items": {
+              "exclusiveMinimum": 0.0,
+              "maximum": 2147483647.0,
+              "type": "integer"
+            },
+            "maxItems": 2,
+            "title": "Referenced Ids",
+            "type": "array"
+          },
+          "shown_ids": {
+            "items": {
+              "exclusiveMinimum": 0.0,
+              "maximum": 2147483647.0,
+              "type": "integer"
+            },
+            "maxItems": 4,
+            "title": "Shown Ids",
+            "type": "array"
+          },
+          "user_turn": {
+            "default": 0,
+            "maximum": 1000000.0,
+            "minimum": 0.0,
+            "title": "User Turn",
+            "type": "integer"
+          },
+          "version": {
+            "const": 2,
+            "title": "Version",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "version"
+        ],
+        "title": "ChatStateV2Wire",
+        "type": "object"
+      },
+      "Conversation": {
+        "additionalProperties": false,
+        "properties": {
+          "criteria": {
+            "$ref": "#/components/schemas/Filters"
+          },
+          "messages": {
+            "items": {
+              "$ref": "#/components/schemas/ConversationMessage"
+            },
+            "maxItems": 20,
+            "title": "Messages",
+            "type": "array"
+          }
+        },
+        "title": "Conversation",
+        "type": "object"
+      },
+      "ConversationCreate": {
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ConversationKey"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "messages": {
+            "items": {
+              "$ref": "#/components/schemas/ImportMessage"
+            },
+            "maxItems": 20,
+            "title": "Messages",
+            "type": "array"
+          }
+        },
+        "title": "ConversationCreate",
+        "type": "object"
+      },
+      "ConversationCreated": {
+        "additionalProperties": false,
+        "properties": {
+          "conversation_id": {
+            "format": "uuid",
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "imported_messages": {
+            "default": 0,
+            "title": "Imported Messages",
+            "type": "integer"
+          },
+          "revision": {
+            "title": "Revision",
+            "type": "integer"
+          },
+          "token": {
+            "maxLength": 43,
+            "minLength": 43,
+            "pattern": "^[A-Za-z0-9_-]{43}$",
+            "title": "Token",
+            "type": "string"
+          }
+        },
+        "required": [
+          "conversation_id",
+          "token",
+          "revision"
+        ],
+        "title": "ConversationCreated",
+        "type": "object"
+      },
+      "ConversationKey": {
+        "additionalProperties": false,
+        "properties": {
+          "conversation_id": {
+            "format": "uuid",
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "token": {
+            "maxLength": 43,
+            "minLength": 43,
+            "pattern": "^[A-Za-z0-9_-]{43}$",
+            "title": "Token",
+            "type": "string"
+          }
+        },
+        "required": [
+          "conversation_id",
+          "token"
+        ],
+        "title": "ConversationKey",
+        "type": "object"
+      },
+      "ConversationMessage": {
+        "additionalProperties": false,
+        "properties": {
+          "content": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Content",
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "user",
+              "assistant"
+            ],
+            "title": "Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "role",
+          "content"
+        ],
+        "title": "ConversationMessage",
+        "type": "object"
+      },
+      "ConversationTurn": {
+        "additionalProperties": false,
+        "properties": {
+          "conversation_id": {
+            "format": "uuid",
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "message": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Message",
+            "type": "string"
+          },
+          "revision": {
+            "minimum": 0.0,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "token": {
+            "maxLength": 43,
+            "minLength": 43,
+            "pattern": "^[A-Za-z0-9_-]{43}$",
+            "title": "Token",
+            "type": "string"
+          },
+          "turn_id": {
+            "format": "uuid",
+            "title": "Turn Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "conversation_id",
+          "token",
+          "turn_id",
+          "revision",
+          "message"
+        ],
+        "title": "ConversationTurn",
+        "type": "object"
+      },
+      "CriteriaConflict": {
+        "additionalProperties": false,
+        "properties": {
+          "current": {
+            "title": "Current",
+            "type": "string"
+          },
+          "field": {
+            "title": "Field",
+            "type": "string"
+          },
+          "proposed": {
+            "title": "Proposed",
+            "type": "string"
+          }
+        },
+        "required": [
+          "field",
+          "current",
+          "proposed"
+        ],
+        "title": "CriteriaConflict",
+        "type": "object"
+      },
+      "DialogueResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "applied_filters": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Filters"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "entities": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Entities",
+            "type": "array"
+          },
+          "evidence": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Evidence",
+            "type": "array"
+          },
+          "games": {
+            "items": {
+              "$ref": "#/components/schemas/Recommendation"
+            },
+            "maxItems": 4,
+            "title": "Games",
+            "type": "array"
+          },
+          "memory_changes": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Memory Changes",
+            "type": "array"
+          },
+          "message": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Message",
+            "type": "string"
+          },
+          "notices": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Notices",
+            "type": "array"
+          },
+          "preference_changes": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preference Changes"
+          },
+          "request_id": {
+            "title": "Request Id",
+            "type": "string"
+          },
+          "revision": {
+            "title": "Revision",
+            "type": "integer"
+          },
+          "total_turns": {
+            "default": 0,
+            "title": "Total Turns",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "request_id",
+          "message",
+          "revision"
+        ],
+        "title": "DialogueResponse",
+        "type": "object"
+      },
       "DiscoverRequest": {
         "additionalProperties": false,
         "properties": {
+          "conversation": {
+            "$ref": "#/components/schemas/Conversation"
+          },
           "favorite_ids": {
             "items": {
               "exclusiveMinimum": 0.0,
@@ -108,6 +806,14 @@
             },
             "maxItems": 50,
             "title": "Favorite Ids",
+            "type": "array"
+          },
+          "feedback": {
+            "items": {
+              "$ref": "#/components/schemas/Feedback"
+            },
+            "maxItems": 500,
+            "title": "Feedback",
             "type": "array"
           },
           "filters": {
@@ -119,6 +825,30 @@
             "minimum": 1.0,
             "title": "Limit",
             "type": "integer"
+          },
+          "preferences": {
+            "$ref": "#/components/schemas/Filters"
+          },
+          "query": {
+            "default": "",
+            "maxLength": 2000,
+            "title": "Query",
+            "type": "string"
+          },
+          "resolution": {
+            "anyOf": [
+              {
+                "enum": [
+                  "controls",
+                  "text"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Resolution"
           }
         },
         "title": "DiscoverRequest",
@@ -127,9 +857,24 @@
       "DiscoverResponse": {
         "additionalProperties": false,
         "properties": {
+          "assistant_message": {
+            "default": "",
+            "title": "Assistant Message",
+            "type": "string"
+          },
+          "capabilities": {
+            "$ref": "#/components/schemas/DiscoveryCapabilities"
+          },
           "catalog_version": {
             "title": "Catalog Version",
             "type": "string"
+          },
+          "conflicts": {
+            "items": {
+              "$ref": "#/components/schemas/CriteriaConflict"
+            },
+            "title": "Conflicts",
+            "type": "array"
           },
           "degraded_reasons": {
             "items": {
@@ -141,9 +886,32 @@
           "effective_criteria": {
             "$ref": "#/components/schemas/Filters"
           },
+          "effective_query": {
+            "default": "",
+            "title": "Effective Query",
+            "type": "string"
+          },
+          "prompt_version": {
+            "default": "interpret-claims-v1",
+            "title": "Prompt Version",
+            "type": "string"
+          },
+          "proposed_criteria": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Filters"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "ranking_version": {
-            "const": "seed-v1",
-            "default": "seed-v1",
+            "default": "seed-feedback-v1",
+            "enum": [
+              "seed-feedback-v1",
+              "hybrid-text-v1"
+            ],
             "title": "Ranking Version",
             "type": "string"
           },
@@ -171,6 +939,13 @@
             },
             "title": "Timings Ms",
             "type": "object"
+          },
+          "unresolved_preferences": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Unresolved Preferences",
+            "type": "array"
           }
         },
         "required": [
@@ -182,6 +957,28 @@
           "timings_ms"
         ],
         "title": "DiscoverResponse",
+        "type": "object"
+      },
+      "DiscoveryCapabilities": {
+        "additionalProperties": false,
+        "properties": {
+          "ai_explanations": {
+            "default": false,
+            "title": "Ai Explanations",
+            "type": "boolean"
+          },
+          "ai_interpretation": {
+            "default": false,
+            "title": "Ai Interpretation",
+            "type": "boolean"
+          },
+          "semantic_query_matching": {
+            "default": false,
+            "title": "Semantic Query Matching",
+            "type": "boolean"
+          }
+        },
+        "title": "DiscoveryCapabilities",
         "type": "object"
       },
       "Evidence": {
@@ -242,6 +1039,17 @@
             "title": "Genres",
             "type": "array"
           },
+          "max_price_cents": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Price Cents"
+          },
           "modes": {
             "items": {
               "type": "string"
@@ -274,6 +1082,38 @@
         "title": "Facets",
         "type": "object"
       },
+      "Feedback": {
+        "additionalProperties": false,
+        "properties": {
+          "app_id": {
+            "exclusiveMinimum": 0.0,
+            "maximum": 2147483647.0,
+            "title": "App Id",
+            "type": "integer"
+          },
+          "kind": {
+            "enum": [
+              "interested",
+              "not-for-me",
+              "already-played"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "title": "Timestamp",
+            "type": "string"
+          }
+        },
+        "required": [
+          "app_id",
+          "kind",
+          "timestamp"
+        ],
+        "title": "Feedback",
+        "type": "object"
+      },
       "Filters": {
         "additionalProperties": false,
         "properties": {
@@ -304,6 +1144,19 @@
               }
             ],
             "title": "Max Price Cents"
+          },
+          "min_price_cents": {
+            "anyOf": [
+              {
+                "maximum": 1000000.0,
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Min Price Cents"
           },
           "platform_match": {
             "default": "any",
@@ -345,6 +1198,16 @@
             ],
             "title": "Price Operator",
             "type": "string"
+          },
+          "required_genres": {
+            "items": {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 30,
+            "title": "Required Genres",
+            "type": "array"
           },
           "required_modes": {
             "items": {
@@ -568,17 +1431,132 @@
         "title": "GamePage",
         "type": "object"
       },
-      "HTTPValidationError": {
+      "HistoryRequest": {
+        "additionalProperties": false,
         "properties": {
-          "detail": {
-            "items": {
-              "$ref": "#/components/schemas/ValidationError"
-            },
-            "title": "Detail",
-            "type": "array"
+          "before": {
+            "anyOf": [
+              {
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Before"
+          },
+          "conversation_id": {
+            "format": "uuid",
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "limit": {
+            "default": 20,
+            "maximum": 50.0,
+            "minimum": 1.0,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "offset": {
+            "default": 0,
+            "minimum": 0.0,
+            "title": "Offset",
+            "type": "integer"
+          },
+          "token": {
+            "maxLength": 43,
+            "minLength": 43,
+            "pattern": "^[A-Za-z0-9_-]{43}$",
+            "title": "Token",
+            "type": "string"
           }
         },
-        "title": "HTTPValidationError",
+        "required": [
+          "conversation_id",
+          "token"
+        ],
+        "title": "HistoryRequest",
+        "type": "object"
+      },
+      "HistoryResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "events": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Events",
+            "type": "array"
+          },
+          "next_offset": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Offset"
+          },
+          "offset": {
+            "title": "Offset",
+            "type": "integer"
+          },
+          "revision": {
+            "title": "Revision",
+            "type": "integer"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "revision",
+          "total",
+          "offset",
+          "next_offset",
+          "events"
+        ],
+        "title": "HistoryResponse",
+        "type": "object"
+      },
+      "ImportMessage": {
+        "additionalProperties": false,
+        "properties": {
+          "content": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Content",
+            "type": "string"
+          },
+          "game_ids": {
+            "items": {
+              "exclusiveMinimum": 0.0,
+              "maximum": 2147483647.0,
+              "type": "integer"
+            },
+            "maxItems": 4,
+            "title": "Game Ids",
+            "type": "array"
+          },
+          "role": {
+            "enum": [
+              "user",
+              "assistant"
+            ],
+            "title": "Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "role",
+          "content"
+        ],
+        "title": "ImportMessage",
         "type": "object"
       },
       "LiveStatus": {
@@ -591,6 +1569,28 @@
           }
         },
         "title": "LiveStatus",
+        "type": "object"
+      },
+      "Origin": {
+        "additionalProperties": false,
+        "properties": {
+          "scope": {
+            "const": "conversation",
+            "default": "conversation",
+            "title": "Scope",
+            "type": "string"
+          },
+          "user_turn": {
+            "maximum": 1000000.0,
+            "minimum": 1.0,
+            "title": "User Turn",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "user_turn"
+        ],
+        "title": "Origin",
         "type": "object"
       },
       "Price": {
@@ -701,6 +1701,26 @@
         "title": "Recommendation",
         "type": "object"
       },
+      "RememberedExclusion": {
+        "additionalProperties": false,
+        "properties": {
+          "app_id": {
+            "exclusiveMinimum": 0.0,
+            "maximum": 2147483647.0,
+            "title": "App Id",
+            "type": "integer"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/Origin"
+          }
+        },
+        "required": [
+          "app_id",
+          "origin"
+        ],
+        "title": "RememberedExclusion",
+        "type": "object"
+      },
       "ResolveRequest": {
         "additionalProperties": false,
         "properties": {
@@ -777,46 +1797,6 @@
         ],
         "title": "Source",
         "type": "object"
-      },
-      "ValidationError": {
-        "properties": {
-          "ctx": {
-            "title": "Context",
-            "type": "object"
-          },
-          "input": {
-            "title": "Input"
-          },
-          "loc": {
-            "items": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
-            },
-            "title": "Location",
-            "type": "array"
-          },
-          "msg": {
-            "title": "Message",
-            "type": "string"
-          },
-          "type": {
-            "title": "Error Type",
-            "type": "string"
-          }
-        },
-        "required": [
-          "loc",
-          "msg",
-          "type"
-        ],
-        "title": "ValidationError",
-        "type": "object"
       }
     }
   },
@@ -840,6 +1820,26 @@
             },
             "description": "Successful Response"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          },
           "503": {
             "content": {
               "application/json": {
@@ -852,6 +1852,104 @@
           }
         },
         "summary": "Status"
+      }
+    },
+    "/api/v1/chat": {
+      "post": {
+        "operationId": "chat_api_v1_chat_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChatResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Bad Gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Gateway Timeout"
+          }
+        },
+        "summary": "Chat"
       }
     },
     "/api/v1/discover": {
@@ -882,11 +1980,21 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/ApiError"
                 }
               }
             },
-            "description": "Validation Error"
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           },
           "503": {
             "content": {
@@ -915,6 +2023,26 @@
               }
             },
             "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           },
           "503": {
             "content": {
@@ -985,11 +2113,21 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/ApiError"
                 }
               }
             },
-            "description": "Validation Error"
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           },
           "503": {
             "content": {
@@ -1033,11 +2171,21 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/ApiError"
                 }
               }
             },
-            "description": "Validation Error"
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           },
           "503": {
             "content": {
@@ -1094,11 +2242,21 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/ApiError"
                 }
               }
             },
-            "description": "Validation Error"
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           },
           "503": {
             "content": {
@@ -1114,6 +2272,269 @@
         "summary": "Detail"
       }
     },
+    "/api/v2/assistant": {
+      "post": {
+        "operationId": "converse_api_v2_assistant_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConversationTurn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DialogueResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Bad Gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Gateway Timeout"
+          }
+        },
+        "summary": "Converse"
+      }
+    },
+    "/api/v2/assistant/conversations": {
+      "post": {
+        "operationId": "create_api_v2_assistant_conversations_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConversationCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversationCreated"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "summary": "Create"
+      }
+    },
+    "/api/v2/assistant/forget": {
+      "post": {
+        "operationId": "forget_api_v2_assistant_forget_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConversationKey"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Forget Api V2 Assistant Forget Post",
+                  "type": "boolean"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Forget"
+      }
+    },
+    "/api/v2/assistant/history": {
+      "post": {
+        "operationId": "history_api_v2_assistant_history_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HistoryRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HistoryResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "History"
+      }
+    },
     "/health/live": {
       "get": {
         "operationId": "live_health_live_get",
@@ -1127,6 +2548,26 @@
               }
             },
             "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           }
         },
         "summary": "Live"
@@ -1145,6 +2586,26 @@
               }
             },
             "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           },
           "503": {
             "content": {

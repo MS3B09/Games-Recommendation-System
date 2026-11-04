@@ -1,0 +1,32 @@
+{
+  "version": "owner-closeout-development-v27",
+  "scope": "Fresh exposed development for compact evidence-only final writing and bounded grounding review. v22-v26 attempts/failures remain immutable. Original held-out capability/discovery fixtures remain unchanged and unattempted.",
+  "development": [
+    {
+      "id": "D27B",
+      "turns": [
+        "My normal requirements should be Windows, single-player and a recorded price ceiling of 16 USD inclusive. Save those and recommend up to four games.",
+        "For this one search, show Windows single-player games whose recorded prices are above 16 USD but no higher than 32 USD. Keep my normal 16-dollar limit saved.",
+        "Return to my normal conditions for another search, and state the usual budget after that temporary exception."
+      ],
+      "checks": ["Initial/restored inclusive maximum1600; temporary minimum1601 and maximum3200", "Normal Windows/single-player/1600 retained", "Actual temporary results contain newly eligible prices", "Every factual assertion supported; no invented descriptions/genre/campaign qualities", "Current provider headers and all model calls recorded"]
+    },
+    {
+      "id": "D27P",
+      "turns": [
+        "Please inspect Bloons TD 6. Give only its recorded operating systems, play modes and historical USD price with the observation date.",
+        "Do those records independently establish compatibility or incompatibility on operating systems today?"
+      ],
+      "checks": ["Actual ID960090 values match", "Natural catalog-only qualification without internal flags"]
+    },
+    {
+      "id": "D27R",
+      "turns": [
+        "My uncle Sam may join me for a gaming evening on Tuesday. We haven't agreed a budget.",
+        "Move that gaming evening to Saturday. Sam remains a possible participant.",
+        "What were the first and replacement days, who may join, and have we agreed a spending limit?"
+      ],
+      "checks": ["Tuesday then Saturday; uncle Sam remains tentative; no budget agreement", "No invented hard filters or unrequested catalog access", "Short recall only, not long-memory acceptance"]
+    }
+  ]
+}

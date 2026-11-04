@@ -1,0 +1,32 @@
+{
+  "version": "owner-closeout-development-v38",
+  "scope": "Fresh exposed checks after v37 omitted a requested restored search. Earlier attempts/failures/skips remain immutable; held-out fixtures unchanged.",
+  "development": [
+    {
+      "id": "D38B",
+      "turns": [
+        "Save Windows, single-player and an inclusive recorded maximum of 17.25 USD as my normal requirements. Find up to four games.",
+        "Only for this request, find Windows single-player games recorded strictly above 17.25 USD and at most 34.50 USD. Do not alter my saved requirements.",
+        "Please find games under my saved normal requirements again, and remind me of the saved maximum price."
+      ],
+      "checks": ["Three actual searches with canonical cards", "Normal/restored1725; temporary1726–3450", "Native saved/temporary/use_saved actions; no temporary persistence", "Recall alone cannot pass restored search"]
+    },
+    {
+      "id": "D38P",
+      "turns": [
+        "Find Terraria in the catalog and report its recorded operating systems, play modes and USD price with the observation date.",
+        "Can missing operating-system support in a catalog entry by itself prove the game is incompatible with that system now?"
+      ],
+      "checks": ["Exact canonical record agrees", "Current question answered; missing support is unknown, not current incompatibility"]
+    },
+    {
+      "id": "D38R",
+      "turns": [
+        "Blair might join my gaming evening on Wednesday. No spending limit has been agreed.",
+        "Move the evening to Saturday. Blair is still tentative.",
+        "Recall the original day, corrected day, possible guest and whether we agreed a budget."
+      ],
+      "checks": ["Wednesday then Saturday; Blair tentative; budget unagreed", "No unsolicited catalog searches or inferred hard filters"]
+    }
+  ]
+}

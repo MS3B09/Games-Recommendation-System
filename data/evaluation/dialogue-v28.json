@@ -1,0 +1,32 @@
+{
+  "version": "owner-closeout-development-v39",
+  "scope": "Fresh exposed checks for verbatim native-answer formatting and latest-request-only writer instructions with sourced originals retained. Earlier failures/skips unchanged; no held-out tuning or replay.",
+  "development": [
+    {
+      "id": "D39B",
+      "turns": [
+        "Save Windows, single-player and an inclusive recorded maximum of 19.25 USD as my usual requirements. Find up to four games with those requirements.",
+        "For this search only, find Windows single-player games recorded strictly above 19.25 USD and no higher than 38.50 USD. Leave my usual requirements unchanged.",
+        "Find games with my saved usual requirements again, and remind me of the maximum price I saved."
+      ],
+      "checks": ["Three searches and canonical cards", "Normal/restored1925; temporary1926–3850", "Saved maximum stated as well as restored search", "Temporary changes never persisted"]
+    },
+    {
+      "id": "D39P",
+      "turns": [
+        "Look up Stardew Valley and give its recorded operating systems, play modes, and USD price with the observation date.",
+        "Does an operating system missing from a catalog entry establish that the game is incompatible with it today?"
+      ],
+      "checks": ["Canonical record agrees", "Answer current compatibility question, not previous summary", "Plain native answer cannot be rewritten during schema formatting"]
+    },
+    {
+      "id": "D39R",
+      "turns": [
+        "Cameron may join my gaming evening on Sunday. We have not settled on any spending limit.",
+        "Move the evening to Tuesday. Cameron remains tentative.",
+        "Recall the original day, updated day, possible guest, and whether we agreed a budget."
+      ],
+      "checks": ["Sunday then Tuesday; Cameron tentative; no agreed budget", "No unsolicited game searches or inferred hard filters", "Original user text preserved as sourced history"]
+    }
+  ]
+}

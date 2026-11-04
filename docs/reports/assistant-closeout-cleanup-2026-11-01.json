@@ -1,0 +1,75 @@
+{
+  "at": "2026-11-01T13:32:05.397621+00:00",
+  "archives": [
+    {
+      "version": 29,
+      "case": "D28B",
+      "history_status": 404,
+      "code": "chat_session_missing"
+    },
+    {
+      "version": 29,
+      "case": "D28P",
+      "history_status": 404,
+      "code": "chat_session_missing"
+    },
+    {
+      "version": 29,
+      "case": "D28R",
+      "history_status": 404,
+      "code": "chat_session_missing"
+    },
+    {
+      "version": 30,
+      "case": "D30B",
+      "history_status": 404,
+      "code": "chat_session_missing"
+    },
+    {
+      "version": 30,
+      "case": "D30P",
+      "history_status": 404,
+      "code": "chat_session_missing"
+    },
+    {
+      "version": 31,
+      "case": "D31B",
+      "history_status": 404,
+      "code": "chat_session_missing"
+    },
+    {
+      "version": 31,
+      "case": "D31P",
+      "history_status": 404,
+      "code": "chat_session_missing"
+    },
+    {
+      "version": 32,
+      "case": "D32B",
+      "history_status": 404,
+      "code": "chat_session_missing"
+    },
+    {
+      "version": 32,
+      "case": "D32P",
+      "history_status": 404,
+      "code": "chat_session_missing"
+    },
+    {
+      "version": 33,
+      "case": "D33B",
+      "history_status": 404,
+      "code": "chat_session_missing"
+    },
+    {
+      "version": 33,
+      "case": "D33P",
+      "history_status": 404,
+      "code": "chat_session_missing"
+    }
+  ],
+  "all_erased": true,
+  "private_capabilities_exported": false,
+  "d33p_followup_skipped_for_infrastructure": 1,
+  "inference_calls": 0
+}

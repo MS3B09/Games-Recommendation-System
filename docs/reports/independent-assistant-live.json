@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "observed_at": "2026-10-22T18:20:27.509200+00:00",
+  "catalog_version": "m2-649714e8b26775165f105d02",
+  "cases": [
+    "main_seed_discovery",
+    "chat_greeting",
+    "independent_chat_search",
+    "chat_local_rejection",
+    "exact_database_cards",
+    "invented_selection_rejected",
+    "main_unchanged_after_chat"
+  ],
+  "selected_id": 203160,
+  "replacement_ids": [
+    588650
+  ],
+  "provider_calls": [
+    "interpret",
+    "interpret",
+    "reply",
+    "interpret",
+    "reply",
+    "interpret",
+    "reply"
+  ],
+  "maximum_reserved_tokens": 5679,
+  "note": "Real restricted read-only catalog and FastAPI TestClient. Groq HTTP and quota reservation mocked; throttle bypassed only for this bounded check. No live AI, database mutation, migration or deployment."
+}

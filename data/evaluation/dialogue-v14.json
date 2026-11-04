@@ -1,0 +1,32 @@
+{
+  "version": "owner-closeout-development-v24",
+  "scope": "Fresh development after v22/v23 failures, with smaller factual summaries and retirement of superseded working-context citations. Exposed regressions, not held-out data. Failed attempts and original hashes remain preserved; original held-out capability cases stay in dialogue-v12.json.",
+  "development": [
+    {
+      "id": "D24B",
+      "turns": [
+        "Set my usual requirements to Windows, single-player and an inclusive recorded USD maximum of 11 dollars. Please show up to four choices.",
+        "This search is a temporary exception: show up to four Windows single-player choices priced above 11 USD and at most 22 USD in your records. My normal maximum must stay 11 dollars.",
+        "Search once more with my normal requirements rather than the exception, and state the normal budget."
+      ],
+      "checks": ["Normal/restored maximum 1100 inclusive", "Temporary minimum 1101 and maximum 2200 inclusive; at least one newly eligible card", "Normal budget remains 1100; Windows and single-player retained", "Four-game evidence when requested fits bounded context or accurately discloses incompleteness", "No unsupported no-match/price-absence claim"]
+    },
+    {
+      "id": "D24P",
+      "turns": [
+        "Please inspect the Hades record. List just its recorded operating systems, recorded play modes and historical USD price, including the price observation date.",
+        "Do those recorded operating-system flags establish independently verified compatibility or incompatibility today?"
+      ],
+      "checks": ["Hades ID1145360 independently confirmed present", "Exact record amounts/dates/modes/platforms", "Catalog-only wording, no independently verified absence implication"]
+    },
+    {
+      "id": "D24R",
+      "turns": [
+        "My aunt Dana may join me for a gaming evening on Thursday. We have not agreed a spending limit.",
+        "We are moving that gaming evening to Sunday instead; Dana may still join.",
+        "Recall our initial day, replacement day, possible gaming partner and whether we agreed a budget."
+      ],
+      "checks": ["Thursday then Sunday; aunt Dana remains tentative; budget unagreed", "No inferred co-op/multiplayer/platform/budget filters", "No invented agreement or changed activity"]
+    }
+  ]
+}

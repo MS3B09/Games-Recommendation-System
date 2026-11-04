@@ -1,0 +1,430 @@
+{
+  "status": "passed",
+  "observed_at": "2026-10-22T18:40:52.050Z",
+  "catalog_version": "m2-649714e8b26775165f105d02",
+  "ranking_version": "hybrid-text-v1",
+  "cases": [
+    {
+      "name": "hades_acceptance",
+      "ids": [
+        113200,
+        400,
+        105600,
+        107100,
+        311690,
+        620,
+        367520,
+        1966720,
+        1091500,
+        237930
+      ],
+      "titles": [
+        "The Binding of Isaac",
+        "Portal",
+        "Terraria",
+        "Bastion",
+        "Enter the Gungeon",
+        "Portal 2",
+        "Hollow Knight",
+        "Lethal Company",
+        "Cyberpunk 2077",
+        "Transistor"
+      ],
+      "criteria": {
+        "min_price_cents": 0,
+        "max_price_cents": 2000,
+        "price_operator": "lt",
+        "free_only": false,
+        "platforms": [
+          "windows"
+        ],
+        "platform_match": "any",
+        "required_modes": [
+          "single-player"
+        ],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "core_ms": 2362.06,
+      "semantic": true
+    },
+    {
+      "name": "story_refinement",
+      "ids": [
+        107100,
+        113200,
+        400,
+        311690,
+        105600,
+        620,
+        1966720,
+        367520,
+        1091500,
+        237930
+      ],
+      "titles": [
+        "Bastion",
+        "The Binding of Isaac",
+        "Portal",
+        "Enter the Gungeon",
+        "Terraria",
+        "Portal 2",
+        "Lethal Company",
+        "Hollow Knight",
+        "Cyberpunk 2077",
+        "Transistor"
+      ],
+      "criteria": {
+        "min_price_cents": 0,
+        "max_price_cents": 2000,
+        "price_operator": "lt",
+        "free_only": false,
+        "platforms": [
+          "windows"
+        ],
+        "platform_match": "any",
+        "required_modes": [
+          "single-player"
+        ],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "core_ms": 771.27,
+      "semantic": true
+    },
+    {
+      "name": "budget_conflict",
+      "ids": [
+        113200,
+        311690,
+        107100,
+        237930,
+        1966720,
+        367520,
+        1091500,
+        632360,
+        105600,
+        620
+      ],
+      "titles": [
+        "The Binding of Isaac",
+        "Enter the Gungeon",
+        "Bastion",
+        "Transistor",
+        "Lethal Company",
+        "Hollow Knight",
+        "Cyberpunk 2077",
+        "Risk of Rain 2",
+        "Terraria",
+        "Portal 2"
+      ],
+      "criteria": {
+        "min_price_cents": 0,
+        "max_price_cents": 2000,
+        "price_operator": "lt",
+        "free_only": false,
+        "platforms": [
+          "windows"
+        ],
+        "platform_match": "any",
+        "required_modes": [
+          "single-player"
+        ],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "core_ms": 708.11,
+      "semantic": true
+    },
+    {
+      "name": "keep_controls",
+      "ids": [
+        113200,
+        311690,
+        107100,
+        237930,
+        1966720,
+        367520,
+        1091500,
+        632360,
+        105600,
+        620
+      ],
+      "titles": [
+        "The Binding of Isaac",
+        "Enter the Gungeon",
+        "Bastion",
+        "Transistor",
+        "Lethal Company",
+        "Hollow Knight",
+        "Cyberpunk 2077",
+        "Risk of Rain 2",
+        "Terraria",
+        "Portal 2"
+      ],
+      "criteria": {
+        "min_price_cents": 0,
+        "max_price_cents": 2000,
+        "price_operator": "lt",
+        "free_only": false,
+        "platforms": [
+          "windows"
+        ],
+        "platform_match": "any",
+        "required_modes": [
+          "single-player"
+        ],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "core_ms": 723.15,
+      "semantic": true
+    },
+    {
+      "name": "accept_text_change",
+      "ids": [
+        113200,
+        311690,
+        892970,
+        107100,
+        237930,
+        1966720,
+        548430,
+        367520,
+        588650,
+        646570
+      ],
+      "titles": [
+        "The Binding of Isaac",
+        "Enter the Gungeon",
+        "Valheim",
+        "Bastion",
+        "Transistor",
+        "Lethal Company",
+        "Deep Rock Galactic",
+        "Hollow Knight",
+        "Dead Cells",
+        "Slay the Spire"
+      ],
+      "criteria": {
+        "min_price_cents": 0,
+        "max_price_cents": 3000,
+        "price_operator": "lt",
+        "free_only": false,
+        "platforms": [
+          "windows"
+        ],
+        "platform_match": "any",
+        "required_modes": [
+          "single-player"
+        ],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "core_ms": 701.42,
+      "semantic": true
+    },
+    {
+      "name": "text_only",
+      "ids": [
+        413150,
+        387290,
+        620,
+        105600,
+        203160,
+        113200,
+        960090,
+        504230,
+        1091500,
+        367520
+      ],
+      "titles": [
+        "Stardew Valley",
+        "Ori and the Blind Forest: Definitive Edition",
+        "Portal 2",
+        "Terraria",
+        "Tomb Raider Game of the Year",
+        "The Binding of Isaac",
+        "Bloons TD 6",
+        "Celeste",
+        "Cyberpunk 2077",
+        "Hollow Knight"
+      ],
+      "criteria": {
+        "min_price_cents": null,
+        "max_price_cents": 2000,
+        "price_operator": "lt",
+        "free_only": false,
+        "platforms": [
+          "windows"
+        ],
+        "platform_match": "any",
+        "required_modes": [],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "core_ms": 688.72,
+      "semantic": true
+    },
+    {
+      "name": "no_silent_relaxation",
+      "ids": [],
+      "titles": [],
+      "criteria": {
+        "min_price_cents": 0,
+        "max_price_cents": 2000,
+        "price_operator": "lte",
+        "free_only": false,
+        "platforms": [
+          "windows"
+        ],
+        "platform_match": "any",
+        "required_modes": [
+          "single-player"
+        ],
+        "required_genres": [
+          "not-a-catalog-genre"
+        ],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "core_ms": 680.07,
+      "semantic": true
+    },
+    {
+      "name": "main_seed_discovery",
+      "ids": [
+        107100,
+        311690,
+        237930,
+        113200,
+        367520,
+        1966720,
+        1091500,
+        105600,
+        632360,
+        620
+      ],
+      "titles": [
+        "Bastion",
+        "Enter the Gungeon",
+        "Transistor",
+        "The Binding of Isaac",
+        "Hollow Knight",
+        "Lethal Company",
+        "Cyberpunk 2077",
+        "Terraria",
+        "Risk of Rain 2",
+        "Portal 2"
+      ],
+      "criteria": {
+        "min_price_cents": 0,
+        "max_price_cents": 2000,
+        "price_operator": "lte",
+        "free_only": false,
+        "platforms": [
+          "windows"
+        ],
+        "platform_match": "any",
+        "required_modes": [
+          "single-player"
+        ],
+        "required_genres": [],
+        "preferred_terms": [],
+        "unwanted_terms": [],
+        "excluded_ids": []
+      },
+      "core_ms": 665.55,
+      "semantic": false
+    }
+  ],
+  "scans": [
+    {
+      "device": "desktop",
+      "state": "initial",
+      "axe": [],
+      "overflow": false
+    },
+    {
+      "device": "desktop",
+      "state": "main-results",
+      "axe": [],
+      "overflow": false
+    },
+    {
+      "device": "desktop",
+      "state": "dismissed",
+      "axe": [],
+      "overflow": false
+    },
+    {
+      "device": "desktop",
+      "state": "assistant-open",
+      "axe": [],
+      "overflow": false
+    },
+    {
+      "device": "desktop",
+      "state": "assistant-unavailable",
+      "axe": [],
+      "overflow": false
+    },
+    {
+      "device": "desktop",
+      "state": "session-reload",
+      "axe": [],
+      "overflow": false
+    },
+    {
+      "device": "mobile",
+      "state": "initial",
+      "axe": [],
+      "overflow": false
+    },
+    {
+      "device": "mobile",
+      "state": "main-results",
+      "axe": [],
+      "overflow": false
+    },
+    {
+      "device": "mobile",
+      "state": "dismissed",
+      "axe": [],
+      "overflow": false
+    },
+    {
+      "device": "mobile",
+      "state": "assistant-open",
+      "axe": [],
+      "overflow": false
+    },
+    {
+      "device": "mobile",
+      "state": "assistant-unavailable",
+      "axe": [],
+      "overflow": false
+    },
+    {
+      "device": "mobile",
+      "state": "session-reload",
+      "axe": [],
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "note": "Owned local API and real restricted catalog; eight API cases include seven legacy text-API compatibility cases. Browser uses independent main discovery and actual disabled-chat endpoint; no live AI. No production migration, import, deployment or evaluated relevance-improvement claim."
+}

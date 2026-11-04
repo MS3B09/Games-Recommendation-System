@@ -1,0 +1,20 @@
+{
+  "version": "simplification-single-reply-path-v8",
+  "scope": "Fresh affected development only after removal of the redundant native json reply tool. Earlier v1-v7 attempts, failures and hashes remain unchanged; no old-turn replay, owner ratings or broader acceptance inferred.",
+  "development": [
+    {
+      "id": "S3T",
+      "turns": [
+        "Save Windows, single-player and an inclusive recorded USD maximum of $22.35 as my normal requirements, and recommend two games using them now.",
+        "This search only: recommend two Windows single-player games recorded strictly above $22.35 and no higher than $44.70 USD. Leave my normal requirements unchanged.",
+        "Recommend two games with my saved normal requirements again. Also tell me my saved maximum price."
+      ],
+      "checks": [
+        "Three actual searches, not save-only acknowledgements: saved max2235, temporary min2236/max4470, restored max2235",
+        "Temporary search never replaces saved requirements; final answer correctly states normal ceiling",
+        "All canonical cards independently satisfy requested modes/platform/price boundaries",
+        "Typed memory validation and atomic failed-turn persistence stay intact"
+      ]
+    }
+  ]
+}

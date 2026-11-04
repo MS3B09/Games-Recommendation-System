@@ -1,0 +1,24 @@
+{
+  "version": "simplification-five-story-review-v5",
+  "scope": "Fresh budget development after idempotent saved-filter handling and explicit card-citation guidance; untouched fact/detour story retained. Earlier failures/hashes are preserved without replay. Browser memory story is separate.",
+  "development": [
+    {
+      "id": "S3Q",
+      "turns": [
+        "Make Windows, single-player and an inclusive recorded USD maximum of $19.75 my normal requirements, and recommend two games.",
+        "Just for this search, find two Windows single-player games recorded strictly above $19.75 and at most $39.50 USD. Do not replace my normal requirements.",
+        "Find two games using my saved normal conditions again. What is my normal maximum price?"
+      ],
+      "checks": ["Three actual searches: maximum 1975, temporary 1976-3950, restored maximum 1975", "Saved maximum remains 1975", "Canonical cards satisfy each search's predicates", "Budget-only prose with cards still supplies title citations"]
+    },
+    {
+      "id": "S4",
+      "turns": [
+        "Look up Portal 2 and Risk of Rain 2. Tell me their catalog-recorded platforms and play modes; don't infer current compatibility.",
+        "A quick non-game detour: give me one simple idea for using leftover cooked rice.",
+        "Back to the two games before the rice question: which has recorded Mac support, and which recorded play modes do they share?"
+      ],
+      "checks": ["Correct canonical facts for 620 and 632360", "Detour does not perform an unsolicited catalog search", "Earlier pair resolved correctly after detour", "Unrecorded support not called proven incompatibility"]
+    }
+  ]
+}

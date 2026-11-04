@@ -1,0 +1,13 @@
+{
+  "version": "native-assistant-discovery-development-v45-untouched",
+  "scope": "Continue only seven untouched original development requests after factual-review and citation-rendering changes. All completed and failed requests remain in earlier journals and are not replayed. Original held-out fixture unchanged.",
+  "development": [
+    {"id":"D04","query":"farming and a friendly community","filters":{"platforms":["linux"],"max_price_cents":2000},"turns":["Find a farming and community experience on Linux with a recorded price no higher than 20 USD."]},
+    {"id":"D05","query":"tower defense strategy","filters":{"max_price_cents":1000},"turns":["Recommend tower-defense strategy with a recorded price at most 10 USD."]},
+    {"id":"D06","query":"games","filters":{"free_only":true,"max_price_cents":0,"min_price_cents":0},"turns":["Which catalog games are explicitly free-to-play and have a recorded price of zero? Do not infer free-to-play from a sale."]},
+    {"id":"D07","query":"local cooperative play","filters":{"required_modes":["local-co-op"],"platforms":["windows"]},"turns":["Recommend local co-op on Windows, based on recorded modes rather than assuming multiplayer means couch play."]},
+    {"id":"D08","query":"space exploration survival","filters":{"platforms":["mac"]},"turns":["Can you find space exploration or survival games whose catalog records support for macOS?"]},
+    {"id":"D09","query":"combat progression","filters":{"excluded_ids":[1145360,588650]},"turns":["Recommend combat with progression, excluding Hades and Dead Cells because I have played them."]},
+    {"id":"D10","query":"story adventure","filters":{"platforms":["windows"],"required_modes":["single-player"],"max_price_cents":1},"turns":["Find a Windows single-player story adventure for a recorded maximum of one cent. If there is no match, keep my limits and explain the result."]}
+  ]
+}

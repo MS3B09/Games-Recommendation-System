@@ -1,0 +1,673 @@
+{
+  "ChatStateV2": {
+    "$defs": {
+      "ChatCriteria": {
+        "additionalProperties": false,
+        "properties": {
+          "excluded_ids": {
+            "items": {
+              "exclusiveMinimum": 0,
+              "maximum": 2147483647,
+              "type": "integer"
+            },
+            "maxItems": 200,
+            "title": "Excluded Ids",
+            "type": "array"
+          },
+          "free_only": {
+            "default": false,
+            "title": "Free Only",
+            "type": "boolean"
+          },
+          "max_price_cents": {
+            "anyOf": [
+              {
+                "maximum": 1000000,
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Max Price Cents"
+          },
+          "min_price_cents": {
+            "anyOf": [
+              {
+                "maximum": 1000000,
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Min Price Cents"
+          },
+          "platform_match": {
+            "default": "any",
+            "enum": [
+              "any",
+              "all"
+            ],
+            "title": "Platform Match",
+            "type": "string"
+          },
+          "platforms": {
+            "items": {
+              "enum": [
+                "windows",
+                "mac",
+                "linux"
+              ],
+              "type": "string"
+            },
+            "maxItems": 3,
+            "title": "Platforms",
+            "type": "array"
+          },
+          "preferred_terms": {
+            "items": {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 30,
+            "title": "Preferred Terms",
+            "type": "array"
+          },
+          "price_operator": {
+            "default": "lte",
+            "enum": [
+              "lte",
+              "lt"
+            ],
+            "title": "Price Operator",
+            "type": "string"
+          },
+          "required_genres": {
+            "items": {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 30,
+            "title": "Required Genres",
+            "type": "array"
+          },
+          "required_modes": {
+            "items": {
+              "enum": [
+                "single-player",
+                "multiplayer",
+                "online-co-op",
+                "local-co-op"
+              ],
+              "type": "string"
+            },
+            "maxItems": 4,
+            "title": "Required Modes",
+            "type": "array"
+          },
+          "unwanted_terms": {
+            "items": {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 30,
+            "title": "Unwanted Terms",
+            "type": "array"
+          }
+        },
+        "title": "ChatCriteria",
+        "type": "object"
+      },
+      "Origin": {
+        "additionalProperties": false,
+        "properties": {
+          "scope": {
+            "const": "conversation",
+            "default": "conversation",
+            "title": "Scope",
+            "type": "string"
+          },
+          "user_turn": {
+            "maximum": 1000000,
+            "minimum": 1,
+            "title": "User Turn",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "user_turn"
+        ],
+        "title": "Origin",
+        "type": "object"
+      },
+      "RememberedExclusion": {
+        "additionalProperties": false,
+        "properties": {
+          "app_id": {
+            "exclusiveMinimum": 0,
+            "maximum": 2147483647,
+            "title": "App Id",
+            "type": "integer"
+          },
+          "origin": {
+            "$ref": "#/$defs/Origin"
+          }
+        },
+        "required": [
+          "app_id",
+          "origin"
+        ],
+        "title": "RememberedExclusion",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "criteria": {
+        "$ref": "#/$defs/ChatCriteria"
+      },
+      "exclusions": {
+        "items": {
+          "$ref": "#/$defs/RememberedExclusion"
+        },
+        "maxItems": 100,
+        "title": "Exclusions",
+        "type": "array"
+      },
+      "legacy_criteria": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/ChatCriteria"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null
+      },
+      "legacy_excluded_ids": {
+        "items": {
+          "exclusiveMinimum": 0,
+          "maximum": 2147483647,
+          "type": "integer"
+        },
+        "maxItems": 100,
+        "title": "Legacy Excluded Ids",
+        "type": "array"
+      },
+      "legacy_query": {
+        "default": "",
+        "maxLength": 1000,
+        "title": "Legacy Query",
+        "type": "string"
+      },
+      "provenance": {
+        "additionalProperties": {
+          "$ref": "#/$defs/Origin"
+        },
+        "maxProperties": 10,
+        "propertyNames": {
+          "enum": [
+            "min_price_cents",
+            "max_price_cents",
+            "price_operator",
+            "free_only",
+            "platforms",
+            "platform_match",
+            "required_modes",
+            "required_genres",
+            "preferred_terms",
+            "unwanted_terms"
+          ]
+        },
+        "title": "Provenance",
+        "type": "object"
+      },
+      "query": {
+        "default": "",
+        "maxLength": 1000,
+        "title": "Query",
+        "type": "string"
+      },
+      "query_origin": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/Origin"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null
+      },
+      "referenced_ids": {
+        "items": {
+          "exclusiveMinimum": 0,
+          "maximum": 2147483647,
+          "type": "integer"
+        },
+        "maxItems": 2,
+        "title": "Referenced Ids",
+        "type": "array"
+      },
+      "shown_ids": {
+        "items": {
+          "exclusiveMinimum": 0,
+          "maximum": 2147483647,
+          "type": "integer"
+        },
+        "maxItems": 4,
+        "title": "Shown Ids",
+        "type": "array"
+      },
+      "user_turn": {
+        "default": 0,
+        "maximum": 1000000,
+        "minimum": 0,
+        "title": "User Turn",
+        "type": "integer"
+      },
+      "version": {
+        "const": 2,
+        "default": 2,
+        "title": "Version",
+        "type": "integer"
+      }
+    },
+    "title": "ChatStateV2",
+    "type": "object"
+  },
+  "RetrievalOutcome": {
+    "additionalProperties": false,
+    "properties": {
+      "channels": {
+        "items": {
+          "enum": [
+            "title",
+            "lexical",
+            "semantic"
+          ],
+          "type": "string"
+        },
+        "maxItems": 3,
+        "title": "Channels",
+        "type": "array"
+      },
+      "degraded_reason": {
+        "anyOf": [
+          {
+            "enum": [
+              "encoder_missing",
+              "encoder_busy",
+              "encoder_failed",
+              "artifact_mismatch"
+            ],
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Degraded Reason"
+      },
+      "evidence_ids": {
+        "items": {
+          "exclusiveMinimum": 0,
+          "maximum": 2147483647,
+          "type": "integer"
+        },
+        "maxItems": 8,
+        "title": "Evidence Ids",
+        "type": "array"
+      },
+      "kind": {
+        "enum": [
+          "found",
+          "found_but_mismatch",
+          "ambiguous",
+          "not_in_catalog",
+          "no_recommendation_match",
+          "retrieval_unavailable"
+        ],
+        "title": "Kind",
+        "type": "string"
+      },
+      "semantic_available": {
+        "default": false,
+        "title": "Semantic Available",
+        "type": "boolean"
+      },
+      "title_search_complete": {
+        "default": false,
+        "title": "Title Search Complete",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "kind"
+    ],
+    "title": "RetrievalOutcome",
+    "type": "object"
+  },
+  "TurnPlan": {
+    "$defs": {
+      "ChatCriteria": {
+        "additionalProperties": false,
+        "properties": {
+          "excluded_ids": {
+            "items": {
+              "exclusiveMinimum": 0,
+              "maximum": 2147483647,
+              "type": "integer"
+            },
+            "maxItems": 200,
+            "title": "Excluded Ids",
+            "type": "array"
+          },
+          "free_only": {
+            "default": false,
+            "title": "Free Only",
+            "type": "boolean"
+          },
+          "max_price_cents": {
+            "anyOf": [
+              {
+                "maximum": 1000000,
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Max Price Cents"
+          },
+          "min_price_cents": {
+            "anyOf": [
+              {
+                "maximum": 1000000,
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Min Price Cents"
+          },
+          "platform_match": {
+            "default": "any",
+            "enum": [
+              "any",
+              "all"
+            ],
+            "title": "Platform Match",
+            "type": "string"
+          },
+          "platforms": {
+            "items": {
+              "enum": [
+                "windows",
+                "mac",
+                "linux"
+              ],
+              "type": "string"
+            },
+            "maxItems": 3,
+            "title": "Platforms",
+            "type": "array"
+          },
+          "preferred_terms": {
+            "items": {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 30,
+            "title": "Preferred Terms",
+            "type": "array"
+          },
+          "price_operator": {
+            "default": "lte",
+            "enum": [
+              "lte",
+              "lt"
+            ],
+            "title": "Price Operator",
+            "type": "string"
+          },
+          "required_genres": {
+            "items": {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 30,
+            "title": "Required Genres",
+            "type": "array"
+          },
+          "required_modes": {
+            "items": {
+              "enum": [
+                "single-player",
+                "multiplayer",
+                "online-co-op",
+                "local-co-op"
+              ],
+              "type": "string"
+            },
+            "maxItems": 4,
+            "title": "Required Modes",
+            "type": "array"
+          },
+          "unwanted_terms": {
+            "items": {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 30,
+            "title": "Unwanted Terms",
+            "type": "array"
+          }
+        },
+        "title": "ChatCriteria",
+        "type": "object"
+      },
+      "CriteriaPatch": {
+        "additionalProperties": false,
+        "properties": {
+          "clear": {
+            "items": {
+              "enum": [
+                "min_price_cents",
+                "max_price_cents",
+                "price_operator",
+                "free_only",
+                "platforms",
+                "platform_match",
+                "required_modes",
+                "required_genres",
+                "preferred_terms",
+                "unwanted_terms"
+              ],
+              "type": "string"
+            },
+            "maxItems": 10,
+            "title": "Clear",
+            "type": "array"
+          },
+          "scope": {
+            "enum": [
+              "turn",
+              "conversation"
+            ],
+            "title": "Scope",
+            "type": "string"
+          },
+          "set": {
+            "$ref": "#/$defs/ChatCriteria"
+          }
+        },
+        "required": [
+          "scope"
+        ],
+        "title": "CriteriaPatch",
+        "type": "object"
+      },
+      "ExclusionPatch": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "enum": [
+              "add",
+              "remove"
+            ],
+            "title": "Action",
+            "type": "string"
+          },
+          "target": {
+            "$ref": "#/$defs/TitleTarget"
+          }
+        },
+        "required": [
+          "action",
+          "target"
+        ],
+        "title": "ExclusionPatch",
+        "type": "object"
+      },
+      "TitleTarget": {
+        "additionalProperties": false,
+        "properties": {
+          "shown_position": {
+            "anyOf": [
+              {
+                "maximum": 4,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Shown Position"
+          },
+          "title": {
+            "default": "",
+            "maxLength": 200,
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "title": "TitleTarget",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "criteria_patch": {
+        "items": {
+          "$ref": "#/$defs/CriteriaPatch"
+        },
+        "maxItems": 2,
+        "title": "Criteria Patch",
+        "type": "array"
+      },
+      "evaluate_prior_requirements": {
+        "default": false,
+        "title": "Evaluate Prior Requirements",
+        "type": "boolean"
+      },
+      "exclusion_patch": {
+        "items": {
+          "$ref": "#/$defs/ExclusionPatch"
+        },
+        "maxItems": 8,
+        "title": "Exclusion Patch",
+        "type": "array"
+      },
+      "kind": {
+        "enum": [
+          "social",
+          "clarify",
+          "title_lookup",
+          "game_facts",
+          "compare",
+          "recommend"
+        ],
+        "title": "Kind",
+        "type": "string"
+      },
+      "query": {
+        "default": "",
+        "maxLength": 1000,
+        "title": "Query",
+        "type": "string"
+      },
+      "reference": {
+        "default": "none",
+        "enum": [
+          "none",
+          "last_game",
+          "last_pair"
+        ],
+        "title": "Reference",
+        "type": "string"
+      },
+      "reply": {
+        "default": "",
+        "maxLength": 2000,
+        "title": "Reply",
+        "type": "string"
+      },
+      "requested_facts": {
+        "items": {
+          "enum": [
+            "description",
+            "platforms",
+            "modes",
+            "genres",
+            "tags",
+            "early_access",
+            "recorded_price"
+          ],
+          "type": "string"
+        },
+        "maxItems": 7,
+        "title": "Requested Facts",
+        "type": "array"
+      },
+      "reset_preferences": {
+        "default": false,
+        "title": "Reset Preferences",
+        "type": "boolean"
+      },
+      "title_mentions": {
+        "items": {
+          "type": "string"
+        },
+        "maxItems": 2,
+        "title": "Title Mentions",
+        "type": "array"
+      }
+    },
+    "required": [
+      "kind"
+    ],
+    "title": "TurnPlan",
+    "type": "object"
+  }
+}

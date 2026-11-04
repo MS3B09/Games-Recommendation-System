@@ -1,0 +1,32 @@
+{
+  "version": "owner-closeout-development-v30",
+  "scope": "Fresh exposed development after v29 failures; no failed-turn replay or held-out changes.",
+  "development": [
+    {
+      "id": "D30B",
+      "turns": [
+        "My normal requirements are Windows, single-player and recorded prices at most 17 USD inclusive. Save those and find up to four games.",
+        "Just for this search, find Windows single-player games priced strictly above 17 USD and no more than 34 USD in the recorded data. Keep my usual maximum unchanged.",
+        "Find games with my normal requirements again. Also tell me my saved maximum price."
+      ],
+      "checks": ["All three turns search; normal/restored maximum1700; temporary minimum1701 maximum3400", "Normal filters persist; temporary filters do not", "Names and requested facts, no unsolicited clipped quotes"]
+    },
+    {
+      "id": "D30P",
+      "turns": [
+        "Look up Portal, not Portal 2. Give its recorded operating systems, play modes and dated USD price.",
+        "If another operating system is not recorded, does that establish that the game cannot run on it today?"
+      ],
+      "checks": ["Exact Portal400 fields", "Dated recorded support, no false incompatibility", "Follow-up answers latest question rather than repeating lookup"]
+    },
+    {
+      "id": "D30R",
+      "turns": [
+        "Robin might join my gaming evening on Friday. No spending limit has been agreed.",
+        "Move the gaming evening to Sunday. Robin is still tentative.",
+        "What was the original day, the new day, the tentative participant and the agreed spending limit, if any?"
+      ],
+      "checks": ["Friday then Sunday; Robin tentative; no agreed budget", "No inferred hard filters or catalog calls"]
+    }
+  ]
+}

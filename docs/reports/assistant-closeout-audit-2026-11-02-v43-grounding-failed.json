@@ -1,0 +1,132 @@
+{
+  "at": "2026-11-02T18:20:01.546086+00:00",
+  "human_scores": null,
+  "journals": [
+    {
+      "source": "C:\\Users\\User\\AppData\\Local\\Temp\\opencode\\assistant-closeout-discovery-development-v43.json",
+      "snapshot": "assistant-closeout-discovery-development-v43-snapshot-f407347319e6.json",
+      "sha256": "f407347319e63f7a1deaef811b75e1901f77ef6de24130729ad1c8aead8ab8bf",
+      "current_source_matches": true,
+      "attempted": 1,
+      "http_200_deliveries": 1,
+      "http_p95_ms": 6997.892,
+      "paused": null,
+      "cases": [
+        {
+          "id": "D42Q",
+          "seed_turns": 0,
+          "finished": true,
+          "cleanup_status": 200
+        },
+        {
+          "id": "D03",
+          "seed_turns": 0
+        }
+      ],
+      "turns": [
+        {
+          "case": "D42Q",
+          "turn": 1,
+          "status": 200,
+          "message": "Portal 2 – A puzzle‑platformer that includes online co‑op. Its description notes the \"Perpetual Testing Initiative\" expansion, which lets players design co‑op puzzles together. Recorded support: Linux, Windows. Price: $9.99 USD.\n\nPrice context: recorded US/USD observations from 2026-10-14; check Steam for current prices.\n\nLethal Company – A co‑op horror about scavenging at abandoned moons to sell scrap to the Company. It offers online co‑op. Recorded support: Windows. Price: $9.99 USD.\n\nPrice context: recorded US/USD observations from 2026-10-14; check Steam for current prices.\n\nDeep Rock Galactic – A 1‑4 player co‑op FPS featuring dwarven space miners, procedurally‑generated caves that encourage exploration. It includes online co‑op. Recorded support: Windows. Price: $29.99 USD.\n\nPrice context: recorded US/USD observations from 2026-10-14; check Steam for current prices.\n\nTerraria – An action‑packed adventure game where you dig, fight, explore, and build, supporting online co‑op. Recorded support: macOS, Linux, Windows. Price: $4.99 USD.\n\nPrice context: recorded US/USD observations from 2026-10-14; check Steam for current prices.",
+          "elapsed_ms": 6997.892,
+          "games": [
+            {
+              "id": 620,
+              "title": "Portal 2",
+              "price": {
+                "amount_cents": 999,
+                "currency": "USD",
+                "region": "US",
+                "observed_at": "2026-10-14T18:52:50.524240Z",
+                "evidence_id": "620:price_cents"
+              }
+            },
+            {
+              "id": 1966720,
+              "title": "Lethal Company",
+              "price": {
+                "amount_cents": 999,
+                "currency": "USD",
+                "region": "US",
+                "observed_at": "2026-10-14T18:54:27.419308Z",
+                "evidence_id": "1966720:price_cents"
+              }
+            },
+            {
+              "id": 548430,
+              "title": "Deep Rock Galactic",
+              "price": {
+                "amount_cents": 2999,
+                "currency": "USD",
+                "region": "US",
+                "observed_at": "2026-10-14T18:54:10.040524Z",
+                "evidence_id": "548430:price_cents"
+              }
+            },
+            {
+              "id": 105600,
+              "title": "Terraria",
+              "price": {
+                "amount_cents": 499,
+                "currency": "USD",
+                "region": "US",
+                "observed_at": "2026-10-14T18:53:10.961365Z",
+                "evidence_id": "105600:price_cents"
+              }
+            }
+          ],
+          "model_calls": 3,
+          "applied_filters": {
+            "min_price_cents": null,
+            "max_price_cents": null,
+            "price_operator": "lte",
+            "free_only": false,
+            "platforms": [],
+            "platform_match": "any",
+            "required_modes": [
+              "online-co-op"
+            ],
+            "required_genres": [],
+            "preferred_terms": [
+              "exploration"
+            ],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "preference_changes": null,
+          "tool_deliveries": [
+            {
+              "tool": "recommend_games",
+              "result_bytes": 3996,
+              "error": null,
+              "returned": 4
+            }
+          ],
+          "code": null,
+          "retry_at": null
+        }
+      ]
+    }
+  ],
+  "receipt": {
+    "at": "2026-11-02T18:20:05.212421+00:00",
+    "day": "2026-11-02",
+    "effective_calls": 64,
+    "effective_units": 700026,
+    "remaining_calls": 36,
+    "remaining_units": 799974
+  },
+  "accounting": {
+    "observed_reserved_calls": 3,
+    "reserved_units": 34162,
+    "known_reported_tokens": 6032,
+    "traces_without_usage": 1,
+    "unreported_reserved_units": 10892,
+    "owned_reported_plus_missing_bound": 16924,
+    "turn_start_days": [
+      "2026-11-02"
+    ],
+    "note": "Aggregate owned usage/bound, not provider remaining balance. Cached tokens may reduce actual debit. Check applicable windows separately."
+  }
+}

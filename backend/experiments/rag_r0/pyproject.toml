@@ -1,0 +1,14 @@
+[project]
+name = "conversational-rag-r0"
+version = "0.1.0"
+requires-python = ">=3.13,<3.14"
+dependencies = ["game-discovery[benchmark,dev]"]
+
+[project.optional-dependencies]
+core = ["langchain-core==1.7.0"]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+game-discovery = { path = "../..", editable = true }

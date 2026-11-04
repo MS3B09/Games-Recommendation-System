@@ -1,0 +1,18 @@
+{
+  "status": "ok",
+  "synthetic_prompt": "Hi!",
+  "result": {
+    "role": "assistant",
+    "reasoning": "We just greet. No tool needed.",
+    "tool_calls": [
+      {
+        "id": "fc_3b44a651-0740-40dd-8125-6e7e2c20aefd",
+        "type": "function",
+        "function": {
+          "name": "reply_to_user",
+          "arguments": "{\"game_ids\":[],\"memory\":[],\"parts\":[{\"evidence\":[],\"text\":\"Hello! How can I help you today?\"}]}"
+        }
+      }
+    ]
+  }
+}

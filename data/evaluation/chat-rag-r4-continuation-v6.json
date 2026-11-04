@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "authorization_date": "2026-10-25",
+  "revision_date": "2026-10-26",
+  "authorization": "Owner approved additional free-tier inference to fix/verify/complete R4 and resumed it on 2026-10-26.",
+  "revision_reason": "Retain V3 transport/genre failures, V4 omission/refusal/checkpoint interruption and V5 undo semantic-validation failure. V6 handles an exact whole-message undo's routing before the unchanged frozen generic TurnPlan validation. Unknown fields/patches/IDs still rejected. No model/prompt/ranking/timeout/quota changes from V5, no output reuse or automatic retries.",
+  "retained_parent": {"path": "docs/reports/conversational-rag-r4-development-v3.json", "sha256": "e07ebd1d77a342c46f2e90eab88fe870b17289a45f0c732fefe5a03ca6d0e715"},
+  "retained_interrupted_parent": {"path": "docs/reports/conversational-rag-r4-development-v4.json", "sha256": "44f1a9e4dab5016a9cd29d3a872c3b4873cf4d99397924a41ad033b168408c47", "disposition": "Preserve original/tmp/lock and never resume/replay the interrupted attempt."},
+  "retained_v5": "E: V5 export and C: authoritative journal remain unchanged with five charged attempts and the failed undo output. Start a fresh full paired V6 development run; do not reuse earlier responses.",
+  "limits": "50 calls/day, 500000 reserved tokens/day, four/minute, 30-second throttle, two calls/turn, existing 3-second socket timeout; no hidden retries/resets or paid services.",
+  "development": {"case_ids": ["M05", "M01", "C01", "A01", "T01", "T04", "S01", "S04"], "max_calls": 52, "max_reserved_tokens": 690560},
+  "held_out": {"source": "All 25 real_catalog held_out cases /31 turns, BOTH methods", "max_calls": 124, "max_reserved_tokens": 1646720},
+  "comparison": "Original RRF60/20+20/eight evidence versus exact cosine-only top-five. Shared explicit-operation normalization, interpretation/generation model/settings/byte budget and validators. No held-out ranking tuning.",
+  "journal": "Authoritative before-call journal in approved C:/Users/User/AppData/Local/Temp/opencode/r4-evaluation-v5 directory, separate V6 filenames. Export E: after each whole turn and at pause/completion. Exact journal write intervals excluded only from explicitly labeled serving-equivalent DOMAIN timings; real budget SQL retained, no HTTP/browser latency claim.",
+  "resume": "Source-frozen identities, fresh effective current-UTC-day read-only quota receipt, preserve failed/started/dependent skipped turns; no silent source-hash changes or replay.",
+  "human_review": "Owner ratings only; null remains unjudged."
+}

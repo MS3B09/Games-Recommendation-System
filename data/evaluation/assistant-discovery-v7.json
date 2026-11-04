@@ -1,0 +1,9 @@
+{
+  "version": "native-assistant-discovery-development-v47",
+  "scope": "Fresh exposed regressions after separating literal title lookup from semantic discovery. Earlier completed/failed cases are not replayed; held-out unchanged.",
+  "development": [
+    {"id":"D47F","query":"farming","filters":{"platforms":["mac"],"max_price_cents":1700},"turns":["Recommend a farming game with recorded macOS support for up to 17 USD recorded. Explain the match from the description your catalog supplies."]},
+    {"id":"D47X","query":"online cooperative games","filters":{"platforms":["windows"],"required_modes":["online-co-op"],"excluded_ids":[620,413150]},"turns":["I have already played Portal 2 and Stardew Valley. Recommend other online co-op games on Windows, excluding both from the search."]},
+    {"id":"D47M","query":"exploration","filters":{"platforms":["mac"],"max_price_cents":2700},"turns":["Suggest exploration games whose records include macOS support, for no more than a recorded 27 USD. Tell me what in the supplied descriptions supports exploration."]}
+  ]
+}

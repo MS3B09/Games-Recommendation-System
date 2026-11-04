@@ -1,0 +1,11 @@
+{
+  "status": "AIFailure",
+  "synthetic_prompt": "Hi!",
+  "provider_status": 400,
+  "protocol_error": {
+    "message": "json mode cannot be combined with tool/function calling",
+    "type": "invalid_request_error",
+    "param": "response_format"
+  },
+  "code": "ai_provider_configuration"
+}

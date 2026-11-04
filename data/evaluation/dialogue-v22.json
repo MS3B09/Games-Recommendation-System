@@ -1,0 +1,32 @@
+{
+  "version": "owner-closeout-development-v33",
+  "scope": "Fresh exposed development for native reply selection; earlier failures preserved and no held-out tuning.",
+  "development": [
+    {
+      "id": "D33B",
+      "turns": [
+        "Use Windows, single-player and an inclusive recorded maximum of 22 USD as my normal requirements. Save them and find up to four games.",
+        "Only for this search, find Windows single-player games strictly above 22 USD and at most 44 USD in the recorded data. Keep my normal maximum unchanged.",
+        "Find games again with my usual requirements and say what maximum price you saved."
+      ],
+      "checks": ["Three searches with cards; normal/restored maximum2200; temporary minimum2201 maximum4400", "Normal2200 retained; no false empty claim"]
+    },
+    {
+      "id": "D33P",
+      "turns": [
+        "Read Risk of Rain 2 from the catalog and give its recorded operating systems, modes and dated USD price.",
+        "What does the absence of another operating system tell us about compatibility today?"
+      ],
+      "checks": ["Exact ID632360 fields and dated price", "Recorded support, not false incompatibility", "Answer latest question without repeating lookup"]
+    },
+    {
+      "id": "D33R",
+      "turns": [
+        "Taylor may join my gaming evening on Wednesday. We have not set a budget.",
+        "Change the evening to Saturday. Taylor is still tentative.",
+        "What was the original day, the corrected day, the possible participant and the agreed budget, if any?"
+      ],
+      "checks": ["Wednesday then Saturday; Taylor tentative; budget unagreed", "No catalog calls or inferred hard filters"]
+    }
+  ]
+}

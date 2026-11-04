@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "id": "r4-v6-quota-only-100-1500000",
+  "approved_on": "2026-10-26",
+  "authorization": "Owner accepted the proposed temporary R4 increase to 100 calls/day and 1500000 reserved units/day: Ok Go for it.",
+  "prior_daily_limits": {"calls": 50, "reserved_units": 500000},
+  "temporary_daily_limits": {"calls": 100, "reserved_units": 1500000},
+  "normal_defaults": {"calls": 50, "reserved_units": 500000},
+  "migration": "backend/migrations/0006_r4_ai_budget_limits.sql",
+  "alembic_revision": "0005",
+  "migration_preserved_row": {"day": "2026-10-26", "calls": 50, "reserved_tokens": 393494, "minute": "2026-10-26T17:33:00+00:00", "minute_calls": 2},
+  "development_checkpoint_sha256_before_amendment": "f5b670b6bdd26bb5f3effce46f01dfb7f85f42f108ca7d6501cbf2bc1855e7de",
+  "experiment": "Same source-frozen v6 prompts, model, catalog, ranking, memory, validators, dataset and outputs. Do not replace source hashes or replay prior attempted/failed/dependent turns. Append the operational amendment separately to the journal, preserving prefix records and attempts.",
+  "provider_free_safeguards": {"model": "openai/gpt-oss-120b", "published_requests_per_day": 1000, "published_tokens_per_minute": 8000, "conservative_local_tokens_per_day": 200000, "worst_case_turn_token_units": 26560, "evaluation_turn_spacing_seconds": 60.1, "notes": "Provider organization quotas can differ and other organization usage can consume them. Observe actual rate headers; honor 429 without automatic retry. Actual tokens are distinct from app reserved units; missing usage is conservatively charged at its reservation bound. No paid plan or key rotation."},
+  "unchanged": "Four application calls/minute, 30-second peer throttle, single concurrency, at most two metered provider calls/turn, input/output/timeout bounds, no retries/refunds/resets. Evaluation may wait longer than 30 seconds for provider free-tier headroom.",
+  "restore": "After R4 restore ignored runtime AI_DAILY_CALLS=50 and AI_DAILY_TOKENS=500000, restart backend; never delete counters or lower database constraints over existing usage. No automatic publication or M5 authority."
+}

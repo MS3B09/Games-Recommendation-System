@@ -1,0 +1,166 @@
+{
+  "at": "2026-11-02T16:04:27.167416+00:00",
+  "human_scores": null,
+  "journals": [
+    {
+      "source": "C:\\Users\\User\\AppData\\Local\\Temp\\opencode\\assistant-closeout-discovery-development-v40.json",
+      "snapshot": "assistant-closeout-discovery-development-v40-snapshot-180e31b34eee.json",
+      "sha256": "180e31b34eeebc4e4e9af78d69d7458638044ddaa26ab77fad0fa478d88f0371",
+      "current_source_matches": true,
+      "attempted": 2,
+      "http_200_deliveries": 1,
+      "http_p95_ms": 5619.341,
+      "paused": null,
+      "cases": [
+        {
+          "id": "D01",
+          "seed_turns": 0,
+          "finished": true,
+          "cleanup_status": 200
+        },
+        {
+          "id": "D02",
+          "seed_turns": 0,
+          "dependent_turns_skipped": 0,
+          "finished": true,
+          "cleanup_status": 200
+        },
+        {
+          "id": "D03",
+          "seed_turns": 0
+        }
+      ],
+      "turns": [
+        {
+          "case": "D01",
+          "turn": 1,
+          "status": 200,
+          "message": "All four listed games meet the explicit request: they each have a recorded single-player mode, recorded Windows support, and a recorded price at or below $20 USD. Portal, Terraria, Tomb Raider Game of the Year, and Bloons TD 6 all satisfy the criteria. The evidence shows recorded support for Windows, so they are known to run on that platform; any unrecorded platforms are unknown but do not affect this fit. Prices are based on the observed catalog values and may differ from current market prices.\n\nPrice context: recorded US/USD observations from 2026-10-14; check Steam for current prices.",
+          "elapsed_ms": 5619.341,
+          "games": [
+            {
+              "id": 400,
+              "title": "Portal",
+              "price": {
+                "amount_cents": 999,
+                "currency": "USD",
+                "region": "US",
+                "observed_at": "2026-10-14T18:52:53.328346Z",
+                "evidence_id": "400:price_cents"
+              }
+            },
+            {
+              "id": 105600,
+              "title": "Terraria",
+              "price": {
+                "amount_cents": 499,
+                "currency": "USD",
+                "region": "US",
+                "observed_at": "2026-10-14T18:53:10.961365Z",
+                "evidence_id": "105600:price_cents"
+              }
+            },
+            {
+              "id": 203160,
+              "title": "Tomb Raider Game of the Year",
+              "price": {
+                "amount_cents": 1999,
+                "currency": "USD",
+                "region": "US",
+                "observed_at": "2026-10-14T18:54:44.637802Z",
+                "evidence_id": "203160:price_cents"
+              }
+            },
+            {
+              "id": 960090,
+              "title": "Bloons TD 6",
+              "price": {
+                "amount_cents": 1399,
+                "currency": "USD",
+                "region": "US",
+                "observed_at": "2026-10-14T18:54:37.727278Z",
+                "evidence_id": "960090:price_cents"
+              }
+            }
+          ],
+          "model_calls": 2,
+          "applied_filters": {
+            "min_price_cents": null,
+            "max_price_cents": 2000,
+            "price_operator": "lte",
+            "free_only": false,
+            "platforms": [
+              "windows"
+            ],
+            "platform_match": "any",
+            "required_modes": [
+              "single-player"
+            ],
+            "required_genres": [],
+            "preferred_terms": [],
+            "unwanted_terms": [],
+            "excluded_ids": []
+          },
+          "preference_changes": null,
+          "tool_deliveries": [
+            {
+              "tool": "recommend_games",
+              "result_bytes": 3950,
+              "error": null,
+              "returned": 4
+            }
+          ],
+          "code": null,
+          "retry_at": null
+        },
+        {
+          "case": "D02",
+          "turn": 1,
+          "status": 502,
+          "message": "We couldn't give you a reliable answer to that question. Try asking it another way.",
+          "elapsed_ms": 5146.116,
+          "games": [],
+          "model_calls": 3,
+          "applied_filters": null,
+          "preference_changes": null,
+          "tool_deliveries": [
+            {
+              "tool": "recommend_games",
+              "result_bytes": 384,
+              "error": "invalid_tool_arguments",
+              "returned": null
+            },
+            {
+              "tool": "recommend_games",
+              "result_bytes": 320,
+              "error": "saved_requirements_conflict",
+              "returned": null
+            }
+          ],
+          "code": "chat_invalid_answer",
+          "retry_at": null
+        }
+      ]
+    }
+  ],
+  "receipt": {
+    "at": "2026-11-02T16:04:30.441905+00:00",
+    "day": "2026-11-02",
+    "effective_calls": 58,
+    "effective_units": 632542,
+    "remaining_calls": 42,
+    "remaining_units": 867458
+  },
+  "accounting": {
+    "observed_reserved_calls": 5,
+    "reserved_units": 53024,
+    "known_reported_tokens": 9320,
+    "traces_without_usage": 1,
+    "unreported_reserved_units": 10655,
+    "owned_reported_plus_missing_bound": 19975,
+    "turn_start_days": [
+      "2026-11-02"
+    ],
+    "note": "Aggregate owned usage/bound, not provider remaining balance. Cached tokens may reduce actual debit. Check applicable windows separately."
+  }
+}

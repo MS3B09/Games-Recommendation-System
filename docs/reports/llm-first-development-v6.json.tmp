@@ -1,0 +1,360 @@
+{
+  "version": "llm-first-v1",
+  "split": "development",
+  "source_identity": {
+    "data/evaluation/dialogue-v1.json": "8d18acb08fb1837b15f12b511f9efc781480980df10e70260ddaa7bebfca51f9",
+    "backend/src/game_discovery/ai/__init__.py": "139967ec6d9917e9b36bdebb0623d329ec0fc27b7f091332105bcc8ba7c95fb6",
+    "backend/src/game_discovery/ai/chat.py": "32bc1ccc5b811ec71431bd1ac78ad04994623e2dba2332ac49b342aed23fd1d0",
+    "backend/src/game_discovery/ai/chat_contracts.py": "91b0f899dd4cd72b20de10cf68eeb200d0a96250a62a3867aeabb3bddc428cdd",
+    "backend/src/game_discovery/ai/chat_evidence.py": "cfa4797b15b7f0232f5b771df90d0f13f724d8bce05f9056d03be1de23da2f15",
+    "backend/src/game_discovery/ai/chat_explicit.py": "8288b8d44a381fb484becad80ff9273cc3f398e92a1894357d0fbc5191b7369c",
+    "backend/src/game_discovery/ai/chat_memory.py": "108e7b3bf9f7a8a4526e744babd8339927495b760784a1c7d21a211e4ea320ce",
+    "backend/src/game_discovery/ai/conversation_store.py": "8b7ecb557ddd00bc98e44fed287949f244d7161fe402ca6057f1df484eed27f5",
+    "backend/src/game_discovery/ai/dialogue.py": "f753e2cf1c1d9747f421de93fbb32de79b0645d0b5d7c7ae03db9f9ca93cc17d",
+    "backend/src/game_discovery/ai/interpretation.py": "433b059c5a2c21d4eafb5a7849fc1819ff3b8303c105c3248a41a966a0605eb3",
+    "backend/src/game_discovery/ai/provider.py": "8ec55ca435c6552385cf81035ff2c67ce6b350bc3168259244b566694955e509",
+    "backend/src/game_discovery/ai/rag.py": "b1cd5fb8ba070e7435fed9150acc06e9a90495d0c1d0584172b2a708b80c96fa",
+    "backend/migrations/0008_conversation_archive.sql": "ef62f695210679f5a8349a9915b0855ac692f7cea0b8e943d4cbfa810a9233e9",
+    "backend/migrations/0009_archive_bootstrap_capacity.sql": "f9d4e54b0fe4d715c33d2eb9a75ba9fde012eb30470ac45a57f4cd215fae49b9",
+    "backend/src/game_discovery/api/conversation_routes.py": "dbc3d1ebd2345ef64ba059c149c9c1eed65f87387457eb6d032c4ca4316cd6f8",
+    "backend/src/game_discovery/catalog/repository.py": "a2bd4065039c4025091fad4c5879fd25c72f752dfbb6b389039fd066eaba7b8e",
+    "backend/src/game_discovery/jobs/evaluate_dialogue_live.py": "7fee9d3cf4a07367d9a93560b8e8706e92adfdc5ba40ddac8d3eb33cc28f4e5b"
+  },
+  "runtime_configuration": {
+    "model": "openai/gpt-oss-120b",
+    "daily_calls": 100,
+    "daily_reserved_units": 1500000,
+    "max_model_calls_per_turn": 3,
+    "max_tool_calls_per_turn": 6,
+    "provider_input_bytes": 12000
+  },
+  "cases": [
+    {
+      "id": "D01",
+      "turns": [
+        {
+          "index": 0,
+          "message": "Hi! I had a long day. Could we chat for a moment before choosing anything?",
+          "turn_id": "9c3fe2dd-97c6-4a40-aba8-cff67667bcdb",
+          "status": 200,
+          "at": "2026-10-29T15:55:35.372359+00:00",
+          "response": {
+            "request_id": "d7ff66b3-d8b9-4e14-b808-580db4f6f2ab",
+            "message": "Hey there! I'm sorry you’ve had a long day—let’s take a breather together. How are you feeling? Anything on your mind you’d like to chat about, or maybe a favorite way to unwind?",
+            "games": [],
+            "notices": [],
+            "evidence": [],
+            "entities": [],
+            "applied_filters": null,
+            "revision": 1,
+            "total_turns": 1
+          },
+          "elapsed_ms": 2854.872,
+          "stored_event": {
+            "at": "2026-10-29T15:55:34.962579+00:00",
+            "id": "9c3fe2dd-97c6-4a40-aba8-cff67667bcdb",
+            "input": "Hi! I had a long day. Could we chat for a moment before choosing anything?",
+            "output": {
+              "games": [],
+              "message": "Hey there! I'm sorry you’ve had a long day—let’s take a breather together. How are you feeling? Anything on your mind you’d like to chat about, or maybe a favorite way to unwind?",
+              "notices": [],
+              "entities": [],
+              "evidence": [],
+              "revision": 1,
+              "total_turns": 1,
+              "applied_filters": null
+            },
+            "status": "done",
+            "attempts": [
+              {
+                "at": "2026-10-29T15:55:36.980482+00:00",
+                "trace": [
+                  {
+                    "response": {
+                      "tool_calls": [
+                        {
+                          "id": "fc_1f8d5dbf-7638-49d1-9b32-9d8fa1fb810c",
+                          "type": "function",
+                          "function": {
+                            "name": "json",
+                            "arguments": "{\"game_ids\":[],\"memory\":[],\"parts\":[{\"evidence\":[],\"text\":\"Hey there! I'm sorry you’ve had a long day—let’s take a breather together. How are you feeling? Anything on your mind you’d like to chat about, or maybe a favorite way to unwind?\"}],\"preferences\":null}"
+                          }
+                        }
+                      ]
+                    },
+                    "elapsed_ms": 1602.264,
+                    "model_call": 1,
+                    "reported_usage": {
+                      "total_tokens": 1399,
+                      "prompt_tokens": 1291,
+                      "completion_tokens": 108
+                    },
+                    "reserved_units": 10681
+                  }
+                ],
+                "succeeded": true
+              }
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "message": "How would you decide between playing alone and playing with friends, without recommending specific games yet?",
+          "turn_id": "6e6d6788-13fe-4d77-b539-46273dc8677b",
+          "status": 200,
+          "at": "2026-10-29T15:56:36.994855+00:00",
+          "response": {
+            "request_id": "d7061826-da45-4de8-a5a4-e664364f7540",
+            "message": "Deciding between solo play and a multiplayer session is all about matching the game experience to your current mood and circumstances. Here’s a quick mental checklist you can run through:\n\n1. **Energy level** – If you’re feeling drained, a relaxed single‑player story can be soothing. If you have a burst of energy, a fast‑paced co‑op or competitive match can be more rewarding.\n2. **Social craving** – Ask yourself whether you’re looking for connection. If you miss chatting and laughing with friends, a multiplayer game gives you that social boost. If you’d rather have some “me‑time,” solo play lets you dive deep without interruptions.\n3. **Time constraints** – Solo sessions can be paused or saved, making them easier to fit into a busy schedule. Multiplayer games often need a block of time when everyone’s available.\n4. **Mood of the narrative** – Some stories are meant to be experienced alone, letting you absorb the plot and atmosphere. Others are built around teamwork or rivalry, which shines when you have a group.\n5. **Skill focus** – If you want to practice or master a mechanic, solo play offers a low‑pressure environment. If you enjoy the challenge of coordinating with others or testing your skills against friends, multiplayer is the way to go.\n6. **Hardware & setup** – Make sure you have the right platform and enough controllers or online accounts for a group session. If that’s a hassle, solo might be simpler.\n\nBy weighing these factors, you can pick the mode that feels most satisfying right now, and later we can look at games that fit the choice you make.",
+            "games": [],
+            "notices": [],
+            "evidence": [],
+            "entities": [],
+            "applied_filters": null,
+            "revision": 2,
+            "total_turns": 2
+          },
+          "elapsed_ms": 3164.291,
+          "stored_event": {
+            "at": "2026-10-29T15:56:36.59575+00:00",
+            "id": "6e6d6788-13fe-4d77-b539-46273dc8677b",
+            "input": "How would you decide between playing alone and playing with friends, without recommending specific games yet?",
+            "output": {
+              "games": [],
+              "message": "Deciding between solo play and a multiplayer session is all about matching the game experience to your current mood and circumstances. Here’s a quick mental checklist you can run through:\n\n1. **Energy level** – If you’re feeling drained, a relaxed single‑player story can be soothing. If you have a burst of energy, a fast‑paced co‑op or competitive match can be more rewarding.\n2. **Social craving** – Ask yourself whether you’re looking for connection. If you miss chatting and laughing with friends, a multiplayer game gives you that social boost. If you’d rather have some “me‑time,” solo play lets you dive deep without interruptions.\n3. **Time constraints** – Solo sessions can be paused or saved, making them easier to fit into a busy schedule. Multiplayer games often need a block of time when everyone’s available.\n4. **Mood of the narrative** – Some stories are meant to be experienced alone, letting you absorb the plot and atmosphere. Others are built around teamwork or rivalry, which shines when you have a group.\n5. **Skill focus** – If you want to practice or master a mechanic, solo play offers a low‑pressure environment. If you enjoy the challenge of coordinating with others or testing your skills against friends, multiplayer is the way to go.\n6. **Hardware & setup** – Make sure you have the right platform and enough controllers or online accounts for a group session. If that’s a hassle, solo might be simpler.\n\nBy weighing these factors, you can pick the mode that feels most satisfying right now, and later we can look at games that fit the choice you make.",
+              "notices": [],
+              "entities": [],
+              "evidence": [],
+              "revision": 2,
+              "total_turns": 2,
+              "applied_filters": null
+            },
+            "status": "done",
+            "attempts": [
+              {
+                "at": "2026-10-29T15:56:38.891618+00:00",
+                "trace": [
+                  {
+                    "response": {
+                      "tool_calls": [
+                        {
+                          "id": "fc_aa406ddd-7f57-40ae-98d8-48e1354b46a2",
+                          "type": "function",
+                          "function": {
+                            "name": "json",
+                            "arguments": "{\"game_ids\":[],\"memory\":[],\"parts\":[{\"evidence\":[],\"text\":\"Deciding between solo play and a multiplayer session is all about matching the game experience to your current mood and circumstances. Here’s a quick mental checklist you can run through:\\n\\n1. **Energy level** – If you’re feeling drained, a relaxed single‑player story can be soothing. If you have a burst of energy, a fast‑paced co‑op or competitive match can be more rewarding.\\n2. **Social craving** – Ask yourself whether you’re looking for connection. If you miss chatting and laughing with friends, a multiplayer game gives you that social boost. If you’d rather have some “me‑time,” solo play lets you dive deep without interruptions.\\n3. **Time constraints** – Solo sessions can be paused or saved, making them easier to fit into a busy schedule. Multiplayer games often need a block of time when everyone’s available.\\n4. **Mood of the narrative** – Some stories are meant to be experienced alone, letting you absorb the plot and atmosphere. Others are built around teamwork or rivalry, which shines when you have a group.\\n5. **Skill focus** – If you want to practice or master a mechanic, solo play offers a low‑pressure environment. If you enjoy the challenge of coordinating with others or testing your skills against friends, multiplayer is the way to go.\\n6. **Hardware \\u0026 setup** – Make sure you have the right platform and enough controllers or online accounts for a group session. If that’s a hassle, solo might be simpler.\\n\\nBy weighing these factors, you can pick the mode that feels most satisfying right now, and later we can look at games that fit the choice you make.\"}],\"preferences\":null}"
+                          }
+                        }
+                      ]
+                    },
+                    "elapsed_ms": 1907.412,
+                    "model_call": 1,
+                    "reported_usage": {
+                      "total_tokens": 1806,
+                      "prompt_tokens": 1393,
+                      "completion_tokens": 413
+                    },
+                    "reserved_units": 11108
+                  }
+                ],
+                "succeeded": true
+              }
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "message": "Actually I mean this weekend, not tonight. Please keep that correction in mind.",
+          "turn_id": "cbf61c03-d50a-4480-b20f-8c881cdbc28b",
+          "status": 200,
+          "at": "2026-10-29T15:57:38.344284+00:00",
+          "response": {
+            "request_id": "f71e0956-fee6-48d4-bbd9-ad6eaf589768",
+            "message": "Got it—you're planning for this weekend, not tonight. I'll keep that in mind.",
+            "games": [],
+            "notices": [],
+            "evidence": [],
+            "entities": [],
+            "applied_filters": null,
+            "revision": 3,
+            "total_turns": 3
+          },
+          "elapsed_ms": 5408.516,
+          "stored_event": {
+            "at": "2026-10-29T15:57:37.896478+00:00",
+            "id": "cbf61c03-d50a-4480-b20f-8c881cdbc28b",
+            "input": "Actually I mean this weekend, not tonight. Please keep that correction in mind.",
+            "output": {
+              "games": [],
+              "message": "Got it—you're planning for this weekend, not tonight. I'll keep that in mind.",
+              "notices": [],
+              "entities": [],
+              "evidence": [],
+              "revision": 3,
+              "total_turns": 3,
+              "applied_filters": null
+            },
+            "status": "done",
+            "attempts": [
+              {
+                "at": "2026-10-29T15:57:42.509487+00:00",
+                "trace": [
+                  {
+                    "response": {
+                      "content": null,
+                      "tool_calls": [
+                        {
+                          "id": "proposed_05d7ccf35e7145e58303b4abd4cec4b4",
+                          "type": "function",
+                          "function": {
+                            "name": "json",
+                            "arguments": "{\"parts\": [{\"text\": \"Got it\\u2014you're thinking about how to choose between solo and group play for this weekend. I'll keep that correction in mind.\", \"evidence\": []}], \"game_ids\": [], \"memory\": [{\"field\": \"timeframe\", \"value\": \"weekend\"}], \"preferences\": null}"
+                          }
+                        }
+                      ]
+                    },
+                    "elapsed_ms": 1411.953,
+                    "model_call": 1,
+                    "reported_usage": null,
+                    "reserved_units": 12950,
+                    "provider_rejected_proposal": {
+                      "proposed": {
+                        "name": "json",
+                        "arguments": {
+                          "parts": [
+                            {
+                              "text": "Got it—you're thinking about how to choose between solo and group play for this weekend. I'll keep that correction in mind.",
+                              "evidence": []
+                            }
+                          ],
+                          "memory": [
+                            {
+                              "field": "timeframe",
+                              "value": "weekend"
+                            }
+                          ],
+                          "game_ids": [],
+                          "preferences": null
+                        }
+                      },
+                      "provider_code": "tool_use_failed"
+                    }
+                  },
+                  {
+                    "tool": "json",
+                    "result": {
+                      "error": "reply_validation",
+                      "instruction": "Use the reply schema. preferences.set is a list of {field,value}, not a Filters object; clear lists field names. Game paragraphs/cards need supplied evidence and must respect filtered recommendations; never invent IDs. Retrieve missing facts before replying.",
+                      "available_game_ids": [],
+                      "available_evidence_ids": []
+                    },
+                    "arguments": "{\"parts\": [{\"text\": \"Got it\\u2014you're thinking about how to choose between solo and group play for this weekend. I'll keep that correction in mind.\", \"evidence\": []}], \"game_ids\": [], \"memory\": [{\"field\": \"timeframe\", \"value\": \"weekend\"}], \"preferences\": null}",
+                    "delivered": {
+                      "error": "reply_validation",
+                      "instruction": "Use the reply schema. preferences.set is a list of {field,value}, not a Filters object; clear lists field names. Game paragraphs/cards need supplied evidence and must respect filtered recommendations; never invent IDs. Retrieve missing facts before replying.",
+                      "available_game_ids": [],
+                      "available_evidence_ids": []
+                    }
+                  },
+                  {
+                    "response": {
+                      "content": null,
+                      "tool_calls": [
+                        {
+                          "id": "proposed_6697d6b89edc4d88b41d595074304f97",
+                          "type": "function",
+                          "function": {
+                            "name": "json",
+                            "arguments": "{\"parts\": [{\"text\": \"Got it\\u2014you're planning for this weekend, not tonight. I'll keep that in mind.\", \"evidence\": []}], \"game_ids\": [], \"memory\": [{\"field\": \"timeframe\", \"value\": \"weekend\"}], \"preferences\": null}"
+                          }
+                        }
+                      ]
+                    },
+                    "elapsed_ms": 1357.851,
+                    "model_call": 2,
+                    "reported_usage": null,
+                    "reserved_units": 11819,
+                    "provider_rejected_proposal": {
+                      "proposed": {
+                        "name": "json",
+                        "arguments": {
+                          "parts": [
+                            {
+                              "text": "Got it—you're planning for this weekend, not tonight. I'll keep that in mind.",
+                              "evidence": []
+                            }
+                          ],
+                          "memory": [
+                            {
+                              "field": "timeframe",
+                              "value": "weekend"
+                            }
+                          ],
+                          "game_ids": [],
+                          "preferences": null
+                        }
+                      },
+                      "provider_code": "tool_use_failed"
+                    }
+                  },
+                  {
+                    "tool": "json",
+                    "result": {
+                      "error": "reply_validation",
+                      "instruction": "Use the reply schema. preferences.set is a list of {field,value}, not a Filters object; clear lists field names. Game paragraphs/cards need supplied evidence and must respect filtered recommendations; never invent IDs. Retrieve missing facts before replying.",
+                      "available_game_ids": [],
+                      "available_evidence_ids": []
+                    },
+                    "arguments": "{\"parts\": [{\"text\": \"Got it\\u2014you're planning for this weekend, not tonight. I'll keep that in mind.\", \"evidence\": []}], \"game_ids\": [], \"memory\": [{\"field\": \"timeframe\", \"value\": \"weekend\"}], \"preferences\": null}",
+                    "delivered": {
+                      "error": "reply_validation",
+                      "instruction": "Use the reply schema. preferences.set is a list of {field,value}, not a Filters object; clear lists field names. Game paragraphs/cards need supplied evidence and must respect filtered recommendations; never invent IDs. Retrieve missing facts before replying.",
+                      "available_game_ids": [],
+                      "available_evidence_ids": []
+                    }
+                  },
+                  {
+                    "response": {
+                      "content": "{\n  \"parts\": [\n    {\n      \"text\": \"Got it—you're planning for this weekend, not tonight. I'll keep that in mind.\",\n      \"evidence\": []\n    }\n  ],\n  \"game_ids\": [],\n  \"memory\": [\n    {\n      \"key\": \"timeframe\",\n      \"value\": \"weekend\",\n      \"source_turn\": null\n    }\n  ],\n  \"preferences\": null\n}"
+                    },
+                    "elapsed_ms": 1371.176,
+                    "model_call": 3,
+                    "reported_usage": {
+                      "total_tokens": 1734,
+                      "prompt_tokens": 1597,
+                      "completion_tokens": 137
+                    },
+                    "reserved_units": 8629
+                  }
+                ],
+                "succeeded": true
+              }
+            ]
+          }
+        }
+      ],
+      "seed_turns": 0,
+      "finished": true,
+      "cleanup_status": 200
+    },
+    {
+      "id": "D02",
+      "turns": [],
+      "seed_turns": 0,
+      "creation_error": {
+        "status": 429,
+        "response": {
+          "code": "chat_rate_limited",
+          "message": "The assistant needs a short pause before another message. Please wait a moment.",
+          "request_id": "f0e2f27e-eb53-4991-9f2a-fe451a657cb0",
+          "retryable": true,
+          "recovery": "retry",
+          "retry_at": "2026-10-29T15:59:11.628745Z",
+          "field": null
+        }
+      }
+    }
+  ],
+  "human_scores": null,
+  "last_attempt_at": "2026-10-29T15:57:38.344284+00:00"
+}

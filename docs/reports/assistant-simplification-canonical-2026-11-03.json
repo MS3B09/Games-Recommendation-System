@@ -1,0 +1,167 @@
+{
+  "canonical_comparisons": 20,
+  "independent_oracle_predicate_checks": 18,
+  "checks": [
+    {
+      "journal": "assistant-closeout-simplification-v1.json",
+      "case": "S1",
+      "turn": 1,
+      "id": 105600,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v1.json",
+      "case": "S1",
+      "turn": 1,
+      "id": 1091500,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v2.json",
+      "case": "S1Q",
+      "turn": 1,
+      "id": 400,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v2.json",
+      "case": "S1Q",
+      "turn": 1,
+      "id": 291550,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v2.json",
+      "case": "S2",
+      "turn": 1,
+      "id": 400,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v2.json",
+      "case": "S2",
+      "turn": 1,
+      "id": 291550,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v4.json",
+      "case": "S3",
+      "turn": 1,
+      "id": 960090,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v4.json",
+      "case": "S3",
+      "turn": 1,
+      "id": 400,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v4.json",
+      "case": "S3",
+      "turn": 2,
+      "id": 203160,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v4.json",
+      "case": "S3",
+      "turn": 2,
+      "id": 892970,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v5.json",
+      "case": "S3Q",
+      "turn": 1,
+      "id": 400,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v5.json",
+      "case": "S3Q",
+      "turn": 1,
+      "id": 960090,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v5.json",
+      "case": "S3Q",
+      "turn": 2,
+      "id": 203160,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v5.json",
+      "case": "S3Q",
+      "turn": 2,
+      "id": 892970,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v6.json",
+      "case": "S3R",
+      "turn": 2,
+      "id": 548430,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v6.json",
+      "case": "S3R",
+      "turn": 2,
+      "id": 646570,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v6.json",
+      "case": "S3R",
+      "turn": 3,
+      "id": 400,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v6.json",
+      "case": "S3R",
+      "turn": 3,
+      "id": 291550,
+      "canonical_equal": true,
+      "oracle_predicates_pass": true
+    },
+    {
+      "journal": "assistant-closeout-simplification-v6.json",
+      "case": "S4",
+      "turn": 1,
+      "id": 620,
+      "canonical_equal": true,
+      "oracle_predicates_pass": null
+    },
+    {
+      "journal": "assistant-closeout-simplification-v6.json",
+      "case": "S4",
+      "turn": 1,
+      "id": 632360,
+      "canonical_equal": true,
+      "oracle_predicates_pass": null
+    }
+  ],
+  "not_quality_acceptance": "Card comparisons do not establish descriptive entailment, relevance or completeness. S3R turn1 omitted the requested search; failed deliveries remain failures."
+}

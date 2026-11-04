@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "status": "completed_observation",
+  "started_at": "2026-10-26T16:04:41.671786+00:00",
+  "protocol": "Observe unchanged R4 evaluation: separate exact journal wrapper time from serving.\n\nNo replacement model/transport, extra inference, packet changes, retries or raw\ntracing. The sidecar retains timings and curated case/turn/method identifiers only.\nServing-equivalent DOMAIN latency excludes evaluation wrappers, not real budget\nSQL. It is not browser/HTTP latency; profiling overhead remains conservatively in it.\n",
+  "profiler_sha256": "72c8dc59afd73f7814ee0dc06e4e6bfcde69552260ead259b01eb38b6c64af4e",
+  "source_identity": {
+    "schema_version": 1,
+    "mode": "live_development",
+    "status": "in_progress",
+    "started_at": "2026-10-26T16:04:41.691455+00:00",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python": "3.13.12",
+    "dataset_sha256": "7a37df211eb815b70162828cae73a8112a29d2b179de59270dd14e89e7405fda",
+    "manifest_sha256": "1ca0d71decd7314401a18f31121406cb14ab10b725ee63f23381b3bfa97affc2",
+    "policy_sha256": "240ec16a7d7ec3c8e223af58df356c80d1ecc445938e33c2566fb08286c66b0e",
+    "evaluator_sha256": "4caceada2ae2b1430f8bf9d5333052172698d79cb06f18508ba3107c2cdffa58",
+    "adapter_sha256": "45dfbd782f5b032de50c54b3b987bbb8e0c1329dc46467a27a79aef7227df92b",
+    "serving_source_sha256": {
+      "backend\\src\\game_discovery\\ai\\__init__.py": "139967ec6d9917e9b36bdebb0623d329ec0fc27b7f091332105bcc8ba7c95fb6",
+      "backend\\src\\game_discovery\\ai\\chat.py": "32bc1ccc5b811ec71431bd1ac78ad04994623e2dba2332ac49b342aed23fd1d0",
+      "backend\\src\\game_discovery\\ai\\chat_contracts.py": "2114c3df59384e207cac937528ef943c473bd359a242a9009a7d566b99481ae2",
+      "backend\\src\\game_discovery\\ai\\chat_evidence.py": "1b8c24bcd6f9224be41d7b75fcb6d1a6dbfe78375953c64619ade26cd62859b6",
+      "backend\\src\\game_discovery\\ai\\chat_memory.py": "108e7b3bf9f7a8a4526e744babd8339927495b760784a1c7d21a211e4ea320ce",
+      "backend\\src\\game_discovery\\ai\\interpretation.py": "433b059c5a2c21d4eafb5a7849fc1819ff3b8303c105c3248a41a966a0605eb3",
+      "backend\\src\\game_discovery\\ai\\provider.py": "4ac50598445095f12b47076ceddb5ae1009419a8bbb12d202a05aa92ce7f90d8",
+      "backend\\src\\game_discovery\\ai\\rag.py": "262db95b7e3aed2fdf8b7a8d567c951da1cf8878cfc08ef038a29705d231125a",
+      "backend\\src\\game_discovery\\retrieval\\__init__.py": "b18830a0dca2a2b4cfe1e86337f60b67fcd8cdd702ae5cd8e5f3e6789fc816b8",
+      "backend\\src\\game_discovery\\retrieval\\chat.py": "cd2153bb791e809733e0b969ac8bb205ef9496074fd66f87b431c432328328c7",
+      "backend\\src\\game_discovery\\retrieval\\contracts.py": "ff78d4a38548d5bb7acf31ce9757b9dd56b7b121909a6d2f08b8f40863d8378f",
+      "backend\\src\\game_discovery\\retrieval\\encoder.py": "c087dd7bd6ae1c35ba7bf48c86cb5b68f2715c6f2ab62329ed91bfe4b638a8fb",
+      "backend\\src\\game_discovery\\retrieval\\query.py": "54f2efd1508e498a8d1a958b22b2f9f3864a151ebf6678a08e869d73f79551f8",
+      "backend\\src\\game_discovery\\retrieval\\titles.py": "a64ecf1760a472242149bafd200900d06a9b15db85c4d899211581676a40fe96",
+      "backend\\src\\game_discovery\\catalog\\__init__.py": "ebc3cce73d17f8f1581a6a8492d3cb796836b937ce0486dc61f8b38b732d5ffc",
+      "backend\\src\\game_discovery\\catalog\\contracts.py": "4aede57fca358d3dd2f4c1e053a315bd2a2977c9cb9ea30b5896406a11d494d9",
+      "backend\\src\\game_discovery\\catalog\\discovery.py": "6f11e2f7e838a2559e0f3fda4dc7b7ba8f288b4d9a94d77db9023e280a8b0f78",
+      "backend\\src\\game_discovery\\catalog\\eligibility.py": "b13ebacd8354f0961f6d86e03c158c9847cddfed242e4a9fc44e154da978b4ac",
+      "backend\\src\\game_discovery\\catalog\\repository.py": "5ee23ed09ee983ce1cf9f6d3980b1a54acea76f48115b130d788456a8c5a465d",
+      "backend\\src\\game_discovery\\db\\__init__.py": "736556f80caf3fa5d37d52384665404fd0a1b637d18e7facf0661830f6e5eb2a",
+      "backend\\src\\game_discovery\\db\\engine.py": "276d962a295c910ed44467608c339ca3a46a1ce591beabf21adad9a0269753f7",
+      "backend\\src\\game_discovery\\db\\migrate.py": "fd386a58a10749f6291da865df720927e647bb8d5e6c9151fb7e5164cadfc996",
+      "backend\\src\\game_discovery\\db\\readiness.py": "0e5a661dc7bf8c14302cbe286968f981e5abf802e1ab13c0e5fe95b9c730b82c"
+    },
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "methods": [
+      "proposed",
+      "semantic_top5"
+    ],
+    "records": [],
+    "provider_attempts": [],
+    "live_provider_calls": 0,
+    "actual_quota_reservations": 0,
+    "synthetic_cases": "Not scored here; covered by separately recorded synthetic/backend/browser regressions.",
+    "quality_gate": "incomplete: full held-out live comparison and human judgments not authorized/executed",
+    "scope": "Live M01 development pilot only",
+    "continuation_policy_sha256": "42dcbb606bcfd295cf13700bdd217897ab8674304fd589ecff9653c3dc3311e2",
+    "runner_sha256": "79fcc59d2c81c951989b8e09f47309080e6b433bd3124916b10d03361c367cbe"
+  },
+  "checkpoint_sha256_before": "b051f59f051111695338c5fb4830e48ac114197517e2ffb402182c064ad85000",
+  "records": [
+    {
+      "case_id": "C01",
+      "turn": 1,
+      "method": "proposed",
+      "elapsed": {
+        "database_budget": 727.4148999713361,
+        "capped_budget": 12045.081800082698,
+        "transport": 14390.435199951753,
+        "journal": 26408.861699979752,
+        "invoke": 27280.834400095046,
+        "turn": 39534.23890005797
+      },
+      "calls": {
+        "database_budget": 2,
+        "capped_budget": 2,
+        "transport": 2,
+        "journal": 2,
+        "invoke": 1,
+        "turn": 1
+      },
+      "invocation_ms": 27280.834400095046,
+      "evaluation_wrapper_ms": 23336.09340013936,
+      "serving_equivalent_domain_ms": 3944.740999955684,
+      "invocation_returned_result": true,
+      "warm": false
+    },
+    {
+      "case_id": "C01",
+      "turn": 1,
+      "method": "semantic_top5",
+      "elapsed": {
+        "database_budget": 917.7975000347942,
+        "capped_budget": 10839.812200050801,
+        "transport": 14538.287000032142,
+        "journal": 23602.726200129837,
+        "invoke": 24160.63559986651,
+        "turn": 30161.881900159642
+      },
+      "calls": {
+        "database_budget": 2,
+        "capped_budget": 2,
+        "transport": 2,
+        "journal": 2,
+        "invoke": 1,
+        "turn": 1
+      },
+      "invocation_ms": 24160.63559986651,
+      "evaluation_wrapper_ms": 18986.453900113702,
+      "serving_equivalent_domain_ms": 5174.181699752808,
+      "invocation_returned_result": true,
+      "warm": false
+    },
+    {
+      "case_id": "A01",
+      "turn": 1,
+      "method": "semantic_top5",
+      "elapsed": {
+        "database_budget": 3843.7149999663234,
+        "capped_budget": 19903.17440009676,
+        "transport": 26157.286300091073,
+        "journal": 39403.933100169525,
+        "invoke": 41259.637099923566,
+        "turn": 47161.36679984629
+      },
+      "calls": {
+        "database_budget": 2,
+        "capped_budget": 2,
+        "transport": 2,
+        "journal": 2,
+        "invoke": 1,
+        "turn": 1
+      },
+      "invocation_ms": 41259.637099923566,
+      "evaluation_wrapper_ms": 29306.106200208887,
+      "serving_equivalent_domain_ms": 11953.530899714679,
+      "invocation_returned_result": false,
+      "warm": true
+    },
+    {
+      "case_id": "A01",
+      "turn": 1,
+      "method": "proposed",
+      "elapsed": {
+        "database_budget": 9348.015900002792,
+        "capped_budget": 18947.74829992093,
+        "transport": 24774.627899983898,
+        "journal": 34138.137500034645,
+        "invoke": 38321.394299855456,
+        "turn": 42797.51499998383
+      },
+      "calls": {
+        "database_budget": 2,
+        "capped_budget": 2,
+        "transport": 2,
+        "journal": 2,
+        "invoke": 1,
+        "turn": 1
+      },
+      "invocation_ms": 38321.394299855456,
+      "evaluation_wrapper_ms": 18963.241999968886,
+      "serving_equivalent_domain_ms": 19358.15229988657,
+      "invocation_returned_result": true,
+      "warm": true
+    },
+    {
+      "case_id": "A01",
+      "turn": 2,
+      "method": "proposed",
+      "elapsed": {
+        "database_budget": 378.4241999965161,
+        "capped_budget": 7404.962900094688,
+        "transport": 8039.048000006005,
+        "journal": 14815.674599958584,
+        "invoke": 15264.65000002645,
+        "turn": 24909.02759996243
+      },
+      "calls": {
+        "database_budget": 1,
+        "capped_budget": 1,
+        "transport": 1,
+        "journal": 1,
+        "invoke": 1,
+        "turn": 1
+      },
+      "invocation_ms": 15264.65000002645,
+      "evaluation_wrapper_ms": 13803.16530005075,
+      "serving_equivalent_domain_ms": 1461.4846999756992,
+      "invocation_returned_result": true,
+      "warm": true
+    }
+  ],
+  "scope": "timing only; original runner/model/accounting/packets unchanged",
+  "summary": {
+    "proposed": {
+      "warm_samples": 2,
+      "failed_samples": 0,
+      "journaled_domain_p95_ms": 38321.394299855456,
+      "evaluation_wrapper_p95_ms": 18963.241999968886,
+      "serving_equivalent_domain_p95_ms": 19358.15229988657
+    },
+    "semantic_top5": {
+      "warm_samples": 1,
+      "failed_samples": 1,
+      "journaled_domain_p95_ms": 41259.637099923566,
+      "evaluation_wrapper_p95_ms": 29306.106200208887,
+      "serving_equivalent_domain_p95_ms": 11953.530899714679
+    }
+  },
+  "checkpoint_sha256_after": "e07ebd1d77a342c46f2e90eab88fe870b17289a45f0c732fefe5a03ca6d0e715",
+  "finished_at": "2026-10-26T16:09:48.680520+00:00"
+}

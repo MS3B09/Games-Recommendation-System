@@ -1,0 +1,1148 @@
+{
+  "version": "llm-first-v1",
+  "split": "development",
+  "source_identity": {
+    "data/evaluation/dialogue-v1.json": "8d18acb08fb1837b15f12b511f9efc781480980df10e70260ddaa7bebfca51f9",
+    "backend/src/game_discovery/ai/__init__.py": "139967ec6d9917e9b36bdebb0623d329ec0fc27b7f091332105bcc8ba7c95fb6",
+    "backend/src/game_discovery/ai/chat.py": "32bc1ccc5b811ec71431bd1ac78ad04994623e2dba2332ac49b342aed23fd1d0",
+    "backend/src/game_discovery/ai/chat_contracts.py": "91b0f899dd4cd72b20de10cf68eeb200d0a96250a62a3867aeabb3bddc428cdd",
+    "backend/src/game_discovery/ai/chat_evidence.py": "cfa4797b15b7f0232f5b771df90d0f13f724d8bce05f9056d03be1de23da2f15",
+    "backend/src/game_discovery/ai/chat_explicit.py": "8288b8d44a381fb484becad80ff9273cc3f398e92a1894357d0fbc5191b7369c",
+    "backend/src/game_discovery/ai/chat_memory.py": "108e7b3bf9f7a8a4526e744babd8339927495b760784a1c7d21a211e4ea320ce",
+    "backend/src/game_discovery/ai/conversation_store.py": "8b7ecb557ddd00bc98e44fed287949f244d7161fe402ca6057f1df484eed27f5",
+    "backend/src/game_discovery/ai/dialogue.py": "7de3596c1ac3724965c6191d49cb0c40f83921bd3b48a0986ca49ec37cc6d451",
+    "backend/src/game_discovery/ai/interpretation.py": "433b059c5a2c21d4eafb5a7849fc1819ff3b8303c105c3248a41a966a0605eb3",
+    "backend/src/game_discovery/ai/provider.py": "8ec55ca435c6552385cf81035ff2c67ce6b350bc3168259244b566694955e509",
+    "backend/src/game_discovery/ai/rag.py": "b1cd5fb8ba070e7435fed9150acc06e9a90495d0c1d0584172b2a708b80c96fa",
+    "backend/migrations/0008_conversation_archive.sql": "ef62f695210679f5a8349a9915b0855ac692f7cea0b8e943d4cbfa810a9233e9",
+    "backend/migrations/0009_archive_bootstrap_capacity.sql": "f9d4e54b0fe4d715c33d2eb9a75ba9fde012eb30470ac45a57f4cd215fae49b9",
+    "backend/src/game_discovery/api/conversation_routes.py": "dbc3d1ebd2345ef64ba059c149c9c1eed65f87387457eb6d032c4ca4316cd6f8",
+    "backend/src/game_discovery/catalog/repository.py": "a2bd4065039c4025091fad4c5879fd25c72f752dfbb6b389039fd066eaba7b8e",
+    "backend/src/game_discovery/jobs/evaluate_dialogue_live.py": "7fee9d3cf4a07367d9a93560b8e8706e92adfdc5ba40ddac8d3eb33cc28f4e5b"
+  },
+  "runtime_configuration": {
+    "model": "openai/gpt-oss-120b",
+    "daily_calls": 100,
+    "daily_reserved_units": 1500000,
+    "max_model_calls_per_turn": 3,
+    "max_tool_calls_per_turn": 6,
+    "provider_input_bytes": 12000
+  },
+  "cases": [
+    {
+      "id": "D01",
+      "turns": [
+        {
+          "index": 0,
+          "message": "Hi! I had a long day. Could we chat for a moment before choosing anything?",
+          "turn_id": "8ce799d4-5cf4-4b16-951d-936cd45bc4d8",
+          "status": 200,
+          "at": "2026-10-29T15:49:59.126664+00:00",
+          "response": {
+            "request_id": "adb8f9ab-afba-4af8-979e-fe45da066daf",
+            "message": "Hey there! I'm sorry your day was long—let's take a breather together. How are you feeling right now? Anything on your mind you'd like to chat about?",
+            "games": [],
+            "notices": [],
+            "evidence": [],
+            "entities": [],
+            "applied_filters": null,
+            "revision": 1,
+            "total_turns": 1
+          },
+          "elapsed_ms": 2723.241,
+          "stored_event": {
+            "at": "2026-10-29T15:49:59.075377+00:00",
+            "id": "8ce799d4-5cf4-4b16-951d-936cd45bc4d8",
+            "input": "Hi! I had a long day. Could we chat for a moment before choosing anything?",
+            "output": {
+              "games": [],
+              "message": "Hey there! I'm sorry your day was long—let's take a breather together. How are you feeling right now? Anything on your mind you'd like to chat about?",
+              "notices": [],
+              "entities": [],
+              "evidence": [],
+              "revision": 1,
+              "total_turns": 1,
+              "applied_filters": null
+            },
+            "status": "done",
+            "attempts": [
+              {
+                "at": "2026-10-29T15:50:00.970918+00:00",
+                "trace": [
+                  {
+                    "response": {
+                      "tool_calls": [
+                        {
+                          "id": "fc_e48076b6-5248-4a05-a6d5-061753163c1f",
+                          "type": "function",
+                          "function": {
+                            "name": "json",
+                            "arguments": "{\"game_ids\":[],\"memory\":[],\"parts\":[{\"evidence\":[],\"text\":\"Hey there! I'm sorry your day was long—let's take a breather together. How are you feeling right now? Anything on your mind you'd like to chat about?\"}],\"preferences\":null}"
+                          }
+                        }
+                      ]
+                    },
+                    "elapsed_ms": 1492.19,
+                    "model_call": 1,
+                    "reported_usage": {
+                      "total_tokens": 1465,
+                      "prompt_tokens": 1366,
+                      "completion_tokens": 99
+                    },
+                    "reserved_units": 10694
+                  }
+                ],
+                "succeeded": true
+              }
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "message": "How would you decide between playing alone and playing with friends, without recommending specific games yet?",
+          "turn_id": "ede04ae3-6b8c-4d75-ad93-7583c209e499",
+          "status": 200,
+          "at": "2026-10-29T15:51:00.566455+00:00",
+          "response": {
+            "request_id": "3f239ff2-8091-429f-90fa-5ceb75015cd9",
+            "message": "Deciding between solo play and a multiplayer session is all about matching the experience to your mood, energy level, and what you want to get out of the time you have. Here’s a quick mental checklist you can run through:\n\n1. **Energy & Focus** – If you’re feeling drained, a single‑player game lets you dip in and out at your own pace, pause whenever you need, and enjoy a story or puzzle without the pressure of keeping up with others. If you have a burst of energy and want some social interaction, a co‑op or party game can be a fun way to recharge.\n\n2. **Social Desire** – Ask yourself whether you’re craving connection. Playing with friends can turn a game into a shared laugh, a chance to catch up, or a friendly competition. If you’re looking for some “me‑time,” solo play gives you space to reflect or get lost in a narrative.\n\n3. **Time Commitment** – Multiplayer sessions often need everyone to be available for a set block of time, whereas single‑player experiences can be broken up into short sessions. Think about how much uninterrupted time you have.\n\n4. **Goal of the Session** – Are you after a story, immersion, and personal achievement? That leans toward solo. Are you after teamwork, strategy, or just a light‑hearted party vibe? That points to multiplayer.\n\n5. **Mood & Stress Level** – If you want a low‑stress, relaxing wind‑down, a solo puzzle or exploration game can be soothing. If you’re in a playful, competitive mood, a multiplayer match can give that extra adrenaline kick.\n\n6. **Availability of Friends** – Finally, consider whether your friends are online and ready to play. If they’re not, solo might be the smoother option.\n\nBy weighing these factors, you can pick the mode that best fits how you feel right now, without needing to name any specific titles yet.",
+            "games": [],
+            "notices": [],
+            "evidence": [],
+            "entities": [],
+            "applied_filters": null,
+            "revision": 2,
+            "total_turns": 2
+          },
+          "elapsed_ms": 3051.376,
+          "stored_event": {
+            "at": "2026-10-29T15:51:00.178053+00:00",
+            "id": "ede04ae3-6b8c-4d75-ad93-7583c209e499",
+            "input": "How would you decide between playing alone and playing with friends, without recommending specific games yet?",
+            "output": {
+              "games": [],
+              "message": "Deciding between solo play and a multiplayer session is all about matching the experience to your mood, energy level, and what you want to get out of the time you have. Here’s a quick mental checklist you can run through:\n\n1. **Energy & Focus** – If you’re feeling drained, a single‑player game lets you dip in and out at your own pace, pause whenever you need, and enjoy a story or puzzle without the pressure of keeping up with others. If you have a burst of energy and want some social interaction, a co‑op or party game can be a fun way to recharge.\n\n2. **Social Desire** – Ask yourself whether you’re craving connection. Playing with friends can turn a game into a shared laugh, a chance to catch up, or a friendly competition. If you’re looking for some “me‑time,” solo play gives you space to reflect or get lost in a narrative.\n\n3. **Time Commitment** – Multiplayer sessions often need everyone to be available for a set block of time, whereas single‑player experiences can be broken up into short sessions. Think about how much uninterrupted time you have.\n\n4. **Goal of the Session** – Are you after a story, immersion, and personal achievement? That leans toward solo. Are you after teamwork, strategy, or just a light‑hearted party vibe? That points to multiplayer.\n\n5. **Mood & Stress Level** – If you want a low‑stress, relaxing wind‑down, a solo puzzle or exploration game can be soothing. If you’re in a playful, competitive mood, a multiplayer match can give that extra adrenaline kick.\n\n6. **Availability of Friends** – Finally, consider whether your friends are online and ready to play. If they’re not, solo might be the smoother option.\n\nBy weighing these factors, you can pick the mode that best fits how you feel right now, without needing to name any specific titles yet.",
+              "notices": [],
+              "entities": [],
+              "evidence": [],
+              "revision": 2,
+              "total_turns": 2,
+              "applied_filters": null
+            },
+            "status": "done",
+            "attempts": [
+              {
+                "at": "2026-10-29T15:51:02.409077+00:00",
+                "trace": [
+                  {
+                    "response": {
+                      "tool_calls": [
+                        {
+                          "id": "fc_959f83e8-5864-4a84-9387-4c4ca8e7918b",
+                          "type": "function",
+                          "function": {
+                            "name": "json",
+                            "arguments": "{\"game_ids\":[],\"memory\":[],\"parts\":[{\"evidence\":[],\"text\":\"Deciding between solo play and a multiplayer session is all about matching the experience to your mood, energy level, and what you want to get out of the time you have. Here’s a quick mental checklist you can run through:\\n\\n1. **Energy \\u0026 Focus** – If you’re feeling drained, a single‑player game lets you dip in and out at your own pace, pause whenever you need, and enjoy a story or puzzle without the pressure of keeping up with others. If you have a burst of energy and want some social interaction, a co‑op or party game can be a fun way to recharge.\\n\\n2. **Social Desire** – Ask yourself whether you’re craving connection. Playing with friends can turn a game into a shared laugh, a chance to catch up, or a friendly competition. If you’re looking for some “me‑time,” solo play gives you space to reflect or get lost in a narrative.\\n\\n3. **Time Commitment** – Multiplayer sessions often need everyone to be available for a set block of time, whereas single‑player experiences can be broken up into short sessions. Think about how much uninterrupted time you have.\\n\\n4. **Goal of the Session** – Are you after a story, immersion, and personal achievement? That leans toward solo. Are you after teamwork, strategy, or just a light‑hearted party vibe? That points to multiplayer.\\n\\n5. **Mood \\u0026 Stress Level** – If you want a low‑stress, relaxing wind‑down, a solo puzzle or exploration game can be soothing. If you’re in a playful, competitive mood, a multiplayer match can give that extra adrenaline kick.\\n\\n6. **Availability of Friends** – Finally, consider whether your friends are online and ready to play. If they’re not, solo might be the smoother option.\\n\\nBy weighing these factors, you can pick the mode that best fits how you feel right now, without needing to name any specific titles yet.\"}],\"preferences\":null}"
+                          }
+                        }
+                      ]
+                    },
+                    "elapsed_ms": 1820.895,
+                    "model_call": 1,
+                    "reported_usage": {
+                      "total_tokens": 1934,
+                      "prompt_tokens": 1459,
+                      "completion_tokens": 475
+                    },
+                    "reserved_units": 11086
+                  }
+                ],
+                "succeeded": true
+              }
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "message": "Actually I mean this weekend, not tonight. Please keep that correction in mind.",
+          "turn_id": "c47e9555-d9c6-41e1-843d-7d4db4fd07cb",
+          "status": 200,
+          "at": "2026-10-29T15:52:01.934886+00:00",
+          "response": {
+            "request_id": "3a49edcf-6445-411f-a04b-7fbd2d7dea29",
+            "message": "Got it—you're thinking about how to choose between solo and group play for this weekend. I'll keep that in mind.",
+            "games": [],
+            "notices": [],
+            "evidence": [],
+            "entities": [],
+            "applied_filters": null,
+            "revision": 3,
+            "total_turns": 3
+          },
+          "elapsed_ms": 2322.488,
+          "stored_event": {
+            "at": "2026-10-29T15:52:01.417786+00:00",
+            "id": "c47e9555-d9c6-41e1-843d-7d4db4fd07cb",
+            "input": "Actually I mean this weekend, not tonight. Please keep that correction in mind.",
+            "output": {
+              "games": [],
+              "message": "Got it—you're thinking about how to choose between solo and group play for this weekend. I'll keep that in mind.",
+              "notices": [],
+              "entities": [],
+              "evidence": [],
+              "revision": 3,
+              "total_turns": 3,
+              "applied_filters": null
+            },
+            "status": "done",
+            "attempts": [
+              {
+                "at": "2026-10-29T15:52:03.000097+00:00",
+                "trace": [
+                  {
+                    "response": {
+                      "tool_calls": [
+                        {
+                          "id": "fc_8c9f3d63-ff0d-4ba9-88c6-daceb38c29d0",
+                          "type": "function",
+                          "function": {
+                            "name": "json",
+                            "arguments": "{\"game_ids\":[],\"memory\":[{\"key\":\"play_timeframe\",\"value\":\"weekend\"}],\"parts\":[{\"evidence\":[],\"text\":\"Got it—you're thinking about how to choose between solo and group play for this weekend. I'll keep that in mind.\"}]}"
+                          }
+                        }
+                      ]
+                    },
+                    "elapsed_ms": 1208.557,
+                    "model_call": 1,
+                    "reported_usage": {
+                      "total_tokens": 2053,
+                      "prompt_tokens": 1909,
+                      "completion_tokens": 144
+                    },
+                    "reserved_units": 13149
+                  }
+                ],
+                "succeeded": true
+              }
+            ]
+          }
+        }
+      ],
+      "seed_turns": 0,
+      "finished": true,
+      "cleanup_status": 200
+    },
+    {
+      "id": "D02",
+      "turns": [
+        {
+          "index": 0,
+          "message": "Could you check whether there are any Ori titles in our catalog? Show the available ones.",
+          "turn_id": "cdf96184-1a4b-49de-8f4b-5b15f3308356",
+          "status": 503,
+          "at": "2026-10-29T15:53:04.944057+00:00",
+          "response": {
+            "code": "chat_service_configuration",
+            "message": "Chat can't connect to its AI service because of a setup issue. You can still find games using Your taste.",
+            "request_id": "fb4249b5-3fb1-412b-9403-38a9f23c94b0",
+            "retryable": false,
+            "recovery": "discover",
+            "retry_at": null,
+            "field": null
+          },
+          "elapsed_ms": 6211.037,
+          "stored_event": {
+            "at": "2026-10-29T15:53:04.502761+00:00",
+            "id": "cdf96184-1a4b-49de-8f4b-5b15f3308356",
+            "input": "Could you check whether there are any Ori titles in our catalog? Show the available ones.",
+            "output": null,
+            "status": "failed",
+            "attempts": [
+              {
+                "at": "2026-10-29T15:53:09.931118+00:00",
+                "trace": [
+                  {
+                    "response": {
+                      "tool_calls": [
+                        {
+                          "id": "fc_48f8ea47-ded7-49ae-bae0-eaf4291c98c4",
+                          "type": "function",
+                          "function": {
+                            "name": "recommend_games",
+                            "arguments": "{\"limit\":4,\"query\":\"Ori\",\"scope\":\"turn\"}"
+                          }
+                        }
+                      ]
+                    },
+                    "elapsed_ms": 1060.159,
+                    "model_call": 1,
+                    "reported_usage": {
+                      "total_tokens": 1431,
+                      "prompt_tokens": 1366,
+                      "completion_tokens": 65
+                    },
+                    "reserved_units": 10709
+                  },
+                  {
+                    "tool": "recommend_games",
+                    "result": {
+                      "games": [
+                        {
+                          "id": 261570,
+                          "facts": [
+                            {
+                              "id": "game:261570:title",
+                              "field": "title",
+                              "value": "Ori and the Blind Forest",
+                              "observed_at": "2026-10-14T18:54:51.502056+00:00"
+                            },
+                            {
+                              "id": "game:261570:description:0:200",
+                              "field": "description",
+                              "value": {
+                                "offset": 0,
+                                "excerpt": "“Ori and the Blind Forest” tells the tale of a young orphan destined for heroics, through a visually stunning action-platformer crafted by Moon Studios for PC.",
+                                "next_offset": null,
+                                "total_characters": 159
+                              },
+                              "observed_at": "2026-10-14T18:54:51.502056+00:00"
+                            },
+                            {
+                              "id": "game:261570:modes",
+                              "field": "modes",
+                              "value": [
+                                "single-player"
+                              ],
+                              "observed_at": "2026-10-14T18:54:51.502056+00:00"
+                            },
+                            {
+                              "id": "game:261570:platforms",
+                              "field": "platforms",
+                              "value": {
+                                "mac": false,
+                                "linux": false,
+                                "windows": true
+                              },
+                              "observed_at": "2026-10-14T18:54:51.502056+00:00"
+                            },
+                            {
+                              "id": "game:261570:genres",
+                              "field": "genres",
+                              "value": [
+                                "action"
+                              ],
+                              "observed_at": "2026-10-14T18:54:51.502056+00:00"
+                            },
+                            {
+                              "id": "game:261570:early_access",
+                              "field": "early_access",
+                              "value": false,
+                              "observed_at": "2026-10-14T18:54:51.502056+00:00"
+                            },
+                            {
+                              "id": "game:261570:price",
+                              "field": "price",
+                              "value": null,
+                              "observed_at": "2026-10-14T18:54:51.502056+00:00"
+                            },
+                            {
+                              "id": "game:261570:free_to_play",
+                              "field": "free_to_play",
+                              "value": false,
+                              "observed_at": "2026-10-14T18:54:51.502056+00:00"
+                            }
+                          ],
+                          "title": "Ori and the Blind Forest",
+                          "available_fields": [
+                            "app_id",
+                            "title",
+                            "description",
+                            "store_url",
+                            "artwork_url",
+                            "eligibility",
+                            "eligibility_reason",
+                            "early_access",
+                            "platforms",
+                            "genres",
+                            "tags",
+                            "modes",
+                            "free_to_play",
+                            "price",
+                            "observed_at",
+                            "evidence",
+                            "semantic_hash"
+                          ]
+                        },
+                        {
+                          "id": 387290,
+                          "facts": [
+                            {
+                              "id": "game:387290:title",
+                              "field": "title",
+                              "value": "Ori and the Blind Forest: Definitive Edition",
+                              "observed_at": "2026-10-14T18:54:54.937875+00:00"
+                            },
+                            {
+                              "id": "game:387290:description:0:200",
+                              "field": "description",
+                              "value": {
+                                "offset": 0,
+                                "excerpt": "“Ori and the Blind Forest” tells the tale of a young orphan destined for heroics, through a visually stunning Action-Platformer crafted by Moon Studios.",
+                                "next_offset": null,
+                                "total_characters": 152
+                              },
+                              "observed_at": "2026-10-14T18:54:54.937875+00:00"
+                            },
+                            {
+                              "id": "game:387290:modes",
+                              "field": "modes",
+                              "value": [
+                                "single-player"
+                              ],
+                              "observed_at": "2026-10-14T18:54:54.937875+00:00"
+                            },
+                            {
+                              "id": "game:387290:platforms",
+                              "field": "platforms",
+                              "value": {
+                                "mac": false,
+                                "linux": false,
+                                "windows": true
+                              },
+                              "observed_at": "2026-10-14T18:54:54.937875+00:00"
+                            },
+                            {
+                              "id": "game:387290:genres",
+                              "field": "genres",
+                              "value": [
+                                "action"
+                              ],
+                              "observed_at": "2026-10-14T18:54:54.937875+00:00"
+                            },
+                            {
+                              "id": "game:387290:early_access",
+                              "field": "early_access",
+                              "value": false,
+                              "observed_at": "2026-10-14T18:54:54.937875+00:00"
+                            },
+                            {
+                              "id": "game:387290:price",
+                              "field": "price",
+                              "value": {
+                                "region": "US",
+                                "currency": "USD",
+                                "evidence_id": "387290:price_cents",
+                                "observed_at": "2026-10-14T18:54:54.937875Z",
+                                "amount_cents": 1999
+                              },
+                              "observed_at": "2026-10-14T18:54:54.937875+00:00"
+                            },
+                            {
+                              "id": "game:387290:free_to_play",
+                              "field": "free_to_play",
+                              "value": false,
+                              "observed_at": "2026-10-14T18:54:54.937875+00:00"
+                            }
+                          ],
+                          "title": "Ori and the Blind Forest: Definitive Edition",
+                          "available_fields": [
+                            "app_id",
+                            "title",
+                            "description",
+                            "store_url",
+                            "artwork_url",
+                            "eligibility",
+                            "eligibility_reason",
+                            "early_access",
+                            "platforms",
+                            "genres",
+                            "tags",
+                            "modes",
+                            "free_to_play",
+                            "price",
+                            "observed_at",
+                            "evidence",
+                            "semantic_hash"
+                          ]
+                        },
+                        {
+                          "id": 881100,
+                          "facts": [
+                            {
+                              "id": "game:881100:title",
+                              "field": "title",
+                              "value": "Noita",
+                              "observed_at": "2026-10-14T18:54:34.292722+00:00"
+                            },
+                            {
+                              "id": "game:881100:description:0:200",
+                              "field": "description",
+                              "value": {
+                                "offset": 0,
+                                "excerpt": "Noita is a magical action roguelite set in a world where every pixel is physically simulated. Fight, explore, melt, burn, freeze and evaporate your way through the procedurally generated world using s",
+                                "next_offset": 200,
+                                "total_characters": 230
+                              },
+                              "observed_at": "2026-10-14T18:54:34.292722+00:00"
+                            },
+                            {
+                              "id": "game:881100:modes",
+                              "field": "modes",
+                              "value": [
+                                "single-player"
+                              ],
+                              "observed_at": "2026-10-14T18:54:34.292722+00:00"
+                            },
+                            {
+                              "id": "game:881100:platforms",
+                              "field": "platforms",
+                              "value": {
+                                "mac": false,
+                                "linux": false,
+                                "windows": true
+                              },
+                              "observed_at": "2026-10-14T18:54:34.292722+00:00"
+                            },
+                            {
+                              "id": "game:881100:genres",
+                              "field": "genres",
+                              "value": [
+                                "action",
+                                "adventure",
+                                "indie",
+                                "rpg",
+                                "simulation"
+                              ],
+                              "observed_at": "2026-10-14T18:54:34.292722+00:00"
+                            },
+                            {
+                              "id": "game:881100:early_access",
+                              "field": "early_access",
+                              "value": false,
+                              "observed_at": "2026-10-14T18:54:34.292722+00:00"
+                            },
+                            {
+                              "id": "game:881100:price",
+                              "field": "price",
+                              "value": {
+                                "region": "US",
+                                "currency": "USD",
+                                "evidence_id": "881100:price_cents",
+                                "observed_at": "2026-10-14T18:54:34.292722Z",
+                                "amount_cents": 799
+                              },
+                              "observed_at": "2026-10-14T18:54:34.292722+00:00"
+                            },
+                            {
+                              "id": "game:881100:free_to_play",
+                              "field": "free_to_play",
+                              "value": false,
+                              "observed_at": "2026-10-14T18:54:34.292722+00:00"
+                            }
+                          ],
+                          "title": "Noita",
+                          "available_fields": [
+                            "app_id",
+                            "title",
+                            "description",
+                            "store_url",
+                            "artwork_url",
+                            "eligibility",
+                            "eligibility_reason",
+                            "early_access",
+                            "platforms",
+                            "genres",
+                            "tags",
+                            "modes",
+                            "free_to_play",
+                            "price",
+                            "observed_at",
+                            "evidence",
+                            "semantic_hash"
+                          ]
+                        },
+                        {
+                          "id": 105600,
+                          "facts": [
+                            {
+                              "id": "game:105600:title",
+                              "field": "title",
+                              "value": "Terraria",
+                              "observed_at": "2026-10-14T18:53:10.961365+00:00"
+                            },
+                            {
+                              "id": "game:105600:description:0:200",
+                              "field": "description",
+                              "value": {
+                                "offset": 0,
+                                "excerpt": "Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game. Four Pack also available!",
+                                "next_offset": null,
+                                "total_characters": 113
+                              },
+                              "observed_at": "2026-10-14T18:53:10.961365+00:00"
+                            },
+                            {
+                              "id": "game:105600:modes",
+                              "field": "modes",
+                              "value": [
+                                "multiplayer",
+                                "online-co-op",
+                                "single-player"
+                              ],
+                              "observed_at": "2026-10-14T18:53:10.961365+00:00"
+                            },
+                            {
+                              "id": "game:105600:platforms",
+                              "field": "platforms",
+                              "value": {
+                                "mac": true,
+                                "linux": true,
+                                "windows": true
+                              },
+                              "observed_at": "2026-10-14T18:53:10.961365+00:00"
+                            },
+                            {
+                              "id": "game:105600:genres",
+                              "field": "genres",
+                              "value": [
+                                "action",
+                                "adventure",
+                                "indie",
+                                "rpg"
+                              ],
+                              "observed_at": "2026-10-14T18:53:10.961365+00:00"
+                            },
+                            {
+                              "id": "game:105600:early_access",
+                              "field": "early_access",
+                              "value": false,
+                              "observed_at": "2026-10-14T18:53:10.961365+00:00"
+                            },
+                            {
+                              "id": "game:105600:price",
+                              "field": "price",
+                              "value": {
+                                "region": "US",
+                                "currency": "USD",
+                                "evidence_id": "105600:price_cents",
+                                "observed_at": "2026-10-14T18:53:10.961365Z",
+                                "amount_cents": 499
+                              },
+                              "observed_at": "2026-10-14T18:53:10.961365+00:00"
+                            },
+                            {
+                              "id": "game:105600:free_to_play",
+                              "field": "free_to_play",
+                              "value": false,
+                              "observed_at": "2026-10-14T18:53:10.961365+00:00"
+                            }
+                          ],
+                          "title": "Terraria",
+                          "available_fields": [
+                            "app_id",
+                            "title",
+                            "description",
+                            "store_url",
+                            "artwork_url",
+                            "eligibility",
+                            "eligibility_reason",
+                            "early_access",
+                            "platforms",
+                            "genres",
+                            "tags",
+                            "modes",
+                            "free_to_play",
+                            "price",
+                            "observed_at",
+                            "evidence",
+                            "semantic_hash"
+                          ]
+                        }
+                      ],
+                      "scope": "ranked_shortlist_not_catalog_search",
+                      "outcome": {
+                        "kind": "found",
+                        "channels": [
+                          "lexical",
+                          "semantic"
+                        ],
+                        "evidence_ids": [
+                          261570,
+                          387290,
+                          881100,
+                          105600,
+                          570,
+                          108600,
+                          435150,
+                          1145360
+                        ],
+                        "degraded_reason": null,
+                        "semantic_available": true,
+                        "title_search_complete": false
+                      },
+                      "returned": 4,
+                      "evidence_id": "recommend:fc_48f8ea47-ded7-49ae-bae0-eaf4291c98c4",
+                      "applied_filters": {},
+                      "candidate_count": 8
+                    },
+                    "arguments": "{\"limit\":4,\"query\":\"Ori\",\"scope\":\"turn\"}",
+                    "delivered": {
+                      "error": "tool_page_too_large",
+                      "instruction": "Request fewer IDs/fields, a smaller page or description_limit. No complete result was delivered."
+                    }
+                  },
+                  {
+                    "response": {
+                      "tool_calls": [
+                        {
+                          "id": "fc_4f12ac07-d1c3-440e-be4d-5700467c8a59",
+                          "type": "function",
+                          "function": {
+                            "name": "recommend_games",
+                            "arguments": "{\"limit\":4,\"query\":\"Ori\",\"scope\":\"turn\"}"
+                          }
+                        }
+                      ]
+                    },
+                    "elapsed_ms": 1269.209,
+                    "model_call": 2,
+                    "reported_usage": {
+                      "total_tokens": 1514,
+                      "prompt_tokens": 1431,
+                      "completion_tokens": 83
+                    },
+                    "reserved_units": 11168
+                  },
+                  {
+                    "tool": "recommend_games",
+                    "result": {
+                      "games": [
+                        {
+                          "id": 261570,
+                          "facts": [
+                            {
+                              "id": "game:261570:title",
+                              "field": "title",
+                              "value": "Ori and the Blind Forest",
+                              "observed_at": "2026-10-14T18:54:51.502056+00:00"
+                            },
+                            {
+                              "id": "game:261570:description:0:200",
+                              "field": "description",
+                              "value": {
+                                "offset": 0,
+                                "excerpt": "“Ori and the Blind Forest” tells the tale of a young orphan destined for heroics, through a visually stunning action-platformer crafted by Moon Studios for PC.",
+                                "next_offset": null,
+                                "total_characters": 159
+                              },
+                              "observed_at": "2026-10-14T18:54:51.502056+00:00"
+                            },
+                            {
+                              "id": "game:261570:modes",
+                              "field": "modes",
+                              "value": [
+                                "single-player"
+                              ],
+                              "observed_at": "2026-10-14T18:54:51.502056+00:00"
+                            },
+                            {
+                              "id": "game:261570:platforms",
+                              "field": "platforms",
+                              "value": {
+                                "mac": false,
+                                "linux": false,
+                                "windows": true
+                              },
+                              "observed_at": "2026-10-14T18:54:51.502056+00:00"
+                            },
+                            {
+                              "id": "game:261570:genres",
+                              "field": "genres",
+                              "value": [
+                                "action"
+                              ],
+                              "observed_at": "2026-10-14T18:54:51.502056+00:00"
+                            },
+                            {
+                              "id": "game:261570:early_access",
+                              "field": "early_access",
+                              "value": false,
+                              "observed_at": "2026-10-14T18:54:51.502056+00:00"
+                            },
+                            {
+                              "id": "game:261570:price",
+                              "field": "price",
+                              "value": null,
+                              "observed_at": "2026-10-14T18:54:51.502056+00:00"
+                            },
+                            {
+                              "id": "game:261570:free_to_play",
+                              "field": "free_to_play",
+                              "value": false,
+                              "observed_at": "2026-10-14T18:54:51.502056+00:00"
+                            }
+                          ],
+                          "title": "Ori and the Blind Forest",
+                          "available_fields": [
+                            "app_id",
+                            "title",
+                            "description",
+                            "store_url",
+                            "artwork_url",
+                            "eligibility",
+                            "eligibility_reason",
+                            "early_access",
+                            "platforms",
+                            "genres",
+                            "tags",
+                            "modes",
+                            "free_to_play",
+                            "price",
+                            "observed_at",
+                            "evidence",
+                            "semantic_hash"
+                          ]
+                        },
+                        {
+                          "id": 387290,
+                          "facts": [
+                            {
+                              "id": "game:387290:title",
+                              "field": "title",
+                              "value": "Ori and the Blind Forest: Definitive Edition",
+                              "observed_at": "2026-10-14T18:54:54.937875+00:00"
+                            },
+                            {
+                              "id": "game:387290:description:0:200",
+                              "field": "description",
+                              "value": {
+                                "offset": 0,
+                                "excerpt": "“Ori and the Blind Forest” tells the tale of a young orphan destined for heroics, through a visually stunning Action-Platformer crafted by Moon Studios.",
+                                "next_offset": null,
+                                "total_characters": 152
+                              },
+                              "observed_at": "2026-10-14T18:54:54.937875+00:00"
+                            },
+                            {
+                              "id": "game:387290:modes",
+                              "field": "modes",
+                              "value": [
+                                "single-player"
+                              ],
+                              "observed_at": "2026-10-14T18:54:54.937875+00:00"
+                            },
+                            {
+                              "id": "game:387290:platforms",
+                              "field": "platforms",
+                              "value": {
+                                "mac": false,
+                                "linux": false,
+                                "windows": true
+                              },
+                              "observed_at": "2026-10-14T18:54:54.937875+00:00"
+                            },
+                            {
+                              "id": "game:387290:genres",
+                              "field": "genres",
+                              "value": [
+                                "action"
+                              ],
+                              "observed_at": "2026-10-14T18:54:54.937875+00:00"
+                            },
+                            {
+                              "id": "game:387290:early_access",
+                              "field": "early_access",
+                              "value": false,
+                              "observed_at": "2026-10-14T18:54:54.937875+00:00"
+                            },
+                            {
+                              "id": "game:387290:price",
+                              "field": "price",
+                              "value": {
+                                "region": "US",
+                                "currency": "USD",
+                                "evidence_id": "387290:price_cents",
+                                "observed_at": "2026-10-14T18:54:54.937875Z",
+                                "amount_cents": 1999
+                              },
+                              "observed_at": "2026-10-14T18:54:54.937875+00:00"
+                            },
+                            {
+                              "id": "game:387290:free_to_play",
+                              "field": "free_to_play",
+                              "value": false,
+                              "observed_at": "2026-10-14T18:54:54.937875+00:00"
+                            }
+                          ],
+                          "title": "Ori and the Blind Forest: Definitive Edition",
+                          "available_fields": [
+                            "app_id",
+                            "title",
+                            "description",
+                            "store_url",
+                            "artwork_url",
+                            "eligibility",
+                            "eligibility_reason",
+                            "early_access",
+                            "platforms",
+                            "genres",
+                            "tags",
+                            "modes",
+                            "free_to_play",
+                            "price",
+                            "observed_at",
+                            "evidence",
+                            "semantic_hash"
+                          ]
+                        },
+                        {
+                          "id": 881100,
+                          "facts": [
+                            {
+                              "id": "game:881100:title",
+                              "field": "title",
+                              "value": "Noita",
+                              "observed_at": "2026-10-14T18:54:34.292722+00:00"
+                            },
+                            {
+                              "id": "game:881100:description:0:200",
+                              "field": "description",
+                              "value": {
+                                "offset": 0,
+                                "excerpt": "Noita is a magical action roguelite set in a world where every pixel is physically simulated. Fight, explore, melt, burn, freeze and evaporate your way through the procedurally generated world using s",
+                                "next_offset": 200,
+                                "total_characters": 230
+                              },
+                              "observed_at": "2026-10-14T18:54:34.292722+00:00"
+                            },
+                            {
+                              "id": "game:881100:modes",
+                              "field": "modes",
+                              "value": [
+                                "single-player"
+                              ],
+                              "observed_at": "2026-10-14T18:54:34.292722+00:00"
+                            },
+                            {
+                              "id": "game:881100:platforms",
+                              "field": "platforms",
+                              "value": {
+                                "mac": false,
+                                "linux": false,
+                                "windows": true
+                              },
+                              "observed_at": "2026-10-14T18:54:34.292722+00:00"
+                            },
+                            {
+                              "id": "game:881100:genres",
+                              "field": "genres",
+                              "value": [
+                                "action",
+                                "adventure",
+                                "indie",
+                                "rpg",
+                                "simulation"
+                              ],
+                              "observed_at": "2026-10-14T18:54:34.292722+00:00"
+                            },
+                            {
+                              "id": "game:881100:early_access",
+                              "field": "early_access",
+                              "value": false,
+                              "observed_at": "2026-10-14T18:54:34.292722+00:00"
+                            },
+                            {
+                              "id": "game:881100:price",
+                              "field": "price",
+                              "value": {
+                                "region": "US",
+                                "currency": "USD",
+                                "evidence_id": "881100:price_cents",
+                                "observed_at": "2026-10-14T18:54:34.292722Z",
+                                "amount_cents": 799
+                              },
+                              "observed_at": "2026-10-14T18:54:34.292722+00:00"
+                            },
+                            {
+                              "id": "game:881100:free_to_play",
+                              "field": "free_to_play",
+                              "value": false,
+                              "observed_at": "2026-10-14T18:54:34.292722+00:00"
+                            }
+                          ],
+                          "title": "Noita",
+                          "available_fields": [
+                            "app_id",
+                            "title",
+                            "description",
+                            "store_url",
+                            "artwork_url",
+                            "eligibility",
+                            "eligibility_reason",
+                            "early_access",
+                            "platforms",
+                            "genres",
+                            "tags",
+                            "modes",
+                            "free_to_play",
+                            "price",
+                            "observed_at",
+                            "evidence",
+                            "semantic_hash"
+                          ]
+                        },
+                        {
+                          "id": 105600,
+                          "facts": [
+                            {
+                              "id": "game:105600:title",
+                              "field": "title",
+                              "value": "Terraria",
+                              "observed_at": "2026-10-14T18:53:10.961365+00:00"
+                            },
+                            {
+                              "id": "game:105600:description:0:200",
+                              "field": "description",
+                              "value": {
+                                "offset": 0,
+                                "excerpt": "Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game. Four Pack also available!",
+                                "next_offset": null,
+                                "total_characters": 113
+                              },
+                              "observed_at": "2026-10-14T18:53:10.961365+00:00"
+                            },
+                            {
+                              "id": "game:105600:modes",
+                              "field": "modes",
+                              "value": [
+                                "multiplayer",
+                                "online-co-op",
+                                "single-player"
+                              ],
+                              "observed_at": "2026-10-14T18:53:10.961365+00:00"
+                            },
+                            {
+                              "id": "game:105600:platforms",
+                              "field": "platforms",
+                              "value": {
+                                "mac": true,
+                                "linux": true,
+                                "windows": true
+                              },
+                              "observed_at": "2026-10-14T18:53:10.961365+00:00"
+                            },
+                            {
+                              "id": "game:105600:genres",
+                              "field": "genres",
+                              "value": [
+                                "action",
+                                "adventure",
+                                "indie",
+                                "rpg"
+                              ],
+                              "observed_at": "2026-10-14T18:53:10.961365+00:00"
+                            },
+                            {
+                              "id": "game:105600:early_access",
+                              "field": "early_access",
+                              "value": false,
+                              "observed_at": "2026-10-14T18:53:10.961365+00:00"
+                            },
+                            {
+                              "id": "game:105600:price",
+                              "field": "price",
+                              "value": {
+                                "region": "US",
+                                "currency": "USD",
+                                "evidence_id": "105600:price_cents",
+                                "observed_at": "2026-10-14T18:53:10.961365Z",
+                                "amount_cents": 499
+                              },
+                              "observed_at": "2026-10-14T18:53:10.961365+00:00"
+                            },
+                            {
+                              "id": "game:105600:free_to_play",
+                              "field": "free_to_play",
+                              "value": false,
+                              "observed_at": "2026-10-14T18:53:10.961365+00:00"
+                            }
+                          ],
+                          "title": "Terraria",
+                          "available_fields": [
+                            "app_id",
+                            "title",
+                            "description",
+                            "store_url",
+                            "artwork_url",
+                            "eligibility",
+                            "eligibility_reason",
+                            "early_access",
+                            "platforms",
+                            "genres",
+                            "tags",
+                            "modes",
+                            "free_to_play",
+                            "price",
+                            "observed_at",
+                            "evidence",
+                            "semantic_hash"
+                          ]
+                        }
+                      ],
+                      "scope": "ranked_shortlist_not_catalog_search",
+                      "outcome": {
+                        "kind": "found",
+                        "channels": [
+                          "lexical",
+                          "semantic"
+                        ],
+                        "evidence_ids": [
+                          261570,
+                          387290,
+                          881100,
+                          105600,
+                          570,
+                          108600,
+                          435150,
+                          1145360
+                        ],
+                        "degraded_reason": null,
+                        "semantic_available": true,
+                        "title_search_complete": false
+                      },
+                      "returned": 4,
+                      "evidence_id": "recommend:fc_4f12ac07-d1c3-440e-be4d-5700467c8a59",
+                      "applied_filters": {},
+                      "candidate_count": 8
+                    },
+                    "arguments": "{\"limit\":4,\"query\":\"Ori\",\"scope\":\"turn\"}",
+                    "delivered": {
+                      "error": "tool_page_too_large",
+                      "instruction": "Request fewer IDs/fields, a smaller page or description_limit. No complete result was delivered."
+                    }
+                  },
+                  {
+                    "elapsed_ms": 671.154,
+                    "model_call": 3,
+                    "reported_usage": null,
+                    "reserved_units": 7581
+                  },
+                  {
+                    "failure": "ai_provider_configuration"
+                  }
+                ],
+                "succeeded": false
+              }
+            ]
+          }
+        }
+      ],
+      "seed_turns": 0,
+      "dependent_turns_skipped": 2,
+      "finished": true,
+      "cleanup_status": 200
+    }
+  ],
+  "human_scores": null,
+  "last_attempt_at": "2026-10-29T15:53:04.944057+00:00"
+}

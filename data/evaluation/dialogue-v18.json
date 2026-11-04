@@ -1,0 +1,32 @@
+{
+  "version": "owner-closeout-development-v28",
+  "scope": "Prepared without inference after v27 preserved normal conditions but omitted the requested restored search. Fresh exposed regressions, not held-out data. All earlier attempts and failures remain immutable; original held-out fixtures stay unchanged.",
+  "development": [
+    {
+      "id": "D28B",
+      "turns": [
+        "Keep Windows, single-player and an inclusive recorded maximum of 18 USD as my normal requirements. Find up to four options.",
+        "For this request only, find Windows single-player options with recorded prices above 18 USD and at most 36 USD. My normal maximum should remain 18 USD.",
+        "Under my usual requirements, find games again and tell me the normal price limit."
+      ],
+      "checks": ["Initial/restored maximum1800 inclusive; temporary minimum1801 and maximum3600 inclusive", "Conversation-scoped normal1800 retained across exception", "All three turns actually retrieve; acknowledgement/recall alone is not restored-search completion", "Real temporary results include newly eligible prices", "Exact supported facts, concise natural prose without clipped quotes", "Record all native/model calls and provider headers"]
+    },
+    {
+      "id": "D28P",
+      "turns": [
+        "Please look up Hades and give its recorded operating systems, modes and dated USD price.",
+        "Does a platform missing from that record prove incompatibility today?"
+      ],
+      "checks": ["ID1145360 record values/date agree", "Natural catalog-only uncertainty; no internal scope flag in prose"]
+    },
+    {
+      "id": "D28R",
+      "turns": [
+        "My friend Sasha may join my gaming evening on Thursday. We have not agreed a budget.",
+        "Move our gaming evening to Monday. Sasha remains a possible participant.",
+        "Recall our first day, replacement day, possible participant and whether a spending limit was agreed."
+      ],
+      "checks": ["Thursday then Monday; Sasha tentative; budget unagreed", "No invented persistent filters or catalog access", "Short recall only; no long-memory acceptance"]
+    }
+  ]
+}

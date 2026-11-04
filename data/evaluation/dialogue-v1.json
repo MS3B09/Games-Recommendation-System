@@ -1,0 +1,16 @@
+{
+  "version": "llm-first-v1",
+  "development": [
+    {"id":"D01","turns":["Hi! I had a long day. Could we chat for a moment before choosing anything?","How would you decide between playing alone and playing with friends, without recommending specific games yet?","Actually I mean this weekend, not tonight. Please keep that correction in mind."]},
+    {"id":"D02","turns":["Could you check whether there are any Ori titles in our catalog? Show the available ones.","How do their recorded play modes and platforms differ?","When you said that, did you mean local co-op is supported, or just that the data does not confirm it? Please correct any overstatement."]}
+  ],
+  "held_out": [
+    {"id":"H01","checks":["search_scope","comparison","repair"],"turns":["Are there different Binding of Isaac titles available here?","What differences between those titles can you actually establish from the catalog?","Which part of that answer is uncertain? Please be direct rather than repeating a disclaimer."]},
+    {"id":"H02","checks":["hard_filters","correction","preference_memory"],"turns":["Find up to two online co-op games on Linux with a recorded price no higher than 30 USD.","Correction: I need Windows instead. Keep the other conditions.","What requirements are you using now, and which of the games we discussed still qualify?"]},
+    {"id":"H03","checks":["fact_bypasses_recommendation_filters","pronouns","topic_change"],"turns":["I usually want multiplayer games. Is Marvel's Spider-Man Remastered in this database?","Would that one actually meet the preference I just mentioned?","Set aside that game for now. Can you suggest two multiplayer alternatives without forgetting why I asked?"]},
+    {"id":"H04","checks":["natural_non_game_chat","earlier_pair_reference","grounded_modes"],"turns":["Show me Hades and Dead Cells from the catalog, please.","Quick change of subject: tell me a short joke about debugging code.","Back to those two games: what can you tell me about their recorded play styles?"]},
+    {"id":"H05","checks":["absence_scope","uncertainty","friendly_clarification"],"turns":["Can you find a game called Moonlight Teapot Expedition 927 in this database?","Does that establish that the game doesn't exist anywhere?","Thanks. What sort of information would help you search for a title if I remembered its name incorrectly?"]},
+    {"id":"H06","seed_turns":80,"checks":["long_original_history","correction_provenance","older_game_identities"],"turns":["What day did I originally suggest, and what did I change it to later?","What had I told you about a budget and the name of the friend I play with?","Which two games did we discuss near the start? Compare their recorded play modes."]}
+  ],
+  "judging": "Structural/source-reference/filter checks can be automated. Naturalness, factual entailment, relevance and conversational correctness require inspection of the actual outputs; no human scores may be invented. A seeded long prefix tests long-context recall, not 80 live model turns. Cases are frozen before the first held-out attempt; preserve failures and source identity."
+}

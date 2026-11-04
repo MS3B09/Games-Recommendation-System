@@ -4,7 +4,7 @@ import tseslint from 'typescript-eslint';
 import hooks from 'eslint-plugin-react-hooks';
 
 export default tseslint.config(
-  { ignores: ['dist/**', 'playwright-report/**', 'test-results/**', 'src/api/schema.d.ts'] },
+  { ignores: ['dist/**', 'playwright-report/**', 'test-results/**', 'test-results-live/**', 'src/api/schema.d.ts'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {

@@ -1,0 +1,649 @@
+{
+  "measured_at": "2026-10-24T17:04:50.074558+00:00",
+  "configuration": {
+    "database_configured": true,
+    "groq_key_configured": true,
+    "groq_model": "openai/gpt-oss-120b",
+    "ai_enabled": true,
+    "daily_calls": 50,
+    "daily_reserved_tokens": 500000,
+    "query_paths_configured": {
+      "query_tokenizer_path": false,
+      "query_model_path": false,
+      "query_artifact_path": false
+    }
+  },
+  "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+  "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "live_provider_calls": 0,
+  "database_writes": 0,
+  "catalog": {
+    "error_code": null,
+    "retryable": false,
+    "version": "m2-649714e8b26775165f105d02",
+    "game_count": 40,
+    "observed_at": "2026-10-14 18:52:47.736652+00:00"
+  },
+  "explicit_local_encoder": {
+    "hash_and_manifest_checks": "passed",
+    "dimensions": 384,
+    "squared_norm": 1.000000048114088,
+    "artifact_version": "m2-649714e8b26775165f105d02",
+    "configured_in_application": false,
+    "catalog_version": "m2-649714e8b26775165f105d02",
+    "existing_read_only_vector_query_ids": [
+      105600,
+      1151640,
+      892970,
+      203160
+    ],
+    "interpretation": "compatibility probe, not new hybrid retrieval or relevance evaluation"
+  },
+  "inventory": [
+    {
+      "app_id": 1086940,
+      "title": "Baldur's Gate 3",
+      "modes": [
+        "multiplayer",
+        "online-co-op",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 5999,
+      "free_to_play": false
+    },
+    {
+      "app_id": 107100,
+      "title": "Bastion",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 1499,
+      "free_to_play": false
+    },
+    {
+      "app_id": 692850,
+      "title": "Bloodstained: Ritual of the Night",
+      "modes": [
+        "local-co-op",
+        "multiplayer",
+        "online-co-op",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 3999,
+      "free_to_play": false
+    },
+    {
+      "app_id": 960090,
+      "title": "Bloons TD 6",
+      "modes": [
+        "multiplayer",
+        "online-co-op",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 1399,
+      "free_to_play": false
+    },
+    {
+      "app_id": 291550,
+      "title": "Brawlhalla",
+      "modes": [
+        "local-co-op",
+        "multiplayer",
+        "online-co-op",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 0,
+      "free_to_play": true
+    },
+    {
+      "app_id": 504230,
+      "title": "Celeste",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 499,
+      "free_to_play": false
+    },
+    {
+      "app_id": 268910,
+      "title": "Cuphead",
+      "modes": [
+        "local-co-op",
+        "multiplayer",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 1999,
+      "free_to_play": false
+    },
+    {
+      "app_id": 1091500,
+      "title": "Cyberpunk 2077",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 1799,
+      "free_to_play": false
+    },
+    {
+      "app_id": 588650,
+      "title": "Dead Cells",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 2499,
+      "free_to_play": false
+    },
+    {
+      "app_id": 548430,
+      "title": "Deep Rock Galactic",
+      "modes": [
+        "multiplayer",
+        "online-co-op",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 2999,
+      "free_to_play": false
+    },
+    {
+      "app_id": 435150,
+      "title": "Divinity: Original Sin 2 - Definitive Edition",
+      "modes": [
+        "local-co-op",
+        "multiplayer",
+        "online-co-op",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 4499,
+      "free_to_play": false
+    },
+    {
+      "app_id": 570,
+      "title": "Dota 2",
+      "modes": [
+        "multiplayer"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 0,
+      "free_to_play": true
+    },
+    {
+      "app_id": 239140,
+      "title": "Dying Light",
+      "modes": [
+        "multiplayer",
+        "online-co-op",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 2499,
+      "free_to_play": false
+    },
+    {
+      "app_id": 1245620,
+      "title": "ELDEN RING",
+      "modes": [
+        "multiplayer",
+        "online-co-op",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 5999,
+      "free_to_play": false
+    },
+    {
+      "app_id": 311690,
+      "title": "Enter the Gungeon",
+      "modes": [
+        "multiplayer",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 299,
+      "free_to_play": false
+    },
+    {
+      "app_id": 22380,
+      "title": "Fallout: New Vegas",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 249,
+      "free_to_play": false
+    },
+    {
+      "app_id": 1145360,
+      "title": "Hades",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 2499,
+      "free_to_play": false
+    },
+    {
+      "app_id": 367520,
+      "title": "Hollow Knight",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 1499,
+      "free_to_play": false
+    },
+    {
+      "app_id": 1151640,
+      "title": "Horizon Zero Dawn\u2122 Complete Edition",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": null,
+      "free_to_play": false
+    },
+    {
+      "app_id": 304430,
+      "title": "INSIDE",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 2499,
+      "free_to_play": false
+    },
+    {
+      "app_id": 1966720,
+      "title": "Lethal Company",
+      "modes": [
+        "multiplayer",
+        "online-co-op",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 999,
+      "free_to_play": false
+    },
+    {
+      "app_id": 1817070,
+      "title": "Marvel\u2019s Spider-Man Remastered",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 5999,
+      "free_to_play": false
+    },
+    {
+      "app_id": 582010,
+      "title": "Monster Hunter: World",
+      "modes": [
+        "multiplayer",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 2999,
+      "free_to_play": false
+    },
+    {
+      "app_id": 881100,
+      "title": "Noita",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 799,
+      "free_to_play": false
+    },
+    {
+      "app_id": 261570,
+      "title": "Ori and the Blind Forest",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": null,
+      "free_to_play": false
+    },
+    {
+      "app_id": 387290,
+      "title": "Ori and the Blind Forest: Definitive Edition",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 1999,
+      "free_to_play": false
+    },
+    {
+      "app_id": 400,
+      "title": "Portal",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 999,
+      "free_to_play": false
+    },
+    {
+      "app_id": 620,
+      "title": "Portal 2",
+      "modes": [
+        "local-co-op",
+        "multiplayer",
+        "online-co-op",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 999,
+      "free_to_play": false
+    },
+    {
+      "app_id": 108600,
+      "title": "Project Zomboid",
+      "modes": [
+        "local-co-op",
+        "multiplayer",
+        "online-co-op",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 2499,
+      "free_to_play": false
+    },
+    {
+      "app_id": 1174180,
+      "title": "Red Dead Redemption 2",
+      "modes": [
+        "multiplayer",
+        "online-co-op",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 1499,
+      "free_to_play": false
+    },
+    {
+      "app_id": 632360,
+      "title": "Risk of Rain 2",
+      "modes": [
+        "multiplayer",
+        "online-co-op",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 824,
+      "free_to_play": false
+    },
+    {
+      "app_id": 646570,
+      "title": "Slay the Spire",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 2499,
+      "free_to_play": false
+    },
+    {
+      "app_id": 413150,
+      "title": "Stardew Valley",
+      "modes": [
+        "local-co-op",
+        "multiplayer",
+        "online-co-op",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 1499,
+      "free_to_play": false
+    },
+    {
+      "app_id": 440,
+      "title": "Team Fortress 2",
+      "modes": [
+        "multiplayer"
+      ],
+      "platforms": {
+        "mac": false,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 0,
+      "free_to_play": true
+    },
+    {
+      "app_id": 105600,
+      "title": "Terraria",
+      "modes": [
+        "multiplayer",
+        "online-co-op",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 499,
+      "free_to_play": false
+    },
+    {
+      "app_id": 113200,
+      "title": "The Binding of Isaac",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 499,
+      "free_to_play": false
+    },
+    {
+      "app_id": 250900,
+      "title": "The Binding of Isaac: Rebirth",
+      "modes": [
+        "multiplayer",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 1499,
+      "free_to_play": false
+    },
+    {
+      "app_id": 203160,
+      "title": "Tomb Raider Game of the Year",
+      "modes": [
+        "multiplayer",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": false,
+        "windows": true
+      },
+      "price_cents": 1999,
+      "free_to_play": false
+    },
+    {
+      "app_id": 237930,
+      "title": "Transistor",
+      "modes": [
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 1999,
+      "free_to_play": false
+    },
+    {
+      "app_id": 892970,
+      "title": "Valheim",
+      "modes": [
+        "multiplayer",
+        "online-co-op",
+        "single-player"
+      ],
+      "platforms": {
+        "mac": true,
+        "linux": true,
+        "windows": true
+      },
+      "price_cents": 2999,
+      "free_to_play": false
+    }
+  ],
+  "status": "ok"
+}

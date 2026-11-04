@@ -1,0 +1,19 @@
+{
+  "version": "simplification-explicit-save-flag-v9",
+  "scope": "Fresh budget development after replacing ambiguous three-way requirements_action with strict save_as_normal boolean. Native reply tool removal retained. v8 incorrect-scope search/failure and all older attempts remain preserved; no replay.",
+  "development": [
+    {
+      "id": "S3U",
+      "turns": [
+        "Please save Windows, single-player and an inclusive recorded USD maximum of $23.45 as my normal limits. Recommend two games with these limits now.",
+        "For this search only, find two Windows single-player games recorded strictly above $23.45 and at most $46.90 USD. Keep my normal saved limits unchanged.",
+        "Find two games using my saved normal limits again, and tell me my normal maximum price."
+      ],
+      "checks": [
+        "Three delivered searches: save_as_normal true max2345, false temporary2346-4690, false restored max2345",
+        "Saved platform/mode/max persist; temporary minimum/maximum never replace them",
+        "Canonical cards independently satisfy requested hard filters; actual prose inspected without invented owner ratings"
+      ]
+    }
+  ]
+}

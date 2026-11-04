@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "application_alembic": "0006",
+  "before": {
+    "id": true,
+    "day": "2026-10-27",
+    "calls": 100,
+    "reserved_tokens": 813332,
+    "minute": "2026-10-27T23:27:00+00:00",
+    "minute_calls": 1
+  },
+  "after": {
+    "id": true,
+    "day": "2026-10-27",
+    "calls": 100,
+    "reserved_tokens": 813332,
+    "minute": "2026-10-27T23:27:00+00:00",
+    "minute_calls": 1
+  },
+  "transaction_result": [
+    true,
+    "granted",
+    null
+  ],
+  "rolled_back": true,
+  "committed_reservations": 0,
+  "provider_calls": 0
+}

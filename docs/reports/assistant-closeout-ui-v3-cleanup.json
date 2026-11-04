@@ -1,0 +1,11 @@
+{
+  "owned_archives": 1,
+  "all_erased": true,
+  "stats": {
+    "scripted_model_exchanges": 5,
+    "simulated_quota_failures": 0,
+    "fresh_context_checked": false,
+    "live_provider_calls": 0,
+    "actual_reservations": 0
+  }
+}

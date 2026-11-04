@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-02T14:01:57.522781+00:00",
+  "canonical_card_comparisons": {
+    "37": 9,
+    "38": 14,
+    "39": 8
+  },
+  "hard_predicate_violations": 0,
+  "canonical_mismatches": 0,
+  "archive_statuses": {
+    "37": {
+      "D37R": 404,
+      "D37B": 404,
+      "D37P": 404
+    },
+    "38": {
+      "D38B": 404,
+      "D38P": 404
+    },
+    "39": {
+      "D39B": 404
+    }
+  },
+  "v37_budget": "FAIL_restored_search_omitted",
+  "v38_budget": "FAIL_requested_saved_limit_wording_omitted",
+  "v38_followup": "FAIL_correct_native_answer_replaced",
+  "v39_budget": "INCOMPLETE_third_turn_provider429",
+  "human_scores": null,
+  "inference_calls_for_this_check": 0
+}
