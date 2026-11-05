@@ -432,6 +432,17 @@
             "title": "Region",
             "type": "string"
           },
+          "semantic_catalog_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Semantic Catalog Version"
+          },
           "semantic_query_matching": {
             "default": false,
             "title": "Semantic Query Matching",

@@ -45,6 +45,7 @@ class CatalogStatus(BaseModel):
     currency: Literal["USD"] = "USD"
     source_observed_at: datetime | None = None
     semantic_query_matching: bool = False
+    semantic_catalog_version: str | None = None
     llm_enabled: bool = False
 
 
@@ -192,6 +193,7 @@ def create_app(settings: Settings | None = None, catalog_probe: Callable[[], Cat
         return CatalogStatus(state="ready" if catalog.version else "uninitialized", catalog_version=catalog.version,
                               game_count=catalog.game_count, source_observed_at=catalog.observed_at,
                               semantic_query_matching=query_encoder is not None and query_encoder.catalog_version == catalog.version,
+                              semantic_catalog_version=query_encoder.catalog_version if query_encoder is not None else None,
                               llm_enabled=assistant is not None)
 
     @app.get("/api/v1/games", response_model=GamePage, responses={503: {"model": ApiError}})

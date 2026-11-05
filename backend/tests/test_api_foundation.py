@@ -6,6 +6,7 @@ from pydantic import SecretStr
 from game_discovery.api.main import create_app
 from game_discovery.core.settings import Settings
 from game_discovery.db.readiness import CatalogReadiness
+from game_discovery.retrieval.query import BoundedQueryEncoder
 
 
 class ApiFoundationTests(unittest.TestCase):
@@ -38,9 +39,15 @@ class ApiFoundationTests(unittest.TestCase):
             self.assertNotIn("secret-value", repr(settings))
 
     def test_ready_catalog_does_not_require_an_llm(self):
-        with self.client(lambda: CatalogReadiness(version="fixture-v1", game_count=3)) as client:
-            self.assertEqual(client.get("/health/ready").status_code, 200)
-            self.assertFalse(client.get("/api/v1/catalog/status").json()["llm_enabled"])
+        for version in (None, 'expanded-v2', 'fixture-v1'):
+            encoder = BoundedQueryEncoder(lambda _: [1.0] + [0.0] * 383, version) if version else None
+            with TestClient(create_app(Settings(), catalog_probe=lambda: CatalogReadiness(
+                    version='fixture-v1', game_count=3), query_encoder=encoder)) as client:
+                self.assertEqual(client.get('/health/ready').status_code, 200)
+                status = client.get('/api/v1/catalog/status').json()
+                self.assertFalse(status['llm_enabled'])
+                self.assertEqual(status['semantic_catalog_version'], version)
+                self.assertEqual(status['semantic_query_matching'], version == 'fixture-v1')
 
     def test_invalid_dsn_does_not_take_down_liveness_or_expose_input(self):
         for value in ("not-a-url-secret", "sqlite:///not-a-runtime-database"):

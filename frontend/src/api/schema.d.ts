@@ -387,6 +387,8 @@ export interface components {
              * @constant
              */
             region: "US";
+            /** Semantic Catalog Version */
+            semantic_catalog_version?: string | null;
             /**
              * Semantic Query Matching
              * @default false
