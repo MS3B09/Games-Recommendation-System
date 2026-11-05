@@ -1,0 +1,10 @@
+Query encoder: sentence-transformers/all-MiniLM-L6-v2
+Source: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
+Revision: 1110a243fdf4706b3f48f1d95db1a4f5529b4d41
+License: Apache License, Version 2.0 (Apache-2.0).
+License text: LICENSE.txt (https://www.apache.org/licenses/LICENSE-2.0.txt).
+
+The tokenizer and float ONNX weights are downloaded without modification during
+the Python package build, verified against artifact.json, and excluded from Git.
+The package uses these files only for bounded CPU query encoding. Game vectors,
+raw Steam snapshots, private chats and credentials are not packaged here.

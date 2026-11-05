@@ -1,5 +1,7 @@
 # Run the M0 jobs
 
+> **Historical operations — 2026-11-04:** new work follows the [completion plan](project-completion-plan.md): capacity-led catalog expansion, its dashboard and publication/deployment. The old synthetic sizing projections, Render references and phase-approval statuses below are historical. Reuse relevant audit concepts, but measure today's real schema/catalog/archive before proposing a target; do not rerun scratch writes or old milestone workflows automatically.
+
 **Historical M0 workflow reference. M0–M2 are complete.** The original commands/results below describe feasibility work, not current blockers. Use [M2 operations](operations-m2.md) for the active pipeline and [replay results](reports/m2-clean-replay.md) for the passed clean-database gate. M3 is not authorized.
 
 Run these PowerShell commands from the repository root. The legacy application has its own dependencies; the new job environment does not require them.

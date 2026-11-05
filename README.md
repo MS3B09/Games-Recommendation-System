@@ -1,5 +1,21 @@
 # 🎮 Steam Games Analytics & Recommendation System
 
+## Current project status — 2026-11-05
+
+The local application includes guest discovery, saved games, feedback and an independent conversational assistant. **The three-task completion plan now stands at:**
+
+1. **Catalog expansion complete at verified staged-handoff scope:** 2,000 eligible games, pinned embeddings and dashboard metadata imported as one inactive generation. Correctness, resources and isolated rollback verified. Public activation is coordinated with Task 3 to preserve the current serving artifact/version. [Evidence and refresh commands](docs/reports/catalog-expansion.md).
+2. **Dashboard implemented locally, ready for owner review:** `/dashboard` has the original four metrics, eight charts and description word cloud in Current, with version-bound analytics and clearer navigation. [Preview, checks and results](docs/reports/dashboard-implementation.md).
+3. **Publication/deployment authorized and in progress:** publish the latest source to GitHub and deploy to Netlify and FastAPI Cloud, verify the hosted experience and confirm project completion. The owner requires the 2,000-game catalog as the shared default for every app service. [Current release work](docs/reports/project-release-2026-11-05.md).
+
+**[Detailed implementation plan](docs/project-completion-plan.md) · [Documentation index](docs/README.md) · [Progress](docs/progress.md) · [Local startup](docs/operations-assistant.md) · [Release runbook](docs/deployment.md)**
+
+The public release remains M2 with 40 active games; the expanded 2,000-game generation and analytics are **staged, not yet live**. Review the local app at **http://127.0.0.1:4173/** or **/dashboard**: discovery, chat catalog tools and analytics now share the actual 2,000-game preview; chat uses the real archive and configured metered AI. Cloud authentication/configuration and the coordinated hosted release remain pending, not owner permission to start. Existing AI evaluation evidence and limitations remain available, but further evaluation campaigns are not part of the remaining roadmap. Free-only operation and honest, source-supported claims remain requirements.
+
+## Historical implementation status
+
+The dated checkpoints below retain earlier engineering context. Their next-step/resume/acceptance instructions are superseded by the completion plan above; they are not today's task list.
+
 > **Current local assistant closeout — 2026-10-30:** [Measured results and remaining gates](docs/reports/assistant-closeout-2026-10-30.md) · [Current native architecture](docs/architecture-assistant.md) · [Finite protocol](docs/assistant-closeout-protocol.md). LLM-first conversation with bounded catalog/history tools and complete conversation-scoped server archives; independent New Chat and main discovery.261backend/74frontend tests and current real catalog/archive/UI integration pass.40-request RRF/cosine retrieval comparison has zero hard-filter violations; broader owner relevance/live naturalness/grounding remain pending, and warm retrieval p952.364s misses1s target. Original owner judgments require improvements, not final acceptance. All historical checkpoint/resume commands below are superseded by the new source-locked v22 development journal. No publication/portfolio-ready claim; hosted M2 unchanged.
 
 > **Latest local revision — 2026-10-28:** [Friendly errors and recovery actions](docs/reports/friendly-errors-2026-10-28.md) implemented across chat/catalog/storage. Precise quota/provider/timeout reasons, local reset times, cooldowns, edit/retry/confirmed-reset actions and hidden diagnostic IDs;201backend/72frontend tests,10isolated DB checks and223scripted-provider catalog checks pass. Additive Alembic0006 preserves counters/limits; no new live inference. **Frozen v6 source/checkpoints are archived; current serving source requires a separately versioned evaluation continuation, not the older resume commands below.** R4/human/latency acceptance remains incomplete. Existing hosted M2 is unchanged. [Local operation](docs/operations-assistant.md).

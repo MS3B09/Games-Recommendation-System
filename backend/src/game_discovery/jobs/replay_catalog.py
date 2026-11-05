@@ -189,7 +189,7 @@ def run_pass(root: Path, port: int, number: int, fixture: Path, identities: Path
         subprocess.run([sys.executable, "-m", "game_discovery.db.migrate", "upgrade", "--env-file", str(env_file)],
                        env=child_env, check=True, timeout=90)
     with psycopg.connect(url(port)) as connection:
-        assert connection.execute("select version_num from discovery_migrations.alembic_version").fetchone()[0] == "0002"
+        assert connection.execute("select version_num from discovery_migrations.alembic_version").fetchone()[0] == "0009"
         assert connection.execute("select extversion from pg_extension where extname='vector'").fetchone()[0] == "0.8.2"
         connection.execute("alter role game_discovery_runtime password 'ci-runtime-only'")
     settings = Settings(database_url=SecretStr(url(port, runtime=True)))

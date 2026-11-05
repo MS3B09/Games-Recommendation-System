@@ -1,5 +1,7 @@
 # Independent assistant — architecture and evaluation boundary
 
+> **Current roadmap — 2026-11-04:** [catalog expansion → catalog-connected dashboard → publication/deployment](project-completion-plan.md). This document describes existing assistant architecture and dated revisions, not additional remaining implementation/evaluation tasks. Preserve independent chat and its bounded tools/archive; account for expanded-catalog title/retrieval limits and hosted model artifacts within the three tasks. Historical failures and unmeasured quality remain limitations, never invented passes.
+
 ## Current — simplified conversation engine, November 3
 
 The owner approved replacing the patch/review cycle with the [simpler implementation and finite verification plan](reports/assistant-simplification-2026-11-03.md). One `DialogueAnswer` contract is parsed and validated before atomic persistence. Plain conversation is wrapped locally without a formatting call or guessed memory edits. Catalog replies have no automatic critique, rewrite or validation-repair call; invalid answers fail without saving changes. The ceiling remains three model calls/two information rounds/six tool calls, with no HTTP retries.

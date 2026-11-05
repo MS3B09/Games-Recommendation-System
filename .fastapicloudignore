@@ -30,3 +30,7 @@ data/
 **/.pytest_cache/
 **/.fastapicloud/
 backend/tests/
+backend/build/
+backend/dist/
+backend/src/game_discovery/assets/model.onnx
+backend/src/game_discovery/assets/tokenizer.json

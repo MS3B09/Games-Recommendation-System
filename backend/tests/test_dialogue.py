@@ -967,6 +967,16 @@ class DialogueTests(unittest.TestCase):
 
 
 class DialogueApiTests(unittest.TestCase):
+    def test_missing_archive_reports_configuration_not_a_new_chat_loop(self):
+        from game_discovery.api.main import create_app
+        key = {'conversation_id': str(uuid4()), 'token': 'a' * 43}
+        with TestClient(create_app(Settings())) as client:
+            for path, body in [('conversations', {'messages': []}), ('history', key), ('forget', key)]:
+                response = client.post('/api/v2/assistant/' + path, json=body)
+                self.assertEqual(response.status_code, 503)
+                self.assertEqual(response.json()['code'], 'chat_service_configuration')
+                self.assertNotEqual(response.json()['recovery'], 'new_chat')
+
     def test_capabilities_idempotency_history_and_erasure_across_new_app_instances(self):
         from game_discovery.api.main import create_app
         archive, model = MemoryArchive(), MagicMock()

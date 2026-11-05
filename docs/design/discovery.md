@@ -1,5 +1,7 @@
 # M2 discovery extension
 
+> **Historical design — 2026-11-04:** preserve the implemented Current discovery surface while following the [completion plan](../project-completion-plan.md): catalog expansion, shared-catalog dashboard, publication/deployment. Use [DESIGN.md](../../DESIGN.md) for the active visual authority; the earlier M2 layout and milestone boundaries below are not the new dashboard specification.
+
 > **Historical M2 engineering/presentation record — superseded visual guidance (2026-10-18).** The exact existing Current page is now the sole official design: [DESIGN.md](../../DESIGN.md), [selected source](../../frontend/CURRENT_ORIGINAL.md). The integrated UI files and old frontend smoke scripts described below have been removed locally; this document preserves dated M2 behavior, provenance and verification evidence, not an active alternative or current command guide. Hosted M2 remains owner-confirmed and unchanged. The official local frontend is frozen/no-API/no-persistence; live reconnection and M3 guest UI are pending. M3 was subsequently authorized and is incomplete; earlier authorization/status statements below are historical.
 
 ## Overview

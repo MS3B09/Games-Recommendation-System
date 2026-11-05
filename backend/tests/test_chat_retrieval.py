@@ -15,7 +15,7 @@ from game_discovery.catalog.repository import CatalogFailure, CatalogRepository
 from game_discovery.retrieval.chat import ChatRetriever, fuse
 from game_discovery.retrieval.contracts import CandidatePools, RetrievalOutcome, TitleLookup
 from game_discovery.retrieval.query import BoundedQueryEncoder
-from game_discovery.retrieval.titles import TITLE_CATALOG_LIMIT, CatalogTitle, match_title, normalize_title
+from game_discovery.retrieval.titles import TITLE_OPTION_LIMIT, CatalogTitle, match_title, normalize_title
 from test_catalog_m2 import fixture
 
 VECTOR = [1.0] + [0.0] * 383
@@ -94,21 +94,39 @@ class ChatRepositoryTests(unittest.TestCase):
     def test_title_lookup_has_no_embedding_join_or_recommendation_predicates(self):
         connection = MagicMock()
         target = game(title="An unembedded game")
-        connection.execute.side_effect = [[(10, target.title)], [(target.model_dump(mode="json"),)]]
+        connection.execute.side_effect = [[(10, target.title, 2, 1)], [(target.model_dump(mode="json"),)]]
         lookup = ConnectionRepository(connection).chat_title("unembedded")
         self.assertEqual(lookup.games, (target,))
         statements = " ".join(str(call.args[0]) for call in connection.execute.call_args_list)
         self.assertNotIn("embedding", statements)
         self.assertNotIn("game_prices", statements)
         self.assertNotIn("excluded", statements)
-        self.assertEqual(connection.execute.call_args_list[0].args[1]["limit"], TITLE_CATALOG_LIMIT + 1)
+        self.assertEqual(connection.execute.call_args_list[0].args[1]['limit'], TITLE_OPTION_LIMIT + 1)
+        self.assertIn('count(*) over(partition by priority)', statements)
 
-    def test_title_scan_overflow_fails_instead_of_claiming_absence(self):
+    def test_missing_identity_keys_fail_instead_of_claiming_absence(self):
         connection = MagicMock()
-        connection.execute.return_value = [(i + 1, f"Game {i}") for i in range(TITLE_CATALOG_LIMIT + 1)]
+        connection.execute.return_value = [(None, None, -1, 1)]
         result = ChatRetriever(ConnectionRepository(connection), None).lookup_title("missing")
         self.assertEqual(result.outcome.kind, "retrieval_unavailable")
         self.assertFalse(result.outcome.title_search_complete)
+
+    def test_complete_database_match_beyond_old_256_cutoff_and_bounded_ambiguity(self):
+        connection = MagicMock()
+        target = game(900, 'Beyond the old cutoff')
+        connection.execute.side_effect = [[(900, target.title, 0, 1)], [(target.model_dump(mode='json'),)]]
+        result = ConnectionRepository(connection).chat_title(target.title)
+        self.assertEqual(result.games, (target,))
+        statement, params = connection.execute.call_args_list[0].args
+        self.assertEqual(params['needle'], 'beyond the old cutoff')
+        self.assertNotIn('257', str(statement))
+        connection = MagicMock()
+        targets = [game(i, f'Adventure {i}') for i in range(1, 6)]
+        connection.execute.side_effect = [[(g.app_id, g.title, 2, 500) for g in targets],
+                                          [(g.model_dump(mode='json'),) for g in targets[:4]]]
+        result = ConnectionRepository(connection).chat_title('adventure')
+        self.assertEqual(result.match.total_matches, 500)
+        self.assertEqual(len(result.games), 4)
 
     def test_lexical_sql_requires_matching_rows_not_zero_rank_fillers(self):
         connection = MagicMock()

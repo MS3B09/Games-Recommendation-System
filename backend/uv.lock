@@ -502,10 +502,13 @@ dependencies = [
     { name = "alembic" },
     { name = "fastapi", extra = ["standard"] },
     { name = "langchain-core" },
+    { name = "numpy" },
+    { name = "onnxruntime" },
     { name = "psycopg", extra = ["binary"] },
     { name = "pydantic" },
     { name = "python-dotenv" },
     { name = "sqlalchemy" },
+    { name = "tokenizers" },
     { name = "uvicorn" },
 ]
 
@@ -545,7 +548,9 @@ requires-dist = [
     { name = "huggingface-hub", marker = "extra == 'benchmark'", specifier = "==2.2.0" },
     { name = "langchain-core", specifier = "==1.7.0" },
     { name = "mypy", marker = "extra == 'dev'", specifier = "==2.4.0" },
+    { name = "numpy", specifier = "==2.5.4" },
     { name = "numpy", marker = "extra == 'benchmark'", specifier = "==2.5.4" },
+    { name = "onnxruntime", specifier = "==1.31.0" },
     { name = "onnxruntime", marker = "extra == 'benchmark'", specifier = "==1.31.0" },
     { name = "psutil", marker = "extra == 'benchmark'", specifier = "==7.2.2" },
     { name = "psycopg", extras = ["binary"], specifier = "==3.3.6" },
@@ -557,6 +562,7 @@ requires-dist = [
     { name = "scrapling", extras = ["fetchers"], marker = "extra == 'collection'", specifier = "==0.4.15" },
     { name = "sentence-transformers", marker = "extra == 'offline'", specifier = "==5.7.0" },
     { name = "sqlalchemy", specifier = "==2.1.4" },
+    { name = "tokenizers", specifier = "==0.23.3" },
     { name = "tokenizers", marker = "extra == 'benchmark'", specifier = "==0.23.3" },
     { name = "uvicorn", specifier = "==0.54.0" },
 ]

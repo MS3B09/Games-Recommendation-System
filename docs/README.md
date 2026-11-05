@@ -1,0 +1,36 @@
+# Documentation index
+
+## Current direction — 2026-11-04
+
+The only remaining tasks are **catalog expansion → catalog-connected dashboard → GitHub publication and Netlify/FastAPI Cloud deployment**. Start with the [project completion plan](project-completion-plan.md), which includes implementation locations, dashboard parity, checks, release order and completion criteria.
+
+The owner selected a capacity audit before deciding catalog size, popular and lesser-known games across varied categories, and one shared catalog for recommendations and dashboard analytics. After the [Task 1A audit](reports/catalog-capacity-audit.md), the owner approved **2,000 total eligible games**, requested **Linux(SteamOS)** with truthful Linux-only source scope, and confirmed free plans. **Task 1 is complete as a verified staged handoff**; the public catalog/artifact switch is coordinated with Task 3.
+
+## Current references
+
+| Document | Purpose |
+| --- | --- |
+| [Completion plan](project-completion-plan.md) | Authoritative remaining scope and execution details |
+| [Catalog capacity audit](reports/catalog-capacity-audit.md) | Original 40-game inventory, source/pilot measurements and sizing basis |
+| [Catalog expansion](reports/catalog-expansion.md) | Completed 2,000-game artifacts/staging, measurements, verification, activation/rollback state and refresh commands |
+| [Dashboard implementation](reports/dashboard-implementation.md) | Implemented `/dashboard`, version-bound analytics, checks, scoped UI verdict, local 2,000-game review preview and release boundary |
+| [Project brief / agent instructions](../AGENTS.md) | Latest owner direction and retained constraints |
+| [Technical plan](../IMPLEMENTATION_PLAN.md) | Current task map plus historical architecture/milestones |
+| [Product](../PRODUCT.md) | Product scope and completion definition |
+| [Progress](progress.md) | Current task status and dated engineering history |
+| [Design system](../DESIGN.md) | Existing Current identity; dashboard extends it |
+| [Setup](setup.md) / [assistant operations](operations-assistant.md) | Local setup and runtime; dated snapshots are not current process/quota receipts |
+| [Catalog operations](operations-m2.md) | Existing collect/normalize/embed/import/activate commands and their current limits |
+| [Deployment](deployment.md) | Final release runbook and historical host references |
+| [Frontend guide](../frontend/CURRENT_ORIGINAL.md) | Current source, routes and verification conventions |
+| [Architecture](architecture-assistant.md) / [walkthrough](walkthrough-assistant.md) | Implemented assistant architecture and product journey |
+
+## Historical material
+
+`reports/`, `decisions/`, older M0–M4 operations, assistant/RAG plans and closeout protocols, HTML design studies, and evaluation preparation/fixtures retain their dated evidence. Their old “next”, “mandatory”, “resume”, “M5 unauthorized”, fixed catalog targets and completion gates are superseded **as future work instructions** by the completion plan. Their measurements, failures, missing judgments and scoped approvals remain unchanged.
+
+In particular, preserve `conversational-rag-contracts.md`, frozen JSON/journals/hashes, owner worksheets and private C: checkpoints. They are not active instructions to resume evaluation. License/font notices, third-party documentation and skill instructions are not project roadmaps and retain their own purpose.
+
+## Next action
+
+Continue **owner-authorized Task 3**: publish/deploy the latest app and make the 2,000-game generation the shared default across discovery, chat and dashboard. Local4173 now connects all these services to the expanded catalog, with the real shared archive and metered AI. FastAPI Cloud access must be authenticated before configuring the coordinated release; public40 remains active until hosted compatibility/artifact readiness. [Current release handoff](reports/project-release-2026-11-05.md). Do not resume collection or old evaluation runs; final hosted acceptance is still required.

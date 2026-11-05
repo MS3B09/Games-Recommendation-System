@@ -1,7 +1,49 @@
 import { expect, test } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import { readFileSync } from 'node:fs';
 import { catalog, discovery, mockCatalog } from './fixtures';
 import { GUEST_KEY } from '../src/guest-store';
+
+test('default 125 percent display keeps routes, navigation and assistant inside the viewport', async ({ page }) => {
+  await mockCatalog(page);
+  const analytics = JSON.parse(readFileSync(new URL('./analytics-fixture.json', import.meta.url), 'utf8'));
+  await page.route('**/api/v1/analytics', route => route.fulfill({ json: analytics }));
+  for (const [width, height] of [[1905, 885], [1440, 1000], [1000, 1000], [768, 800], [390, 844], [320, 640]]) {
+    await page.setViewportSize({ width: width!, height: height! });
+    for (const route of ['/', '/current-original.html', '/saved', '/dashboard']) {
+      await page.goto(route);
+      expect(await page.evaluate(() => getComputedStyle(document.documentElement).zoom)).toBe('1.25');
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+      if (route === '/' && [1905, 390, 320].includes(width!) && process.env.SCALE_CAPTURE_DIR) {
+        await page.evaluate(() => document.fonts.ready);
+        await page.screenshot({ path: `${process.env.SCALE_CAPTURE_DIR}/discovery-${width}.png` });
+      }
+      if (route === '/dashboard') {
+        await expect(page.locator('.dashboard-chart')).toHaveCount(8);
+        if ([1905, 390, 320].includes(width!) && process.env.SCALE_CAPTURE_DIR) {
+          await page.screenshot({ path: `${process.env.SCALE_CAPTURE_DIR}/dashboard-${width}.png` });
+        }
+      }
+    }
+    await page.getByRole('button', { name: 'Ask the assistant', exact: true }).click();
+    const panel = await page.locator('.assistant-panel').boundingBox();
+    expect(panel!.x).toBeGreaterThanOrEqual(0);
+    expect(panel!.y).toBeGreaterThanOrEqual(0);
+    expect(panel!.x + panel!.width).toBeLessThanOrEqual(width!);
+    expect(panel!.y + panel!.height).toBeLessThanOrEqual(height!);
+    expect(await page.locator('.assistant-header h2').evaluate(element => element.scrollWidth <= element.clientWidth)).toBe(true);
+    expect(await page.locator('.assistant-composer textarea').evaluate((element: HTMLTextAreaElement) => {
+      const style = getComputedStyle(element);
+      const canvas = document.createElement('canvas').getContext('2d')!;
+      canvas.font = style.font;
+      return canvas.measureText(element.placeholder).width <= element.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+    })).toBe(true);
+    if ([1905, 390, 320].includes(width!) && process.env.SCALE_CAPTURE_DIR) {
+      await page.screenshot({ path: `${process.env.SCALE_CAPTURE_DIR}/assistant-${width}.png` });
+    }
+    await page.getByRole('button', { name: 'Close game assistant', exact: true }).click();
+  }
+});
 
 test('desktop feedback sits beside Steam and Save, and details retain only concise essentials', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });

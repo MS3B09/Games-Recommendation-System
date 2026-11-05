@@ -1,5 +1,7 @@
 # Project-local design skills
 
+> **Dashboard use — 2026-11-05:** owner authorized Task 2 and explicitly selected **Impeccable**. Its context, pinned Current direction, craft floor, bounded capture/review and documentation workflow were used for `/dashboard` and the four-item header navigation. [Results and scoped verdict](reports/dashboard-implementation.md). No skill/dependency reinstall or architecture replacement. Historical installation records below remain history; future UI work still confirms desired skills.
+
 Installed 2026-10-13 at the user's request. Scope: this repository only; no global OpenCode skill configuration was changed.
 
 Upstream licenses and attribution for the published skill copies are retained in `third_party/`. Vendored skill text remains unchanged, including upstream whitespace; application-code whitespace checks exclude those vendor directories.

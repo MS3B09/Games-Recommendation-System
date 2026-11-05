@@ -1,0 +1,1005 @@
+{
+  "schema_version": 2,
+  "games": 2000,
+  "requested": 2500,
+  "quarantine": [
+    {
+      "app_id": 33350,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 34330,
+      "reason": "missing_description"
+    },
+    {
+      "app_id": 431960,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 1422450,
+      "reason": "unreleased"
+    },
+    {
+      "app_id": 2676230,
+      "reason": "missing_description"
+    },
+    {
+      "app_id": 1905180,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 1366800,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 1281930,
+      "reason": "non_game_type:mod"
+    },
+    {
+      "app_id": 3301060,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3205720,
+      "reason": "non_game_type:demo"
+    },
+    {
+      "app_id": 3008670,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2918370,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2477290,
+      "reason": "non_game_type:mod"
+    },
+    {
+      "app_id": 645390,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3653040,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3353470,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3625270,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 2857120,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3152790,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 1707900,
+      "reason": "non_game_type:mod"
+    },
+    {
+      "app_id": 2968040,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2868390,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3313270,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3448670,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3349410,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3568390,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3308900,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3568410,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3210350,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3568430,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3568420,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3568440,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3568450,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3568370,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3371120,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3568400,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3152780,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3568380,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3289630,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3261720,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3204800,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3174120,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2800590,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 2536180,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2983600,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3145640,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 2963840,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3144890,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3251420,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2879370,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2604420,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3410840,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 1667250,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 2957520,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3329480,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3213970,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2805520,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3243840,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3451100,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3042220,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3456600,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3481460,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2574900,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 1007090,
+      "reason": "non_game_type:mod"
+    },
+    {
+      "app_id": 3366290,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3368750,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3336860,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3153370,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3310650,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3276060,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3202690,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3499380,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3483400,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3130750,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3417840,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3145880,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3619310,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3416090,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3116990,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3130740,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3698790,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3474900,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3368630,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3651820,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2909790,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3245770,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3423690,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3080080,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2792170,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2904660,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3308140,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3307210,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3115390,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3512600,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2524070,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3515260,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3613770,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3333870,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3515270,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3289620,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3515210,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3419300,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3046550,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3003300,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3192760,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3326620,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3245120,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 611150,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3515230,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3468240,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3515250,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3499520,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3515300,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3417270,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3260810,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2991170,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3368600,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2957460,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3158590,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3354860,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3622300,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3204810,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2378088,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3260820,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3282470,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3349320,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3283450,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3349420,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2524080,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3349430,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3286290,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 1846720,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3258330,
+      "reason": "non_game_type:music"
+    },
+    {
+      "app_id": 2668910,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3303020,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3314480,
+      "reason": "non_game_type:music"
+    },
+    {
+      "app_id": 3279470,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 1862860,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3323360,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3698350,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3118100,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3246790,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3543180,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3174360,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2601380,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3533970,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2671080,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3422870,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3004660,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3316520,
+      "reason": "non_game_type:music"
+    },
+    {
+      "app_id": 2948140,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3279160,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3226440,
+      "reason": "non_game_type:music"
+    },
+    {
+      "app_id": 3276070,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 2427741,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3225010,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3419320,
+      "reason": "non_game_type:music"
+    },
+    {
+      "app_id": 3535520,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2427742,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3202650,
+      "reason": "non_game_type:music"
+    },
+    {
+      "app_id": 3205310,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3124580,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3418380,
+      "reason": "non_game_type:mod"
+    },
+    {
+      "app_id": 3203240,
+      "reason": "non_game_type:music"
+    },
+    {
+      "app_id": 3463200,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3337800,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 2792180,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3486700,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3367530,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 2606110,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 1142740,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3458170,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2820060,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3227830,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3305800,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3302470,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3332620,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3283440,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3526660,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2688870,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 1948180,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 1649260,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3323350,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3255980,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3156380,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2863080,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2730870,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3417000,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2543620,
+      "reason": "non_game_type:music"
+    },
+    {
+      "app_id": 3152800,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3701380,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3323880,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3515280,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3317190,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 2606120,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3333880,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3548900,
+      "reason": "non_game_type:music"
+    },
+    {
+      "app_id": 3391010,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3336600,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2361710,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3299720,
+      "reason": "non_game_type:music"
+    },
+    {
+      "app_id": 3282900,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3202450,
+      "reason": "non_game_type:demo"
+    },
+    {
+      "app_id": 3502710,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3415590,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3366300,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3375020,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3117510,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3443980,
+      "reason": "non_game_type:music"
+    },
+    {
+      "app_id": 3003800,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3230340,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2978620,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2909770,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3319940,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3570850,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3274430,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3417250,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3281900,
+      "reason": "non_game_type:mod"
+    },
+    {
+      "app_id": 3336890,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3181500,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3245230,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3117110,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3259120,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3288070,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3325140,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3244810,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3199060,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3398280,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3405660,
+      "reason": "collection_failed"
+    },
+    {
+      "app_id": 3282270,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3467170,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 2971270,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3093340,
+      "reason": "non_game_type:dlc"
+    },
+    {
+      "app_id": 3060770,
+      "reason": "software_genre_requires_verification"
+    },
+    {
+      "app_id": 3411130,
+      "reason": "non_game_type:dlc"
+    }
+  ],
+  "games_sha256": "8fd37a0d4d700000cd97c098db18ca7cc0465fd148fea35474913bf1e053140a",
+  "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+  "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "dimensions": 384,
+  "semantic_text_version": "title-terms-description-v1",
+  "metadata_format": "dashboard-fields-v1",
+  "metadata_sha256": "ad2edf1351a4247de8f587ac0985ed21c8465e4165765d2a15b927622690707e",
+  "selection": {
+    "eligible_target": 2000,
+    "required_ids": [
+      400,
+      440,
+      570,
+      620,
+      22380,
+      105600,
+      107100,
+      108600,
+      113200,
+      203160,
+      237930,
+      239140,
+      250900,
+      261570,
+      268910,
+      291550,
+      304430,
+      311690,
+      367520,
+      387290,
+      413150,
+      435150,
+      504230,
+      548430,
+      582010,
+      588650,
+      632360,
+      646570,
+      692850,
+      881100,
+      892970,
+      960090,
+      1086940,
+      1091500,
+      1145360,
+      1151640,
+      1174180,
+      1245620,
+      1817070,
+      1966720
+    ],
+    "candidate_ids_sha256": "e64770415b5126d19796b1523b6f86fe8aefab115afc4ee48e800d72a89aa5bb"
+  },
+  "embeddings_sha256": "52955e42d1cc9970254a520f496f4b60b41a47f5bb9ae57f2798748495f51d63",
+  "encoder": "float-onnx-cpu-parity-verified",
+  "tokenizer_sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+  "model_sha256": "6fd5d72fe4589f189f8ebc006442dbb529bb7ce38f8082112682524616046452",
+  "version": "m2-cd9790b88f91370e69dae895"
+}

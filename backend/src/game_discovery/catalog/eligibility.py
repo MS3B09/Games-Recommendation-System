@@ -1,5 +1,7 @@
 """Conservative source classification; absent facts never imply eligibility."""
 
+SOFTWARE_GENRE_IDS = frozenset(str(value) for value in range(50, 61))
+
 
 def classify_appdetails(data: dict) -> dict:
     app_type = data.get("type")
@@ -28,4 +30,7 @@ def classify_appdetails(data: dict) -> dict:
         return {**result, "status": "excluded", "reason": "adult_only_sexual_content"}
     if any(value not in {1, 2, 3, 4, 5} for value in ids):
         return {**result, "reason": "unknown_content_descriptor"}
+    # Steam labels some software as type=game; mixed software/game genres need review.
+    if isinstance(genres, list) and any(isinstance(term, dict) and str(term.get('id')) in SOFTWARE_GENRE_IDS for term in genres):
+        return {**result, 'reason': 'software_genre_requires_verification'}
     return {**result, "status": "eligible", "reason": "released_game_with_content_classification"}

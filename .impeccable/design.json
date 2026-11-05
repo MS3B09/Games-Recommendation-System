@@ -3,6 +3,15 @@
   "generatedAt": "2026-10-19T00:32:59.290Z",
   "title": "Design System: Game Discovery — Current",
   "extensions": {
+    "displayScale": {
+      "cssCustomProperty": "--study-scale",
+      "value": 1.25,
+      "cssProperty": "zoom",
+      "scope": "All application routes and the shared assistant",
+      "browserZoom": "Independent; use browser100% for the application's default125% rendering",
+      "source": "frontend/src/current-original.css",
+      "documentedAt": "2026-11-05"
+    },
     "colorMeta": {
       "ground": { "role": "neutral", "displayName": "Near-black ground", "tonalRamp": ["oklch(15% .03 265)", "oklch(26% .03 265)", "oklch(38% .03 265)", "oklch(49% .03 265)", "oklch(61% .03 265)", "oklch(72% .03 265)", "oklch(84% .03 265)", "oklch(95% .03 265)"] },
       "surface": { "role": "neutral", "displayName": "Panel navy", "tonalRamp": ["oklch(15% .035 265)", "oklch(26% .035 265)", "oklch(38% .035 265)", "oklch(49% .035 265)", "oklch(61% .035 265)", "oklch(72% .035 265)", "oklch(84% .035 265)", "oklch(95% .035 265)"] },

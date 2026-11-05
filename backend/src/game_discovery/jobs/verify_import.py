@@ -10,7 +10,7 @@ from sqlalchemy.engine import make_url
 
 from game_discovery.catalog.contracts import digest
 from game_discovery.core.database_url import normalize_db_url
-from game_discovery.jobs.catalog import publish, validated_artifact, write_json
+from game_discovery.jobs.catalog import load_metadata, publish, validated_artifact, write_json
 
 
 def verify_import(run_dir: Path, env_file: Path, output: Path) -> dict:
@@ -21,6 +21,12 @@ def verify_import(run_dir: Path, env_file: Path, output: Path) -> dict:
     manifest = {key: value for key, value in artifact.items()
                 if key not in {"version", "embeddings_sha256", "encoder", "tokenizer_sha256", "model_sha256"}}
     manifest.update(games=1, games_sha256=digest(documents))
+    metadata = load_metadata(run_dir, artifact, games)
+    subset_metadata = [metadata[0].model_dump(mode='json')] if metadata else []
+    if metadata:
+        manifest['metadata_sha256'] = digest(subset_metadata)
+        manifest['selection'] = {'eligible_target': 1, 'required_ids': [games[0].app_id],
+                                 'candidate_ids_sha256': digest([games[0].app_id])}
     unsigned = {**artifact, **manifest, "embeddings_sha256": digest(vectors)}
     unsigned.pop("version")
     subset = {**unsigned, "version": "m2-" + digest(unsigned)[:24]}
@@ -39,6 +45,8 @@ def verify_import(run_dir: Path, env_file: Path, output: Path) -> dict:
             for filename, value in (("games.json", documents), ("normalized.json", manifest),
                                     ("embeddings.json", vectors), ("artifact.json", subset)):
                 write_json(directory / filename, value)
+            if metadata:
+                write_json(directory / 'metadata.json', subset_metadata)
             original = Connection.execute
             interrupted = []
 

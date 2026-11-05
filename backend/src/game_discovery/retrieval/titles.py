@@ -7,6 +7,7 @@ from typing import Literal, Sequence
 
 TITLE_CATALOG_LIMIT = 256
 TITLE_OPTION_LIMIT = 4
+TITLE_SUGGESTION_POOL_LIMIT = 64
 
 
 @dataclass(frozen=True)
@@ -89,11 +90,15 @@ def match_title(query: str, titles: Sequence[CatalogTitle], reference_id: int | 
     if matches:
         return TitleMatch("found" if len(matches) == 1 else "ambiguous",
                           tuple(matches[:TITLE_OPTION_LIMIT]), total_matches=len(matches))
+    return TitleMatch('not_in_catalog', suggestions=title_suggestions(query, ordered) if reference_id is None else ())
+
+
+def title_suggestions(query: str, titles: Sequence[CatalogTitle]) -> tuple[CatalogTitle, ...]:
+    compact = normalize_title(query).replace(' ', '')
     suggestions = []
-    if reference_id is None:
-        for item in ordered:
-            score = SequenceMatcher(None, compact, normalize_title(item.title).replace(" ", "")).ratio()
-            if score >= 0.72:
-                suggestions.append((score, item))
+    for item in titles:
+        score = SequenceMatcher(None, compact, normalize_title(item.title).replace(' ', '')).ratio()
+        if score >= 0.72:
+            suggestions.append((score, item))
     suggestions.sort(key=lambda pair: (-pair[0], pair[1].app_id))
-    return TitleMatch("not_in_catalog", suggestions=tuple(item for _, item in suggestions[:TITLE_OPTION_LIMIT]))
+    return tuple(item for _, item in suggestions[:TITLE_OPTION_LIMIT])

@@ -30,8 +30,11 @@ class Settings(BaseModel):
         explicit_origins = tuple(value.strip() for value in origins.split(",") if value.strip())
         if "*" in explicit_origins:
             raise ValueError("Explicit frontend origins are required")
-        encoder = {key: os.environ.get(key.upper(), file_values.get(key.upper()) or "")
-                   for key in ("query_tokenizer_path", "query_model_path", "query_artifact_path")}
+        assets = Path(__file__).resolve().parents[1] / 'assets'
+        encoder = {key: os.environ.get(key.upper(), file_values.get(key.upper()) or str(assets / filename))
+                   for key, filename in (("query_tokenizer_path", 'tokenizer.json'),
+                                         ("query_model_path", 'model.onnx'),
+                                         ("query_artifact_path", 'artifact.json'))}
         values: dict[str, object] = {"database_url": url, "allowed_origins": explicit_origins, **encoder}
         for name in ("groq_api_key", "groq_model", "ai_enabled", "ai_daily_calls", "ai_daily_tokens"):
             value = os.environ.get(name.upper(), file_values.get(name.upper()))

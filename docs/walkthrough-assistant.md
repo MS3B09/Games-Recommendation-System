@@ -1,5 +1,17 @@
 # Local product walkthrough and honest demo scope
 
+## Final walkthrough plan — 2026-11-04
+
+The [completion plan](project-completion-plan.md) adds the expanded catalog and `/dashboard`, then publishes the latest application. These additions are planned, not live today. The final walkthrough should demonstrate:
+
+1. Find a favorite in the expanded catalog, apply My limits and request recommendations.
+2. Save a game and demonstrate persistent saved games and feedback.
+3. Open Dashboard: four metrics, eight original analytics charts and description word cloud, all labeled with the same active catalog version/freshness.
+4. Use the existing independent assistant and show clear availability/limit handling.
+5. Follow the published GitHub and Netlify links; verify direct dashboard/saved reloads and record the deployed API revision.
+
+Use actual released counts/results at completion. Dated demos below remain evidence with their stated limitations; old evaluation continuation gates are not extra tasks. Core discovery and dashboard remain useful when AI is unavailable.
+
 ## Current v28 demo boundary — 2026-10-31
 
 [Latest evidence/continuation](reports/assistant-closeout-resume-2026-10-31-v28.md). Main catalog discovery, canonical details/Save and current actual UI/archive/recovery integration are inspectable without provider inference. Current v28has0live turns: use retained reports/captures for engineering evidence, not a claim of completed conversational quality. A restored-budget search was omitted in earlier v27; the current offline correction still needs fresh live development before held-out. No failed example should be replayed as a demo pass. Live evaluation pauses at a conservative provider-token planning guard despite48application calls remaining. No new configuration/key is needed once applicable headroom is verified; publication remains separate. Earlier walkthrough counts/commands are historical.

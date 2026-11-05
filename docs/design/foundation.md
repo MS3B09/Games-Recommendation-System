@@ -1,5 +1,7 @@
 # M1 foundation surface
 
+> **Historical design — 2026-11-04:** Current's [design system](../../DESIGN.md) and the [completion plan](../project-completion-plan.md) govern the upcoming catalog-connected dashboard. The M1 routes/layout and phase gates below are historical; do not recreate them or introduce extra work before publication.
+
 **Historical M1 direction. M0–M2 are complete.** Today this foundation applies to `/system` and the connection fallback at `/`; a ready catalog renders the completed [M2 discovery surface](discovery.md). Hosted M2 is owner-confirmed and its [clean replay passed](../reports/m2-clean-replay.md). The original M1 contract below is preserved; M3 requires explicit approval.
 
 Scope: `/` and `/system`. Mode: Operate. The owner approved this narrow page, temporary title and restrained dark direction. No recommendation controls or game imagery are part of M1.

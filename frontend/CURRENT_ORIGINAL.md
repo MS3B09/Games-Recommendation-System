@@ -1,5 +1,11 @@
 # Official Current — source, operation and provenance
 
+## Remaining frontend work — 2026-11-04
+
+The [completion plan](../docs/project-completion-plan.md) calls for a **catalog-connected `/dashboard`** after catalog expansion, then publication of the latest application. Preserve Current's identity and existing discovery/saved/assistant contracts. The planned dashboard retains four summary metrics, eight charts and the description word cloud from the original Streamlit app, with clearer responsive/accessible presentation.
+
+`/dashboard` is not implemented yet. Extend `GuestApp.tsx`'s existing routing/navigation/skip links and API client/types; use the same active catalog and refresh boundary. Confirm desired frontend skills before implementation. Update this source guide and the surface brief when the actual page exists. Older frozen/no-API status, R4 continuation and publication prohibitions below are historical, superseded as a remaining-work list by the completion plan.
+
 **Friendly-error revision — 2026-10-28:** [Implementation/evidence](../docs/reports/friendly-errors-2026-10-28.md). Friendly reason-specific chat/catalog/storage messages, internal-only diagnostic IDs, localized reset times, persistent cooldowns, meaningful actions, edit/retry and confirmed New chat. Error prose16px and wrapping44px recovery actions retain Current.72frontend tests and nine error scans pass; manual narrow clipping finding fixed and corrected captures checked. Builder-reviewed UI revision only, not independent SHIP or R4 quality acceptance. Final build targets API:8001. Original v6 source is archived; earlier source-frozen resume instructions require a separately versioned decision.
 
 **Backend quota update — 2026-10-27:** [Temporary100/1,500,000allowance](../docs/reports/r4-quota-increase-2026-10-27.md) applied preserving usage. No frontend implementation/build/visual change. Restart backend for runtime values; preserve authoritative C: evaluation journals. Current proposed development13/13passes, held-out32attempts with8retained prose failures; R4 not accepted. Today's95calls pause at provider-safe headroom, not the application ceiling. Historical UI evidence below retains its scope.

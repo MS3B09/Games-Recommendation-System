@@ -1,5 +1,115 @@
 # Implementation progress
 
+## 2026-11-05 — shared-catalog release authorized; local chat services restored
+
+**Latest verification:** full clean frontend **80/80passed in one run**, after the standard build/lint/API-type checks. Initial79/80failure exposed one320px chat-log keyboard-focus issue; fixed with native tabIndex/existing inset focus outline, retaining125%. Fresh backend89-package production install and actual portable384Dencoder passed; final licensed wheel83,279,503B/hash/version verified. One new local live OuterWilds smoke returnedHTTP200/canonical expanded-only card in8,037.024ms,3calls/30,886reserved units,no retry; owned archive erased/independent404. Public activation/push/deploy still blocked on cloud login, not authorization. This supersedes the earlier in-progress/zero-inference snapshots below; no broad quality/hosted acceptance claim.
+
+Owner explicitly approved **Publish now** and requires the2,000-game catalog across all services. Task3 is in progress, not awaiting permission. Local4173→8002 now has matching2k discovery/semantic retrieval/dashboard and real archive+metered AI (normal50/500k process caps). Actual browser create/history/erasure/discovery/analytics pass with no API mocking or generation; existing user chats/usage were not cleared. Missing-archive configuration now reports503 rather than a misleading Newchat loop.
+
+Required pinned semantic serving dependencies and build-time hash-verified assets replace cloud reliance on local Windows paths. Fresh2-file download passed90.565s; Csource wheel/hash inspection passed83,275,359B (initialEbuild timed out). Clean frontend npmci initially exposed2missing transitive lock entries; repaired only those slots, no existing versions changed. Fresh283-package install, full lint/APItypes/standardTypeScript+Vite public-origin build pass, resolving the previous125% type-check limitation. Backend299testsOK(1historicalskip)/Ruff/mypy30/OpenAPIpass. Full clean browser/clean backend install results must be read from completion notifications before claiming them.
+
+GitHub authenticated; FastAPI Cloud CLI/browser has no login. Owner asked to run the installed cloud-login command, never paste secrets. No push/deployment/shared activation yet: current hosted40/AIoff/noanalytics must not be broken by data-first activation. The later explicit actual-network confirmation passed1/1in13.7safter the ordinary30screate-throttle window, preserving its preceding429failure and unchanged3/30,886usage. Currentfrontend21228/parent24344andAPI25516/parent6324;recheckidentitiesbeforeactions. [Current handoff and next actions](reports/project-release-2026-11-05.md).
+
+## 2026-11-05 — final default display125%
+
+Owner selected **125%**. Source/tests/metadata updated; direct Vite production build and focused fit/actual-network browser checks pass, detector`[]`. TypeScript recheck failed from local memory pressure; no false pass. Lighter process-local192MiB/1MiB Vite build recovered the preview without service/env-file changes. Browser100%+hard-refresh4173. [Details](reports/default-scale-120.md).
+
+## 2026-11-05 — latest default display124%
+
+Owner changed122%→**124%**. Updated scale token/tests/metadata; focused fit and actual-network browser checks, TypeScript/build/lint/detector pass. Initial Node allocation failure recovered with a process-local lower-memory build; no env-file/service changes. No full-suite/hardware rerun. Browser100%+hard-refresh4173. [Current setting](reports/default-scale-120.md).
+
+## 2026-11-05 — final default display122%
+
+Owner's final decision is **122%**, replacing105%. Updated existing scale token/tests/metadata; build/type/lint/detector and focused route/bounds plus actual-network browser checks pass. No full-suite/hardware rerun or backend/publication changes. Browser100%+hard-refresh4173. [Evidence](reports/default-scale-120.md).
+
+## 2026-11-05 — default display revised to105%
+
+Owner reduced the earlier120% setting to **105%**. Existing route/bounds check and actual-network browser check both pass, along with TypeScript/build, targeted lint and detector`[]`. No full-suite or hardware rerun for this scalar-only adjustment. Browser100%+hard-refresh4173. Earlier120% results below remain historical; [current setting](reports/default-scale-120.md).
+
+## 2026-11-05 — owner-requested default 120% display
+
+- Explicitly applied rootCSSzoom1.2 across all routes, keeping base font tokens/browserzoom/useraccessibilitycontrols intact. Adjusted physicalminimum/floatingviewportcaps and tiny-screenassistantgutters; no redesign/dependency/backend/data/servicechange.
+- Fourroutes/sixwidths1905/1440/1000/768/390/320 fit, including title/placeholder assertions. Finalsourcefullsuite77/80passed; last3computed43.9974pxmeasurementroundingcases now useintegerCSSclientHeight and all3pass, retaining44–48CSSpxcontract. Actualnetworkbrowser1pass; TS/build/realEtargetlint/detector[]pass; accessibility/overflow checks remain clean. Initialfailuresretainedin[report](reports/default-scale-120.md), not a claimed single80passrun.
+- Two bounded capture/review rounds; all9finalcapturesopened, P1header/P2placeholderBOTHRESOLVED, **ship at two-scored-fixes UI scope only**. Browser100%Ctrl+0 plus hardrefresh4173 avoids compoundzoom. Physicalphone/otherengines/hosteduntested. Ownerdashboardreview/Task3approval stillpending; no publication.
+
+## 2026-11-05 — Task 2 dashboard implemented locally, ready for owner review
+
+- Owner authorized Task2, chose Impeccable and requested clearer four-item navigation with **Dashboard between Discover and Saved games**. `/dashboard` now contains all four metrics/eight charts/description word cloud, year selection, native exact-value alternatives, known/unknown/invalid coverage and explicit source/freshness scope in Current's system. Device data, discovery and independent assistant are preserved.
+- New compact deterministic analytics sidecar for `m2-cd9790b88f91370e69dae895`, digest `5116c42f8dc97f6e2556f8789aeb664e6c7ae02c070ec1466936d4fdf8472a83`. Actual response6055B; means$19.29originalUSD/7.04%validdiscount/1968developers/2000eligible. Input digests/original artifact identity remain bound and unchanged. Additive Alembic0010/SQL0011 applied after isolated real-shape migration/RLS/activation checks. Atomic import/activation and readiness require matching enabled analytics; legacy dashboard reports unavailable, never borrows another version. Refresh updates aggregate without frontend rebuild.
+- Actual restricted private API and independent SQL means/denominators/free-paid parity pass. Missing/mismatched enabled analytics fail commit; idempotent reimport samehash, interruption rollback and incomplete-artifact rejection pass. Publicactive40/originaldigest unchanged. One exact owned preview schema deliberately retained while serving inspection; disposable verifier scratch removed.
+- Fullbackend295OK(1skipped) before final boundary hardening, then all5finalanalyticschecks/Ruff/mypy30+newmodule/OpenAPIpass. Fullfrontend79passed/0failed/0flaky; afterfinalvisualbatch4dashboardcheckspass, all3widthsaxe0/nooverflow/pageerrors. TS/build/actualEtargetlint/generatedAPItypes and detector[]pass. Csource-matchedtools/Chromium1243, notfreshEinstall. No newdependency/model/quota/envfilechange or liveLLM/evaluationreplay.
+- First full UI review found2P1mobileissues. One batch made release labels12pxwithnativefocusablescrolling and proportionallycompactwordcloud. Revieweropenedall8finalcaptures, BOTHfixesRESOLVED, **shipattwo-scored-fixesUIscopeonly**; notowner/backend/hostedacceptance. Rootdesign/officialsurfacebrief handoff records actualextension; no newrasterassets or unrelatedsidecardriftrepair.
+- Inspect **http://127.0.0.1:4173/dashboard** (hardrefresh), currentbuildtargetsisolatedread-onlyAPI8002withactual2k+matchingencoder/analytics; AIintentionallydisabled. Public40unchanged. ExistingAPIpreviewprocessessurvivedharnessrestart/identitieschecked/noduplicates. [Fullhandoff, checks, commands, cleanup and limitations](reports/dashboard-implementation.md).
+- **STOP before Task3. Owner dashboard review and explicit publication approval remain.** No commit/push/deploy/publicactivation; earlierTask2-awaiting-skill paragraphs are historical.
+
+## 2026-11-05 10:35 UTC — Task 1 complete, verified staged handoff
+
+- **2,000 eligible games/all 40 original IDs, matching pinned 384-dimensional vectors and metadata staged** in one generation **`m2-cd9790b88f91370e69dae895`**. Pinned cache-only embedding: 230.972 s wall/308,862,976-byte peak; actual resume reused all 2,000 with zero encoding and unchanged artifacts.
+- Fixed the measured manifest-size issue with a bounded hash-linked database projection, without changing artifact identity/schema limits. Full manifest and exact eligible ID list are safe reproducibility fixtures. Bounded 100-game inserts retain one advisory-locked transaction and every validation: actual stage73.231s/138SQLcalls, repeated import29.430s/reused. Interruption rollback/incomplete-artifact rejection passed.
+- Real restricted expanded checks in exact tagged private schemas: 19 ASGI requests, 200 saved IDs, ten hard-filter cases, actual semantic discovery, beyond-256 title/reference/ambiguity handling, 12 actual chat encoder/RRF samples and native paging/details/recommendation tools. Isolated committed 2000→40→2000 rollback and uncommitted reader isolation passed. No actual inference/archive access. All scratch schemas removed; initial private activation fixtures were correctly rejected until `activated_at` was included.
+- Final measured API p95/max1,354.137ms (n19, includes200cards), chat encode/retrieve/RRFp95650.108ms(n12); API-probe peak346,316,800B under400MiB, final DB31,446,707B under350MiB. Not hosted/representative latency or relevance/LLM-quality acceptance; earlier faster bounded results retained in the report.
+- Hosted probes200 and exact Game/Evidence/Source/Price schema parity pass. **Activation intentionally deferred to Task3**: current semantic artifact/public snapshot remains40; switch app/artifact/catalog together rather than silently degrade current runtime. Staged data/normalized inputs and an isolated reproducible acceptance path are available for Task2. Runtime cannot read inactive2k/metadata; public40 digest and archive/usage aggregates unchanged. Security advisor[]; two pre-existing informational unused-index notices retained.
+- Fullbackend **291checks OK(1skipped)**, Ruff, strictmypy30 and unchanged OpenAPI pass. No dependencies/model/version/quota/env/user-service/UI changes, liveLLM/reservations, old-evaluation replay or publication. [Results/commands/limits](reports/catalog-expansion.md), ignored hash-linked receipt `data/reports/catalog-expansion-task1-final.json`.
+- **STOP before Task2.** Owner phase approval and frontend-skill confirmation are required; no dashboard scaffold or publication started. Prior collection/staging-pending paragraphs below are dated history.
+
+## 2026-11-05 06:53 UTC — exactly 2,000 eligible games collected and normalized
+
+- **Owner's collection objective complete.** Independent final verification passed **2,000 eligible unique games / all 40 original IDs / 2,000 review summaries / 4,269 source-file hashes**, with no duplicate normalized titles or running collector.
+- Semantic review caught Steam software labeled `type=game`; conservatively quarantined software-genre records via the shared classifier and refreshed cached classifications. Preserved initial checkpoint/normalized documents/receipts and unavailable snapshots in a 31-file verified C: archive. One explicit sequential resume replaced 34 initial software-tagged selections; one additional software-tagged candidate was quarantined. All 4,171 prior successful source hashes remained unchanged.
+- Final population: 2,235 observed candidates, 2,000 eligible, 235 quarantined/rejected/unavailable, 265 untouched. The CLI retains `partial`/exit 1 for 25 unavailable candidates; selected-game completion is independently verified, not a clean-exit claim. Unknown developer/list-price/release precision values remain unknown. See [coverage, digests and failure history](reports/catalog-expansion.md).
+- Full backend **290 tests OK (1 skipped)**, Ruff, strict mypy **30 modules**, and correctly targeted unchanged OpenAPI check pass. No new test methods or dependencies; existing eligibility/collector checks cover the fix.
+- **Overall Task 1 still in progress:** embeddings, stage/import/rollback/idempotence and expanded-runtime/storage/hosted compatibility checks have not run. No database write/activation, user-service change, frontend work, inference, commit, push or deployment in this continuation. Do not restart collection for this completed run.
+
+## 2026-11-05 05:39 UTC — collection continuation, 1,340 independently verified
+
+- Owner requested collection through **2,000 eligible games**, without another next-step question. Existing authoritative C: collector remains the single sequential job; no duplicate was launched.
+- Fixed-checkpoint integrity verification passed **1,340 complete eligible pairs / all 40 required IDs / 2,769 source-file hashes**, with US identity, review scope/counts and metadata validation. No duplicate normalized titles. Of 1,429 observed IDs, 72 noneligible/missing-description records and 17 unavailable identities did not count toward the target.
+- Evidence and continuation: [catalog expansion](reports/catalog-expansion.md), local receipt `data/reports/catalog-expansion-inprogress-integrity-20261105T0537.json`. Await existing job's completion/error notification, then verify/normalize exactly 2,000; do not poll or duplicate it. No source edit, database write, activation, embedding, frontend work, inference or publication in this continuation.
+
+## 2026-11-05 — Task 1B/C authorized and in progress
+
+- Owner approved **2,000 total eligible games**, requested **Linux(SteamOS)** and confirmed the existing free plans. The combined label will count Linux source support with an explicit no-independent-SteamOS/Deck-verification note.
+- New collection/normalization supports a bounded 2,500-lead replacement queue, exact eligible target, required retained IDs, per-source checkpoints, stop-on-source-failure and summary-only reviews. Optional developer/release/list-price/discount/review documents remain separate from public Game payloads and are bound to a versioned normalization checksum.
+- Prepared an immutable queue: 40 required active identities, 349 curated gap leads, 83 current Steam-chart identity leads and 2,028 legacy leads. These counts are candidates, not validated eligible games. Raw chart provenance is local; every candidate still needs appdetails classification.
+- First collection stopped safely after 25 complete games on Valheim's reviews HTTP 502; its successful appdetails and all earlier source hashes are retained, and `collection-stop-1.json` preserves that failure. No automatic retry or source bypass occurred.
+- The new database title matcher has 22 focused retrieval tests passing and strict mypy passes for its three affected boundary files. A real 341-row private-schema integration check verified beyond-256 matching, Unicode/aliases/references/ambiguity, fail-closed missing keys and restricted active-only metadata reads; owned scratch cleanup and unchanged public catalog digest passed. This check used committed isolated fixtures solely so the separate restricted connection could read them, then removed the exact owned schema. Initial SET ROLE trials were denied and rolled back; no role privileges were changed.
+- **03:48 UTC update:** the C: collector reached **108 eligible complete source pairs**, including all 40 required identities, with no stop at that checkpoint. Valheim's review recovered on the explicit resume. An earlier E: resume had a checkpoint replacement PermissionError while revalidating cached IDs, before any new source request; the original run/`.tmp` remain, and 59 copied files/hash-verified source pairs establish the approved C: run as authoritative. See [expansion handoff](reports/catalog-expansion.md); do not restore the older E: copy over C: or duplicate the running collector.
+- Seven collector/metadata/embedding checks pass, including interrupted per-app embedding-part reuse and unchanged semantic vectors for metadata-only format changes. A measured 2,000-vector JSON write took 11.212 s / load 0.799 s; per-app atomic parts replace repeated whole-vector checkpoint rewrites while preserving the combined artifact digest.
+- Full backend suite **290 OK (1 skipped)**, all-backend Ruff, strict mypy **30 modules** and unchanged OpenAPI drift pass. Seven affected focused checks passed again after the final cached-success no-op-write refinement. All unit checks used an isolated process-local no-env path, not live inference or configuration edits.
+- Application migration **`0009`/SQL `0010` applied** and postchecked: active 40-game document digest unchanged, 40 populated title identities, no fabricated legacy metadata, one retained version, no remaining owned scratch schema. Restricted actual Hades/Portal-2/Spider-Man/Ori reads pass; Supabase security advisor `[]`. Database 13,096,627 bytes. No user service restart, env/dependency/model/quota/archive changes, dashboard, LLM call, commit, push or deployment. Expanded generation normalization/embedding/import and actual 2,000-game gates remain pending collection.
+
+## 2026-11-05 — Task 1A audit delivered; target decision pending
+
+The owner requested implementation of the [completion plan](project-completion-plan.md). The [capacity audit](reports/catalog-capacity-audit.md) is delivered:
+
+- Restricted inventory confirms 40 active games in `m2-649714e8b26775165f105d02`, ~12.85 MB database, one retained generation and three archives/99,155 logical bytes. Before/after active-document digest, versions and archive aggregates are unchanged.
+- Deduplicated 17,433 candidate leads; fixed 32-ID pilot produced 30 eligible games, with the mod, invalid ID and mislabeled title retained explicitly. The deprecated review endpoint failed; its documented replacement gave 31/31 valid summaries. Zero-page defaults to 20 reviews; a separate one-review probe confirmed summary availability, and future requests are minimized accordingly.
+- Real pilot documents/384-dimensional embeddings/indexes measured in rollback-only TEMP relations at 30/500/1,000/2,000/4,000 rows; larger counts are replicated sizing fixtures, not collected games. At 2,000 rows the generation used 15.93 MB and filtered vector round-trip p95 was 149.067 ms over six samples; full lifecycle planning is 237.7 MB with explicit uncertainty, three generations and chat/operational reserves.
+- Recommend **2,000 total eligible games**; 4,000's conservative projection reaches 359.6 MB, above the 350 MB target. Independent SteamOS is unavailable from selected sources; request explicit unknown coverage rather than infer from Linux. Supabase/FastAPI account dashboards require login; public free allowances were rechecked, account-specific receipts remain pending.
+- Three focused audit tests, eight existing catalog tests, Ruff/self-check pass. Five real restricted-DB ASGI reads returned 200; corrected single-app peak was 274,231,296 bytes. No full-suite/frontend/hosted/AI-generation acceptance claim. Public hosted compatibility probes returned 403, so assume staged-only activation until verified with the compatible Task 3 backend.
+
+**Pause for the owner's size/SteamOS decisions and free-account confirmation before bulk work.** Task 1 is incomplete; dashboard/publication remain unstarted. No serving code, migration, environment, dependency, quota, user service or frozen evaluation changed; no live LLM calls/reservations, commit, push or deployment.
+
+## 2026-11-04 — owner narrows completion to three tasks; documentation updated
+
+**Current authority:** [project completion plan](project-completion-plan.md). This replaces older remaining-work and evaluation continuation instructions below.
+
+| Remaining task | Current state |
+| --- | --- |
+| Expand the 40-game catalog | Not started. First audit actual capacity/coverage, then obtain the owner's total-size decision. |
+| Add the catalog-connected dashboard | Not started. Four metrics, eight charts and description word cloud confirmed against live Streamlit and local source. |
+| Publish latest GitHub + Netlify + FastAPI Cloud release | Not started. Final task includes compatible data/runtime deployment, hosted verification and completion handoff. |
+
+Owner clarified selection: recognizable popular and lesser-known games across genres, budgets, platforms and modes; existing database/data may supply candidates. Dashboard must share the active catalog and follow its updates. Final count remains deliberately undecided until the audit.
+
+Documentation now links the three-task plan across product, implementation, design, operations, deployment and older roadmap entry points. Historical reports/frozen evidence remain retained. Missing evaluation judgments and older failures are disclosed limitations, not additional required work or reclassified successes.
+
+This pass inspected source and the original dashboard read-only, and checked documentation consistency. It made no application/configuration/database changes, catalog collection, model calls, commit, push or deployment. **Next: stop; on the owner's request to start, perform Task 1A.**
+
+## Historical progress entries
+
+Dates, measurements and failures below retain their original meaning. Their old “next” commands and milestone gates do not override the completion plan.
+
 ## 2026-11-02 15:31UTC — v40capability development complete; discovery paused
 
 - [Currentevidence/nextcommand](reports/assistant-answer-preservation-2026-11-02.md): all8v40developmentturnsdelivered;objectivefacts/scope/recallpass,notownerqualityacceptance. Saved2125→temporary2126–4250→restored2125withactualsearches/12canonicalcardsandnormal-limitanswer. Thursday→Monday/Ellistentative/noagreedbudgetrecallcorrect;archiveserased.

@@ -1,5 +1,41 @@
 # Deployment — Netlify + FastAPI Cloud Hobby
 
+## Owner-authorized release — 2026-11-05
+
+The owner explicitly selected **Publish now**, authorizing commit/push/deployment to the existing free services and a shared2,000-game catalog for every app service. Repository connection/Netlify Active builds are owner-reported setup, not verification of a deployed revision. [Current release evidence/blockers](reports/project-release-2026-11-05.md).
+
+FastAPI Cloud CLI currently reports **No credentials found** and the browser opens its login page. From the project root, the owner must run `.\backend\.venv\Scripts\fastapi.exe cloud login` and complete their own browser authorization. Never paste tokens into chat. GitHub access already works. Keep min0/max1 replica and one worker/free plan; actual account settings remain to be inspected after login.
+
+The standard Python build now bundles the public2k artifact plus the exact pinned tokenizer/floatONNX files using `setup.py`/`build_semantic.py`, with streaming hash/size checks and no request-time download. NumPy/ONNX/tokenizers are required, already-pinned serving dependencies; no existing locked version was upgraded. Portable default query paths resolve inside the installed package. Cloud `QUERY_*` overrides should be unset or point to those actual hosted files, never C:/E: paths. Still configure secret `DATABASE_URL`, secret `GROQ_API_KEY`, explicit `GROQ_MODEL=openai/gpt-oss-120b`, `AI_ENABLED=true`, `AI_DAILY_CALLS=50`, `AI_DAILY_TOKENS=500000` and exact Netlify CORS origin. Migration credentials remain developer-only.
+
+Do not switch the shared active generation before the matching backend/assets are available. Current hosted API remains40/semanticfalse/AIoff/noanalytics. After hosted readiness, activate using the existing validated developer job, verify shared version across endpoints, then publish the matching frontend. Preserve the previous compatible app/catalog/artifact and all usage/history. No completed release or final acceptance is claimed yet.
+
+## Current release plan — 2026-11-04
+
+Publication is **Task 3** of the [project completion plan](project-completion-plan.md), after catalog expansion and the catalog-connected dashboard. The current documentation request does not execute a release. Old M5/publication prohibitions and R4 continuation gates below are historical; the final release is now part of the owner's remaining scope.
+
+### Current release checklist
+
+1. Verify the final catalog target/artifact and dashboard acceptance, then run existing release checks against the complete latest source. Confirm locked clean builds without the private local C: harness.
+2. Review `MS3B09/Games-Recommendation-System` / `main`, intended changes, lockfiles and safe public evidence. Keep secrets, private chat capabilities, raw archives and model caches out of Git.
+3. Recheck existing free plans and connected projects. Prepare reviewed migrations/runtime settings **before** a push can trigger auto-deploys. Inspect actual Alembic state; current source has revision `0008`, not only historical `0002`.
+4. Preserve restricted `DATABASE_URL` and exact `ALLOWED_ORIGINS`. Configure Groq/AI and normal release allowances (50 calls / 500,000 reserved units), preserving all consumed usage. The historical M2 statement “no Groq key required” applies to core discovery, not an enabled latest assistant.
+5. Provision pinned tokenizer/ONNX/artifact files and the necessary serving dependencies for the hosted semantic path; local Windows paths and optional development extras do not automatically deploy. Verify hashes, model/catalog compatibility and resource use. Never download weights in a user request.
+6. Publish the reviewed source to GitHub when Task 3 is requested. Verify both CI and the intended commit on FastAPI Cloud (`backend`, `game_discovery.api.main:app`) and Netlify (`frontend`, `dist`, existing `netlify.toml`). Coordinate connected auto-deploys and schema/document compatibility; a frontend must not depend on an API still building.
+7. Activate any staged-only expanded catalog only when the hosted API accepts its documents. Catalog and dashboard aggregates must share the same atomic active version; keep compatible prior app/data rollback references.
+8. Verify `/`, `/current-original.html`, `/saved`, **`/dashboard`**, direct reloads, public API/CORS, main discovery/storage, all dashboard analytics, assistant integration and graceful free-limit recovery. Use a bounded fresh AI smoke only with verified free headroom, never old evaluation journals.
+9. Record actual commit/deploy IDs, URLs, active version/count, checks and limitations in `reports/project-completion.md`; update current docs and obtain owner completion confirmation.
+
+**Expected existing destinations:** frontend `https://steam-discovery.netlify.app/`, API `https://steam-discovery-api.fastapicloud.dev/`. Verify actual provider state at release time; this documentation pass did not deploy or revalidate these services.
+
+**Configuration map:** Netlify gets public build-time `VITE_API_BASE_URL` only. FastAPI Cloud gets restricted secret `DATABASE_URL`, `ALLOWED_ORIGINS`, secret `GROQ_API_KEY`, explicit `GROQ_MODEL`, `AI_ENABLED`, daily limits and hosted `QUERY_TOKENIZER_PATH` / `QUERY_MODEL_PATH` / `QUERY_ARTIFACT_PATH`. `MIGRATION_DATABASE_URL` stays developer-only. Ask the owner to configure missing credentials locally/provider-side, never paste secrets into chat.
+
+The [full Task 3 procedure](project-completion-plan.md#5-task-3--publish-deploy-and-complete) includes compatibility, quotas, artifacts, rollback and completion criteria. Current official FastAPI Cloud application-directory/GitHub and Netlify build/SPA documentation was consulted during planning; account allowances still require a fresh release-time check.
+
+## Historical deployment evidence and settings
+
+The following dated M1/M2/M3/R4 observations retain their original scope. Use the checklist above for the next release; do not run obsolete verifier/resume commands or assume old account values are current.
+
 > **Current quota boundary — 2026-10-27:** [Temporary R4 quota migration applied](reports/r4-quota-increase-2026-10-27.md):100calls/1,500,000reserved units, old usage preserved, runtime defaults50/500,000. This is authorized accounting/configuration work, not publication. Restore lower runtime after R4 without clearing usage. Development proposed13/13passes; held-out pricing-prose failures/latency/human gates remain. Hosted M2, frontend and deployment settings unchanged; no M5/commit/push/deploy authority.
 
 > **Current R4 boundary — 2026-10-26:** [v6 checkpoint](reports/conversational-rag-r4-resume-2026-10-26.md). Backend-only explicit-operation/shortlist/diagnostic/journal changes verified locally. Current9/26development attempts; full live/human/representative latency gates pending. Additional inference approved; today's50calls exhausted. Preserve authoritative C: journals; resume on later UTC days. Hosted M2 remains; no M5/commit/push/deploy authority. October25 statuses below are historical.

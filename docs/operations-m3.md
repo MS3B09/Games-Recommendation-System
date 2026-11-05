@@ -1,5 +1,7 @@
 # M3 guest persistence and personalization
 
+> **Current scope — 2026-11-04:** the [completion plan](project-completion-plan.md) governs catalog expansion, dashboard and final release. Preserve the guest storage/personalization contracts described here and check their regressions during those tasks. Older milestone/publication boundaries are historical; this document does not add a new implementation phase.
+
 **2026-10-18: M0–M3 complete; M3 COMPLETE LOCALLY.** Main agent confirms all five functional acceptance gates and final handoff. Independent reviewer marks all four material fixes RESOLVED; **ship at the four-scored-fixes verdict-pass scope**, with all 12 fresh captures inspected and no material regression attributable to that batch. This is not blanket whole-product/UI release approval. The authorized M3 extension preserves Current; both HTML entries load `current-original.tsx` → `GuestApp`, and `/saved` uses that system. Hosted M2 remains unchanged; M3 is unpublished. M4 is unstarted and unauthorized; no further implementation or publication is authorized.
 
 [Implementation/check evidence](reports/m3-implementation.md) · [retained live report](reports/m3-live-evidence.json) · [setup](setup.md) · [Current source/provenance](../frontend/CURRENT_ORIGINAL.md)

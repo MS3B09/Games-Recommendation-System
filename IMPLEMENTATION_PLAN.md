@@ -1,5 +1,23 @@
 # Technical Implementation Plan
 
+## Current implementation authority — 2026-11-05
+
+The owner replaced the remaining roadmap with **catalog expansion → dashboard → publication/deployment**. The detailed, actionable plan is [docs/project-completion-plan.md](docs/project-completion-plan.md); use it before any older instructions in this document.
+
+| Task | Required outcome | Status |
+| --- | --- | --- |
+| 1. Catalog expansion | Capacity audit, owner-selected total size, diverse verified games, reproducible full-generation import/refresh | **Complete as verified staged handoff:** 2,000 games/vectors/metadata; public activation coordinated with Task 3 |
+| 2. Dashboard | Original four metrics, eight charts and word cloud; improved Current design; same active catalog and refresh lifecycle | **Implemented locally, awaiting owner review**; Impeccable selected, real expanded preview at `/dashboard` |
+| 3. Publish and deploy | Latest code on GitHub; verified Netlify + FastAPI Cloud release; owner confirms completion | Planned; follows dashboard acceptance |
+
+After the capacity audit, the owner approved **2,000 total eligible games**. They are collected, embedded, staged and verified as `m2-cd9790b88f91370e69dae895`; [results and refresh commands](docs/reports/catalog-expansion.md). Keep the public 40-game snapshot and existing semantic artifact coordinated until Task 3. Dashboard data is not a separate historical CSV population.
+
+The owner authorized Task 2 and selected Impeccable; [dashboard implementation and verification](docs/reports/dashboard-implementation.md) are ready for owner review. **Stop before Task 3**; no commit/push/deploy or public activation yet. Retain stop/report boundaries between tasks and frontend-skill confirmation for future UI work. Existing R4/assistant evaluation backlogs are historical limitations, not additional completion gates. Preserve frozen experiments and honest results. Free-only, one-database, Scrapling-only and existing product/identity constraints continue.
+
+## Historical technical baseline and milestone record
+
+The dated entries and M0–M5/R0–R4 sequences below are reference material. Their old next actions, targets and publication prohibitions do not override the three-task plan. Proposed technologies below are not proof they are installed; the completion plan records inspected implementation paths.
+
 **Latest R4 — 2026-10-27:** [quota amendment/progress](docs/reports/r4-quota-increase-2026-10-27.md). Approved100/1,500,000temporary daily limits applied preserving usage; defaults50/500,000 retained. Same v6 source/outputs continue via documented operational wrapper.193backend tests and15scratch quota checks pass. Proposed development13/13passes; held-out32attempts/8prose failures,95calls today, paused by conservative provider-token headroom. Human/mandatory/latency gates remain, R4 not accepted. Resume only unattempted held-out work with a fresh receipt; restore runtime after R4, no counter reset or M5/publication authority. Older statuses below are historical.
 
 **Latest R4 authority — 2026-10-26:** [v6 checkpoint](docs/reports/conversational-rag-r4-resume-2026-10-26.md) supersedes October25 status. Additional inference approved, today's50calls/393,494units exhaust daily calls.189backend tests/313integration assertions; explicit played/undo and durable journal fixes verified. Current9/26development attempts, baseline claim failure retained; full held-out live/human/representative latency gates pending. Preserve C: authoritative journal and resume only unattempted v6 work on later UTC days. No new setup or M5/publication authority.
@@ -27,7 +45,7 @@ This plan implements [AGENTS.md](AGENTS.md) and records the decisions made durin
 ## 1. Build-agent instructions
 
 1. Read both documents before coding. Inspect the current working tree and preserve existing user work.
-2. Start with M0. Complete milestones in dependency order; do not mark a milestone complete without its evidence and acceptance checks. **After completing each milestone, report its results and stop; explicit user permission is required before starting the next milestone.** This includes its scaffolding, migrations and setup. M1 was already in progress when this rule was added; M2 requires permission after M1 completion.
+2. For new work, start with Task 1A of [the completion plan](docs/project-completion-plan.md), not M0 or an old evaluation resume command. Complete catalog, dashboard and release in order; report and stop between tasks. Obtain the owner-selected catalog target after the capacity audit. The milestone chronology below is historical.
 3. Build a thin, usable discovery flow early. Expand it incrementally rather than implementing every layer in isolation.
 4. Record progress in `docs/progress.md`: milestone, completed work, checks run, measured results, blockers, and next action. Never describe a proposed check as passed.
 5. Resolve routine choices within the current milestone autonomously using current official documentation. Ask the user for permission to advance after milestone completion, or when changing scope, requiring paid services, or encountering a product tradeoff this plan does not resolve.

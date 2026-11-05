@@ -47,6 +47,8 @@ const copy: Record<string, [string, Recovery]> = {
   database_role_misconfigured: ['Game search is unavailable because of a service setup issue. Please try again later.', 'none'],
   catalog_not_initialized: ["The game catalog isn't ready yet. Please come back later.", 'none'],
   catalog_integrity_error: ["We couldn't load these game details correctly. Please try again later.", 'back'],
+  analytics_unavailable: ['The dashboard is not available for this catalog version yet. You can still discover and save games.', 'retry'],
+  analytics_integrity_error: ["We couldn't verify this catalog’s dashboard. Please try again later. Your saved games are unchanged.", 'retry'],
   unknown_favorite: ['A selected favorite is no longer available in our catalog. Remove unavailable favorites to continue.', 'remove_favorite'],
   game_not_found: ['This game is no longer available in our catalog. Choose another game to view its details.', 'back'],
   invalid_price_range: ["Choose a maximum price that's at least your minimum price.", 'edit'],

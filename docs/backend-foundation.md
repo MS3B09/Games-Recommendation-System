@@ -1,5 +1,7 @@
 # M1 backend foundation
 
+> **Historical foundation — 2026-11-04:** the [completion plan](project-completion-plan.md) replaces older milestone/remaining-work gates. Retain restricted runtime access and inspect actual migrations before catalog/dashboard schema work. Publication of the latest application is the third task; do not rerun M1 initialization against the existing database.
+
 Status: **M1 and M2 complete.** This document records the M1 foundation; [M2 operations](operations-m2.md) and [evidence](reports/m2-implementation.md) supersede its historical unpublished-catalog results. M2 hosted verification is owner-confirmed and the [approved clean-native replay](reports/m2-clean-replay.md) passed twice with CI/cleanup evidence. Stop before M3 until explicit approval. [Stack setup](setup.md) · [Deployment](deployment.md).
 
 ## Configure the runtime database role

@@ -232,7 +232,7 @@ export default function FloatingAssistant({ store, state }: { store: GuestStore;
     {open && <section id="game-assistant" ref={panel} className="assistant-panel" role="dialog" aria-modal={mobile} aria-labelledby="assistant-title"
       onKeyDown={panelKeys}>
       <div className="assistant-header"><div className="assistant-identity"><Icon name="gamepad" /><h2 id="assistant-title">Game assistant</h2></div><div className="assistant-header-actions"><button type="button" className="assistant-new" onClick={requestNewChat}><Icon name="plus" />New chat</button><button type="button" className="assistant-close" onClick={close} aria-label="Close game assistant"><Icon name="close" /></button></div></div>
-      <div className="assistant-log" ref={log} role="log" aria-label="Assistant conversation" aria-live="polite" aria-relevant="additions text">
+      <div className="assistant-log" ref={log} tabIndex={0} role="log" aria-label="Assistant conversation" aria-live="polite" aria-relevant="additions text">
         {session.remoteReady && session.historyBefore > 0 && <button className="assistant-history" type="button" disabled={readingHistory || loading} onClick={() => void loadHistory()}>Load earlier messages</button>}
         {!session.messages.length && <div className="assistant-welcome"><h3>What would you<br />like to play?</h3><p>A familiar feeling. A new obsession.<br />Tell me what you’re in the mood for.</p>
           <div className="assistant-starters" aria-label="Conversation starters">{starters.map(starter => <button type="button" key={starter.label} onClick={() => chooseStarter(starter.message)}>{starter.label}<Icon name="arrow" /></button>)}</div>

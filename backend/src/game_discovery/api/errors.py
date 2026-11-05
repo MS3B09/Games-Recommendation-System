@@ -49,6 +49,8 @@ ERRORS: dict[str, tuple[str, Recovery, bool, int]] = {
     'database_role_misconfigured': ('Game search is unavailable because of a service setup issue. Please try again later.', 'none', False, 503),
     'catalog_not_initialized': ("The game catalog isn't ready yet. Please come back later.", 'none', False, 503),
     'catalog_integrity_error': ("We couldn't load these game details correctly. Please try again later.", 'back', False, 503),
+    'analytics_unavailable': ('The dashboard is not available for this catalog version yet. You can still discover and save games.', 'retry', False, 503),
+    'analytics_integrity_error': ("We couldn't verify this catalog’s dashboard. Please try again later. Your saved games are unchanged.", 'retry', False, 503),
     'unknown_favorite': ('A selected favorite is no longer available in our catalog. Remove unavailable favorites to continue.', 'remove_favorite', False, 422),
     'game_not_found': ('This game is no longer available in our catalog. Choose another game to view its details.', 'back', False, 404),
     'invalid_price_range': ("Choose a maximum price that's at least your minimum price.", 'edit', False, 422),

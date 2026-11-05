@@ -43,3 +43,8 @@ frontend/playwright-report/
 # Personal MCP/provider configuration is local; project skills remain versioned.
 .opencode/opencode.json
 .fastapicloud/
+# Rebuilt from pinned, hash-verified sources by backend/build_semantic.py.
+backend/src/game_discovery/assets/model.onnx
+backend/src/game_discovery/assets/tokenizer.json
+backend/build/
+backend/dist/

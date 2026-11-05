@@ -1,9 +1,10 @@
-import { useState, useSyncExternalStore } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 import { createRoot } from 'react-dom/client';
 import '@fontsource-variable/manrope';
 import Icon from './Icon';
 import GuestDiscovery from './GuestDiscovery';
 import GuestLibrary from './GuestLibrary';
+import GuestDashboard from './GuestDashboard';
 import FloatingAssistant from './FloatingAssistant';
 import { eraseServerAssistant } from './server-assistant-session';
 import { createGuestStore, GUEST_KEY, OWNED_PREFIX, type GuestSnapshot } from './guest-store';
@@ -28,6 +29,12 @@ window.addEventListener('storage', (event) => {
 function GuestApp({ state }: { state: GuestSnapshot }) {
   const [clearError, setClearError] = useState('');
   const [clearing, setClearing] = useState(false);
+  const [hash, setHash] = useState(window.location.hash);
+  useEffect(() => {
+    const changed = () => setHash(window.location.hash);
+    window.addEventListener('hashchange', changed);
+    return () => window.removeEventListener('hashchange', changed);
+  }, []);
   async function clearData() {
     if (clearing) return;
     setClearing(true); setClearError('');
@@ -36,16 +43,17 @@ function GuestApp({ state }: { state: GuestSnapshot }) {
     finally { setClearing(false); }
   }
   const savedPage = window.location.pathname === '/saved';
+  const dashboardPage = window.location.pathname === '/dashboard';
   const discoveryPage = ['/', '/current-original.html', '/index.html'].includes(window.location.pathname);
   return <div className="study-shell">
-    <a className="study-skip" href={savedPage ? '#saved-title' : '#taste'}>Skip to {savedPage ? 'saved games' : 'your taste'}</a>
+    <a className="study-skip" href={savedPage ? '#saved-title' : dashboardPage ? '#dashboard-title' : discoveryPage ? '#taste' : '#not-found'}>Skip to {savedPage ? 'saved games' : dashboardPage ? 'dashboard' : discoveryPage ? 'your taste' : 'content'}</a>
     <header className="study-header">
       <a className="study-brand" href="/"><Icon name="compass" /><span>Game Discovery</span><small>Steam</small></a>
-      <nav aria-label="Main navigation"><a href={savedPage ? '/#taste' : '#taste'}>Your taste</a><a href={savedPage ? '/' : '#possibilities'}>Discover</a><a href="/saved" aria-current={savedPage ? 'page' : undefined}>Saved games ({state.data.saved.length})</a></nav>
+      <nav aria-label="Main navigation"><a href={discoveryPage ? '#taste' : '/#taste'} aria-current={discoveryPage && hash !== '#possibilities' ? 'location' : undefined}>Your taste</a><a href={discoveryPage ? '#possibilities' : '/#possibilities'} aria-current={discoveryPage && hash === '#possibilities' ? 'location' : undefined}>Discover</a><a href="/dashboard" aria-current={dashboardPage ? 'page' : undefined}>Dashboard</a><a href="/saved" aria-current={savedPage ? 'page' : undefined}>Saved games ({state.data.saved.length})</a></nav>
     </header>
     <main>
-      {savedPage ? <GuestLibrary store={guestStore} state={state} /> : discoveryPage ? <GuestDiscovery store={guestStore} state={state} />
-        : <section className="study-library"><h1>Page not found.</h1><p>This address is not part of Game Discovery.</p><a href="/">Back to discovery</a></section>}
+      {savedPage ? <GuestLibrary store={guestStore} state={state} /> : dashboardPage ? <GuestDashboard /> : discoveryPage ? <GuestDiscovery store={guestStore} state={state} />
+        : <section className="study-library"><h1 id="not-found">Page not found.</h1><p>This address is not part of Game Discovery.</p><a href="/">Back to discovery</a></section>}
     </main>
     <footer className="study-footer">
       <div><p>{state.persistent ? 'Saved on this device' : 'Temporary in this tab'} · Guest-first. No sign-in required.</p><p>US store snapshots · Recorded USD, not live purchase prices.</p></div>

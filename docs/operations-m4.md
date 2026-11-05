@@ -1,5 +1,7 @@
 # M4 local hybrid discovery
 
+> **Current scope — 2026-11-04:** follow the [completion plan](project-completion-plan.md) for catalog expansion, its dashboard and final release. This is a historical model/text/quota reference, not a request to rebuild M4 or resume AI evaluation. Use [current assistant operations](operations-assistant.md) for local startup; verify hosted model packaging explicitly in Task 3.
+
 **Superseded UI/startup, 2026-10-22:** the current application separates favorites/limits/feedback discovery from an independent floating assistant. Use [current operations](operations-assistant.md) and durable `backend/.venv`; temporary interpreter paths below are historical and removed. This document retains compatible backend text/model/quota workflows, not the current frontend composition.
 
 [Implementation and acceptance evidence](reports/m4-implementation.md) · [live report](reports/m4-live-evidence.json) · [budget verification](reports/m4-budget-evidence.json)

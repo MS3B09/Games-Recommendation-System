@@ -1,5 +1,17 @@
 # M2 catalog and discovery operations
 
+## Current catalog work — 2026-11-05
+
+Catalog expansion is Task 1 of the [completion plan](project-completion-plan.md), **complete at verified staged-handoff scope**. Audit/owner decision, collection, normalization, embeddings, import/idempotence/interruption, actual expanded runtime and isolated rollback checks passed. The dashboard will share the same active generation and refresh lifecycle at release.
+
+Current Task 1B uses the same command family with a **2,500-candidate bound / 2,000 eligible target**, explicit review summaries, separate versioned dashboard metadata and verified per-app embedding parts. Migration `0009`/SQL `0010` is applied; complete parameterized title lookup replaces the live 256-title scan. Preserve one complete generation, recorded failures and explicit source-error stops. [Current commands, C: run and evidence](reports/catalog-expansion.md).
+
+**2026-11-05 10:35 UTC:** approved **2,000 eligible games/all 40 required IDs** are staged as **`m2-cd9790b88f91370e69dae895`**, with 2,000 vectors and separate metadata documents. Database 31,446,707 bytes; no owned scratch remains; archives/usage unchanged. Public active version remains the original 40 to avoid mismatching the current semantic artifact. Hosted wire schemas match; full expanded hosted runtime is a coordinated Task 3 check. No collection job remains or needs resumption. [Exact results, safe manifest/IDs and new-run refresh commands](reports/catalog-expansion.md).
+
+Old migration-head, UI, fixed-size, M5 and next-milestone statements below are historical. Inspect actual schema/source first; current source includes migrations through `0009`. Current startup is [assistant operations](operations-assistant.md); no obsolete frontend smoke command is restored by this plan.
+
+The M2 examples and 100-ID/0002 statements below describe the historical schema-v1 sample, not the current expansion. The current source/application migration head is `0009`; use the linked expansion report for its exact new flags and staged-only compatibility boundary.
+
 > **Historical frontend-command notice (2026-10-18):** backend/catalog workflows and retained M2 evidence remain; hosted M2 is owner-confirmed and unchanged. The exact approved local Current frontend is now frozen/no-API/no-persistence at `/` and `/current-original.html`. Old `smoke:stack`, `smoke:discovery` and `verify:hosted` scripts were removed; frontend smoke commands below are historical. Use [the official frontend guide](../frontend/CURRENT_ORIGINAL.md) for current checks, whose final results remain pending. Live reconnection and M3 guest UI are pending follow-up; no deployment is authorized.
 
 Run Python commands from the repository root. Keep the original legacy application/data intact. This pipeline never loads pickle files and never constructs an N-by-N matrix.

@@ -69,7 +69,7 @@ def register_conversations(app: FastAPI, archive: Archive | None, model: Dialogu
     def guarded(request: Request, action: Any) -> Any:
         try:
             if archive is None:
-                raise AIFailure("chat_session_missing")
+                raise AIFailure("ai_provider_configuration")
             return action(archive)
         except AIFailure as error:
             return error_response(request.state.request_id, ai_error_code(error.code), retry_at=error.retry_at)

@@ -1,5 +1,7 @@
 # Native assistant closeout — authorized 2026-10-30
 
+> **Superseded remaining-work authority — 2026-11-04:** the owner now requires only [catalog expansion, the shared-catalog dashboard and publication/deployment](project-completion-plan.md). This closeout protocol is historical; its unfinished ratings, live turns and performance gates are not additional required tasks. Preserve results and source-locked journals without replay/hash replacement. Use focused catalog/dashboard/release checks under the new plan; do not restart this protocol automatically.
+
 ## Superseding owner direction — November 3 simplification
 
 The owner approved the simpler plan in conversation and directed implementation. **The five-story verification below replaces the mandatory 80-turn closeout expansion described later in this document.** Previous attempts/failures, original fixtures, scores, counters and source hashes remain historical evidence; they are not erased, rerun or promoted to passes.

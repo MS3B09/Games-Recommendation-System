@@ -10,3 +10,8 @@ __pycache__/
 .pytest_cache/
 .fastapicloud/
 tests/
+build/
+dist/
+# Build hook provisions verified assets; do not upload the local cache copies.
+src/game_discovery/assets/model.onnx
+src/game_discovery/assets/tokenizer.json

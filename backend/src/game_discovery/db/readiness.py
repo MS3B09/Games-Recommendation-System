@@ -6,6 +6,7 @@ from sqlalchemy import Engine, text
 from sqlalchemy.exc import SQLAlchemyError, TimeoutError
 
 from game_discovery.db.engine import create_runtime_engine
+from game_discovery.catalog.analytics import validate_analytics
 
 
 @dataclass(frozen=True)
@@ -33,8 +34,16 @@ def probe_catalog(database_url: SecretStr, engine: Engine | None = None) -> Cata
             if elevated:
                 return CatalogReadiness(error_code="database_role_misconfigured")
             row = connection.execute(
-                text("select version, game_count, source_observed_at from discovery.catalog_versions where active")
+                text("""select v.version,v.game_count,v.source_observed_at,v.artifact_manifest,v.analytics_manifest,a.sha256,a.document
+                    from discovery.catalog_versions v left join discovery.catalog_analytics a using(version) where v.active""")
             ).fetchone()
+            if row and row[4] is not None:
+                try:
+                    if row[6] is None:
+                        raise ValueError('Missing analytics')
+                    validate_analytics(row[6], row[5], row[4], row[3], row[0], row[1])
+                except ValueError:
+                    return CatalogReadiness(error_code='analytics_integrity_error')
             return CatalogReadiness(version=row[0], game_count=row[1], observed_at=row[2]) if row else CatalogReadiness()
     except ValueError:
         return CatalogReadiness(error_code="database_configuration_invalid")

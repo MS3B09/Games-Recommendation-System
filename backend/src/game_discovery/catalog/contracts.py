@@ -3,7 +3,7 @@
 import hashlib
 import json
 import math
-from datetime import datetime
+from datetime import date, datetime
 from typing import Annotated, Literal
 
 from pydantic import AwareDatetime, BaseModel, ConfigDict, Field, model_validator
@@ -39,6 +39,68 @@ class Price(StrictModel):
     region: Literal["US"] = "US"
     observed_at: datetime
     evidence_id: str
+
+
+class ReleaseDate(StrictModel):
+    raw: str = Field(max_length=100)
+    precision: Literal['day', 'month', 'year', 'unknown']
+    year: int | None = Field(default=None, ge=1, le=9999)
+    month: int | None = Field(default=None, ge=1, le=12)
+    day: int | None = Field(default=None, ge=1, le=31)
+
+    @model_validator(mode='after')
+    def valid_precision(self) -> 'ReleaseDate':
+        expected = {'day': (True, True, True), 'month': (True, True, False),
+                    'year': (True, False, False), 'unknown': (False, False, False)}[self.precision]
+        if tuple(value is not None for value in (self.year, self.month, self.day)) != expected:
+            raise ValueError('Release date precision mismatch')
+        if self.year is not None and self.month is not None and self.day is not None:
+            date(self.year, self.month, self.day)
+        return self
+
+
+class ReviewSummary(StrictModel):
+    label: str | None = Field(default=None, max_length=100)
+    positive: int = Field(ge=0, strict=True)
+    negative: int = Field(ge=0, strict=True)
+    total: int = Field(ge=0, strict=True)
+    scope: Literal['all-languages-all-purchases-offtopic-filtered-v1'] = 'all-languages-all-purchases-offtopic-filtered-v1'
+    source: Source
+
+    @model_validator(mode='after')
+    def counts_agree(self) -> 'ReviewSummary':
+        if self.positive + self.negative != self.total:
+            raise ValueError('Review counts mismatch')
+        return self
+
+
+class DashboardMetadata(StrictModel):
+    """Separate immutable document: never added to legacy Game/API/assistant payloads."""
+
+    schema_version: Literal[1] = 1
+    app_id: AppId
+    developers: list[Annotated[str, Field(min_length=1, max_length=300)]] | None = Field(default=None, max_length=100)
+    release_date: ReleaseDate | None = None
+    original_price_cents: int | None = Field(default=None, ge=0, le=2147483647, strict=True)
+    currency: Literal['USD'] = 'USD'
+    region: Literal['US'] = 'US'
+    # Preserve impossible recorded integers for the dashboard's invalid-data count.
+    discount_percent: int | None = Field(default=None, strict=True)
+    reviews: ReviewSummary | None = None
+    evidence: list[Evidence] = Field(default_factory=list, max_length=10)
+
+    @model_validator(mode='after')
+    def field_evidence(self) -> 'DashboardMetadata':
+        fields = {item.field: item for item in self.evidence}
+        if len(fields) != len(self.evidence) or len({item.id for item in self.evidence}) != len(self.evidence):
+            raise ValueError('Duplicate metadata evidence')
+        for key in ('developers', 'original_price_cents', 'discount_percent'):
+            value = getattr(self, key)
+            if value is not None and (key not in fields or fields[key].value != value):
+                raise ValueError('Missing or conflicting metadata evidence')
+        if self.release_date is not None and ('release_date_raw' not in fields or fields['release_date_raw'].value != self.release_date.raw):
+            raise ValueError('Missing release date evidence')
+        return self
 
 
 class Game(StrictModel):

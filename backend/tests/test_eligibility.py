@@ -29,6 +29,12 @@ class EligibilityTests(unittest.TestCase):
     def test_non_games_and_unreleased_games_fail_closed(self):
         for app_type in ("demo", "music", "dlc", "software"):
             self.assertEqual(classify_appdetails({"type": app_type})["status"], "excluded")
+        for genre_id in range(50, 61):
+            data = self.base()
+            data['genres'] = [{'id': str(genre_id)}, {'id': '23'}, {'id': '37'}]
+            result = classify_appdetails(data)
+            self.assertEqual(result['status'], 'quarantined')
+            self.assertEqual(result['reason'], 'software_genre_requires_verification')
         data = self.base()
         data["release_date"]["coming_soon"] = True
         self.assertEqual(classify_appdetails(data)["reason"], "unreleased")

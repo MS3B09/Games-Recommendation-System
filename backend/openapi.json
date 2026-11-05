@@ -1,6 +1,152 @@
 {
   "components": {
     "schemas": {
+      "AnalyticsCount": {
+        "additionalProperties": false,
+        "properties": {
+          "count": {
+            "minimum": 0.0,
+            "title": "Count",
+            "type": "integer"
+          },
+          "label": {
+            "maxLength": 300,
+            "minLength": 1,
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "count"
+        ],
+        "title": "AnalyticsCount",
+        "type": "object"
+      },
+      "AnalyticsCoverage": {
+        "additionalProperties": false,
+        "properties": {
+          "invalid": {
+            "default": 0,
+            "minimum": 0.0,
+            "title": "Invalid",
+            "type": "integer"
+          },
+          "known": {
+            "minimum": 0.0,
+            "title": "Known",
+            "type": "integer"
+          },
+          "unknown": {
+            "minimum": 0.0,
+            "title": "Unknown",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "known",
+          "unknown"
+        ],
+        "title": "AnalyticsCoverage",
+        "type": "object"
+      },
+      "AnalyticsPlatform": {
+        "additionalProperties": false,
+        "properties": {
+          "count": {
+            "minimum": 0.0,
+            "title": "Count",
+            "type": "integer"
+          },
+          "label": {
+            "maxLength": 300,
+            "minLength": 1,
+            "title": "Label",
+            "type": "string"
+          },
+          "unknown": {
+            "minimum": 0.0,
+            "title": "Unknown",
+            "type": "integer"
+          },
+          "unsupported": {
+            "minimum": 0.0,
+            "title": "Unsupported",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "label",
+          "count",
+          "unsupported",
+          "unknown"
+        ],
+        "title": "AnalyticsPlatform",
+        "type": "object"
+      },
+      "AnalyticsResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "analytics_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Analytics Sha256",
+            "type": "string"
+          },
+          "catalog_created_at": {
+            "format": "date-time",
+            "title": "Catalog Created At",
+            "type": "string"
+          },
+          "catalog_version": {
+            "title": "Catalog Version",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/CatalogAnalytics"
+          }
+        },
+        "required": [
+          "catalog_version",
+          "catalog_created_at",
+          "analytics_sha256",
+          "data"
+        ],
+        "title": "AnalyticsResponse",
+        "type": "object"
+      },
+      "AnalyticsYear": {
+        "additionalProperties": false,
+        "properties": {
+          "months": {
+            "items": {
+              "minimum": 0.0,
+              "type": "integer"
+            },
+            "maxItems": 12,
+            "minItems": 12,
+            "title": "Months",
+            "type": "array"
+          },
+          "unknown_month": {
+            "minimum": 0.0,
+            "title": "Unknown Month",
+            "type": "integer"
+          },
+          "year": {
+            "maximum": 9999.0,
+            "minimum": 1.0,
+            "title": "Year",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "year",
+          "months",
+          "unknown_month"
+        ],
+        "title": "AnalyticsYear",
+        "type": "object"
+      },
       "ApiError": {
         "properties": {
           "code": {
@@ -70,6 +216,186 @@
           "retryable"
         ],
         "title": "ApiError",
+        "type": "object"
+      },
+      "CatalogAnalytics": {
+        "additionalProperties": false,
+        "properties": {
+          "avg_discount_percent": {
+            "anyOf": [
+              {
+                "maximum": 100.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Avg Discount Percent"
+          },
+          "avg_price_cents": {
+            "anyOf": [
+              {
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Avg Price Cents"
+          },
+          "catalog_version": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Catalog Version",
+            "type": "string"
+          },
+          "coverage": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/AnalyticsCoverage"
+            },
+            "title": "Coverage",
+            "type": "object"
+          },
+          "developers": {
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsCount"
+            },
+            "maxItems": 10,
+            "title": "Developers",
+            "type": "array"
+          },
+          "discount_ranges": {
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsCount"
+            },
+            "maxItems": 7,
+            "minItems": 7,
+            "title": "Discount Ranges",
+            "type": "array"
+          },
+          "format": {
+            "const": "catalog-analytics-v1",
+            "default": "catalog-analytics-v1",
+            "title": "Format",
+            "type": "string"
+          },
+          "free_paid": {
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsCount"
+            },
+            "maxItems": 3,
+            "minItems": 3,
+            "title": "Free Paid",
+            "type": "array"
+          },
+          "genres": {
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsCount"
+            },
+            "maxItems": 15,
+            "title": "Genres",
+            "type": "array"
+          },
+          "observed_from": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed From"
+          },
+          "observed_until": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed Until"
+          },
+          "platforms": {
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsPlatform"
+            },
+            "maxItems": 3,
+            "minItems": 3,
+            "title": "Platforms",
+            "type": "array"
+          },
+          "price_ranges": {
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsCount"
+            },
+            "maxItems": 6,
+            "minItems": 6,
+            "title": "Price Ranges",
+            "type": "array"
+          },
+          "release_years": {
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsYear"
+            },
+            "maxItems": 1000,
+            "title": "Release Years",
+            "type": "array"
+          },
+          "reviews": {
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsCount"
+            },
+            "maxItems": 30,
+            "title": "Reviews",
+            "type": "array"
+          },
+          "total_developers": {
+            "minimum": 0.0,
+            "title": "Total Developers",
+            "type": "integer"
+          },
+          "total_games": {
+            "minimum": 0.0,
+            "title": "Total Games",
+            "type": "integer"
+          },
+          "words": {
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsCount"
+            },
+            "maxItems": 60,
+            "title": "Words",
+            "type": "array"
+          }
+        },
+        "required": [
+          "catalog_version",
+          "observed_from",
+          "observed_until",
+          "total_games",
+          "avg_price_cents",
+          "avg_discount_percent",
+          "total_developers",
+          "coverage",
+          "release_years",
+          "free_paid",
+          "price_ranges",
+          "discount_ranges",
+          "genres",
+          "platforms",
+          "developers",
+          "reviews",
+          "words"
+        ],
+        "title": "CatalogAnalytics",
         "type": "object"
       },
       "CatalogStatus": {
@@ -1806,6 +2132,54 @@
   },
   "openapi": "3.1.0",
   "paths": {
+    "/api/v1/analytics": {
+      "get": {
+        "operationId": "analytics_api_v1_analytics_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyticsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "summary": "Analytics"
+      }
+    },
     "/api/v1/catalog/status": {
       "get": {
         "operationId": "status_api_v1_catalog_status_get",

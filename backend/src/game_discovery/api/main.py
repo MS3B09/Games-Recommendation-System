@@ -20,6 +20,7 @@ from game_discovery.db.readiness import CatalogReadiness, probe_catalog
 from game_discovery.catalog.contracts import AppId, DiscoverRequest, DiscoverResponse, Game, Recommendation, StrictModel
 from game_discovery.catalog.contracts import DiscoveryCapabilities
 from game_discovery.catalog.repository import CatalogFailure, CatalogRepository, Facets, GamePage, ResolvedGames
+from game_discovery.catalog.analytics import AnalyticsResponse
 from game_discovery.retrieval.query import QueryEncoder, load_query_encoder
 from game_discovery.ai.interpretation import experience_uncertainty, local_patch, resolve_criteria
 from game_discovery.ai.provider import AIFailure, Assistant, ClientThrottle, DatabaseBudget, GroqAssistant
@@ -214,6 +215,14 @@ def create_app(settings: Settings | None = None, catalog_probe: Callable[[], Cat
     @app.get("/api/v1/facets", response_model=Facets, responses={503: {"model": ApiError}})
     def facets(request: Request) -> Facets | JSONResponse:
         return catalog_operation(request, lambda repo: repo.facets())
+
+    @app.get('/api/v1/analytics', response_model=AnalyticsResponse, responses={503: {'model': ApiError}})
+    def analytics(request: Request) -> AnalyticsResponse | JSONResponse:
+        response = catalog_operation(request, lambda repo: repo.analytics())
+        # Snapshot identity belongs to this response; never reuse an aggregate across activation.
+        if isinstance(response, AnalyticsResponse):
+            return JSONResponse(response.model_dump(mode='json'), headers={'Cache-Control': 'no-store'})
+        return response
 
     @app.post("/api/v1/discover", response_model=DiscoverResponse, responses={503: {"model": ApiError}})
     def discover(request: Request, body: DiscoverRequest) -> DiscoverResponse | JSONResponse:

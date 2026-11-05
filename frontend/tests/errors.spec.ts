@@ -157,7 +157,7 @@ for (const width of [1440, 1000, 900, 390, 320]) {
     expect(Math.abs(noticeBox!.x - controlsBox!.x)).toBeLessThan(1);
     expect(Math.abs(noticeBox!.width - controlsBox!.width)).toBeLessThan(1);
     const retry = notice.getByRole('button', { name: 'Retry catalog controls', exact: true });
-    expect((await retry.boundingBox())!.height).toBeLessThanOrEqual(50);
+    expect(await retry.evaluate(element => parseFloat(getComputedStyle(element).height))).toBeLessThanOrEqual(50);
     expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)).toBe(false);
     expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
     await notice.scrollIntoViewIfNeeded();
@@ -183,12 +183,14 @@ for (const width of [1440, 390, 320]) {
         ...(code === 'chat_daily_calls' ? { retry_at: new Date(Date.now() + 3600000).toISOString() } : {}) } }));
       await open(page); await say(page);
       await expect(page.getByRole('alert')).toBeVisible();
-      const header = await page.locator('.assistant-header').boundingBox();
-      const input = await page.getByRole('textbox', { name: 'Message the assistant' }).boundingBox();
-      expect(header!.height).toBeLessThanOrEqual(64);
-      expect(input!.height).toBeGreaterThanOrEqual(44);
-      expect(input!.height).toBeLessThanOrEqual(48);
+      const headerHeight = await page.locator('.assistant-header').evaluate(element => parseFloat(getComputedStyle(element).height));
+      const inputHeight = await page.getByRole('textbox', { name: 'Message the assistant' }).evaluate(element => element.clientHeight);
+      expect(headerHeight).toBeLessThanOrEqual(64);
+      expect(inputHeight).toBeGreaterThanOrEqual(44);
+      expect(inputHeight).toBeLessThanOrEqual(48);
       expect(await page.locator('.assistant-status').evaluate(element => element.scrollHeight <= element.clientHeight)).toBe(true);
+      await page.getByRole('log', { name: 'Assistant conversation' }).focus();
+      await expect(page.getByRole('log', { name: 'Assistant conversation' })).toBeFocused();
       expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
       expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)).toBe(false);
       await page.screenshot({ path: testInfo.outputPath(`${code}-${width}.png`), fullPage: true });

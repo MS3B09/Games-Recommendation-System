@@ -18,15 +18,21 @@ def main() -> int:
     import_verification.add_argument("--run-dir", type=Path, required=True)
     import_verification.add_argument("--env-file", type=Path, required=True)
     import_verification.add_argument("--output", type=Path, required=True)
-    collect = commands.add_parser("collect", help="Sequential resumable US Steam appdetails collection (max 100 IDs)")
+    collect = commands.add_parser("collect", help="Sequential resumable US Steam collection (max 2500 candidate IDs)")
     identities = collect.add_mutually_exclusive_group(required=True)
     identities.add_argument("--app-id", type=int, action="append")
     identities.add_argument("--ids-file", type=Path, help="JSON array of Steam app IDs")
     collect.add_argument("--run-dir", type=Path, required=True)
     collect.add_argument("--resume", action="store_true")
+    collect.add_argument('--reviews', action='store_true', help='Collect validated summary projections from the current reviews API')
+    collect.add_argument('--eligible-target', type=int, help='Stop after 1–2000 eligible complete games; retain the full candidate queue')
     for name in ("normalize", "embed", "import", "activate"):
         job = commands.add_parser(name, help=f"M2 catalog {name}")
         job.add_argument("--run-dir", type=Path, required=True)
+        if name == 'normalize':
+            job.add_argument('--metadata', action='store_true', help='Write versioned dashboard metadata separately from legacy Game documents')
+            job.add_argument('--target-count', type=int, help='Require exactly this many eligible games (max 2000)')
+            job.add_argument('--required-ids-file', type=Path, help='JSON array of existing identities that must be retained')
         if name == "embed":
             job.add_argument("--cache-dir", type=Path, required=True)
             job.add_argument("--batch-size", type=int, default=8)
@@ -75,16 +81,20 @@ def main() -> int:
             from game_discovery.jobs import catalog
             if args.command == "collect":
                 app_ids = json.loads(args.ids_file.read_text(encoding="utf-8")) if args.ids_file else args.app_id
-                report = catalog.collect(args.run_dir, app_ids, args.resume)
+                report = catalog.collect(args.run_dir, app_ids, args.resume, args.reviews, args.eligible_target)
             elif args.command == "normalize":
-                report = catalog.normalize(args.run_dir)
+                required = json.loads(args.required_ids_file.read_text(encoding='utf-8')) if args.required_ids_file else None
+                report = catalog.normalize(args.run_dir, args.metadata, args.target_count, required)
             elif args.command == "embed":
                 report = catalog.embed(args.run_dir, args.cache_dir, args.batch_size, args.resume)
             else:
                 report = catalog.publish(args.run_dir, args.env_file, args.command == "activate")
-            failed = args.command == "collect" and any(item.get("error_type") for item in report["observations"])
+            failed = args.command == 'collect' and (bool(report.get('stopped')) or
+                any(item.get('error_type') or item.get('review_error_type') for item in report['observations']) or
+                (args.eligible_target is not None and report.get('eligible_complete', 0) != args.eligible_target))
             summary = {"requested": len(report["app_ids"]), "observed": len(report["observations"]),
-                       "failed": sum(bool(item.get("error_type")) for item in report["observations"])} if args.command == "collect" else report
+                       'failed': sum(bool(item.get('error_type') or item.get('review_error_type')) for item in report['observations']),
+                       'eligible_complete': report.get('eligible_complete'), 'stopped': report.get('stopped')} if args.command == 'collect' else report
             print(json.dumps({"job": args.command, "status": "partial" if failed else "ok", "report": summary}))
             return 1 if failed else 0
         if args.command == "audit":

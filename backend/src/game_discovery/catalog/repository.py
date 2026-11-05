@@ -1,6 +1,7 @@
 """Bounded, parameterized PostgreSQL catalog access; active snapshot per transaction."""
 
 import json
+import re
 from collections.abc import Iterator
 from contextlib import contextmanager
 from typing import Any
@@ -8,11 +9,14 @@ from typing import Any
 from sqlalchemy import Connection, Engine, text
 
 from game_discovery.catalog.contracts import DiscoverRequest, Filters, Game, Recommendation, StrictModel
+from game_discovery.catalog.analytics import AnalyticsResponse, validate_analytics
 from game_discovery.catalog.discovery import FEEDBACK_WEIGHT, centroid, recommendation, satisfies
 from game_discovery.retrieval.query import lexical_query
 from game_discovery.retrieval.query import validate_query_vector
 from game_discovery.retrieval.contracts import CandidatePools, TitleLookup
-from game_discovery.retrieval.titles import TITLE_CATALOG_LIMIT, CatalogTitle, match_title
+from game_discovery.retrieval.titles import (
+    ALIASES, TITLE_OPTION_LIMIT, TITLE_SUGGESTION_POOL_LIMIT, CatalogTitle, TitleMatch, normalize_title, title_suggestions,
+)
 
 
 class CatalogFailure(Exception):
@@ -112,24 +116,71 @@ class CatalogRepository:
                 join discovery.games g using(version,app_id)
                 where p.version=:v and g.eligibility='eligible' and p.region='US' and p.currency='USD'"""), {"v": version}).scalar()
             return Facets(catalog_version=version, genres=terms["genre"], tags=terms["tag"], modes=terms["mode"],
-                          platforms=platform_names, max_price_cents=maximum)
+                           platforms=platform_names, max_price_cents=maximum)
+
+    def analytics(self) -> AnalyticsResponse:
+        with self.snapshot() as (connection, version):
+            row = connection.execute(text('''select v.created_at,v.game_count,v.artifact_manifest,v.analytics_manifest,a.sha256,a.document
+                from discovery.catalog_versions v left join discovery.catalog_analytics a using(version) where v.version=:v'''), {'v': version}).one()
+            created, count, artifact, manifest, checksum, document = row
+            if manifest is None:
+                raise CatalogFailure('analytics_unavailable')
+            if document is None:
+                raise CatalogFailure('analytics_integrity_error')
+            try:
+                data = validate_analytics(document, checksum, manifest, artifact, version, count)
+            except ValueError as error:
+                raise CatalogFailure('analytics_integrity_error') from error
+            return AnalyticsResponse(catalog_version=version, catalog_created_at=created, analytics_sha256=checksum, data=data)
 
     def chat_title(self, query: str, reference_id: int | None = None) -> TitleLookup:
-        """Complete small-catalog identity search, including games without vectors.
-
-        Only compact identities cross the scan boundary. Fail closed above the
-        measured cap: a partial catalog scan must never establish absence.
-        """
+        """Complete database identity matching; only options/suggestions are capped."""
         if len(query) > 200 or (not query.strip() and reference_id is None):
             raise ValueError("A bounded title is required")
+        needle = normalize_title(query)
+        compact = needle.replace(' ', '')
+        if (reference_id is None and not needle) or (reference_id is not None and not 0 < reference_id <= 2147483647):
+            raise ValueError('Invalid title or canonical reference')
+        alias = ALIASES.get(compact)
         with self.snapshot() as (connection, version):
-            rows = connection.execute(text("""select app_id,title from discovery.games
-                where version=:v and eligibility='eligible' order by app_id limit :limit"""),
-                {"v": version, "limit": TITLE_CATALOG_LIMIT + 1})
-            titles = [CatalogTitle(int(row[0]), str(row[1])) for row in rows]
-            if len(titles) > TITLE_CATALOG_LIMIT:
-                raise CatalogFailure("title_catalog_bound_exceeded")
-            match = match_title(query, titles, reference_id)
+            rows = list(connection.execute(text("""with candidates as materialized (
+                select app_id,title,identity_title is null as missing_keys,case
+                    when cast(:reference as integer) is not null then case when app_id=:reference then 0 end
+                    when identity_title=:needle then 0
+                    when compact_title=:compact then 1
+                    when cast(:words as text[]) <@ title_tokens
+                        or (:phrase<>'' and identity_title ~ :phrase)
+                        or (app_id=:alias_id and identity_title=:alias_title) then 2
+                    when :allow_prefix and cast(:numbers as text[]) <@ title_tokens and not exists (
+                        select 1 from unnest(cast(:prefixes as text[])) w where not exists (
+                            select 1 from unnest(title_tokens) t where t like w || '%')) then 3
+                    end as priority
+                from discovery.games where version=:v and eligibility='eligible'), matches as (
+                select app_id,title,priority,count(*) over(partition by priority) as total
+                from candidates where priority is not null)
+                select app_id,title,priority,total from matches
+                union all select null,null,-1,count(*) from candidates where missing_keys having count(*)>0
+                order by priority,app_id limit :limit"""),
+                {'v': version, 'reference': reference_id, 'needle': needle, 'compact': compact,
+                 'words': needle.split(), 'numbers': [word for word in needle.split() if word.isdigit()],
+                 'prefixes': [word for word in needle.split() if not word.isdigit()],
+                 'phrase': '(^| )' + ' ?'.join(re.escape(c) for c in compact) + '( |$)' if len(compact) >= 3 else '',
+                 'alias_id': alias.app_id if alias else 0, 'alias_title': normalize_title(alias.title) if alias else '',
+                 'allow_prefix': len(compact) >= 2, 'limit': TITLE_OPTION_LIMIT + 1}))
+            if rows and rows[0][2] == -1:
+                raise CatalogFailure('catalog_identity_keys_unavailable')
+            selected = [CatalogTitle(int(row[0]), str(row[1])) for row in rows
+                        if row[2] == rows[0][2]][:TITLE_OPTION_LIMIT] if rows else []
+            suggestions: tuple[CatalogTitle, ...] = ()
+            if not selected and reference_id is None and len(compact) >= 3:
+                # Suggestions are deliberately a bounded prefix pool; never used as identities.
+                candidates = connection.execute(text('''select app_id,title from discovery.games where version=:v
+                    and eligibility='eligible' and compact_title like :prefix order by app_id limit :limit'''),
+                    {'v': version, 'prefix': compact[:3] + '%', 'limit': TITLE_SUGGESTION_POOL_LIMIT})
+                suggestions = title_suggestions(query, [CatalogTitle(int(row[0]), str(row[1])) for row in candidates])
+            total = int(rows[0][3]) if rows else 0
+            match = TitleMatch('found' if total == 1 else 'ambiguous' if total else 'not_in_catalog',
+                               tuple(selected), suggestions, total)
             ids = [item.app_id for item in match.matches]
             games: dict[int, Game] = {}
             if ids:
