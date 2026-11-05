@@ -11,6 +11,7 @@ The owner selected a capacity audit before deciding catalog size, popular and le
 | Document | Purpose |
 | --- | --- |
 | [Completion plan](project-completion-plan.md) | Authoritative remaining scope and execution details |
+| [Hosted release outcome](reports/project-completion.md) | Published destinations, verification and failed hosted assistant smoke; final acceptance incomplete |
 | [Catalog capacity audit](reports/catalog-capacity-audit.md) | Original 40-game inventory, source/pilot measurements and sizing basis |
 | [Catalog expansion](reports/catalog-expansion.md) | Completed 2,000-game artifacts/staging, measurements, verification, activation/rollback state and refresh commands |
 | [Dashboard implementation](reports/dashboard-implementation.md) | Implemented `/dashboard`, version-bound analytics, checks, scoped UI verdict, local 2,000-game review preview and release boundary |
@@ -33,4 +34,4 @@ In particular, preserve `conversational-rag-contracts.md`, frozen JSON/journals/
 
 ## Next action
 
-Continue **owner-authorized Task 3**: compatible FastAPI Cloud release/artifact verified and shared2,000-game generation active. Login resolved; next publish reviewed source, verify CI/connected deployments, exercise hosted journeys and obtain owner acceptance. [Release handoff](reports/project-release-2026-11-05.md). Do not resume collection or old evaluations.
+Task3 publication/connected deployments are verified; shared2k discovery/dashboard/saves/layout pass hosted checks. **One fresh hosted assistant smoke failed answer validation**, not retried. Read the [current release outcome](reports/project-completion.md); targeted follow-up and final owner acceptance remain, not another collection/evaluation campaign.

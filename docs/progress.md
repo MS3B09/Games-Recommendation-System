@@ -1,5 +1,9 @@
 # Implementation progress
 
+## 2026-11-05 — source/hosts published; assistant smoke remains open
+
+GitHub/Netlify/FastAPICloud verified at`a76fc58`; shared2k active/semantic+AItrue. Backend CI passed; initial frontend79/80exposed request-capture/reload race in test, one completion assertion fixed it; corrected CI80/80passed. Real hosted discovery/saves/dashboard13items/4routes/125%/1440-390-320axe0/nooverflow/pageerrors pass. OnefreshhostedassistantHTTP502/chat_invalid_answer/6,897.868ms/2calls22,232units,NOTdelivery/pass; no retries/guardrelaxation. Cleanup404/3userarchives99,155B/0pending/total5calls53,118units/scratch[]verified. Precise internal failure unavailable after owned probe erasure. [Current outcome](reports/project-completion.md): publication verified, assistant successful delivery and final owner acceptance incomplete; no old evaluation campaign resumed.
+
 ## 2026-11-05 20:06 UTC — hosted backend ready; shared2k catalog active
 
 Login resolved; Hobby/min0-max1/nano/one-server startup verified. Deployment `782ae973-8bf6-4b23-b8c3-3fd102897f6e` loaded matching2k artifact **before** validated atomic activation. Hosted status/analytics/facets/expanded detail/last page/constrained discovery/CORS/exact OpenAPI pass; semantic+AItrue. Previous40/artifact/deployment retained; user archives/usage preserved. Local env uses matching artifact/normal50-500k caps; exact tagged preview stopped/removed, normal API8002started. GitHub push/connected deployments/hosted owner acceptance remain. [Evidence](reports/project-release-2026-11-05.md). Earlier login/public40 statements below are historical.

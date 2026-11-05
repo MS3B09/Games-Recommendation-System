@@ -1,5 +1,7 @@
 # Shared 2,000-game release — in progress
 
+**Latest: published and deployed; hosted acceptance incomplete.** Connected cloud/Netlify verified at `a76fc58`; corrected full frontend CI80/80and backend CI pass. Real hosted discovery/saves/dashboard/all4routes/125%/3width axe0/nooverflow pass. The one fresh hosted chat smoke **failedHTTP502/chat_invalid_answer**,2actualcalls/22,232units/no retry; owned archive erased/independent404, existing3archives/99,155B/0pending retained. Nov5total5calls/53,118units. Precise validation cause unavailable after probe cleanup; do not invent one or replay the failure. **Read [current release outcome/open limitation](project-completion.md)** before older preparation snapshots below. No project completion/owner acceptance claimed.
+
 ## Authorization and current boundary
 
 The owner requires the2,000-game catalog to be the default for recommendations, chat, dashboard and every other catalog service, and explicitly selected **Publish now** for Task3. Commit/push and deployment to the existing free GitHub/Netlify/FastAPI Cloud services are authorized. Owner-reported repo connection and Active Netlify builds do not establish a successful latest deployment. Final hosted acceptance is still required.

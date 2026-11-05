@@ -1,5 +1,7 @@
 # Deployment — Netlify + FastAPI Cloud Hobby
 
+**Latest hosted outcome — 2026-11-05:** source published, connected Cloud/Netlify deployments verified, shared2k catalog/semantic artifact/analytics active. Backend CI and corrected80/80frontend CI pass; real hosted discovery/saves/dashboard/routes/layout pass. **Hosted assistant smoke failed guarded answer validation (502); final acceptance remains incomplete.** [Deploy IDs, receipts, rollback and limitation](reports/project-completion.md). Older release-preparation instructions below are dated context.
+
 ## Owner-authorized release — 2026-11-05
 
 The owner explicitly selected **Publish now**, authorizing commit/push/deployment to the existing free services and a shared2,000-game catalog for every app service. Repository connection/Netlify Active builds are owner-reported setup, not verification of a deployed revision. [Current release evidence/blockers](reports/project-release-2026-11-05.md).

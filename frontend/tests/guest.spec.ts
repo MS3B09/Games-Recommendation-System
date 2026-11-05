@@ -113,10 +113,10 @@ test('favorites, preferences, saves, feedback and history survive reload and dir
   expect(requests[1]?.favorite_ids).toContain(237930);
   expect(requests[1]?.filters?.max_price_cents).toBe(2500);
   expect(requests[1]).not.toHaveProperty('saved');
-    expect(requests[1]).not.toHaveProperty('history');
-    // Request capture precedes response persistence; do not reload mid-request.
-    await expect(page.locator('.study-results')).toHaveAttribute('aria-busy', 'false');
-    await page.reload();
+  expect(requests[1]).not.toHaveProperty('history');
+  // Request capture precedes response persistence; do not reload mid-request.
+  await expect(page.locator('.study-results')).toHaveAttribute('aria-busy', 'false');
+  await page.reload();
   await expect(page.getByRole('button', { name: 'Remove Transistor from favorites' })).toBeVisible();
   await expect(page.getByRole('slider', { name: 'Maximum recorded price', exact: true })).toHaveValue('2500');
   await page.getByRole('link', { name: 'Saved games (1)' }).click();

@@ -5,12 +5,12 @@
 The local application includes guest discovery, saved games, feedback and an independent conversational assistant. **The three-task completion plan now stands at:**
 
 1. **Catalog expansion complete and active:** 2,000 eligible games with pinned embeddings/metadata. Compatible hosted backend/artifact verified before atomic activation; original40retained for rollback. [Evidence and refresh](docs/reports/catalog-expansion.md).
-2. **Dashboard implemented locally, ready for owner review:** `/dashboard` has the original four metrics, eight charts and description word cloud in Current, with version-bound analytics and clearer navigation. [Preview, checks and results](docs/reports/dashboard-implementation.md).
-3. **Publication/deployment authorized and in progress:** publish the latest source to GitHub and deploy to Netlify and FastAPI Cloud, verify the hosted experience and confirm project completion. The owner requires the 2,000-game catalog as the shared default for every app service. [Current release work](docs/reports/project-release-2026-11-05.md).
+2. **Dashboard live:** `/dashboard` has all four metrics, eight charts and the description word cloud in Current, with version-bound analytics and clearer navigation. [Implementation evidence](docs/reports/dashboard-implementation.md).
+3. **Published/deployed; acceptance incomplete:** GitHub/Netlify/FastAPI Cloud publication verified. Hosted discovery/saves/dashboard pass, but one bounded hosted assistant smoke failed guarded answer validation. Final owner acceptance remains. [Release outcome and limitation](docs/reports/project-completion.md).
 
 **[Detailed implementation plan](docs/project-completion-plan.md) · [Documentation index](docs/README.md) · [Progress](docs/progress.md) · [Local startup](docs/operations-assistant.md) · [Release runbook](docs/deployment.md)**
 
-The [public API](https://steam-discovery-api.fastapicloud.dev/docs) now serves the shared **2,000-game catalog**, matching analytics/semantic artifact and metered AI. The [public frontend](https://steam-discovery.netlify.app/) still needs its matching latest build verified; GitHub/connected deployments and hosted acceptance are in progress. Local **http://127.0.0.1:4173/** and **/dashboard** retain Current's125% default scale. Historical AI evaluation limitations remain; further evaluation campaigns are not part of the roadmap. Free-only operation and source-supported claims remain requirements.
+The [live application](https://steam-discovery.netlify.app/) and [API](https://steam-discovery-api.fastapicloud.dev/docs) share **2,000eligible games**, matching analytics/semantic artifact and metered AI. Hosted discovery/dashboard/persistence and125%layout checks pass. **Hosted chat delivered no answer in its smoke (502); project completion is not claimed.** Historical AI evidence remains honest; no old evaluation campaign was resumed. Free-only operation and source-supported claims remain requirements.
 
 ## Historical implementation status
 
