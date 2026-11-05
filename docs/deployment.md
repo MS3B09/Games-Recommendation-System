@@ -4,11 +4,11 @@
 
 The owner explicitly selected **Publish now**, authorizing commit/push/deployment to the existing free services and a shared2,000-game catalog for every app service. Repository connection/Netlify Active builds are owner-reported setup, not verification of a deployed revision. [Current release evidence/blockers](reports/project-release-2026-11-05.md).
 
-FastAPI Cloud CLI currently reports **No credentials found** and the browser opens its login page. From the project root, the owner must run `.\backend\.venv\Scripts\fastapi.exe cloud login` and complete their own browser authorization. Never paste tokens into chat. GitHub access already works. Keep min0/max1 replica and one worker/free plan; actual account settings remain to be inspected after login.
+FastAPI Cloud login is complete. Existing Hobby app verified: `backend`, min0/max1, nano, one startup server process. Manual deployment `782ae973-8bf6-4b23-b8c3-3fd102897f6e` succeeded with actual expanded semantic artifact loaded. GitHub works. Never paste tokens into chat; keep these existing free settings.
 
 The standard Python build now bundles the public2k artifact plus the exact pinned tokenizer/floatONNX files using `setup.py`/`build_semantic.py`, with streaming hash/size checks and no request-time download. NumPy/ONNX/tokenizers are required, already-pinned serving dependencies; no existing locked version was upgraded. Portable default query paths resolve inside the installed package. Cloud `QUERY_*` overrides should be unset or point to those actual hosted files, never C:/E: paths. Still configure secret `DATABASE_URL`, secret `GROQ_API_KEY`, explicit `GROQ_MODEL=openai/gpt-oss-120b`, `AI_ENABLED=true`, `AI_DAILY_CALLS=50`, `AI_DAILY_TOKENS=500000` and exact Netlify CORS origin. Migration credentials remain developer-only.
 
-Do not switch the shared active generation before the matching backend/assets are available. Current hosted API remains40/semanticfalse/AIoff/noanalytics. After hosted readiness, activate using the existing validated developer job, verify shared version across endpoints, then publish the matching frontend. Preserve the previous compatible app/catalog/artifact and all usage/history. No completed release or final acceptance is claimed yet.
+Backend/artifact readiness passed before validated atomic activation. Hosted status now reports `m2-cd9790b88f91370e69dae895`,2,000games, semantic+AItrue; matching analytics/CORS/constrained discovery pass. GitHub/Netlify publication verification and final hosted acceptance remain. Preserve previous compatible app/catalog/artifact and all usage/history; do not claim completion yet.
 
 ## Current release plan — 2026-11-04
 

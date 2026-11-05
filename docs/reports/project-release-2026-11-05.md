@@ -4,7 +4,20 @@
 
 The owner requires the2,000-game catalog to be the default for recommendations, chat, dashboard and every other catalog service, and explicitly selected **Publish now** for Task3. Commit/push and deployment to the existing free GitHub/Netlify/FastAPI Cloud services are authorized. Owner-reported repo connection and Active Netlify builds do not establish a successful latest deployment. Final hosted acceptance is still required.
 
-**No push, deployment or shared public activation has occurred in this continuation.** The hosted API still reports40games, semantic/AI disabled and404for analytics; the public frontend remains the earlier M2 build. Activation must follow compatible hosted backend/model readiness, not precede it.
+**20:06 UTC: compatible backend deployed and the shared 2,000-game generation is active.** FastAPI Cloud login is resolved. Deployment `782ae973-8bf6-4b23-b8c3-3fd102897f6e` serves the latest local source. Before activation, status proved `semantic_catalog_version=m2-cd9790b88f91370e69dae895` while the catalog still had40games. The existing validated `jobs activate` reused and atomically activated that generation; the previous40 remains retained. GitHub push and matching Netlify publication are next, not yet verified.
+
+## Hosted backend and shared activation
+
+- Existing Hobby team verified: directory `backend`, min0/max1, `nano`; startup logs show one server process. No paid resources/new app/second database.
+- Preserved secret `DATABASE_URL`; added existing Groq key as secret, explicit `openai/gpt-oss-120b`, AI enabled, normal50/500,000 limits and exact Netlify CORS. No migration credentials/Windows query overrides deployed.
+- Local commits `c50f5d4`/`bb93118`: release plus additive loaded-semantic-version diagnostic. After diagnostic: backend299checks(1historical skip)/Ruff/mypy30/OpenAPI and frontend APItypes/standard TS+Vite public-origin build passed.
+- Post-activation hosted status2,000/semantic+AItrue; analytics digest `5116c42f8dc97f6e2556f8789aeb664e6c7ae02c070ec1466936d4fdf8472a83`/60words, expanded-only OuterWilds detail, last50of2,000page, facets, constrained favorite discovery, exact Netlify CORS and exact hosted/local OpenAPI equality pass. No inference in these probes.
+- Preflight: Alembic0010,2,000games/vectors/metadata, original40document digest unchanged,3user archives/99,155logical bytes/0pending, Nov5usage3calls/30,886units. Activation report:50,460,339database bytes including temporary preview. No archive/accounting mutation by activation.
+- Initial probe errors retained: wrong Alembic schema caused read-only rollback; wrong manual request keys/mode correctly returned422; wrong `recommendations` assertion corrected to actual `results`. Probe fixes only. Nonexistent `/api/v1/catalog/analytics` returned404; actual `/api/v1/analytics` correctly returned503for legacy generation and200after activation.
+- Ignored local `.env`: matching2k artifact, normal50/500k caps and explicit dev/4173CORS; other values preserved. Exact owned preview25516/6324stopped after identity checks; tagged schema `catalog_preview_ca1e80e8e814` inspected/removed. Normal single-worker API8002started against shared DB; frontend4173unchanged.
+- Rollback references: retained40version `m2-649714e8b26775165f105d02`, original full artifact, prior cloud deployment `59e1a472-abdc-447f-b5bd-bcb27e1b71ec`/source `c5a85499b7fe21ec1cf551cdb71e134c86840588`. Roll back compatible app/artifact/catalog together.
+
+Ignored receipts: `cloud-postdeploy-initial.json`, `release-activation-preflight.json`, `release-hosted-api-activation.json`, `release-preview-cleanup.json`; C:run `activation-report.json`. Security advisories empty. Public Netlify history shows old `main@3453bfb` published; latest connected production build needs verification after push. No hosted generation/final owner acceptance yet. The preparation snapshots below are historical.
 
 ## Local services restored
 
@@ -53,12 +66,12 @@ The current inspection frontend is the verified clean-source Vite preview:listen
 
 Read-only database checks: Alembic0010; original40active/expanded2,000inactive; matching analytics digest retained. Three user archives existed before probe creation (38,890logical document bytes), and three remained after owned archive probes. Fresh19:38UTCusage check showed0effective Nov5calls/units and last reservation Nov4at10:13UTC(over33hours earlier), establishing fresh owned-window headroom for one bounded smoke, not an organization-wide balance guarantee. The smoke used the ordinary reservation function's normal UTC rollover: Nov5now3calls/30,886units. No manual reset/refund/quota increase. The terminal's CP1252printing failed on a nonbreaking hyphen **after** the completed smoke report/cleanup had been written; the saved report was read, not replayed. Supabase security advisories empty; existing informational unused-index findings retained, not deleted.
 
-## Access blocker and exact next action
+## Resolved access blocker and next action
 
-GitHub is authenticated for the existing repo/main. **FastAPI Cloud is not authenticated in this environment**: CLI `fastapi cloud whoami` reports No credentials and browser opens login. From the project folder, the owner should run:
+The owner completed FastAPI Cloud login privately; `cloud whoami` and deployment now succeed. The earlier private-login request was:
 
 ```powershell
 .\backend\.venv\Scripts\fastapi.exe cloud login
 ```
 
-Complete browser authorization privately, then report that login is finished; do not paste tokens/keys. After access: inspect the existing app's free plan/build/worker settings and configure its server secrets/runtime, finish release checks, review all intended source and staged-file safety, coordinate backend→catalog/artifact→frontend publication, then perform hosted smoke/acceptance. Netlify public build variable remains`VITE_API_BASE_URL=https://steam-discovery-api.fastapicloud.dev`. No new paid service, second database, old evaluation replay or blanket quality claim is authorized or needed.
+Next: publish reviewed source, verify CI and connected Netlify/FastAPI Cloud revisions, then hosted journeys and bounded fresh chat when headroom permits. Public build variable remains`VITE_API_BASE_URL=https://steam-discovery-api.fastapicloud.dev`. Never paste secrets. No paid service, second database, old evaluation replay or blanket quality claim is needed.

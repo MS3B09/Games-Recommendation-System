@@ -1,5 +1,9 @@
 # Implementation progress
 
+## 2026-11-05 20:06 UTC — hosted backend ready; shared2k catalog active
+
+Login resolved; Hobby/min0-max1/nano/one-server startup verified. Deployment `782ae973-8bf6-4b23-b8c3-3fd102897f6e` loaded matching2k artifact **before** validated atomic activation. Hosted status/analytics/facets/expanded detail/last page/constrained discovery/CORS/exact OpenAPI pass; semantic+AItrue. Previous40/artifact/deployment retained; user archives/usage preserved. Local env uses matching artifact/normal50-500k caps; exact tagged preview stopped/removed, normal API8002started. GitHub push/connected deployments/hosted owner acceptance remain. [Evidence](reports/project-release-2026-11-05.md). Earlier login/public40 statements below are historical.
+
 ## 2026-11-05 — shared-catalog release authorized; local chat services restored
 
 **Latest verification:** full clean frontend **80/80passed in one run**, after the standard build/lint/API-type checks. Initial79/80failure exposed one320px chat-log keyboard-focus issue; fixed with native tabIndex/existing inset focus outline, retaining125%. Fresh backend89-package production install and actual portable384Dencoder passed; final licensed wheel83,279,503B/hash/version verified. One new local live OuterWilds smoke returnedHTTP200/canonical expanded-only card in8,037.024ms,3calls/30,886reserved units,no retry; owned archive erased/independent404. Public activation/push/deploy still blocked on cloud login, not authorization. This supersedes the earlier in-progress/zero-inference snapshots below; no broad quality/hosted acceptance claim.

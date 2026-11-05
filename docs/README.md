@@ -33,4 +33,4 @@ In particular, preserve `conversational-rag-contracts.md`, frozen JSON/journals/
 
 ## Next action
 
-Continue **owner-authorized Task 3**: publish/deploy the latest app and make the 2,000-game generation the shared default across discovery, chat and dashboard. Local4173 now connects all these services to the expanded catalog, with the real shared archive and metered AI. FastAPI Cloud access must be authenticated before configuring the coordinated release; public40 remains active until hosted compatibility/artifact readiness. [Current release handoff](reports/project-release-2026-11-05.md). Do not resume collection or old evaluation runs; final hosted acceptance is still required.
+Continue **owner-authorized Task 3**: compatible FastAPI Cloud release/artifact verified and shared2,000-game generation active. Login resolved; next publish reviewed source, verify CI/connected deployments, exercise hosted journeys and obtain owner acceptance. [Release handoff](reports/project-release-2026-11-05.md). Do not resume collection or old evaluations.

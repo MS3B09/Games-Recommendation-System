@@ -4,13 +4,13 @@
 
 The local application includes guest discovery, saved games, feedback and an independent conversational assistant. **The three-task completion plan now stands at:**
 
-1. **Catalog expansion complete at verified staged-handoff scope:** 2,000 eligible games, pinned embeddings and dashboard metadata imported as one inactive generation. Correctness, resources and isolated rollback verified. Public activation is coordinated with Task 3 to preserve the current serving artifact/version. [Evidence and refresh commands](docs/reports/catalog-expansion.md).
+1. **Catalog expansion complete and active:** 2,000 eligible games with pinned embeddings/metadata. Compatible hosted backend/artifact verified before atomic activation; original40retained for rollback. [Evidence and refresh](docs/reports/catalog-expansion.md).
 2. **Dashboard implemented locally, ready for owner review:** `/dashboard` has the original four metrics, eight charts and description word cloud in Current, with version-bound analytics and clearer navigation. [Preview, checks and results](docs/reports/dashboard-implementation.md).
 3. **Publication/deployment authorized and in progress:** publish the latest source to GitHub and deploy to Netlify and FastAPI Cloud, verify the hosted experience and confirm project completion. The owner requires the 2,000-game catalog as the shared default for every app service. [Current release work](docs/reports/project-release-2026-11-05.md).
 
 **[Detailed implementation plan](docs/project-completion-plan.md) · [Documentation index](docs/README.md) · [Progress](docs/progress.md) · [Local startup](docs/operations-assistant.md) · [Release runbook](docs/deployment.md)**
 
-The public release remains M2 with 40 active games; the expanded 2,000-game generation and analytics are **staged, not yet live**. Review the local app at **http://127.0.0.1:4173/** or **/dashboard**: discovery, chat catalog tools and analytics now share the actual 2,000-game preview; chat uses the real archive and configured metered AI. Cloud authentication/configuration and the coordinated hosted release remain pending, not owner permission to start. Existing AI evaluation evidence and limitations remain available, but further evaluation campaigns are not part of the remaining roadmap. Free-only operation and honest, source-supported claims remain requirements.
+The [public API](https://steam-discovery-api.fastapicloud.dev/docs) now serves the shared **2,000-game catalog**, matching analytics/semantic artifact and metered AI. The [public frontend](https://steam-discovery.netlify.app/) still needs its matching latest build verified; GitHub/connected deployments and hosted acceptance are in progress. Local **http://127.0.0.1:4173/** and **/dashboard** retain Current's125% default scale. Historical AI evaluation limitations remain; further evaluation campaigns are not part of the roadmap. Free-only operation and source-supported claims remain requirements.
 
 ## Historical implementation status
 

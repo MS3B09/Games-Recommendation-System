@@ -1,5 +1,7 @@
 # Project Brief and Agreed Requirements
 
+**Release continuation — 2026-11-05 20:06 UTC:** Cloud login resolved; existingHobby/min0-max1/nano/one-server startup verified. Manualdeployment`782ae973-8bf6-4b23-b8c3-3fd102897f6e`loadedexact2ksemanticartifactBEFOREvalidated`jobs activate`; sharedgeneration`m2-cd9790b88f91370e69dae895`NOWACTIVE/2000/semantic+AItrue. Hostedanalyticsdigestunchanged/60words/facets/OuterWilds/lastpage/constrainedfavorite/CORS/exactOpenAPIpass,0inference. Previous40+artifact+cloud`59e1a472-abdc-447f-b5bd-bcb27e1b71ec`retainedforcoordinatedrollback. PreflightAlembic0010/3archives99155B/0pending/usage3calls30886unitsunchanged. Localignored.envnowmatchingartifact+normal50/500k+dev4173CORS; othersecretsunchanged. Exactowned25516/6324stopped/tagged`catalog_preview_ca1e80e8e814`inspected/removed;normalAPI8002started/frontend21228untouched(recheckidentities). Localcommitsc50f5d4/bb93118,NOTpushedyet;nextsafe-sourcepublication/CI/connectedNetlify+Cloudrevisionverification/hostedjourneys+boundedfreshchat/finalowneracceptance. Netlifypublichistorystill3453bfbpublished;nohostedcompletionclaim. [Releasehandoff](docs/reports/project-release-2026-11-05.md). Earlierlogin/public40/no-deployparagraphsarehistorical;donotresumecollectors/oldevaluations.
+
 ## Authoritative remaining scope — owner revision, 2026-11-04
 
 The owner has narrowed completion to **three tasks only**, in order:
