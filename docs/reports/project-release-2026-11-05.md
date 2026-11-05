@@ -19,7 +19,15 @@ The owner requires the2,000-game catalog to be the default for recommendations, 
 
 Ignored receipts: `cloud-postdeploy-initial.json`, `release-activation-preflight.json`, `release-hosted-api-activation.json`, `release-preview-cleanup.json`; C:run `activation-report.json`. Security advisories empty. Public Netlify history shows old `main@3453bfb` published; latest connected production build needs verification after push. No hosted generation/final owner acceptance yet. The preparation snapshots below are historical.
 
-## Local services restored
+## Connected publication and CI
+
+Published `d9796e4f291992794e7e53799e75eab78728541f` to existing `main` after scanning1,391tracked files:0configured-secret findings/0unsafe outgoing paths. Connected cloud deployment `aeffac70-9394-40f4-9557-ba97036aedbe` succeeded at that exact SHA. Netlify deploy `6aece2f9a3a978959a4e219f` is published at the same SHA; public JS includes the correct API origin/dashboard (not claimed byte-identical to the saved Windows build).
+
+Backend CI [42101069716](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/42101069716) passed. Frontend CI [42101068285](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/42101068285) passed79/80; its saved-history test reloaded after request capture but before response persistence, aborting the second response. Added one explicit `aria-busy=false` completion assertion before reload; no app behavior/layout changed. The affected existing test passes3bounded local repetitions with lint. Full corrected CI and hosted journeys still pending. The temporary local reporter reused its normal JSON output for this3-run check; prior full80result remains dated terminal evidence, not the contents of that overwritten machine JSON. Historical failure reports/journals remain unchanged.
+
+Normal local API8002verified against shared2k/semantic+AItrue: listener25788/parent10792; frontend21228/24344unchanged. Recheck identities before actions.
+
+## Local services restored (earlier preparation)
 
 -4173 still targets8002; the125% presentation is unchanged.
 -Discovery, exact/semantic/chat catalog tools and dashboard share version`m2-cd9790b88f91370e69dae895` and2,000games.
