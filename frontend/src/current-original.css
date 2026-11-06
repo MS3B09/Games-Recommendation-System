@@ -119,6 +119,23 @@ p { line-height: 1.6; }
 .dashboard-legend-dot { display: inline-block; width: 9px; height: 9px; flex-shrink: 0; border-radius: 50%; }
 .dashboard-stack-key { display: flex; flex-wrap: wrap; gap: 12px; font-size: 11px; color: #c1c7da; }
 .dashboard-stack-key > span { display: inline-flex; align-items: center; gap: 6px; }
+.dashboard-donut-summary { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1fr); gap: 16px; align-items: center; }
+.dashboard-donut-summary .dashboard-legend button { grid-template-columns: 9px minmax(0, 1fr) auto; border: 0; padding-inline: 0; }
+.dashboard-donut-summary .dashboard-legend small { grid-column: 2 / -1; text-align: left; margin-top: -6px; }
+.dashboard-share-strip { display: flex; height: 36px; margin-bottom: 24px; }
+.dashboard-share-strip > span { flex-shrink: 0; min-width: 0; }
+.dashboard-share-values, .dashboard-lollipops { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
+.dashboard-share-values li > div { display: grid; grid-template-columns: 9px minmax(0, 1fr) auto; gap: 10px; align-items: center; font-size: 13px; }
+.dashboard-share-values p { margin: 5px 0 0 19px; font-size: 11px; color: #b8bed1; }
+.dashboard-lollipops li > div:first-child { display: flex; justify-content: space-between; gap: 20px; align-items: start; font-size: 14px; }
+.dashboard-lollipops li > div:first-child > span { overflow-wrap: anywhere; }
+.dashboard-lollipops strong { flex-shrink: 0; }
+.dashboard-lollipop-track { height: 2px; background: #1b2137; margin: 14px 6px 4px; }
+.dashboard-lollipop-track > span { display: block; height: 100%; background: #8995f0; position: relative; }
+.dashboard-lollipop-track > span::after { content: ''; position: absolute; right: -6px; top: -5px; width: 12px; height: 12px; background: #e3fb76; border-radius: 50%; }
+@media (max-width: 640px) {
+  .dashboard-donut-summary { grid-template-columns: minmax(0, 1fr); }
+}
 .dashboard-values table { table-layout: fixed; }
 .dashboard-provenance summary { min-height: 44px; align-content: center; }
 @media (max-width: 1000px) {

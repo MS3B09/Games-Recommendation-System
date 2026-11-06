@@ -17,6 +17,8 @@ The owner selected a capacity audit before deciding catalog size, popular and le
 | [Catalog capacity audit](reports/catalog-capacity-audit.md) | Original 40-game inventory, source/pilot measurements and sizing basis |
 | [Catalog expansion](reports/catalog-expansion.md) | Completed 2,000-game artifacts/staging, measurements, verification, activation/rollback state and refresh commands |
 | [Dashboard implementation](reports/dashboard-implementation.md) | Implemented `/dashboard`, version-bound analytics, checks, scoped UI verdict, local 2,000-game review preview and release boundary |
+| [Dashboard chart options](reports/dashboard-chart-options-2026-11-06.md) | Retained36-preview selection artifact; owner subsequently supplied chart choices |
+| [Owner-selected dashboard](reports/dashboard-selected-2026-11-06.md) | Implemented selected chart mix, visible values, presentation-only filtering, axis-label fixes and release evidence boundaries |
 | [Project brief / agent instructions](../AGENTS.md) | Latest owner direction and retained constraints |
 | [Technical plan](../IMPLEMENTATION_PLAN.md) | Current task map plus historical architecture/milestones |
 | [Product](../PRODUCT.md) | Product scope and completion definition |
