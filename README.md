@@ -6,7 +6,7 @@ The local application includes guest discovery, saved games, feedback and an ind
 
 1. **Catalog expansion complete and active:** 2,000 eligible games with pinned embeddings/metadata. Compatible hosted backend/artifact verified before atomic activation; original40retained for rollback. [Evidence and refresh](docs/reports/catalog-expansion.md).
 2. **Dashboard live:** `/dashboard` has all four metrics, eight charts and the description word cloud in Current, with version-bound analytics and clearer navigation. [Implementation evidence](docs/reports/dashboard-implementation.md).
-3. **Published, deployed and owner accepted:** the owner verified the live application, including recommendations and chat, on November6. The original three-task scope is complete. A separately authorized interactive-dashboard enhancement is now in progress. [Release outcome and retained limitations](docs/reports/project-completion.md).
+3. **Published, deployed and owner accepted:** the owner verified the live application, including recommendations and chat, on November6. The original three-task scope is complete. The separately requested [interactive-dashboard enhancement](docs/reports/dashboard-interactive-2026-11-06.md) is now live with varied Plotly charts, keyboard legends, hover/zoom/reset and a refined overview. [Release outcome and retained limitations](docs/reports/project-completion.md).
 
 **[Detailed implementation plan](docs/project-completion-plan.md) · [Documentation index](docs/README.md) · [Progress](docs/progress.md) · [Local startup](docs/operations-assistant.md) · [Release runbook](docs/deployment.md)**
 

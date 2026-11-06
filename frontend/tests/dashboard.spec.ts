@@ -58,12 +58,12 @@ test('dashboard navigation, all thirteen items, year exploration, refresh and st
   const release = page.getByRole('article', { name: 'Games released by month' });
   await release.getByText('View exact values', { exact: true }).click();
   await expect(release.getByRole('row', { name: 'Nov 1', exact: true })).toBeVisible();
-  await expect.poll(() => release.locator('.dashboard-plot').evaluate(node => (node as HTMLElement & { data: { y: number[] }[] }).data[0]!.y)).toEqual(snapshot.data.release_years.find(x => x.year === 2006)!.months);
+  await expect.poll(() => release.locator('.dashboard-plot').evaluate(node => (node as HTMLElement & { data: { y: number[] }[] }).data?.[0]?.y)).toEqual(snapshot.data.release_years.find(x => x.year === 2006)!.months);
   const free = page.getByRole('article', { name: 'Free vs paid games', exact: true });
   const category = free.getByRole('button', { name: /^Free / });
   await category.focus(); await page.keyboard.press('Space');
   await expect(category).toHaveAttribute('aria-pressed', 'false');
-  await expect.poll(() => free.locator('.dashboard-plot').evaluate(node => (node as HTMLElement & { layout: { hiddenlabels: string[] } }).layout.hiddenlabels)).toContain('Free to play');
+  await expect.poll(() => free.locator('.dashboard-plot').evaluate(node => (node as HTMLElement & { layout: { hiddenlabels: string[] } }).layout?.hiddenlabels)).toContain('Free to play');
   await category.click(); await expect(category).toHaveAttribute('aria-pressed', 'true');
   // Plotly's transparent drag layer receives pointer events above its SVG points.
   await release.locator('.scatterlayer .point').nth(10).hover({ force: true });
@@ -73,9 +73,9 @@ test('dashboard navigation, all thirteen items, year exploration, refresh and st
   await page.mouse.down();
   await page.mouse.move(drag!.x + drag!.width * .7, drag!.y + drag!.height * .8, { steps: 8 });
   await page.mouse.up();
-  await expect.poll(() => release.locator('.dashboard-plot').evaluate(node => (node as HTMLElement & { layout: { xaxis: { range: number[] } } }).layout.xaxis.range[1]!)).toBeLessThan(11);
+  await expect.poll(() => release.locator('.dashboard-plot').evaluate(node => (node as HTMLElement & { layout: { xaxis: { range: number[] } } }).layout?.xaxis?.range?.[1])).toBeLessThan(11);
   await release.getByRole('button', { name: 'Reset view: Games released by month', exact: true }).click();
-  await expect.poll(() => release.locator('.dashboard-plot').evaluate(node => (node as HTMLElement & { layout: { xaxis: { range: number[] } } }).layout.xaxis.range[1]!)).toBeGreaterThanOrEqual(11);
+  await expect.poll(() => release.locator('.dashboard-plot').evaluate(node => (node as HTMLElement & { layout: { xaxis: { range: number[] } } }).layout?.xaxis?.range?.[1])).toBeGreaterThanOrEqual(11);
   const refreshed = clone();
   refreshed.catalog_version = refreshed.data.catalog_version = 'refresh-fixture';
   refreshed.data.avg_price_cents = 2500;
