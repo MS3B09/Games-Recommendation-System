@@ -2,10 +2,14 @@
 version: 1
 slug: "frontend-src-current-original-tsx"
 primary_target: "frontend/src/current-original.tsx"
-related_targets: ["frontend/index.html", "frontend/current-original.html", "frontend/src/GuestApp.tsx", "frontend/src/GuestDiscovery.tsx", "frontend/src/DiscoveryControls.tsx", "frontend/src/GuestGameRow.tsx", "frontend/src/GuestLibrary.tsx", "frontend/src/guest-store.ts", "frontend/src/current-original.css", "frontend/src/Icon.tsx", "frontend/src/GuestDashboard.tsx", "frontend/src/api/analytics.ts"]
+related_targets: ["frontend/index.html", "frontend/current-original.html", "frontend/src/GuestApp.tsx", "frontend/src/GuestDiscovery.tsx", "frontend/src/DiscoveryControls.tsx", "frontend/src/GuestGameRow.tsx", "frontend/src/GuestLibrary.tsx", "frontend/src/guest-store.ts", "frontend/src/current-original.css", "frontend/src/Icon.tsx", "frontend/src/GuestDashboard.tsx", "frontend/src/DashboardPlot.tsx", "frontend/src/api/analytics.ts"]
 ---
 
 # Official Current surface — M3 complete locally, 2026-10-18
+
+## Interactive dashboard follow-up — owner approved, 2026-11-06
+
+Mode: Operate. Preserve Current's cobalt/navy/lime, Anton/Manrope,125%app scale, thirteen analytics items, exact-value tables, source coverage and independent guest/chat state. Owner confirmed Impeccable and authorized commit/push/live deployment. Replace static plots with lazy-loaded Plotly basic4.2.0: donut free/paid and reviews, filled release trend, price/discount columns, ranked genre/developer bars and stacked platform support states. Native keyboard category toggles accompany donut plots; chart pointer zoom/reset and hover/tap values do not filter discovery or mutate source aggregates. Chart labels are escaped before Plotly's text rendering; native tables retain full names. Metric overview gains a cobalt anchor, shared navy panel and drawn icons; snapshot provenance gains a framed disclosure; section navigation becomes icon-led outlined links. No fabricated trends, live-price claims, new imagery or global redesign. Verification/deployment evidence belongs to the dated dashboard-interactive report; older static-chart/acceptance-pending descriptions below are historical.
 
 **Release hardening — 2026-11-05:** owner authorized publication and the shared2k catalog across all services. Local preview chat now has real archive+metered AI;125% remains unchanged. Fresh locked frontend install/standard TypeScript+Vite build passed. Initial full browser run79/80exposed one keyboard-inaccessible scrolling log in the320px error state; native `tabIndex=0` and the existing lime focus outline inset3px resolve the mechanism without a visual/layout redesign. Final confirmation remains separate in [release evidence](../../docs/reports/project-release-2026-11-05.md); no new independent/hosted verdict is claimed. Existing tokens/sidecar/asset provenance remain unchanged.
 

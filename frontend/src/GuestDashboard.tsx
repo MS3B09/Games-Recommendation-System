@@ -2,6 +2,8 @@ import { useEffect, useState, type CSSProperties, type ReactNode } from 'react';
 import { getAnalytics, type Analytics, type AnalyticsResponse, type Count } from './api/analytics';
 import { ServiceError } from './api/client';
 import { observed } from './GuestGameRow';
+import DashboardPlot from './DashboardPlot';
+import Icon from './Icon';
 
 const number = (n: number) => n.toLocaleString('en-US');
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -11,14 +13,11 @@ function Values({ rows, caption }: { rows: Count[]; caption: string }) {
     <thead><tr><th scope="col">Category</th><th scope="col">Games</th></tr></thead>
     <tbody>{rows.map(x => <tr key={x.label}><th scope="row">{x.label}</th><td>{number(x.count)}</td></tr>)}</tbody></table></details>;
 }
-function Chart({ title, note, rows, children, className = '' }: { title: string; note: ReactNode; rows: Count[]; children?: ReactNode; className?: string }) {
-  const max = Math.max(1, ...rows.map(x => x.count));
+function Chart({ title, note, rows, children, className = '', kind = 'rank' }: { title: string; note: ReactNode; rows: Count[]; children?: ReactNode; className?: string; kind?: 'donut' | 'line' | 'column' | 'rank' | 'stack' }) {
   return <article className={`dashboard-chart ${className}`} aria-label={title}>
     <h3>{title}</h3><p className="dashboard-note">{note}</p>
-    {children ?? (rows.length ? <ul className="dashboard-bars">{rows.map(x => <li key={x.label}>
-      <div><span>{x.label}</span><strong>{number(x.count)}</strong></div>
-      <span className="dashboard-track" aria-hidden="true"><span style={{ width: `${x.count / max * 100}%` }} /></span>
-    </li>)}</ul> : <p>No recorded data for this chart.</p>)}
+    {children}
+    <DashboardPlot title={title} rows={rows} kind={kind} />
     <Values rows={rows} caption={title} />
   </article>;
 }
@@ -30,38 +29,31 @@ function DashboardData({ data: d }: { data: Analytics }) {
   const [year, setYear] = useState('all');
   const selected = d.release_years.filter(x => year === 'all' || String(x.year) === year);
   const released = months.map((label, i) => ({ label, count: selected.reduce((n, y) => n + y.months[i]!, 0) }));
-  const maxMonth = Math.max(1, ...released.map(x => x.count));
   const wordMax = Math.max(1, ...d.words.map(x => x.count));
   return <>
     <dl className="dashboard-metrics" aria-label="Catalog overview">
-      <div><dt>Total games</dt><dd><span>{number(d.total_games)}</span><p>Unique eligible games</p></dd></div>
-      <div><dt>Avg. price</dt><dd><span>{d.avg_price_cents === null ? 'Unknown' : `$${(d.avg_price_cents / 100).toFixed(2)}`}</span><p>Original/list USD · <Coverage data={d} field="original_price" /></p></dd></div>
-      <div><dt>Avg. discount</dt><dd><span>{d.avg_discount_percent === null ? 'Unknown' : `${d.avg_discount_percent.toFixed(2)}%`}</span><p><Coverage data={d} field="discount" /></p></dd></div>
-      <div><dt>Total developers</dt><dd><span>{number(d.total_developers)}</span><p><Coverage data={d} field="developers" /> games</p></dd></div>
+      <div><dt><Icon name="gamepad" />Total games</dt><dd><span>{number(d.total_games)}</span><p>Unique eligible games</p></dd></div>
+      <div><dt><Icon name="sliders" />Avg. price</dt><dd><span>{d.avg_price_cents === null ? 'Unknown' : `$${(d.avg_price_cents / 100).toFixed(2)}`}</span><p>Original/list USD · <Coverage data={d} field="original_price" /></p></dd></div>
+      <div><dt><Icon name="arrow" />Avg. discount</dt><dd><span>{d.avg_discount_percent === null ? 'Unknown' : `${d.avg_discount_percent.toFixed(2)}%`}</span><p><Coverage data={d} field="discount" /></p></dd></div>
+      <div><dt><Icon name="compass" />Total developers</dt><dd><span>{number(d.total_developers)}</span><p><Coverage data={d} field="developers" /> games</p></dd></div>
     </dl>
     {d.total_games === 0 ? <div className="dashboard-empty"><h2>No games in this snapshot.</h2><p>The charts will appear when an eligible catalog is published.</p></div> : <>
-      <nav className="dashboard-sections" aria-label="Dashboard sections"><a href="#dashboard-prices">Prices &amp; value</a><a href="#dashboard-range">Releases &amp; genres</a><a href="#dashboard-people">Platforms &amp; people</a><a href="#dashboard-themes">Description themes</a></nav>
+      <nav className="dashboard-sections" aria-label="Dashboard sections"><a href="#dashboard-prices"><Icon name="sliders" />Prices &amp; value<Icon name="arrow" /></a><a href="#dashboard-range"><Icon name="book" />Releases &amp; genres<Icon name="arrow" /></a><a href="#dashboard-people"><Icon name="gamepad" />Platforms &amp; people<Icon name="arrow" /></a><a href="#dashboard-themes"><Icon name="chat" />Description themes<Icon name="arrow" /></a></nav>
       <section className="dashboard-section" aria-labelledby="dashboard-prices"><h2 id="dashboard-prices">What does play cost?</h2><p>Recorded US store prices, not live offers. Price charts use original/list USD prices, not discounted checkout prices.</p>
-        <Chart title="Free vs paid games" note="Free to play is an explicit source classification. A temporary $0 promotion does not make a paid game free to play." rows={d.free_paid} className="dashboard-free">
-          <div className="dashboard-free-chart"><div className="dashboard-segments" aria-hidden="true">{d.free_paid.map((x, i) => <span key={x.label} className={`dashboard-segment-${i}`} style={{ flexGrow: x.count }} />)}</div>
-            <ul>{d.free_paid.map((x, i) => <li key={x.label}><span className={`dashboard-key dashboard-segment-${i}`} aria-hidden="true" /><span>{x.label}</span><strong>{number(x.count)}</strong><span>{(x.count / d.total_games * 100).toFixed(1)}%</span></li>)}</ul></div>
-        </Chart>
-        <div className="dashboard-grid"><Chart title="Games by price range" note={<><Coverage data={d} field="original_price" /> · USD</>} rows={d.price_ranges} />
-          <Chart title="Games by discount" note={<><Coverage data={d} field="discount" />. Valid discounts only; invalid values are excluded.</>} rows={d.discount_ranges} /></div>
+        <div className="dashboard-grid"><Chart title="Free vs paid games" kind="donut" note="Free to play is an explicit source classification. A temporary $0 promotion does not make a paid game free to play." rows={d.free_paid} className="dashboard-free" />
+        <Chart title="Games by price range" kind="column" note={<><Coverage data={d} field="original_price" /> · USD</>} rows={d.price_ranges} /></div>
+        <Chart title="Games by discount" kind="column" note={<><Coverage data={d} field="discount" />. Valid discounts only; invalid values are excluded.</>} rows={d.discount_ranges} />
       </section>
       <section className="dashboard-section" aria-labelledby="dashboard-range"><h2 id="dashboard-range">A catalog with range.</h2><p>Explore when games arrived and the genres they bring. Multi-genre games count once in each of their genres.</p>
-        <div className="dashboard-grid dashboard-range-grid"><Chart title="Games released by month" note={<><Coverage data={d} field="release_month" /> month. Year-only dates are not assigned a month.</>} rows={released}>
+        <div className="dashboard-grid dashboard-range-grid"><Chart title="Games released by month" kind="line" note={<><Coverage data={d} field="release_month" /> month. Year-only dates are not assigned a month.</>} rows={released}>
           <div className="dashboard-year"><label htmlFor="release-year">Release year</label><select id="release-year" value={year} onChange={e => setYear(e.target.value)}><option value="all">All years</option>{d.release_years.map(y => <option key={y.year} value={y.year}>{y.year}</option>)}</select></div>
           {year !== 'all' && <p className="dashboard-note">{number(selected.reduce((n, y) => n + y.unknown_month, 0))} releases with an unknown month in {year}.</p>}
-          <div className="dashboard-month-scroll" tabIndex={0} role="region" aria-label="Monthly release chart. Scroll horizontally for all months on narrow screens."><div className="dashboard-months" role="img" aria-label={`Monthly releases, ${year === 'all' ? 'all years' : year}. ${released.map(x => `${x.label}: ${x.count}`).join(', ')}`}>
-            {released.map(x => <div key={x.label}><strong>{number(x.count)}</strong><span className="dashboard-month-track"><span style={{ height: `${x.count / maxMonth * 100}%` }} /></span><span>{x.label}</span></div>)}
-          </div></div><p className="dashboard-chart-help">Scroll the chart for all months, or open the exact values below.</p>
         </Chart><Chart title="Top 15 game genres" note={<><Coverage data={d} field="genres" /> games. Full genre labels are retained.</>} rows={d.genres} className="dashboard-ranked" /></div>
       </section>
       <section className="dashboard-section" aria-labelledby="dashboard-people"><h2 id="dashboard-people">Platforms. Makers. Players.</h2><p>The support, studios and review sentiments recorded for this catalog.</p>
-        <div className="dashboard-grid"><Chart title="Supported platforms" note="Linux(SteamOS) counts verified Linux support only. Independent SteamOS / Steam Deck compatibility has not been verified." rows={d.platforms}>
-          <ul className="dashboard-platforms">{d.platforms.map(x => <li key={x.label}><div><strong>{x.label}</strong><strong>{number(x.count)}</strong></div><span className="dashboard-track" aria-hidden="true"><span style={{ width: `${x.count / d.total_games * 100}%` }} /></span><p>{number(x.unsupported)} unsupported · {number(x.unknown)} unknown</p></li>)}</ul>
-        </Chart><Chart title="Review type distribution" note={<><Coverage data={d} field="reviews" /> summaries. Steam’s exact sentiment labels; all languages, all purchase types, off-topic activity filtered. No reviews and unknown are separate.</>} rows={d.reviews} /></div>
+        <div className="dashboard-grid"><Chart title="Supported platforms" kind="stack" note="Linux(SteamOS) counts verified Linux support only. Independent SteamOS / Steam Deck compatibility has not been verified." rows={d.platforms}>
+          <details className="dashboard-platforms dashboard-values"><summary>Support coverage</summary><ul>{d.platforms.map(x => <li key={x.label}><strong>{x.label}</strong><p>{number(x.unsupported)} unsupported · {number(x.unknown)} unknown</p></li>)}</ul></details>
+        </Chart><Chart title="Review type distribution" kind="donut" note={<><Coverage data={d} field="reviews" /> summaries. Steam’s exact sentiment labels; all languages, all purchase types, off-topic activity filtered. No reviews and unknown are separate.</>} rows={d.reviews} /></div>
         <Chart title="Top 10 developers by game count" note="Each developer counts once per game. Co-developed games count for multiple developers. Names are normalized for spacing and case, never split at commas." rows={d.developers} className="dashboard-developers" />
       </section>
       <section className="dashboard-section" aria-labelledby="dashboard-themes"><h2 id="dashboard-themes">What’s in a description?</h2><p>Recurring words from the actual catalog descriptions. Larger words appear more often; these are themes, not verified gameplay attributes.</p>

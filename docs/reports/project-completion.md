@@ -1,6 +1,8 @@
-# Hosted release — published; acceptance incomplete
+# Hosted release — owner accepted
 
-**2026-11-05:** the requested source is published and the expanded catalog/dashboard are live. **Do not mark the project complete:** the one fresh hosted assistant smoke failed answer validation, and final owner acceptance has not occurred.
+**Owner acceptance — 2026-11-06:** the owner checked the live application, explicitly reported recommendations/chat/other services working well, and confirmed proceeding to a new dashboard enhancement. This closes the original three-task scope. The failed November5automated chat smoke below remains historical evidence, not erased or relabeled a pass. The separately authorized interactive-dashboard follow-up is documented in `dashboard-interactive-2026-11-06.md`.
+
+**Historical 2026-11-05 snapshot:** the requested source was published and expanded catalog/dashboard live; the one fresh hosted assistant smoke failed answer validation and owner acceptance had not yet occurred at that time.
 
 ## Live destinations
 

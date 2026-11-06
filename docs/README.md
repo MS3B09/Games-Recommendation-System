@@ -1,5 +1,7 @@
 # Documentation index
 
+**November6 owner update:** the original three-task release is owner accepted after live recommendations/chat review. The owner separately authorized richer interactive dashboard charts, a metrics/snapshot-area refinement, and commit/push/live deployment, with Impeccable confirmed. [Dashboard follow-up](reports/dashboard-interactive-2026-11-06.md). Earlier assistant-acceptance-pending next actions are historical; no old evaluation work is active.
+
 ## Current direction — 2026-11-04
 
 The only remaining tasks are **catalog expansion → catalog-connected dashboard → GitHub publication and Netlify/FastAPI Cloud deployment**. Start with the [project completion plan](project-completion-plan.md), which includes implementation locations, dashboard parity, checks, release order and completion criteria.

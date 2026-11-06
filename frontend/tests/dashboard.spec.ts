@@ -19,6 +19,22 @@ test('analytics parser rejects cross-version, malformed counts and missing field
   ]) { const x = clone(); mutate(x); expect(isAnalytics(x)).toBe(false); }
 });
 
+test('chart code loads only on the dashboard and exact data survives a chart-download failure', async ({ page }) => {
+  await mockCatalog(page);
+  await page.route('**/api/v1/analytics', route => route.fulfill({ json: clone() }));
+  let downloads = 0;
+  await page.route('**/assets/plotly-basic*.js', route => { downloads++; return route.abort(); });
+  await page.goto('/');
+  await expect(page.getByRole('button', { name: 'Find my next game', exact: true })).toBeVisible();
+  expect(downloads).toBe(0);
+  await page.getByRole('link', { name: 'Dashboard', exact: true }).click();
+  await expect(page.getByText('Interactive chart unavailable. Use the exact values below, or reload to try again.', { exact: true })).toHaveCount(8);
+  expect(downloads).toBeGreaterThan(0);
+  const free = page.getByRole('article', { name: 'Free vs paid games', exact: true });
+  await free.getByText('View exact values', { exact: true }).click();
+  await expect(free.getByRole('row', { name: 'Free to play 352', exact: true })).toBeVisible();
+});
+
 test('dashboard navigation, all thirteen items, year exploration, refresh and storage isolation', async ({ page }) => {
   await mockCatalog(page);
   let current = clone();
@@ -33,13 +49,33 @@ test('dashboard navigation, all thirteen items, year exploration, refresh and st
   await expect(page.locator('.dashboard-metrics dd > span').first()).toHaveText('2,000');
   await expect(page.locator('.dashboard-chart')).toHaveCount(8);
   await expect(page.locator('.dashboard-word-cloud > span')).toHaveCount(60);
+  await expect(page.locator('.dashboard-plot[data-ready="true"]')).toHaveCount(8);
+  expect(await page.locator('.dashboard-interactive').evaluateAll(nodes => [...new Set(nodes.map(n => n.getAttribute('data-chart-kind')))].sort())).toEqual(['column', 'donut', 'line', 'rank', 'stack']);
+  await page.getByText('Support coverage', { exact: true }).click();
   await expect(page.locator('.dashboard-platforms').getByText('Linux(SteamOS)', { exact: true })).toBeVisible();
   await expect(page.getByText(/Independent SteamOS \/ Steam Deck compatibility/)).toBeVisible();
   await page.getByLabel('Release year', { exact: true }).selectOption('2006');
   const release = page.getByRole('article', { name: 'Games released by month' });
   await release.getByText('View exact values', { exact: true }).click();
   await expect(release.getByRole('row', { name: 'Nov 1', exact: true })).toBeVisible();
-  await expect(release.locator('.dashboard-months strong')).toHaveText(snapshot.data.release_years.find(x => x.year === 2006)!.months.map(String));
+  await expect.poll(() => release.locator('.dashboard-plot').evaluate(node => (node as HTMLElement & { data: { y: number[] }[] }).data[0]!.y)).toEqual(snapshot.data.release_years.find(x => x.year === 2006)!.months);
+  const free = page.getByRole('article', { name: 'Free vs paid games', exact: true });
+  const category = free.getByRole('button', { name: /^Free / });
+  await category.focus(); await page.keyboard.press('Space');
+  await expect(category).toHaveAttribute('aria-pressed', 'false');
+  await expect.poll(() => free.locator('.dashboard-plot').evaluate(node => (node as HTMLElement & { layout: { hiddenlabels: string[] } }).layout.hiddenlabels)).toContain('Free to play');
+  await category.click(); await expect(category).toHaveAttribute('aria-pressed', 'true');
+  // Plotly's transparent drag layer receives pointer events above its SVG points.
+  await release.locator('.scatterlayer .point').nth(10).hover({ force: true });
+  await expect(release.locator('.hoverlayer')).toContainText('Nov');
+  const drag = await release.locator('.nsewdrag').boundingBox();
+  await page.mouse.move(drag!.x + drag!.width * .2, drag!.y + drag!.height * .2);
+  await page.mouse.down();
+  await page.mouse.move(drag!.x + drag!.width * .7, drag!.y + drag!.height * .8, { steps: 8 });
+  await page.mouse.up();
+  await expect.poll(() => release.locator('.dashboard-plot').evaluate(node => (node as HTMLElement & { layout: { xaxis: { range: number[] } } }).layout.xaxis.range[1]!)).toBeLessThan(11);
+  await release.getByRole('button', { name: 'Reset view: Games released by month', exact: true }).click();
+  await expect.poll(() => release.locator('.dashboard-plot').evaluate(node => (node as HTMLElement & { layout: { xaxis: { range: number[] } } }).layout.xaxis.range[1]!)).toBeGreaterThanOrEqual(11);
   const refreshed = clone();
   refreshed.catalog_version = refreshed.data.catalog_version = 'refresh-fixture';
   refreshed.data.avg_price_cents = 2500;
@@ -97,6 +133,7 @@ test('dashboard responsive charts, exact values, long labels and accessibility',
   await page.route('**/api/v1/analytics', route => route.fulfill({ json: current }));
   await page.goto('/dashboard');
   await expect(page.locator('.dashboard-chart')).toHaveCount(8);
+  await expect(page.locator('.dashboard-plot[data-ready="true"]')).toHaveCount(8);
   for (const [width, height] of [[1440, 1000], [390, 844], [320, 640]]) {
     await page.setViewportSize({ width: width!, height: height! });
     await page.evaluate(() => document.fonts.ready);

@@ -1,16 +1,16 @@
 # 🎮 Steam Games Analytics & Recommendation System
 
-## Current project status — 2026-11-05
+## Current project status — 2026-11-06
 
 The local application includes guest discovery, saved games, feedback and an independent conversational assistant. **The three-task completion plan now stands at:**
 
 1. **Catalog expansion complete and active:** 2,000 eligible games with pinned embeddings/metadata. Compatible hosted backend/artifact verified before atomic activation; original40retained for rollback. [Evidence and refresh](docs/reports/catalog-expansion.md).
 2. **Dashboard live:** `/dashboard` has all four metrics, eight charts and the description word cloud in Current, with version-bound analytics and clearer navigation. [Implementation evidence](docs/reports/dashboard-implementation.md).
-3. **Published/deployed; acceptance incomplete:** GitHub/Netlify/FastAPI Cloud publication verified. Hosted discovery/saves/dashboard pass, but one bounded hosted assistant smoke failed guarded answer validation. Final owner acceptance remains. [Release outcome and limitation](docs/reports/project-completion.md).
+3. **Published, deployed and owner accepted:** the owner verified the live application, including recommendations and chat, on November6. The original three-task scope is complete. A separately authorized interactive-dashboard enhancement is now in progress. [Release outcome and retained limitations](docs/reports/project-completion.md).
 
 **[Detailed implementation plan](docs/project-completion-plan.md) · [Documentation index](docs/README.md) · [Progress](docs/progress.md) · [Local startup](docs/operations-assistant.md) · [Release runbook](docs/deployment.md)**
 
-The [live application](https://steam-discovery.netlify.app/) and [API](https://steam-discovery-api.fastapicloud.dev/docs) share **2,000eligible games**, matching analytics/semantic artifact and metered AI. Hosted discovery/dashboard/persistence and125%layout checks pass. **Hosted chat delivered no answer in its smoke (502); project completion is not claimed.** Historical AI evidence remains honest; no old evaluation campaign was resumed. Free-only operation and source-supported claims remain requirements.
+The [live application](https://steam-discovery.netlify.app/) and [API](https://steam-discovery-api.fastapicloud.dev/docs) share **2,000eligible games**, matching analytics/semantic artifact and metered AI. Hosted discovery/dashboard/persistence and125%layout checks pass; owner acceptance is recorded. The earlier automated chat502remains documented, not relabeled a successful test. No old evaluation campaign was resumed. Free-only operation and source-supported claims remain requirements.
 
 ## Historical implementation status
 

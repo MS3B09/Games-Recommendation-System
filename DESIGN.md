@@ -163,6 +163,12 @@ components:
 
 # Design System: Game Discovery — Current
 
+## Interactive catalog dashboard — November 6 owner revision
+
+Owner approved Impeccable and publication for this scoped dashboard refinement. Preserve Current's cobalt/navy/lime, Anton/Manrope and125%root scale. Four metrics now form a framed navy overview with a cobalt total-games anchor and the existing drawn icon family; framed snapshot disclosure and icon-led outlined section links replace raw text links. Do not add invented comparison/trend badges.
+
+Eight charts use lazy-loaded Plotly basic: two donuts (free/paid, reviews), a filled monthly-release line, price/discount columns, genre/developer ranked bars and stacked supported/unsupported/unknown platform columns. Full labels/counts remain in native tables; keyboard category toggles accompany donuts. Hover/tap, drag-to-zoom and native Reset view are view-only. The drawing surface neutralizes inherited CSSzoom and explicitly scales typography/dimensions so Plotly pointer pixels align without changing the visible125%scale. The chart viewport clips obsolete SVG bounds during resize, never the page or table data. Existing missing-data/source/freshness/storage/refresh/word-cloud contracts remain. No new raster artwork or global tokens. See the dated interactive-dashboard report for actual checks and publication receipts; historical static-chart descriptions below are superseded only for this surface.
+
 **Release hardening — 2026-11-05:** the2k shared-catalog release is explicitly authorized and in progress; local chat now uses the real archive/metered AI, superseding the older AI-disabled preview notes below. Clean frontend install/standard TypeScript+Vite build passed at125%. An initial full browser run found one320px error-state a11y issue: the scrolling assistant log lacked keyboard focus when it contained only the user message. It now has native `tabIndex=0` and an inset existing lime focus outline, without scale/layout/copy changes. Final confirmation is recorded in [release evidence](docs/reports/project-release-2026-11-05.md); no new independent/hosted verdict is implied.
 
 The final clean-source confirmation passed **all80frontend tests in one run**; builder opened representative1440/390/320error captures, detector`[]`. This is verification of the focusability fix and regressions, not a new independent design verdict or physical-phone/hosted acceptance.
