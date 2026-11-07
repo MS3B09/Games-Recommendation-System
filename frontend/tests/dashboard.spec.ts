@@ -19,7 +19,7 @@ test('analytics parser rejects cross-version, malformed counts and missing field
   ]) { const x = clone(); mutate(x); expect(isAnalytics(x)).toBe(false); }
 });
 
-test('chart code loads only on the dashboard and exact data survives a chart-download failure', async ({ page }) => {
+test('chart code loads only on the dashboard and readable data survives a chart-download failure without disclosures', async ({ page }) => {
   await mockCatalog(page);
   await page.route('**/api/v1/analytics', route => route.fulfill({ json: clone() }));
   let downloads = 0;
@@ -28,11 +28,11 @@ test('chart code loads only on the dashboard and exact data survives a chart-dow
   await expect(page.getByRole('button', { name: 'Find my next game', exact: true })).toBeVisible();
   expect(downloads).toBe(0);
   await page.getByRole('link', { name: 'Dashboard', exact: true }).click();
-  await expect(page.getByText('Interactive chart unavailable. Use the exact values below, or reload to try again.', { exact: true })).toHaveCount(6);
+  await expect(page.getByText('Interactive chart unavailable. Values are shown below; reload to try again.', { exact: true })).toHaveCount(7);
   expect(downloads).toBeGreaterThan(0);
   const free = page.getByRole('article', { name: 'Free vs paid games', exact: true });
-  await free.getByText('View exact values', { exact: true }).click();
   await expect(free.getByRole('row', { name: 'Free to play 352', exact: true })).toBeVisible();
+  await expect(page.getByText('View exact values', { exact: true })).toHaveCount(0);
   await expect(page.locator('.dashboard-share-values li')).toHaveCount(6);
   await expect(page.locator('.dashboard-lollipops li')).toHaveCount(10);
 });
@@ -51,28 +51,41 @@ test('dashboard navigation, all thirteen items, year exploration, refresh and st
   await expect(page.locator('.dashboard-metrics dd > span').first()).toHaveText('2,000');
   await expect(page.locator('.dashboard-chart')).toHaveCount(8);
   await expect(page.locator('.dashboard-word-cloud > span')).toHaveCount(60);
-  await expect(page.locator('.dashboard-plot[data-ready="true"]')).toHaveCount(6);
+  await expect(page.locator('.dashboard-plot[data-ready="true"]')).toHaveCount(7);
   expect(await page.locator('.dashboard-interactive').evaluateAll(nodes => [...new Set(nodes.map(n => n.getAttribute('data-chart-kind')))].sort())).toEqual(['column', 'donut', 'line', 'lollipop', 'rank', 'stack', 'strip', 'summary-donut']);
-  await expect(page.locator('.dashboard-metrics')).toContainText('392 unknown');
+  await expect(page.locator('.dashboard-body')).not.toContainText(/\b(?:un)?known\b/i);
+  await expect(page.locator('.dashboard-provenance')).toHaveCount(0);
+  await expect(page.locator('.dashboard-body summary')).toHaveText(['View word counts and method']);
+  await expect(page.locator('.dashboard-body')).not.toContainText(/Recorded US store prices, not live offers|not discounted checkout prices|Names are normalized for spacing and case|these are themes, not verified gameplay attributes|All percentages use the/);
+  await page.getByText('View word counts and method', { exact: true }).click();
+  await expect(page.locator('.dashboard-word-counts li')).toHaveCount(60);
+  await page.getByText('View word counts and method', { exact: true }).click();
   for (const article of await page.locator('.dashboard-chart').all()) await expect(article).not.toContainText(/unknown|user reviews/i);
   const price = page.getByRole('article', { name: 'Games by price range', exact: true });
   await expect(price.locator('.bartext')).toHaveText(['227', '317', '581', '422', '61']);
   await expect(page.locator('.dashboard-ranked .bartext')).toHaveText(snapshot.data.genres.map(r => r.count.toLocaleString('en-US')));
   await expect(page.locator('.dashboard-lollipops strong')).toHaveText(snapshot.data.developers.map(r => r.count.toLocaleString('en-US')));
   await expect(page.locator('.dashboard-share-values strong')).toHaveText(['1,381', '23', '78', '92', '24', '10']);
+  const discounts = page.getByRole('article', { name: 'Games by discount', exact: true });
+  const discountRows = snapshot.data.discount_ranges.filter(r => r.count > 0);
+  const discountTotal = discountRows.reduce((n, r) => n + r.count, 0);
+  for (const [i, row] of discountRows.entries()) {
+    await discounts.locator('.barlayer .trace .point path').nth(i).hover({ force: true });
+    await expect(discounts.getByRole('tooltip')).toContainText(row.label);
+    await expect(discounts.getByRole('tooltip')).toContainText(`${row.count.toLocaleString('en-US')} games`);
+    await expect(discounts.getByRole('tooltip')).toContainText(`${(row.count / discountTotal * 100).toFixed(1)}%`);
+  }
   const reviews = page.getByRole('article', { name: 'Review type distribution', exact: true });
   await expect(reviews.locator('.dashboard-legend button')).toHaveCount(6);
-  await expect(reviews.locator('.dashboard-legend p')).toContainText('1,995 games');
+  await expect(reviews.locator('.dashboard-legend p')).toHaveText('Toggle a category to compare.');
   await expect(reviews.locator('text.slicetext')).toHaveText(['54.7%', '17.2%', '12.3%', '12.2%', '2.6%', '0.9%']);
   await expect(page.locator('.dashboard-stack-key')).toHaveText('SupportedUnsupported');
   await expect(page.locator('[data-chart-kind="stack"] .bartext')).toHaveText(['2,000', '496', '331', '1,504', '1,669']);
-  await page.getByText('Support coverage', { exact: true }).click();
-  await expect(page.locator('.dashboard-platforms').getByText('Linux', { exact: true })).toBeVisible();
+  await expect(page.locator('[data-chart-kind="stack"] .xtick text')).toHaveText(['Windows', 'macOS', 'Linux']);
   await expect(page.getByText(/Independent SteamOS \/ Steam Deck compatibility/)).toBeVisible();
   await page.getByLabel('Release year', { exact: true }).selectOption('2006');
   const release = page.getByRole('article', { name: 'Games released by month' });
-  await release.getByText('View exact values', { exact: true }).click();
-  await expect(release.getByRole('row', { name: 'Nov 1', exact: true })).toBeVisible();
+  await expect(release.getByRole('row', { name: 'Nov 1', exact: true })).toHaveCount(1);
   await expect(release.getByRole('row')).toHaveCount(3);
   await expect.poll(() => release.locator('.dashboard-plot').evaluate(node => (node as HTMLElement & { data: { y: number[] }[] }).data?.[0]?.y)).toEqual(snapshot.data.release_years.find(x => x.year === 2006)!.months);
   const free = page.getByRole('article', { name: 'Free vs paid games', exact: true });
@@ -145,10 +158,13 @@ test('dashboard loading, manual retry, invalid reply and empty catalog are disti
   await page.route('**/api/v1/analytics', route => route.fulfill({ json: empty }));
   await page.getByRole('button', { name: 'Refresh snapshot' }).click();
   await expect(page.getByRole('heading', { name: 'No games in this snapshot.' })).toBeVisible();
+  await expect(page.locator('.dashboard-metrics dd > span').nth(1)).toHaveText('—');
+  await expect(page.locator('.dashboard-metrics dd > span').nth(1)).toHaveAttribute('aria-label', 'Not available');
+  await expect(page.locator('.dashboard-metrics dd > span').nth(2)).toHaveText('—');
   await expect(page.locator('.dashboard-chart')).toHaveCount(0);
 });
 
-test('dashboard responsive charts, exact values, long labels and accessibility', async ({ page }) => {
+test('dashboard responsive labels, expanded genre plot, compact developers and accessibility', async ({ page }) => {
   await mockCatalog(page);
   const current = clone();
   const errors: string[] = [];
@@ -156,12 +172,14 @@ test('dashboard responsive charts, exact values, long labels and accessibility',
   await page.route('**/api/v1/analytics', route => route.fulfill({ json: current }));
   await page.goto('/dashboard');
   await expect(page.locator('.dashboard-chart')).toHaveCount(8);
-  await expect(page.locator('.dashboard-plot[data-ready="true"]')).toHaveCount(6);
+  await expect(page.locator('.dashboard-plot[data-ready="true"]')).toHaveCount(7);
   await page.getByRole('button', { name: 'Dismiss assistant greeting', exact: true }).click();
   for (const [width, height] of [[1440, 1000], [390, 844], [320, 640]]) {
     await page.setViewportSize({ width: width!, height: height! });
     await page.evaluate(() => document.fonts.ready);
     await expect.poll(() => page.locator('.dashboard-plot').evaluateAll(nodes => nodes.every(node => Math.abs(node.querySelector('.main-svg')!.getBoundingClientRect().width - node.getBoundingClientRect().width) < 2))).toBe(true);
+    expect(await page.locator('.dashboard-ranked .dashboard-plot').evaluate(node => (node as HTMLElement & { _fullLayout: { _size: { r: number } } })._fullLayout._size.r)).toBeLessThanOrEqual(54);
+    if (width === 1440) expect((await page.locator('.dashboard-lollipops').boundingBox())!.height).toBeLessThan(480);
     for (const [title, labels] of [
       ['Supported platforms', ['Windows', 'macOS', 'Linux']],
       ['Games by price range', current.data.price_ranges.filter(r => r.count > 0).map(r => r.label)],
@@ -188,6 +206,23 @@ test('dashboard responsive charts, exact values, long labels and accessibility',
         return r.width > 0 && (r.left < plot.left - 1 || r.right > plot.right + 1 || r.top < plot.top - 1 || r.bottom > plot.bottom + 1);
       }).map(label => label.textContent);
     }))).toEqual([]);
+    const discounts = page.getByRole('article', { name: 'Games by discount', exact: true });
+    await discounts.locator('.dashboard-plot').scrollIntoViewIfNeeded();
+    await discounts.locator('.barlayer .trace .point path').last().hover({ force: true });
+    await expect(discounts.getByRole('tooltip')).toContainText('10 games · 0.6%');
+    const tooltip = await discounts.getByRole('tooltip').boundingBox();
+    const strip = await discounts.locator('.barlayer').boundingBox();
+    expect(tooltip!.y + tooltip!.height).toBeLessThan(strip!.y);
+    const plot = await discounts.locator('.dashboard-plot').boundingBox();
+    expect(tooltip!.width).toBeLessThanOrEqual(200);
+    expect(tooltip!.height).toBeLessThan(64);
+    expect(tooltip!.x).toBeGreaterThanOrEqual(plot!.x - 1);
+    expect(tooltip!.x + tooltip!.width).toBeLessThanOrEqual(plot!.x + plot!.width + 1);
+    const entries = discounts.locator('.dashboard-share-values li');
+    const first = await entries.nth(0).boundingBox();
+    const second = await entries.nth(1).boundingBox();
+    expect(first!.y - (plot!.y + plot!.height)).toBeCloseTo(second!.y - (first!.y + first!.height), 0);
+    if (process.env.DASHBOARD_CAPTURE_DIR) await discounts.locator('.dashboard-plot').screenshot({ path: `${process.env.DASHBOARD_CAPTURE_DIR}/discount-hover-${width}.png` });
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     const violations = (await new AxeBuilder({ page }).analyze()).violations;
     expect(violations).toEqual([]);
@@ -199,16 +234,14 @@ test('dashboard responsive charts, exact values, long labels and accessibility',
         ['free', 'Free vs paid games'], ['price', 'Games by price range'], ['discount', 'Games by discount'],
         ['range', 'Games released by month'], ['genres', 'Top 15 game genres'], ['platforms', 'Supported platforms'],
         ['reviews', 'Review type distribution'], ['developers', 'Top 10 developers by game count'],
-      ]) if (width === 1440 || ['free', 'price', 'range', 'genres', 'platforms', 'reviews'].includes(slug!)) {
+      ]) if (width === 1440 || ['free', 'price', 'discount', 'range', 'genres', 'platforms', 'reviews', 'developers'].includes(slug!)) {
         await page.getByRole('article', { name: title!, exact: true }).screenshot({ path: `${process.env.DASHBOARD_CAPTURE_DIR}/${slug}-${width}.png` });
       }
       if (width === 320) {
         const release = page.getByRole('article', { name: 'Games released by month' });
         await page.getByLabel('Release year', { exact: true }).selectOption('2006');
-        await release.getByText('View exact values', { exact: true }).click();
-        await release.screenshot({ path: `${process.env.DASHBOARD_CAPTURE_DIR}/dashboard-release-values-320.png` });
+        await release.screenshot({ path: `${process.env.DASHBOARD_CAPTURE_DIR}/dashboard-release-2006-320.png` });
         await page.getByLabel('Release year', { exact: true }).selectOption('all');
-        await release.getByText('View exact values', { exact: true }).click();
         await page.locator('.dashboard-word-cloud').screenshot({ path: `${process.env.DASHBOARD_CAPTURE_DIR}/dashboard-words-320.png` });
       }
     }

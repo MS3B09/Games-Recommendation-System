@@ -1,5 +1,7 @@
 # Documentation index
 
+**November7 publication follow-up:** owner explicitly approved commit/push/live deployment of the dashboard cleanup, compact above-strip hover and catalog-wide assistant fix. Final local frontend suite81/81passed; release-time CI/hosting receipts are separate. [Current implementation, release evidence and limits](reports/catalog-chat-fix-2026-11-07.md). No old evaluation campaign or live AI smoke is resumed.
+
 **November6 owner update:** the original three-task release is owner accepted after live recommendations/chat review. The owner separately authorized richer interactive dashboard charts, a metrics/snapshot-area refinement, and commit/push/live deployment, with Impeccable confirmed. [Dashboard follow-up](reports/dashboard-interactive-2026-11-06.md). Earlier assistant-acceptance-pending next actions are historical; no old evaluation work is active.
 
 ## Current direction — 2026-11-04
@@ -19,6 +21,9 @@ The owner selected a capacity audit before deciding catalog size, popular and le
 | [Dashboard implementation](reports/dashboard-implementation.md) | Implemented `/dashboard`, version-bound analytics, checks, scoped UI verdict, local 2,000-game review preview and release boundary |
 | [Dashboard chart options](reports/dashboard-chart-options-2026-11-06.md) | Retained36-preview selection artifact; owner subsequently supplied chart choices |
 | [Owner-selected dashboard](reports/dashboard-selected-2026-11-06.md) | Implemented selected chart mix, visible values, presentation-only filtering, axis-label fixes and release evidence boundaries |
+| [Dashboard cleanup](reports/dashboard-cleanup-2026-11-07.md) | Owner-requested copy/disclosure/panel removal, wider genres, compact developers and local preview checks |
+| [eFootball chat diagnosis](reports/efootball-catalog-diagnosis-2026-11-07.md) | Historical trace-backed cause; subsequent general correction is implemented locally in the catalog-wide fix report |
+| [Catalog-wide chat fix](reports/catalog-chat-fix-2026-11-07.md) | Implemented name grounding/normalized lookup/structured lookup finalization,2k-title verification, tooltip-above-strip and local runtime boundaries |
 | [Project brief / agent instructions](../AGENTS.md) | Latest owner direction and retained constraints |
 | [Technical plan](../IMPLEMENTATION_PLAN.md) | Current task map plus historical architecture/milestones |
 | [Product](../PRODUCT.md) | Product scope and completion definition |
@@ -38,4 +43,4 @@ In particular, preserve `conversational-rag-contracts.md`, frozen JSON/journals/
 
 ## Next action
 
-Task3 publication/connected deployments are verified; shared2k discovery/dashboard/saves/layout pass hosted checks. **One fresh hosted assistant smoke failed answer validation**, not retried. Read the [current release outcome](reports/project-completion.md); targeted follow-up and final owner acceptance remain, not another collection/evaluation campaign.
+The original release is owner accepted (November6). The November7follow-up is now authorized for publication; verify its final CI/deployment/hosted receipts in the [current fix report](reports/catalog-chat-fix-2026-11-07.md). Historical assistant failures remain evidence, not an instruction to retry or resume an evaluation campaign.

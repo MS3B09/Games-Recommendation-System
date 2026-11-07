@@ -40,6 +40,10 @@ def game(app_id=10, title="Fixture", modes=None, description=None):
 def repository(games=None):
     games = games if games is not None else [game()]
     repo = MagicMock(spec=CatalogRepository)
+    from game_discovery.retrieval.titles import mentioned_titles
+    repo.mentioned_games.side_effect = lambda message: ResolvedGames(catalog_version='fixture', unknown_ids=[],
+        items=[g for title in mentioned_titles(message, tuple(CatalogTitle(g.app_id, g.title) for g in games))
+               for g in games if title.app_id == g.app_id])
     def lookup(query, reference_id=None):
         match = match_title(query, [CatalogTitle(g.app_id, g.title) for g in games], reference_id)
         return TitleLookup("fixture", match, tuple(g for m in match.matches for g in games if g.app_id == m.app_id))

@@ -1,6 +1,8 @@
 """Bounded catalog-only title matching; fuzzy names are suggestions, never identities."""
 
 import unicodedata
+import re
+from functools import lru_cache
 from dataclasses import dataclass
 from difflib import SequenceMatcher
 from typing import Literal, Sequence
@@ -29,6 +31,35 @@ def normalize_title(title: str) -> str:
     # Apostrophes are elided so Baldur's/Baldurs agree; hyphens become spaces.
     folded = "".join(character for character in folded if character not in "'’‘ʼ")
     return " ".join("".join(character if character.isalnum() else " " for character in folded).split())
+
+
+@lru_cache(maxsize=1)
+def _mention_patterns(titles: tuple[CatalogTitle, ...]) -> tuple[tuple[CatalogTitle, re.Pattern[str]], ...]:
+    # Cache only the current public title set, never user messages or conversations.
+    patterns = []
+    for title in titles:
+        variants = {normalize_title(title.title), normalize_title(title.title.translate(str.maketrans('', '', '™®℠')))}
+        alternatives = [r'\s*'.join(re.escape(word) for word in value.split()) for value in sorted(variants) if value]
+        if alternatives:
+            patterns.append((title, re.compile(r'(?<!\w)(?:' + '|'.join(alternatives) + r')(?!\w)')))
+    return tuple(patterns)
+
+
+def mentioned_titles(message: str, titles: tuple[CatalogTitle, ...]) -> tuple[CatalogTitle, ...]:
+    """Recognize catalog names, not intent; longer overlapping names take precedence."""
+    if len(message) > 2000:
+        raise ValueError('Title mention input exceeds the conversation bound')
+    normalized = normalize_title(message)
+    matches = []
+    for title, pattern in _mention_patterns(titles):
+        found = pattern.search(normalized)
+        if found:
+            matches.append((found.start(), found.end(), title))
+    selected: list[tuple[int, int, CatalogTitle]] = []
+    for start, end, title in sorted(matches, key=lambda m: (m[0] - m[1], m[0], m[2].app_id)):
+        if not any(start < b and end > a and (start, end) != (a, b) for a, b, _ in selected):
+            selected.append((start, end, title))
+    return tuple(item[2] for item in sorted(selected, key=lambda m: (m[0], m[2].app_id))[:TITLE_OPTION_LIMIT])
 
 
 # An alias is valid only while BOTH the canonical ID and title still agree.

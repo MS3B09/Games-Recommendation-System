@@ -1,5 +1,9 @@
 # Independent assistant — architecture and evaluation boundary
 
+## Catalog-wide name grounding — November7owner fix
+
+[Implementation and limits](reports/catalog-chat-fix-2026-11-07.md). Before native planning, the backend recognizes explicit names against every active catalog title and supplies up to four verified identities. Whole-name, Unicode/case/punctuation/spacing and trademark variants share one public-pattern cache; no main/device information or input intent classifier is introduced. This adds read-only title grounding to ordinary conversation, without adding an AI stage. Exact normalized lookup identities are ranked first; explicit completed lookups enter the existing structured writer, while finish=false retains further tools. Common catalog-absence assertions are formatted locally from verified matches or an unverified-name/search-criteria clarification; invalid citations/cards/filter proposals remain rejected. Same three-call ceiling, no automatic inference repair/HTTP retry, public-wire/model/schema/quota change.302backend checks OK(1skip), actual2k/4,602name variants0misses; these are not2kreal generated answers or a universal semantic-quality guarantee. Earlier optional-tool/no-pre-read descriptions below are historical for this narrow revision. Old source-locked journals remain immutable and cannot resume on new source.
+
 > **Current roadmap — 2026-11-04:** [catalog expansion → catalog-connected dashboard → publication/deployment](project-completion-plan.md). This document describes existing assistant architecture and dated revisions, not additional remaining implementation/evaluation tasks. Preserve independent chat and its bounded tools/archive; account for expanded-catalog title/retrieval limits and hosted model artifacts within the three tasks. Historical failures and unmeasured quality remain limitations, never invented passes.
 
 ## Current — simplified conversation engine, November 3

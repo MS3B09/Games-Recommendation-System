@@ -15,7 +15,7 @@ from game_discovery.catalog.repository import CatalogFailure, CatalogRepository
 from game_discovery.retrieval.chat import ChatRetriever, fuse
 from game_discovery.retrieval.contracts import CandidatePools, RetrievalOutcome, TitleLookup
 from game_discovery.retrieval.query import BoundedQueryEncoder
-from game_discovery.retrieval.titles import TITLE_OPTION_LIMIT, CatalogTitle, match_title, normalize_title
+from game_discovery.retrieval.titles import TITLE_OPTION_LIMIT, CatalogTitle, match_title, normalize_title, mentioned_titles
 from test_catalog_m2 import fixture
 
 VECTOR = [1.0] + [0.0] * 383
@@ -37,6 +37,17 @@ class ConnectionRepository(CatalogRepository):
 
 
 class TitleTests(unittest.TestCase):
+    def test_mentions_cover_large_catalogs_without_prefix_confusion_or_mark_dependencies(self):
+        titles = tuple([CatalogTitle(10, 'Ori'), CatalogTitle(11, 'Original Sin'), CatalogTitle(12, 'Portal'),
+                        CatalogTitle(13, 'Portal 2'), CatalogTitle(14, 'Nightmare™'), CatalogTitle(15, 'Café — Adventure')]
+                       + [CatalogTitle(1000 + i, f'Catalog Title {i}') for i in range(2000)])
+        for query, expected in [('original sin', [11]), ('Portal 2', [13]), ('nightmare', [14]),
+                                ('NightmareTM', [14]), ('café adventure', [15]), ('catalogtitle1999', [2999])]:
+            with self.subTest(query=query):
+                self.assertEqual([x.app_id for x in mentioned_titles('Do you know ' + query + '?', titles)], expected)
+        self.assertEqual(mentioned_titles('Ordinary conversation, no invented game identities.', titles), ())
+        self.assertEqual([x.app_id for x in mentioned_titles('Ori and Portal 2', titles)], [10, 13])
+
     def test_unicode_punctuation_and_verified_spiderman_aliases(self):
         title = CatalogTitle(1817070, "Marvel’s Spider-Man Remastered")
         for query in ("spiderman", "Spider-Man", "spider man remastered", "MARVEL'S SPIDER-MAN REMASTERED",

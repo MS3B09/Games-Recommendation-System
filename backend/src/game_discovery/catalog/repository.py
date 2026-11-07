@@ -15,7 +15,7 @@ from game_discovery.retrieval.query import lexical_query
 from game_discovery.retrieval.query import validate_query_vector
 from game_discovery.retrieval.contracts import CandidatePools, TitleLookup
 from game_discovery.retrieval.titles import (
-    ALIASES, TITLE_OPTION_LIMIT, TITLE_SUGGESTION_POOL_LIMIT, CatalogTitle, TitleMatch, normalize_title, title_suggestions,
+    ALIASES, TITLE_OPTION_LIMIT, TITLE_SUGGESTION_POOL_LIMIT, CatalogTitle, TitleMatch, normalize_title, title_suggestions, mentioned_titles,
 )
 
 
@@ -97,12 +97,30 @@ class CatalogRepository:
             raise ValueError("Invalid catalog page")
         with self.snapshot() as (connection, version):
             params = {"v": version, "q": query, "limit": limit, "offset": offset,
+                      "compact": normalize_title(query).replace(' ', ''),
                       "needle": "%" + query.casefold().replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_") + "%"}
-            where = "version=:v and (:q='' or normalized_title like :needle escape '\\' or search_text @@ websearch_to_tsquery('english',:q))"
+            where = "version=:v and (:q='' or (:compact<>'' and compact_title=:compact) or normalized_title like :needle escape '\\' or search_text @@ websearch_to_tsquery('english',:q))"
             total = connection.execute(text(f"select count(*) from discovery.games where {where}"), params).scalar_one()
-            rows = connection.execute(text(f"select document from discovery.games where {where} order by normalized_title,app_id limit :limit offset :offset"), params)
+            rows = connection.execute(text(f"select document from discovery.games where {where} order by (compact_title=:compact) desc,normalized_title,app_id limit :limit offset :offset"), params)
             return GamePage(catalog_version=version, items=[Game.model_validate(row[0]) for row in rows],
-                            total=total, offset=offset)
+                             total=total, offset=offset)
+
+    def mentioned_games(self, message: str) -> ResolvedGames:
+        """Ground explicit names against every active title, without an intent classifier."""
+        if len(message) > 2000:
+            raise ValueError('Title mention input exceeds the conversation bound')
+        with self.snapshot() as (connection, version):
+            titles = tuple(CatalogTitle(int(row[0]), str(row[1])) for row in connection.execute(text(
+                "select app_id,title from discovery.games where version=:v and eligibility='eligible' order by app_id"), {'v': version}))
+            ids = [title.app_id for title in mentioned_titles(message, titles)]
+            games = {}
+            if ids:
+                rows = connection.execute(text('select document from discovery.games where version=:v and app_id=any(:ids)'),
+                                          {'v': version, 'ids': ids})
+                games = {game.app_id: game for game in (Game.model_validate(row[0]) for row in rows)}
+                if set(games) != set(ids):
+                    raise CatalogFailure('catalog_integrity_error')
+            return ResolvedGames(catalog_version=version, items=[games[i] for i in ids], unknown_ids=[])
 
     def facets(self) -> Facets:
         with self.snapshot() as (connection, version):

@@ -103,11 +103,46 @@ class DialogueTests(unittest.TestCase):
         self.model.exchange.side_effect = exchange
         return Dialogue(self.model, self.repo, self.archive, None).run(turn, self.archive.begin(turn))
 
-    def test_natural_chat_has_one_call_no_classifier_and_no_catalog_access(self):
+    def assert_only_name_grounding(self):
+        self.assertTrue(all(call[0] == 'mentioned_games' for call in self.repo.mock_calls))
+
+    def test_catalog_name_grounding_prevents_unsupported_denials_without_repair_calls(self):
+        originals = [game(101, 'Celestial Orchard™'), game(102, 'Café — Adventure'), game(103, 'eFootball™')]
+        self.repo = repository(originals)
+        for name, expected in [('celestialorchardTM', 101), ('CAFÉ adventure', 102), ('efootball', 103)]:
+            before = self.model.exchange.call_count
+            result = self.turn('Do you know ' + name + '?', [
+                {'content': "I don't have an entry for that title in the current catalog."}])
+            self.assertEqual([c['game']['app_id'] for c in result['games']], [expected])
+            self.assertIn(next(g.title for g in originals if g.app_id == expected), result['message'])
+            self.assertIn(f'game:{expected}:title', {e['id'] for e in result['evidence']})
+            self.assertEqual(self.model.exchange.call_count - before, 1)
+            self.assertIsNone(result['preference_changes'])
+        self.repo.assistant_search.assert_not_called()
+        result = self.turn('Do you know Unlisted Example?', [{'content': 'No such game is in our catalog.'}])
+        self.assertEqual(result['games'], [])
+        self.assertIn('couldn’t verify', result['message'])
+        self.assertNotIn('No such game', result['message'])
+        self.assertEqual(self.archive.read(self.key)['document']['memory'], {})
+
+    def test_completed_name_lookup_uses_the_structured_writer(self):
+        result = self.turn('Check One.', [tools(('lookup_titles', {'query': 'One', 'finish': True})),
+            answer('One is recorded.', [10], ['game:10:title'])])
+        self.assertEqual(result['games'][0]['game']['app_id'], 10)
+        self.assertEqual(self.model.exchange.call_count, 2)
+        _, active_tools, schema = self.model.exchange.call_args.args
+        self.assertEqual(active_tools, [])
+        self.assertIn('parts', schema['properties'])
+        self.repo.mentioned_games.side_effect = CatalogFailure('catalog_unavailable')
+        result = self.turn('Check an unverified name.', [{'content': 'There are no entries in this catalog.'}])
+        self.assertIn('couldn’t verify', result['message'])
+        self.assertEqual(result['games'], [])
+
+    def test_natural_chat_has_one_call_no_classifier_and_only_title_grounding(self):
         text = "I'm Current's game-discovery assistant. What would you like to play?"
         result = self.turn("Hello, what's your name?", [answer(text)])
         self.assertEqual(result['message'], text)
-        self.assertFalse(self.repo.mock_calls)
+        self.assert_only_name_grounding()
         self.assertEqual(self.model.exchange.call_count, 1)
         self.assertTrue(self.model.exchange.call_args.args[1])
         result = self.turn('Which GPT model and architecture exactly?', [answer(
@@ -117,7 +152,7 @@ class DialogueTests(unittest.TestCase):
         result = self.turn('How do I make rice fluffier?', [answer(general)])
         self.assertEqual(result['message'], general)
         self.assertEqual(self.model.exchange.call_count, 3)
-        self.assertFalse(self.repo.mock_calls)
+        self.assert_only_name_grounding()
 
     def test_direct_reply_finishes_without_a_competing_native_reply_tool(self):
         payload = json.loads(answer('Hi! Want to tell me about your day?')['content'])
@@ -126,7 +161,7 @@ class DialogueTests(unittest.TestCase):
             'recommend_games', 'lookup_titles', 'game_details', 'conversation_history'})
         self.assertIn('your day', result['message'])
         self.assertEqual(self.model.exchange.call_count, 1)
-        self.assertFalse(self.repo.mock_calls)
+        self.assert_only_name_grounding()
 
     def test_natural_reply_may_omit_empty_metadata_without_inferred_edits(self):
         for metadata in ({}, {'preferences': {}}, {'preferences': None}):
@@ -139,14 +174,14 @@ class DialogueTests(unittest.TestCase):
         for invalid in ([], False, 'none'):
             with self.assertRaises(ValueError):
                 self.turn('Let us just chat', [reply({'parts': [{'text': 'Hello.'}], 'preferences': invalid})])
-        self.assertFalse(self.repo.mock_calls)
+        self.assert_only_name_grounding()
 
     def test_plain_native_response_needs_no_formatting_call_or_guessed_edits(self):
         result = self.turn('A friend might join on Tuesday; no budget is agreed.', [
             {'role': 'assistant', 'content': 'Tuesday is tentative, with no agreed budget.'}])
         self.assertEqual(result['message'], 'Tuesday is tentative, with no agreed budget.')
         self.assertEqual(self.model.exchange.call_count, 1)
-        self.assertFalse(self.repo.mock_calls)
+        self.assert_only_name_grounding()
         self.assertIsNone(result['applied_filters'])
         self.assertIsNone(result['preference_changes'])
         self.assertEqual(self.archive.read(self.key)['document']['memory'], {})
@@ -323,7 +358,7 @@ class DialogueTests(unittest.TestCase):
         result = self.turn('What is my friend called?', [reply(payload)])
         self.assertEqual(result['message'], 'Your friend is Alex.')
         self.assertEqual(self.model.exchange.call_count, 2)  # first acknowledgement + this reply
-        self.assertFalse(self.repo.mock_calls)
+        self.assert_only_name_grounding()
 
     def test_failed_user_statement_is_preserved_in_context_with_its_original_memory_source(self):
         with self.assertRaises(AIFailure):
@@ -349,7 +384,7 @@ class DialogueTests(unittest.TestCase):
     def test_general_conversation_has_no_legacy_intent_word_blacklist(self):
         result = self.turn('For vocabulary practice, respond only with the word social.', [answer('social')])
         self.assertEqual(result['message'], 'social')
-        self.assertFalse(self.repo.mock_calls)
+        self.assert_only_name_grounding()
 
     def test_context_is_bounded_but_original_large_messages_are_not_changed(self):
         row = self.archive.rows[str(self.key.conversation_id)]
@@ -411,7 +446,7 @@ class DialogueTests(unittest.TestCase):
         for field in ('limit', 'max_results'):
             packet = dialogue.tool('conversation_history', {field: 1}, document, 'h')
             self.assertEqual(packet['entries'][0]['user'], 'Our original plan is Tuesday.')
-        self.assertFalse(self.repo.mock_calls)
+        self.assert_only_name_grounding()
 
     def test_history_search_finds_original_and_corrected_memory_key_values(self):
         self.turn('We plan for Tuesday.', [answer('Noted.', memory=[{'key': 'plan_day', 'value': 'Tuesday'}])])
@@ -594,7 +629,7 @@ class DialogueTests(unittest.TestCase):
             self.turn('Tell me about a game', [
                 reply({'parts': [{'text': 'An invented fact.', 'evidence': ['fake']}]})])
         self.assertEqual(self.model.exchange.call_count, 1)
-        self.assertFalse(self.repo.mock_calls)
+        self.assert_only_name_grounding()
 
     def test_competing_preferences_fail_without_overwriting_saved_filters(self):
         self.turn('Keep a normal maximum of 30 USD.', [reply({
@@ -630,11 +665,11 @@ class DialogueTests(unittest.TestCase):
             {'field': 'platforms', 'value': ['linux']}, {'field': 'max_price_cents', 'value': 3000},
             {'field': 'required_modes', 'value': ['online-co-op']}]}}
         self.turn('Online co-op on Linux, no higher than 30 USD.', [reply(first)])
-        self.assertFalse(self.repo.mock_calls)
+        self.assert_only_name_grounding()
         correction = {'parts': [{'text': 'Windows replaces Linux; the other conditions stay.'}],
                       'preferences': {'set': [{'field': 'platforms', 'value': ['windows']}]}}
         self.turn('Correction: Windows instead, keep the other limits.', [reply(correction)])
-        self.assertFalse(self.repo.mock_calls)
+        self.assert_only_name_grounding()
         self.turn('Recommend something with those conditions.', [
             tools(('recommend_games', {'save_as_normal': False, 'query': 'cooperative games', 'filters': {}})),
             answer('Two records online co-op.', [20], ['game:20:modes'])])
@@ -771,9 +806,9 @@ class DialogueTests(unittest.TestCase):
         self.assertEqual(self.model.exchange.call_count, 2)
         self.assertEqual([c['game']['app_id'] for c in result['games']], [10])
 
-    def test_ready_flag_does_not_disable_a_planned_second_information_round(self):
+    def test_finish_false_keeps_a_planned_second_information_round(self):
         result = self.turn('Find the games, then compare the recorded modes.', [
-            tools(('lookup_titles', {'query': '', 'finish': True})),
+            tools(('lookup_titles', {'query': '', 'finish': False})),
             tools(('game_details', {'ids': [10, 20], 'fields': ['modes'], 'finish': True})),
             answer('One records single-player; Two records online co-op.', [10, 20], ['game:10:modes', 'game:20:modes'])])
         self.assertEqual(len(result['games']), 2)
