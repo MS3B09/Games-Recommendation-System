@@ -1,6 +1,6 @@
 # Project history and release status
 
-Current is [live](https://steam-discovery.netlify.app/) with a shared catalog of 2,000 games. The original three-task completion scope was owner-accepted on November 6, 2026; subsequent dashboard and assistant improvements were published on November 7.
+Steam Game Discovery Platform is [live](https://steam-discovery.netlify.app/) with a shared catalog of 2,000 games. The original three-task completion scope was owner-accepted on November 6, 2026; subsequent dashboard and assistant improvements were published on November 7.
 
 | Phase | Work completed |
 | --- | --- |

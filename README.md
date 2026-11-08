@@ -1,6 +1,6 @@
-# Current — Steam Game Discovery
+# Steam Game Discovery Platform
 
-Current is a guest-friendly app for finding your next Steam game. Pick games you like, set your limits, and explore recommendations, catalog analytics, or an independent AI assistant. The live catalog contains **2,000 eligible games**.
+Steam Game Discovery Platform is a guest-friendly app for finding your next Steam game. Pick games you like, set your limits, and explore recommendations, catalog analytics, or an independent AI assistant. The live catalog contains **2,000 eligible games**.
 
 **[Try the app](https://steam-discovery.netlify.app/) · [Explore the dashboard](https://steam-discovery.netlify.app/dashboard) · [API documentation](https://steam-discovery-api.fastapicloud.dev/docs)**
 
