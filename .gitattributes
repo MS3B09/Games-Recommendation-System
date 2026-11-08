@@ -1,5 +1,8 @@
 *.mov filter=lfs diff=lfs merge=lfs -text
 
+# Generated API types must match the generator's LF output on every platform.
+/frontend/src/api/schema.d.ts text eol=lf
+
 # Preserve byte-exact evaluation evidence, fixtures, and pinned upstream files.
 /docs/reports/** -text
 /data/evaluation/** -text

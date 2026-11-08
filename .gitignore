@@ -48,3 +48,43 @@ backend/src/game_discovery/assets/model.onnx
 backend/src/game_discovery/assets/tokenizer.json
 backend/build/
 backend/dist/
+
+# Internal project history, agent tooling, and the legacy Streamlit app.
+# Retained locally; the public repository focuses on the current application.
+/.agents/
+/.opencode/
+/.impeccable/
+/.vscode/
+/.streamlit/
+/AGENTS.md
+/DESIGN.md
+/IMPLEMENTATION_PLAN.md
+/PRODUCT.md
+/PROMPT.txt
+/skills-lock.json
+/app.py
+/requirements.txt
+/game_data_for_dashboard.csv
+/games_data_recomendation.csv
+/similarity_finale.pkl
+/faiss_index/
+/frontend/CURRENT_ORIGINAL.md
+/docs/architecture-assistant.md
+/docs/assistant-closeout-protocol.md
+/docs/backend-foundation.md
+/docs/conversational-rag-contracts.md
+/docs/conversational-rag-plan.md
+/docs/llm-first-assistant-plan.md
+/docs/operations-*.md
+/docs/project-completion-plan.md
+/docs/project-skills.md
+/docs/walkthrough-assistant.md
+/docs/design/
+/docs/decisions/
+/docs/reports/*
+# Frozen inputs used by tests and the historical clean-database replay.
+!/docs/reports/conversational-rag-r0-contracts.json
+!/docs/reports/conversational-rag-r0-config.json
+!/docs/reports/conversational-rag-r0-benchmark.json
+!/docs/reports/error-handling-prechange-manifest.json
+!/docs/reports/m2-artifact-manifest.json

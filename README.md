@@ -1,245 +1,71 @@
-# 🎮 Steam Games Analytics & Recommendation System
+# Current — Steam Game Discovery
 
-## Current project status — 2026-11-06
+Current is a guest-friendly app for finding your next Steam game. Pick games you like, set your limits, and explore recommendations, catalog analytics, or an independent AI assistant. The live catalog contains **2,000 eligible games**.
 
-The local application includes guest discovery, saved games, feedback and an independent conversational assistant. **The three-task completion plan now stands at:**
+**[Try the app](https://steam-discovery.netlify.app/) · [Explore the dashboard](https://steam-discovery.netlify.app/dashboard) · [API documentation](https://steam-discovery-api.fastapicloud.dev/docs)**
 
-1. **Catalog expansion complete and active:** 2,000 eligible games with pinned embeddings/metadata. Compatible hosted backend/artifact verified before atomic activation; original40retained for rollback. [Evidence and refresh](docs/reports/catalog-expansion.md).
-2. **Dashboard live:** `/dashboard` has all four metrics, eight charts and the description word cloud in Current, with version-bound analytics and clearer navigation. [Implementation evidence](docs/reports/dashboard-implementation.md).
-3. **Published, deployed and owner accepted:** the owner verified the live application, including recommendations and chat, on November6. The original three-task scope is complete. The separately requested [interactive-dashboard enhancement](docs/reports/dashboard-interactive-2026-11-06.md) is now live with varied Plotly charts, keyboard legends, hover/zoom/reset and a refined overview. [Release outcome and retained limitations](docs/reports/project-completion.md).
+## What you can do
 
-**[Detailed implementation plan](docs/project-completion-plan.md) · [Documentation index](docs/README.md) · [Progress](docs/progress.md) · [Local startup](docs/operations-assistant.md) · [Release runbook](docs/deployment.md)**
+- **Discover games** using favorites and filters for price, platform, genre, and play mode. Save games or provide feedback for future recommendations.
+- **Explore the catalog** through four summary metrics, eight charts, interactive plots, and a description word cloud.
+- **Ask the assistant** for game information or recommendations in a conversation separate from your main discovery preferences.
+- **Use it without an account.** Favorites, saved games, and feedback are saved in your browser; relevant preferences are sent to the API when you request recommendations. Assistant conversations use a server-side archive. Erase the chat in the app before clearing browser storage: clearing storage alone removes its access key, not the archive.
 
-The [live application](https://steam-discovery.netlify.app/) and [API](https://steam-discovery-api.fastapicloud.dev/docs) share **2,000eligible games**, matching analytics/semantic artifact and metered AI. Hosted discovery/dashboard/persistence and125%layout checks pass; owner acceptance is recorded. The earlier automated chat502remains documented, not relabeled a successful test. No old evaluation campaign was resumed. Free-only operation and source-supported claims remain requirements.
+Prices are recorded US/USD observations, not live Steam offers. Linux support does not independently establish Steam Deck compatibility.
 
-## Historical implementation status
+## How it works
 
-The dated checkpoints below retain earlier engineering context. Their next-step/resume/acceptance instructions are superseded by the completion plan above; they are not today's task list.
+The React/TypeScript frontend talks to a FastAPI backend backed by PostgreSQL and pgvector. Main discovery combines game-content embeddings with explicit filters and feedback. The assistant can use title lookup, game details, and lexical/semantic retrieval to ground its replies in the catalog. MiniLM embeddings run on CPU using ONNX; Groq receives assistant requests for optional, rate-limited language-model inference. Core discovery does not require an LLM.
 
-> **Current local assistant closeout — 2026-10-30:** [Measured results and remaining gates](docs/reports/assistant-closeout-2026-10-30.md) · [Current native architecture](docs/architecture-assistant.md) · [Finite protocol](docs/assistant-closeout-protocol.md). LLM-first conversation with bounded catalog/history tools and complete conversation-scoped server archives; independent New Chat and main discovery.261backend/74frontend tests and current real catalog/archive/UI integration pass.40-request RRF/cosine retrieval comparison has zero hard-filter violations; broader owner relevance/live naturalness/grounding remain pending, and warm retrieval p952.364s misses1s target. Original owner judgments require improvements, not final acceptance. All historical checkpoint/resume commands below are superseded by the new source-locked v22 development journal. No publication/portfolio-ready claim; hosted M2 unchanged.
+The dashboard, discovery, and assistant use the same versioned catalog. Steam data is collected and normalized by developer jobs; source observations and generated artifacts are versioned separately from the app.
 
-> **Latest local revision — 2026-10-28:** [Friendly errors and recovery actions](docs/reports/friendly-errors-2026-10-28.md) implemented across chat/catalog/storage. Precise quota/provider/timeout reasons, local reset times, cooldowns, edit/retry/confirmed-reset actions and hidden diagnostic IDs;201backend/72frontend tests,10isolated DB checks and223scripted-provider catalog checks pass. Additive Alembic0006 preserves counters/limits; no new live inference. **Frozen v6 source/checkpoints are archived; current serving source requires a separately versioned evaluation continuation, not the older resume commands below.** R4/human/latency acceptance remains incomplete. Existing hosted M2 is unchanged. [Local operation](docs/operations-assistant.md).
+## Run locally
 
-> **Current R4 — 2026-10-27:** [Temporary quota increase and progress](docs/reports/r4-quota-increase-2026-10-27.md). **100 calls /1,500,000 reserved units per day** applied for R4, preserving consumed usage and normal50/500,000 defaults.193backend tests,15scratch quota checks and rollback-only runtime probe pass. Proposed v6 development13/13 passes; held-out32method-turns attempted with eight pricing-prose failures retained. Today's95calls/778,069units demonstrate the higher allowance; work pauses at conservative provider-token headroom, not the app ceiling. R4/quality/latency/human gates remain incomplete. Use the documented quota wrapper to resume, preserve C: journals, and restart the backend for runtime settings. Older statuses below are historical; hosted M2 unchanged.
-
-> **Latest R4 checkpoint — 2026-10-26:** [Resume report](docs/reports/conversational-rag-r4-resume-2026-10-26.md). Played/undo handling and journal durability improved; current proposed played → inspect → undo passes3/3live. **189 backend tests**,313catalog/API integration assertions and18byte-exact packet replays pass their stated scopes. Current v6 development9/26attempts, one retained baseline claim failure; full live/human quality remains incomplete. Today's **50calls/393,494reserved units** exhaust daily calls. Resume on later UTC days under existing approval; preserve the authoritative C: journal described in the report. Current runtime retrieval p95717ms/90warm samples; small successful live totalp954.93s is not a complete latency/quality gate. No new credentials/configuration needed. October25 status below is historical; R4 is not accepted, hosted M2 unchanged.
-
-> **Current status — 2026-10-25:** R0–R3 are complete locally; **R4 evaluation is in progress, not accepted**. The [public demo](https://steam-discovery.netlify.app/) remains hosted M2. [R4 results/failures](docs/reports/conversational-rag-evaluation.md) · [Architecture](docs/architecture-assistant.md) · [Walkthrough](docs/walkthrough-assistant.md) · [Local startup](docs/operations-assistant.md).
-
-## Independent conversational RAG — R4 measured findings, incomplete quality gate
-
-[Coding-agent implementation plan](docs/conversational-rag-plan.md) · [Visual HTML roadmap](docs/design/conversational-rag-plan.html) · [Progress](docs/progress.md)
-
-**[Latest R4 fixes/checkpoint](docs/reports/conversational-rag-r4-continuation.md):** strict schema-constrained generation retains the four-card validator; unsupported-platform metadata and continuation references are corrected. The live proposed multiplayer → Spider-Man mismatch → more multiplayer journey now passes3/3. A fixed three-pass runtime benchmark measures retrieval p95 **487ms** across90warm observations; journaled spikes remain reported.180backend tests/static/contracts and313actual-catalog/scripted-provider assertions pass. The current paired development run is13/26turns; full held-out live/human quality is pending. **Additional free-tier inference is approved, but today's49/50calls (390,773reserved units) pause further two-call turns.** No new permission/key/config/model is needed to resume on later UTC days. Earlier [retrieval comparison/failures](docs/reports/conversational-rag-evaluation.md) remain: title Hit@5 9/9 vs8/9 is conditional retrieval, not end-to-end quality improvement. Frontend unchanged; R3 browser evidence remains historical. Restart backend for fixes. R4 is not accepted; publication remains separately gated.
-
-## Current full-stack application
-
-React/TypeScript frontend → modular FastAPI backend → one restricted PostgreSQL/pgvector database. The owner selected the exact **Current** visual and subsequently authorized completing M3 in that system. Both `/` and `/current-original.html` load the same guest application.
-
-- Real catalog search, artwork favorite picker and explicitly submitted recommendations, starting with Hades / Windows / single-player / recorded ≤$20 USD.
-- **My limits:** multi-choice required play modes → platform → catalog genre → a two-handle recorded-USD price range. All selected modes/genres must match; any selected platform may match. One desktop row, two columns at ≤900px, one column at ≤640px. $0–$0 means explicit free-to-play only. Exact exclusions/undo remain; the former advanced/preferred/unwanted text UI is removed and legacy terms clear on submission. Genre-led rows expose evidence, dates and tradeoffs; prices are snapshots, not live quotes.
-- **Saved on this device:** favorites/preferences, `/saved` with cached metadata, recommendation feedback and recent summaries. Limits: 50 favorites / 200 saves / 500 feedback / 20 history. Main actions: Save Game (bookmark only), Not For Me (hide/exclude and gently downweight similar content), Already Played (hide/exclude exact title only). Dismissing one result retains the others in order; next explicit discovery applies saved feedback. Earlier Interested/exclusion records remain manageable.
-- Protected versioned storage, truthful temporary mode when storage fails, tab synchronization and clear-data handling that invalidates pending work.
-- **Independent floating game assistant:** native LLM conversation with bounded catalog/history tools, typed preferences/corrections and a complete server-side conversation archive within explicit storage ceilings. It never inherits main favorites, limits, feedback or saved/history lists. Canonical cards expand inside chat with Save/Steam. The tab retains the private capability and bounded reload cache; older originals remain paged from the server. New Chat/clear actually erase the current archive and begin with empty memory. AI chat requires configured Groq; main recommendations do not. Full conversational quality remains under evaluation.
-- Free-only operation and no sign-in. Core discovery does not require an LLM. Broader relevance evaluation is underway against one cosine-only baseline; no quality improvement is claimed before actual owner judgments.
-
-**Latest follow-up evidence:** 80 backend tests, strict mypy18/Ruff, 29 frontend tests, TypeScript/build/targeted lint/contracts. Seven real-catalog cases with mocked Groq/accounting; owned live eight API cases/twelve clean scans plus two fixture-card visual checks. One mobile-focus finding RESOLVED; **SHIP at ONE-MOBILE-FOCUS-FIX UI verdict scope**, not whole-product/publication approval. [Full scope and limits](docs/reports/independent-assistant.md). [Historical M4 evidence](docs/reports/m4-implementation.md) retains earlier 68/25 and SQL-budget checks; old integrated-text UI is superseded.
-
-**Controls revision complete locally, main confirmed:** the one material metadata-failure fix is **RESOLVED**; **ship at ONE-SCORED-FIX verdict-pass scope**, not blanket whole-product/publication approval. All 18 refreshed captures were reopened with no regression attributable to the fix; earlier full controls review found no material visual/a11y regression. Unavailable facets preserve stored null maximum/free-only false, displaying **Any price / No maximum price** instead of imposing a rendering fallback as budget. Full **21 frontend tests (15 browser + 6 storage)**, TypeScript/build/lint and live **nine cases / 18 clean scans** passed again (axe 0/no overflow/page errors). Backend **51**, Ruff, strict mypy13, OpenAPI/generated drift and detector `[]` remain passed. [Controls report](docs/reports/discovery-controls.md) · [refreshed JSON](docs/reports/discovery-controls-live.json). Actual E: source used existing C: tools; fresh frontend installation, remote M3 CI and real-phone checks remain unverified.
-
-**Completed M3 baseline, historical:** [49 backend/17 frontend checks and six-case/12-scan evidence](docs/reports/m3-implementation.md) retain the earlier four-material-fixes **RESOLVED / ship at the four-scored-fixes verdict-pass scope** disposition. This remains separate from the controls one-fix verdict and is not blanket whole-product/UI release approval.
-
-**The final interactive :4173 build targets API :8001.** The verifier stops its owned :8002 API; no persistent owned background API remains. Start/restart the backend using the project-local `backend/.venv/Scripts/python.exe`, start/reuse preview and refresh both entry routes. [Current startup and AI prerequisites](docs/operations-assistant.md). Removed temporary interpreter paths are not current instructions. Main discovery needs no Groq key; actual chat additionally needs deliberate quota initialization and server-only provider configuration.
-
-**Historical M2 evidence:** [implementation](docs/reports/m2-implementation.md) and [approved clean replay](docs/reports/m2-clean-replay.md) retain owner-confirmed hosted acceptance and two reproducible fresh PostgreSQL/pgvector builds. No evaluated relevance improvement is claimed.
-
-Start locally with [independent-assistant operations](docs/operations-assistant.md); [M4 operations](docs/operations-m4.md) retain compatible backend text/model/quota workflows and [M3 operations](docs/operations-m3.md) the earlier device-storage baseline. [Deployment](docs/deployment.md) records historical hosted M2 settings. [DESIGN.md](DESIGN.md) describes the selected visual system.
-
-## Preserved legacy Streamlit application
-
-The sections below describe the earlier application and its historical features, not the current full-stack release status.
-
-A comprehensive web application built with Streamlit that provides interactive analytics, AI-powered game recommendations, and an intelligent chatbot for exploring Steam's vast gaming library.
-
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.45.1-FF4B4B.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-
-## ✨ Features
-
-### 📊 Interactive Dashboard
-- **Comprehensive Analytics**: Visualize 15,000+ Steam games with interactive charts
-- **Price Analysis**: Distribution of game prices and discount patterns
-- **Genre Insights**: Top 15 game genres with detailed breakdowns
-- **Platform Support**: Cross-platform availability statistics (Windows, macOS, Linux, SteamOS)
-- **Release Trends**: Monthly and yearly game release patterns
-- **Developer Statistics**: Top developers and publishers by game count
-- **Review Analysis**: User review distribution and sentiment
-- **Word Cloud**: Visual representation of game descriptions and themes
-
-### 🎯 AI-Powered Recommendation System
-- **Smart Recommendations**: Content-based filtering using cosine similarity
-- **Personalized Results**: Get 1-15 similar game suggestions
-- **Rich Game Cards**: Beautiful UI with game images, pricing, and discounts
-- **Detailed Information**: Full game details including:
-  - Release dates
-  - Developer and publisher info
-  - Original pricing and current discounts
-  - Direct Steam store links
-- **Responsive Design**: Mobile-friendly interface with modern aesthetics
-
-### 🤖 Intelligent Game Chatbot
-- **Conversational AI**: Powered by Llama 3 (8B parameters) via Groq
-- **RAG Architecture**: Retrieval-Augmented Generation using FAISS vector database
-- **Natural Language Understanding**: Ask questions in plain English
-- **Game Discovery**: Get personalized recommendations through conversation
-- **Context-Aware**: Remembers chat history for coherent dialogues
-- **Rich Responses**: Detailed game information and suggestions
-
-## 📸 Screenshots
-
-### Dashboard
-<img width="1913" height="835" alt="Capture d'écran 2025-10-08 213546" src="https://github.com/user-attachments/assets/ac50485c-7a87-4fd6-a12b-4343ce89fe2b" />
-<img width="1919" height="826" alt="Capture d'écran 2025-10-08 213608" src="https://github.com/user-attachments/assets/8ef49971-678b-4709-8d12-2ebe36b46efa" />
-
-
-### Recommendation System
-<img width="1916" height="816" alt="Capture d'écran 2025-10-08 213741" src="https://github.com/user-attachments/assets/116e61d7-0b1c-4e57-8327-120bab75e412" />
-<img width="1910" height="841" alt="Capture d'écran 2025-05-30 183931" src="https://github.com/user-attachments/assets/65aa0407-6d1a-4e1c-bec5-07d55f524499" />
-
-### AI Chatbot
-<img width="1877" height="871" alt="Capture d'écran 2025-05-30 183347" src="https://github.com/user-attachments/assets/c0c0ee14-bd8d-45f9-87b2-53e79140ba05" />
-
----
-## 🚀 Installation
-
-### Prerequisites
-- Python 3.8 or higher
-- pip package manager
-- Git
-
-### Setup Instructions
-
-1. **Clone the repository**
-```bash
-git https://github.com/HaFares/Game-Recommendation-System-.git
-cd Game-Recommendation-System
-```
-
-2. **Create a virtual environment**
-```bash
-python -m venv venv
-
-# On Windows
-venv\Scripts\activate
-
-# On macOS/Linux
-source venv/bin/activate
-```
-
-3. **Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-4. **Set up API keys**
-
-Create a `.env` file in the root directory or set environment variables:
-```bash
-export HUGGINGFACEHUB_API_TOKEN="your_huggingface_token"
-export GROQ_API_KEY="your_groq_api_key"
-```
-
-5. **Prepare data files**
-
-Ensure the following files are in your project directory:
-- `game_data_for_dashboard.csv` - Main dataset for analytics
-- `games_data_recomendation.csv` - Dataset for recommendations
-- `similarity_finale.pkl` - Pre-computed similarity matrix
-- `faiss_index/` - FAISS vector database directory
-
-## 📁 Project Structure
-
-```
-steam-games-analytics/
-│
-├── app.py                          # Main Streamlit application
-├── requirements.txt                # Python dependencies
-├── README.md                       # Project documentation
-│
-├── data/
-│   ├── game_data_for_dashboard.csv
-│   ├── games_data_recomendation.csv
-│   └── similarity_finale.pkl
-│
-├── faiss_index/                    # Vector database for chatbot
-│   ├── index.faiss
-│   └── index.pkl
-│
-└── assets/                         # Images and static files
-```
-
-## 🎯 Usage
-
-### Running the Application
+You need **Python 3.13**, **uv**, **Node.js 24**, and a PostgreSQL database with pgvector and an activated catalog. A fresh clone does **not** include the hosted database or the full 2,000-game snapshot. Follow the [setup guide](docs/setup.md) to prepare your own database, data, and optional AI configuration.
 
 ```bash
-streamlit run app.py
+git clone https://github.com/MS3B09/Games-Recommendation-System.git
+cd Games-Recommendation-System
+uv sync --project backend --locked --extra dev --extra benchmark --extra api-spike
+# Configure backend/.env from backend/.env.example first.
+uv run --project backend --locked --extra dev --extra benchmark --extra api-spike python -m uvicorn game_discovery.api.main:app --host 127.0.0.1 --port 8000 --workers 1
 ```
 
-The application will open in your default browser at `http://localhost:8501`
+In a second terminal:
 
-### Navigation
+```bash
+cd frontend
+npm ci
+npm run dev
+```
 
-Use the sidebar to switch between three main sections:
+Open **http://127.0.0.1:5173**. The development frontend defaults to the local API at port 8000. Never put database credentials or provider keys in frontend environment variables.
 
-1. **Dashboard** - Explore comprehensive game analytics
-2. **Recommendation System** - Find similar games based on your preferences
-3. **Chatbot** - Chat with AI to discover new games
+## Project history
 
-## 🛠️ Technologies Used
+This project began as a Streamlit analytics and recommendation app. Its full-stack rebuild followed these phases:
 
-### Core Framework
-- **Streamlit** - Web application framework
-- **Python 3.8+** - Programming language
+1. **M0:** audited the original data and tested source, hosting, and embedding feasibility.
+2. **M1–M2:** built the API, database, deployment foundation, reproducible catalog pipeline, and initial 40-game discovery experience.
+3. **M3–M4:** added guest persistence, feedback, richer controls, and AI-assisted discovery. The chat experience was later redesigned as an independent assistant.
+4. **Assistant follow-up:** developed catalog retrieval, conversation state, validation, and browser integration; later simplified the conversation engine and added catalog-wide name grounding.
+5. **Final release work:** expanded the shared catalog to 2,000 games, built the dashboard, and deployed the app. Dashboard and assistant refinements were published on November 7, 2026.
 
-### Data Processing & Visualization
-- **Pandas** - Data manipulation and analysis
-- **NumPy** - Numerical computing
-- **Plotly** - Interactive visualizations
-- **Matplotlib & Seaborn** - Statistical graphics
-- **WordCloud** - Text visualization
+The final three-task plan replaced the older remaining M5–M8 roadmap; it did **not** turn unfinished evaluation work into a pass. [Progress and phase evidence](docs/progress.md) · [Documentation index](docs/README.md)
 
-### Machine Learning & AI
-- **LangChain** - LLM application framework
-- **Groq** - Fast LLM inference (Llama 3)
-- **HuggingFace** - Embeddings (all-MiniLM-L6-v2)
-- **FAISS** - Vector similarity search
-- **Sentence Transformers** - Text embeddings
+## Verification and limitations
 
-### UI Components
-- **streamlit-shadcn-ui** - Enhanced UI components
+The November 7 release passed [backend CI](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/42409600236) (302 tests, one skipped) and [frontend CI](https://github.com/MS3B09/Games-Recommendation-System/actions/runs/42409600180) (81 tests). Hosted checks covered discovery, saves, dashboard interactions, and responsive accessibility in Chromium.
 
-## 📊 Data Sources
+Recommendation relevance and assistant response quality are **not** claimed as comprehensively evaluated: earlier experiments include failures and incomplete human judgments. The latest catalog-name fix was tested against the active titles and scripted responses, but not with a fresh live-provider quality test. See the [evaluation summary](docs/evaluation.md) and [release history](docs/progress.md).
 
-The application uses Steam game data including:
-- Game titles and descriptions
-- Pricing information and discounts
-- Release dates
-- Developer and publisher details
-- Platform compatibility
-- User reviews and ratings
-- Genre classifications
-- Game images and Steam store links
+## Repository map
 
-## 🙏 Acknowledgments
+| Path | Contents |
+| --- | --- |
+| [`frontend/`](frontend/) | React application and browser tests |
+| [`backend/`](backend/) | FastAPI, catalog and retrieval logic, migrations, jobs, and tests |
+| [`data/fixtures/`](data/fixtures/) | Small tracked inputs and catalog manifests |
+| [`docs/`](docs/README.md) | Setup, architecture, project history, and reports |
 
-- Steam for providing the gaming data
-- Groq for fast LLM inference
-- HuggingFace for embedding models
-- The Streamlit team for the amazing framework
-- The open-source community for various libraries used
-
-⭐ If you find this project useful, please consider giving it a star!
-
-Made with ❤️ and ☕
+No project-wide license file has been declared; third-party components retain their own license notices.
